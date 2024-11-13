@@ -229,7 +229,6 @@
 
 ["uavsAttack", [
     "O_T_UAV_04_CAS_F"
-
 ]] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
 ["uavsPortable", [
     "CUP_O_Pchela1T_RU"
