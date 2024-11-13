@@ -345,6 +345,9 @@
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
+
+//ADD mags and items ""
+
 private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["rifles", [
     "CUP_arifle_Galil_black"
@@ -354,12 +357,16 @@ _loadoutData set ["rifles", [
     , "CUP_glaunch_M32"
     , "CUP_arifle_M16A1"
     ]];
-_loadoutData set ["carbines", ["CUP_arifle_Galil_SAR_black", ]];
+_loadoutData set ["carbines", [
+"CUP_arifle_FNFAL_OSW"
+ ]];
 _loadoutData set ["grenadeLaunchers", [
     "CUP_arifle_M16A1GL"
     , "CUP_glaunch_M32"
 ]];
-_loadoutData set ["designatedGrenadeLaunchers", []];
+_loadoutData set ["designatedGrenadeLaunchers", [
+"CUP_glaunch_M32"
+]];
 _loadoutData set ["SMGs", ["CUP_smg_UZI"]];
 _loadoutData set ["machineGuns", [
     "CUP_lmg_FNMAG"
