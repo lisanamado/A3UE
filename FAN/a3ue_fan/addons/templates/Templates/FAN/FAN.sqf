@@ -21,7 +21,7 @@
 //FLAG TO BE DONE
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
-["flagTexture", ""] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\FAN\FAN.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "Faction_CUP_FAN"] call _fnc_saveToTemplate;
 
 
@@ -57,14 +57,15 @@
 
 // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
 ["vehiclesLightArmed", [
-    "CUP_O_Tigr_233014_PK_SLA"
+    "CUP_I_M151_M2_SYND"
+    , "CUP_O_Tigr_233014_PK_SLA"
     , "CUP_B_RG31_M2_USMC"
-    , "CUP_B_HMMWV_DSHKM_GPK_ACR"
+    , "CUP_B_HMMWV_Crows_M2_NATO_T"
 ]] call _fnc_saveToTemplate;            
 
 // vehicle that can carry troops and cargoboxes:
 ["vehiclesTrucks", [
-    "CUP_O_Kamaz_RU"
+    "CUP_B_Kamaz_CDF"
 ]] call _fnc_saveToTemplate;		 
 
 // vehicle that can carry only cargoboxes:
@@ -74,52 +75,56 @@
 
 // wheeled vehicle with capability to rearm vehicles
 ["vehiclesAmmoTrucks", [
-    "CUP_O_Kamaz_Reammo_RU"
+    "CUP_O_Ural_Reammo_SLA"
 ]] call _fnc_saveToTemplate;
 
 // wheeled vehicle with capability to repair vehicles
 ["vehiclesRepairTrucks", [
-    "CUP_O_Kamaz_Repair_RU"
+    "CUP_O_Ural_Repair_SLA"
 ]] call _fnc_saveToTemplate;
 
 // wheeled vehicle with capability to refuel vehicles
 ["vehiclesFuelTrucks", [
-    "CUP_O_Kamaz_Refuel_RU"
+    "CUP_O_Ural_Refuel_SLA"
 ]] call _fnc_saveToTemplate;		 
 
 // vehicle with capability to provide healing
 ["vehiclesMedical", [
-    "CUP_O_GAZ_Vodnik_MedEvac_RU"
+    "CUP_O_UAZ_AMB_RU"
+    , "CUP_O_BMP2_AMB_sla"
+    , "CUP_B_M113A1_Med_olive_USA"
+    , "I_E_Truck_02_Medical_F"
 ]] call _fnc_saveToTemplate;
 
 // armed, lightly armoured, with 6-8 passengers 
 ["vehiclesLightAPCs", [
-    "CUP_O_GAZ_Vodnik_PK_RU"
-    , "CUP_B_RG31E_M2_USMC"
-    , "CUP_O_BRDM2_SLA"
+    "CUP_B_RG31E_M2_OD_USA"
+    , "CUP_O_BTR60_SLA"
+    , "CUP_O_BTR80_SLA"
+    , "CUP_O_BTR80A_SLA"
 ]] call _fnc_saveToTemplate;             
 
 // armed with enclosed turret, armoured, with 6-8 passengers
 ["vehiclesAPCs", [
-    "CUP_O_MTLB_pk_TKA"
+    "CUP_O_MTLB_pk_SLA"
     , "CUP_O_BMP1_TKM"
     , "CUP_O_BMP2_SLA"
     , "CUP_B_M113A1_olive_USA"
-    , "CUP_O_GAZ_Vodnik_BPPU_RU"
-    , "CUP_O_GAZ_Vodnik_KPVT_RU"
-    , "CUP_B_M1126_ICV_M2_Woodland"
+    , "CUP_B_M113A1_HQ_olive_USA"
+
 ]] call _fnc_saveToTemplate;                  
 
 // airborne vehicles, could be with passenger seats or just a crew 
 ["vehiclesAirborne", [
-    "CUP_B_RG31E_M2_USMC"
+    "CUP_B_RG31_M2_OD_GC_USA"
+    , "CUP_B_RG31_Mk19_OD_USA"
+
 ]] call _fnc_saveToTemplate;              
 
 // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
 ["vehiclesIFVs", [
     "CUP_O_BMP3_RU"
-    , "B_APC_Wheeled_01_cannon_F"
-    , "CUP_B_LAV25M240_green"
+    , "B_T_APC_Wheeled_01_cannon_F"
 
 ]] call _fnc_saveToTemplate;                  
 
@@ -127,19 +132,17 @@
 ["vehiclesTanks", [
     "CUP_O_T72_SLA"
     , "CUP_O_T90_RU"
-    , "O_MBT_04_cannon_F"
     , "CUP_B_M60A3_USMC"
     , "CUP_O_T55_SLA"
 ]] call _fnc_saveToTemplate;                 
 
 // tanks with poor armor and weapons
 ["vehiclesLightTanks", [
-    CUP_B_LAV25M240_green
+        "CUP_B_LAV25M240_green"
     ,  "CUP_I_T34_NAPA"
     ,  "CUP_O_BMP3_RU"
     ,  "CUP_O_T55_SLA"
     ,  "CUP_O_BRDM2_ATGM_SLA"
-    ,  "CUP_O_BRDM2_SLA"
 ]] call _fnc_saveToTemplate;             
 
 // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
@@ -152,7 +155,7 @@
 
 
 
-//WATER VEHICLES
+//WATER VEHICLES//
 
 // boat that can carry passengers and cargoboxes
 ["vehiclesTransportBoats", [
@@ -164,63 +167,132 @@
     "CUP_O_LCVP_SLA"
 ]] call _fnc_saveToTemplate;              
 
+["vehiclesAmphibious", [
+    "CUP_O_BRDM2_SLA"
+    , "CUP_O_BRDM2_ATGM_SLA"
+    , "CUP_O_BTR60_SLA"
+    , "CUP_O_BTR80_SLA"
+    , "CUP_O_BTR80A_SLA"
+]] call _fnc_saveToTemplate;          // armed or unarmed wheled or tracked based vehicle with light armor(?) and passengers(?)
 
 
 
+//AIR VEHICLES
 
+["vehiclesPlanesCAS", [
+    "CUP_O_Su25_Dyn_SLA"
+    , "CUP_I_L39_AAF"
+]] call _fnc_saveToTemplate;             // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
 
-
-
-//["vehiclesAmphibious", []] call _fnc_saveToTemplate;          // armed or unarmed wheled or tracked based vehicle with light armor(?) and passengers(?)
-
-["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;             // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
-["vehiclesPlanesAA", []] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
+["vehiclesPlanesAA", [
+"CUP_I_SU34_AAF"
+]] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
-["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
+
+["vehiclesPlanesTransport", [
+    "CUP_O_C47_SLA"
+    , "CUP_I_C130J_AAF"
+]] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
 //no need for vehicle variant currently
 
-["vehiclesHelisLight", []] call _fnc_saveToTemplate;            // ideally fragile & unarmed helis seating 4+
-["vehiclesHelisTransport", []] call _fnc_saveToTemplate;        // bigger heli with more passengers. 
+["vehiclesHelisLight", [
+    "CUP_O_UH1H_SLA"
+    , "CUP_O_UH1H_slick_SLA"
+    , "B_Heli_Light_01_F"
+]] call _fnc_saveToTemplate;            // ideally fragile & unarmed helis seating 4+
+
+["vehiclesHelisTransport", [
+    "CUP_B_UH60M_US"
+    , "I_Heli_light_03_unarmed_F"
+    , "CUP_I_Wildcat_Green_AAF"
+]] call _fnc_saveToTemplate;        // bigger heli with more passengers. 
 //Should be capable of dealing damage to ground targets without additional scripting
 
 // Should be capable of dealing damage to ground targets without additional scripting
-["vehiclesHelisLightAttack", []] call _fnc_saveToTemplate;      // Utility helis with fixed or door guns + rocket pods
-["vehiclesHelisAttack", []] call _fnc_saveToTemplate;           // Proper attack helis: Apache, Hind etc
+["vehiclesHelisLightAttack", [
+    "B_Heli_Light_01_dynamicLoadout_F"
+    , "CUP_O_UH1H_gunship_SLA"
+]] call _fnc_saveToTemplate;      // Utility helis with fixed or door guns + rocket pods
+["vehiclesHelisAttack", [
+        "CUP_O_Ka50_DL_SLA"
+    , "CUP_B_AH64_DL_USA"
+]] call _fnc_saveToTemplate;           // Proper attack helis: Apache, Hind etc
 
-["vehiclesArtillery", []] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
-["magazines", createHashMapFromArray []] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
 
-["uavsAttack", []] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
-["uavsPortable", []] call _fnc_saveToTemplate;                  // unmanned aerial vehicle(drone), unarmed or armed(Western Sahara style), must be able to be disassembled
+
+["vehiclesArtillery", [
+    "CUP_B_M270_HE_USMC"
+    , "CUP_O_BM21_SLA"
+]] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
+
+["magazines", createHashMapFromArray [["CUP_O_BM21_SLA", ["CUP_40Rnd_GRAD_HE"]]] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
+
+["uavsAttack", [
+    "O_T_UAV_04_CAS_F"
+
+]] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
+["uavsPortable", [
+    "CUP_O_Pchela1T_RU"
+    , "I_UAV_01_F"
+]] call _fnc_saveToTemplate;                  // unmanned aerial vehicle(drone), unarmed or armed(Western Sahara style), must be able to be disassembled
+
 
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", []] call _fnc_saveToTemplate;     // same as "vehiclesLightArmed" but for milita forces
-["vehiclesMilitiaTrucks", []] call _fnc_saveToTemplate;         // same as "vehiclesTrucks" but for milita forces
-["vehiclesMilitiaCars", []] call _fnc_saveToTemplate;           // same as "vehiclesLightUnarmed" but for milita forces
+["vehiclesMilitiaLightArmed", [
+        "CUP_I_M151_M2_SYND"
+]] call _fnc_saveToTemplate;     // same as "vehiclesLightArmed" but for milita forces
+["vehiclesMilitiaTrucks", [
+    "CUP_O_Ural_RU"
+]] call _fnc_saveToTemplate;         // same as "vehiclesTrucks" but for milita forces
+["vehiclesMilitiaCars", [
+    "CUP_O_Volha_SLA"
+    , "CUP_I_M151_SYND"
+]] call _fnc_saveToTemplate;           // same as "vehiclesLightUnarmed" but for milita forces
+["vehiclesMilitiaAPCs", [
+    "CUP_O_BRDM2_SLA"
+    , "CUP_O_MTLB_pk_SLA"
+    , "CUP_B_RG31E_M2_OD_USA"
+]] call _fnc_saveToTemplate;              // Militia APCs will be used at roadblocks and attacks at first 4 war levels
 
-["vehiclesMilitiaAPCs", []] call _fnc_saveToTemplate;              // Militia APCs will be used at roadblocks and attacks at first 4 war levels
+["vehiclesPolice", [    
+    "B_GEN_Offroad_01_gen_F"
+    , "CUP_O_Tigr_233034_RU" 
 
-["vehiclesPolice", []] call _fnc_saveToTemplate;                // cars used by police forces
+]] call _fnc_saveToTemplate;                // cars used by police forces
 
-["staticMGs", []] call _fnc_saveToTemplate;                     // static machine guns
-["staticAT", []] call _fnc_saveToTemplate;                      // static anti-tank weapons 
-["staticAA", []] call _fnc_saveToTemplate;                      // static anti-aircraft weapons
-["staticMortars", []] call _fnc_saveToTemplate;                 // static mortars
-["staticHowitzers", []] call _fnc_saveToTemplate;               // static howitzers
+["staticMGs", [
+    "CUP_O_DSHKM_SLA"
+    , "CUP_I_M2StaticMG_RACS"
+]] call _fnc_saveToTemplate;                     // static machine guns
+["staticAT", [
+    "CUP_O_SPG9_SLA"
+    , "CUP_B_TOW2_TriPod_US"
+]] call _fnc_saveToTemplate;                      // static anti-tank weapons 
+["staticAA", [
+    "CUP_O_Igla_AA_pod_SLA"
+    , "CUP_B_CUP_Stinger_AA_pod_US"
+]] call _fnc_saveToTemplate;                      // static anti-aircraft weapons
+["staticMortars", [
+    "CUP_I_M252_RACS"
+]] call _fnc_saveToTemplate;                 // static mortars
+["staticHowitzers", [
+    "CUP_O_D30_RU"
+]] call _fnc_saveToTemplate;               // static howitzers
 
 ["vehicleRadar", ""] call _fnc_saveToTemplate;                  // vehicle with radar
 ["vehicleSam", ""] call _fnc_saveToTemplate;                    // vehicle with SAM
 
-["howitzerMagazineHE", ""] call _fnc_saveToTemplate;            // explosive ammo for Howitzer
+["howitzerMagazineHE", "CUP_30Rnd_122mmHE_D30_M"] call _fnc_saveToTemplate;            // explosive ammo for Howitzer
 
-["mortarMagazineHE", ""] call _fnc_saveToTemplate;              // explosive ammo for mortars
-["mortarMagazineSmoke", ""] call _fnc_saveToTemplate;           // smoke ammo for mortars
+["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;              // explosive ammo for mortars
+["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;           // smoke ammo for mortars
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
 //Minefield definition
 //CFGVehicles variant of Mines are needed "ATMine", "APERSTripMine", "APERSMine"
-["minefieldAT", []] call _fnc_saveToTemplate;                   // anti-tank mines
-["minefieldAPERS", []] call _fnc_saveToTemplate;                // anti-personal mines
+["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;                   // anti-tank mines
+["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;                // anti-personal mines
 
 //SLAT cages, camo nets, logs, doors etc
 ["animations", [
@@ -230,21 +302,9 @@
 
 //vehicle skins
 ["variants", [
-        ["CUP_O_Tigr_233014_SLA", ["SLA",1]
-    ,   ["CUP_O_Tigr_233014_PK_SLA"], ["SLA",1]
-    ,   ["CUP_B_RG31_M2_USMC"], ["Woodland",1]
-    ,   ["CUP_B_HMMWV_DSHKM_GPK_ACR"], ["Green",1]
-    ,   ["CUP_O_Kamaz_RU"], ["Green",1]
-    ,   ["CUP_O_Kamaz_Reammo_RU"], ["Camo1",1]
-    ,   ["CUP_O_Kamaz_Refuel_RU"], ["Green",1]
-    ,   ["CUP_O_Kamaz_Repair_RU"], ["CDF",1]
-    ,   ["CUP_O_MTLB_pk_TKA"], ["SLA_GREEN",1]    
-    ,   ["CUP_B_M1126_ICV_MK19_Desert"], ["Woodland",1]    
-    ,   ["CUP_B_LAV25M240_USMC"], ["green",1]    
-    ,   ["CUP_B_RG31E_M2_USMC"], ["Woodland",1]    
-    ,   ["B_APC_Wheeled_01_cannon_F"], ["Olive",1]    
-    ,   ["O_MBT_04_cannon_F"], ["Jungle",1]    
-    ,   ["CUP_O_BMP2_ZU_TKA"], ["SLA",1]    
+
+       ["CUP_O_BMP2_ZU_TKA"], ["SLA",1] 
+    ,   ["CUP_O_Tigr_233034_RU", ["Generic_Gendarmerie",1]
     ]
 ]] call _fnc_saveToTemplate;
 

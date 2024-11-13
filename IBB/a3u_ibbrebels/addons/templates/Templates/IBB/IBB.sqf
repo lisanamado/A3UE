@@ -75,9 +75,9 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 
 //vehicle skins
 ["variants", [
-    ["CUP_C_Tigr_4x4_CIV", ["Generic_Zebra",1], ]
-    ["CUP_O_Tigr_M_233114_KORD_RU", ["Generic_Zebra",1], ]
-    ["CUP_O_Kamaz_6396_transport_RUS_M", ["GreenHex",1], ]
+    ["CUP_C_Tigr_4x4_CIV", ["Generic_Zebra",1]],
+    ["CUP_O_Tigr_M_233114_KORD_RU", ["Generic_Zebra",1]],
+    ["CUP_O_Kamaz_6396_transport_RUS_M", ["GreenHex",1]]
     
 ]] call _fnc_saveToTemplate;
 
@@ -205,7 +205,6 @@ private _rebUniforms =  [
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
 
-
 //HEADGEAR
 
 ["headgear", [
@@ -242,7 +241,7 @@ private _rebUniforms =  [
 
 ["faces", [
 
-//I deleted the variants to see if it works    
+// for some reason, male faces keep spawning from time to time 
     "TCGM_Fem_Ayres",
     "TCGM_Fem_Eillish",
     "TCGM_Fem_Fenty",    
@@ -254,12 +253,13 @@ private _rebUniforms =  [
     "TCGM_Fem_Stone",
     "TCGM_Fem_Zhu",
     "TCGM_Fem_Liu",
-
-
-
-
-
-
+    "Max_faceWS1",
+    "Max_faceWS10",
+    "Max_faceWS2",
+    "Max_faceWS3",
+    "Max_faceWS4",
+    "Max_faceWS6",
+    "Max_faceWS9"
 
 ]] call _fnc_saveToTemplate;
 ["voices", ["CUP_D_Female01_D_EN"]] call _fnc_saveToTemplate;
