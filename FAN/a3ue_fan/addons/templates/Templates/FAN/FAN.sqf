@@ -447,7 +447,14 @@ _loadoutData set ["goggles", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_sfLoadoutData set ["uniforms", []];
+_sfLoadoutData set ["uniforms", [
+"CUP_U_B_BDUv2_gloves_Tigerstripe"
+, "CUP_U_B_BDUv2_roll_Tigerstripe"
+, "CUP_U_B_BDUv2_Tigerstripe"
+, "CUP_U_B_BDUv2_dirty_Tigerstripe"
+, "CUP_U_B_BDUv2_roll2_Tigerstripe"
+, "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe"
+]];
 _sfLoadoutData set ["vests", []];
 _sfLoadoutData set ["backpacks", []];
 _sfLoadoutData set ["helmets", []];
@@ -467,10 +474,29 @@ _sfLoadoutData set ["sidearms", []];
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_militaryLoadoutData set ["uniforms", []];
-_militaryLoadoutData set ["vests", []];
+_militaryLoadoutData set ["uniforms", [
+"CUP_U_B_BDUv2_roll2_gloves_dirty_OD"
+, "CUP_U_B_BDUv2_roll2_gloves_OD"
+, "CUP_U_B_BDUv2_roll_gloves_dirty_OD"
+, "CUP_U_B_BDUv2_roll_gloves_OD"
+, "CUP_U_B_BDUv2_gloves_dirty_OD"
+, "CUP_U_B_BDUv2_gloves_OD"
+, "CUP_U_B_BDUv2_roll2_dirty_OD"
+, "CUP_U_B_BDUv2_roll2_OD"
+, "CUP_U_B_BDUv2_roll_dirty_OD"
+, "CUP_U_B_BDUv2_roll_OD"
+, "CUP_U_B_BDUv2_dirty_OD"
+, "CUP_U_B_BDUv2_OD"
+]];
+_militaryLoadoutData set ["vests", [
+"CUP_V_B_PASGT_OD"
+, CUP_V_B_PASGT_no_bags_OD
+]];
 _militaryLoadoutData set ["backpacks", []];
-_militaryLoadoutData set ["helmets", []];
+_militaryLoadoutData set ["helmets", [
+"CUP_H_PASGTv2_OD"
+, CUP_H_PASGTv2_NVG_OD
+]];
 _militaryLoadoutData set ["binoculars", []];
 
 _militaryLoadoutData set ["rifles", []];
@@ -491,12 +517,18 @@ private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _policeLoadoutData set ["uniforms", []];
 _policeLoadoutData set ["vests", []];
 _policeLoadoutData set ["helmets", [
-  //POLICE CAP AND ANTI DISTURBS HELMET
-
+"CUP_H_C_Policecap_01"
+//ADD GENDARMERIE ITEMS
+ITEMS
+//Next ones are helmets I planned to use, but they are too resistant for police
+//, "CUP_H_RUS_K6_3_Shield_Down_black"
+//, "CUP_H_RUS_K6_3_Shield_Up_black"
 ]];
 
+
+//check this:
 _policeLoadoutData set ["SMGs", [
-  "CUP_smg_BallisticShield_Sa61","","CUP_acc_SF_XC1","",["CUP_50Rnd_B_765x17_Ball_M","CUP_20Rnd_B_765x17_Ball_M","CUP_20Rnd_B_765x17_Ball_M","CUP_10Rnd_B_765x17_Ball_M"], [], "CUP_decal_BallisticShield_Police_worn"
+ "CUP_smg_BallisticShield_Sa61","","CUP_acc_SF_XC1","",["CUP_50Rnd_B_765x17_Ball_M","CUP_20Rnd_B_765x17_Ball_M","CUP_20Rnd_B_765x17_Ball_M","CUP_10Rnd_B_765x17_Ball_M"], [], "CUP_decal_BallisticShield_Police_worn"
 , "CUP_hgun_BallisticShield_PMM","","CUP_acc_LCU_PM_Laser","",["CUP_12Rnd_9x18_PMM_M","CUP_12Rnd_9x18_PMM_M","CUP_12Rnd_9x18_PMM_M","CUP_12Rnd_9x18_PMM_M"], [], "CUP_decal_BallisticShield_Police_worn"
 ,	"CUP_sgun_SPAS12","","","",["CUP_8Rnd_12Gauge_Pellets_No00_Buck","CUP_8Rnd_12Gauge_Pellets_No4_Buck","CUP_8Rnd_12Gauge_Slug","CUP_8Rnd_12Gauge_Slug"], [], ""
 ,	"CUP_sgun_M1014_solidstock","","","",["CUP_8Rnd_12Gauge_Pellets_No00_Buck","CUP_8Rnd_12Gauge_Pellets_No4_Buck","CUP_8Rnd_12Gauge_Slug","CUP_8Rnd_12Gauge_Slug"], [], ""
