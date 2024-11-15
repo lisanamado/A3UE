@@ -85,6 +85,8 @@ private _initialRebelEquipment = [
     "CUP_hgun_TaurusTracker455_gold",
     "CUP_hgun_Deagle",
     "CUP_hgun_TEC9_FA",
+    "CUP_hgun_MicroUzi",
+    "CUP_hgun_MicroUzi_snds",
 
     "sgun_HunterShotgun_01_sawedoff_F",
     "CUP_glaunch_6G30",
@@ -108,7 +110,7 @@ private _initialRebelEquipment = [
     "CUP_6Rnd_FlareRed_GP25_M",
     "CUP_6Rnd_HE_GP25_M",
     "CUP_30Rnd_45ACP_MAC10_M",
-    "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
+    "CUP_30Rnd_9x19_UZI" "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
     "CUP_20Rnd_B_765x17_Ball_M",
     "CUP_30Rnd_45ACP_M3A1_SND_M",
     "1Rnd_SmokePurple_Grenade_shell",
