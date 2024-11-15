@@ -5,13 +5,6 @@
 
 #include "..\..\script_component.hpp"
 
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasTanks = "tank" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -95,13 +88,17 @@ private _initialRebelEquipment = [
 
     "sgun_HunterShotgun_01_sawedoff_F",
     "CUP_glaunch_6G30",
+    "CUP_glaunch_M79",
+
     "CUP_smg_Mac10",
     "CUP_smg_BallisticShield_Sa61",
     "CUP_smg_M3A1_snd",
-    "CUP_glaunch_M79",
-    "CUP_arifle_Sa58_sporter_compact",
+    "CUP_smg_Mac10_snd",
+    "CUP_smg_Mac10_rail",
+
     "CUP_arifle_Sa58s",
     "CUP_arifle_SR3M_Vikhr_VFG",
+
     "CUP_sgun_M1014_Entry_vfg",
     "CUP_sgun_slamfire",
 
