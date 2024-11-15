@@ -6,6 +6,9 @@ class CfgMarkers
 	{
 		name = "FAN
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_aaf_torn_co.paa);
+
+addons\templates\Templates\FAN\FAN.paa
+
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_aaf_torn_co.paa);
 	};
 };
