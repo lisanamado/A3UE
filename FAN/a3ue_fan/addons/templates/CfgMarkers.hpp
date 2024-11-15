@@ -5,10 +5,8 @@ class CfgMarkers
 	class Faction_CUP_FAN : flag_NATO 
 	{
 		name = "FAN
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_aaf_torn_co.paa);
+		icon = QPATHTOFOLDER(Templates\FAN\FAN.paa);
 
-addons\templates\Templates\FAN\FAN.paa
-
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_aaf_torn_co.paa);
+		texture = QPATHTOFOLDER(Templates\FAN\FAN.paa);
 	};
 };
