@@ -416,8 +416,8 @@ _loadoutData set ["sniperRifles", [
 
 ]];
 _loadoutData set ["lightATLaunchers", [
-    "CUP_launch_RPG18"
-    , "CUP_launch_RPG26"
+    ["CUP_launch_RPG18", "", "", "", [""], [], ""],
+    ["CUP_launch_M72A6", "", "", "", [""], [], ""]
 ]];
 _loadoutData set ["lightHELaunchers", [
     "CUP_launch_RShG2"
@@ -439,7 +439,6 @@ _loadoutData set ["AALaunchers", [
 _loadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911","","","",["CUP_7Rnd_45ACP_1911",7],[],""]
     , ["CUP_hgun_SA61","","","",["CUP_10Rnd_B_765x17_Ball_M",10],[],""]
-
 ]];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];
