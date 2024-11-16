@@ -100,8 +100,8 @@ private _initialRebelEquipment = [
 
     "CUP_sgun_CZ584",
     "sgun_HunterShotgun_01_sawedoff_F",
-
     "CUP_sgun_slamfire",
+    
     "CUP_srifle_Mosin_Nagant",
     "CUP_srifle_LeeEnfield",
     "CUP_srifle_LeeEnfield_rail",
@@ -135,7 +135,6 @@ private _initialRebelEquipment = [
     "CUP_PG7VM_M",
     "CUP_PG7VL_M",
     "CUP_PG7VR_M",
-    "RPG7_F",
     "CUP_TBG7V_M",
 
     "CUP_HandGrenade_RGD5", "SmokeShell",
@@ -193,7 +192,6 @@ private _rebUniforms =  [
     "WU_B_T_Soldier_F",
     "WU_B_HeliPilotCoveralls",
 // male uniforms:
-    "U_C_WorkerCoveralls",
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_unit_3",
     "CUP_I_B_PARA_unit_6",

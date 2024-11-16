@@ -176,7 +176,6 @@ private _rebUniforms =  [
     "WU_B_T_Soldier_F",
     "WU_B_HeliPilotCoveralls",
 // male uniforms:
-    "U_C_WorkerCoveralls",
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_unit_3",
     "CUP_I_B_PARA_unit_6",

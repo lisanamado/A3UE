@@ -35,8 +35,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
-//Change TKA skinned units for other versions
-
 ["vehiclesBasic", ["I_E_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;  //add , "CUP_I_Hilux_armored_unarmed_NAPA"?
 ["vehiclesLightArmed", ["CUP_O_Hilux_armored_M2_TK_INS"]] call _fnc_saveToTemplate;
@@ -108,7 +106,7 @@ private _initialRebelEquipment = [
 
     "CUP_sgun_CZ584",
     "sgun_HunterShotgun_01_sawedoff_F",
-    "CUP_srifle_Remington700",
+    ["CUP_srifle_Remington700", 20],
     ["CUP_srifle_CZ550", 5],
 
     "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 
@@ -168,7 +166,6 @@ private _rebUniforms =  [
     "WU_B_T_Soldier_F",
     "WU_B_HeliPilotCoveralls",
 // male uniforms:
-    "U_C_WorkerCoveralls",
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_unit_3",
     "CUP_I_B_PARA_unit_6",
