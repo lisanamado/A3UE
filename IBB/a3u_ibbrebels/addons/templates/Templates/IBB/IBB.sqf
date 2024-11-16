@@ -5,13 +5,6 @@
 
 #include "..\..\script_component.hpp"
 
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasTanks = "tank" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -92,16 +85,22 @@ private _initialRebelEquipment = [
     "CUP_hgun_TaurusTracker455_gold",
     "CUP_hgun_Deagle",
     "CUP_hgun_TEC9_FA",
+    "CUP_hgun_MicroUzi",
+    "CUP_hgun_MicroUzi_snds",
 
     "sgun_HunterShotgun_01_sawedoff_F",
     "CUP_glaunch_6G30",
+    "CUP_glaunch_M79",
+
     "CUP_smg_Mac10",
     "CUP_smg_BallisticShield_Sa61",
     "CUP_smg_M3A1_snd",
-    "CUP_glaunch_M79",
-    "CUP_arifle_Sa58_sporter_compact",
+    "CUP_smg_Mac10_snd",
+    "CUP_smg_Mac10_rail",
+
     "CUP_arifle_Sa58s",
     "CUP_arifle_SR3M_Vikhr_VFG",
+
     "CUP_sgun_M1014_Entry_vfg",
     "CUP_sgun_slamfire",
 
@@ -111,7 +110,7 @@ private _initialRebelEquipment = [
     "CUP_6Rnd_FlareRed_GP25_M",
     "CUP_6Rnd_HE_GP25_M",
     "CUP_30Rnd_45ACP_MAC10_M",
-    "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
+    "CUP_30Rnd_9x19_UZI" "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
     "CUP_20Rnd_B_765x17_Ball_M",
     "CUP_30Rnd_45ACP_M3A1_SND_M",
     "1Rnd_SmokePurple_Grenade_shell",
