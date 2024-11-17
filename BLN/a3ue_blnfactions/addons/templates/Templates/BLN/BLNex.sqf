@@ -82,7 +82,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 
 ["variants", [
     [
-
      "CUP_B_AC47_Spooky_USA", ["SLAWoodland",1]
     ]
 ]] call _fnc_saveToTemplate;
@@ -111,7 +110,7 @@ private _initialRebelEquipment = [
     "CUP_smg_M3A1_blk",
     "CUP_smg_Mac10",
 
-    ["CUP_launch_M72A6_Special", 50],
+    ["CUP_launch_M72A6_Special"],
     ["CUP_launch_FIM92Stinger", 10],
     ["CUP_launch_RPG7V", 10],
 
@@ -161,6 +160,7 @@ private _initialRebelEquipment = [
     "B_AssaultPack_cbr",
     "B_AssaultPack_rgr",
     "B_AssaultPack_khk",
+    "CUP_B_HikingPack_Civ"
 
     "Binocular"
 ];

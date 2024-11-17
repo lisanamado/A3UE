@@ -8,10 +8,9 @@
 //       Vehicles       //
 //////////////////////////    
 
-//TODO SET VARIANTS SO THERE'S NO CAMO VEHICLES SPAWNING (HAPPENS NOT TOO OFTEN THOUGH)
+
 
 ["vehiclesCivCar", [
-
 
      "CUP_C_TT650_RU" , 0.7
 	,"CUP_C_TT650_TK_CIV" , 0.7
@@ -80,8 +79,6 @@
 	, "C_Hatchback_01_F", 0.4
 	, "C_Hatchback_01_sport_F", 0.2
 
-
-
 ]] call _fnc_saveToTemplate;             //this line determines civilian cars -- Example: ["vehiclesCivCar", ["C_Offroad_01_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivIndustrial", [
@@ -104,9 +101,7 @@
     , "C_Van_01_transport_F", 0.3
     , "O_Truck_02_covered_F", 0.1
     
-    
 ]] call _fnc_saveToTemplate;             //this line determines civilian trucks -- Example: ["vehiclesCivIndustrial", ["C_Truck_02_transport_F"]] -- Array, can contain multiple assets
-
 
 ["vehiclesCivBoat", [
 
@@ -152,7 +147,6 @@
 
 ]] call _fnc_saveToTemplate;             //this line determines civilian helis -- Example: ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] -- Array, can contain multiple assets
 
-
 ["vehiclesCivPlanes", [
 	 "CUP_C_C47_CIV"
 	,"CUP_C_Plane_Orbit"
@@ -173,12 +167,9 @@
 
 //vehicle skins
 ["variants", [
-
-       ["CUP_C_S1203_Ambulance_CIV"], ["Ambulance",1] 
-
-    ]
-]] call _fnc_saveToTemplate;
-
+[["CUP_C_S1203_Ambulance_CIV"], ["Ambulance",1]]
+]
+] call _fnc_saveToTemplate;
 
 
 /////////////////////////////////
@@ -212,9 +203,6 @@
 	"GreekHead_A3_09",
 	"GreekHead_A3_04",
 	"GreekHead_A3_03"
-
-    
-
 
 ]] call _fnc_saveToTemplate;
 
@@ -253,15 +241,12 @@ private _workerUniforms = [
     "U_C_ConstructionCoverall_Black_F",
     "U_C_ConstructionCoverall_Red_F"
 
-
 ];           //Uniforms given to Workers at Factories/Resources
-
 
 ["uniforms", _civUniforms + _pressUniforms + _workerUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
 
-
-
 _civHats = [
+
      "",
      "CUP_H_C_Beret_03", 
 	 "H_StrawHat_dark",
@@ -269,6 +254,7 @@ _civHats = [
      "CUP_H_PMC_Cap_Burberry",
 	 "CUP_H_PMC_Cap_Grey",
      "H_Cap_MaldenTours"
+	 
     ];
 
 ["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.

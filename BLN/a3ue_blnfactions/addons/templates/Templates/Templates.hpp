@@ -3,8 +3,6 @@
 class Templates 
 {
 
-        //CHANGED TO RACS SO THEY INHERIT SPANISH NAMES, But they are keeping greek ones
-
     class CUP_RACS_Tropical;
 
     class BLN : CUP_RACS_Tropical

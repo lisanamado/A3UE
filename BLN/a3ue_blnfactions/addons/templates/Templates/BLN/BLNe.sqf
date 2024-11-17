@@ -80,10 +80,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    [
-
-     "CUP_B_AC47_Spooky_USA", ["SLAWoodland",1]
-    ]
+    ["CUP_B_AC47_Spooky_USA", ["SLAWoodland",1]]
 ]] call _fnc_saveToTemplate;
 
 

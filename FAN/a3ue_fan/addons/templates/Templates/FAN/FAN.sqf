@@ -24,7 +24,6 @@
 
 
 
-
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
@@ -228,6 +227,7 @@
 
 ["uavsAttack", [
     "O_T_UAV_04_CAS_F"
+    , "CUP_B_USMC_DYN_MQ9"
 ]] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
 ["uavsPortable", [
     "CUP_O_Pchela1T_RU"
@@ -237,20 +237,17 @@
 
 //Config special vehicles
 ["vehiclesMilitiaLightArmed", [
-        "CUP_I_M151_M2_SYND"
+    "CUP_I_M151_M2_SYND"
 ]] call _fnc_saveToTemplate;     // same as "vehiclesLightArmed" but for milita forces
 ["vehiclesMilitiaTrucks", [
-    "CUP_O_Ural_RU"
+    "CUP_O_Ural_SLA"
 ]] call _fnc_saveToTemplate;         // same as "vehiclesTrucks" but for milita forces
 ["vehiclesMilitiaCars", [
-    "CUP_O_Volha_SLA"
-    , "CUP_I_M151_SYND"
+    "CUP_I_M151_SYND"
 ]] call _fnc_saveToTemplate;           // same as "vehiclesLightUnarmed" but for milita forces
 ["vehiclesMilitiaAPCs", [
     "CUP_O_BRDM2_SLA"
     , "CUP_O_Tigr_233014_PK_SLA"
-    , "CUP_B_RG31_M2_OD_GC_USA"
-    , "CUP_B_RG31_Mk19_OD_USA"
     , "CUP_B_HMMWV_Crows_M2_NATO_T"
 ]] call _fnc_saveToTemplate;              // Militia APCs will be used at roadblocks and attacks at first 4 war levels
 
@@ -301,10 +298,8 @@
 
 //vehicle skins
 ["variants", [
-
        ["CUP_O_BMP2_ZU_TKA", ["SLA",1]]
     ,  ["CUP_O_Tigr_233034_RU", ["Generic_Gendarmerie",1]]
-    
 ]] call _fnc_saveToTemplate;
 
 
@@ -416,8 +411,8 @@ _loadoutData set ["sniperRifles", [
 
 ]];
 _loadoutData set ["lightATLaunchers", [
-    ["CUP_launch_RPG18", "", "", "", [""], [], ""],
-    ["CUP_launch_M72A6", "", "", "", [""], [], ""]
+    ["CUP_launch_RPG18", "", "", "", [""], [], ""]
+    , ["CUP_launch_M72A6", "", "", "", [""], [], ""]
 ]];
 _loadoutData set ["lightHELaunchers", [
     "CUP_launch_RShG2"
@@ -621,7 +616,7 @@ _militaryLoadoutData set ["rifles", [
     , ["CUP_arifle_Galil_black", "", "", "",["CUP_25Rnd_762x51_Galil_Mag"],[],""]
     , ["CUP_arifle_FNFAL5060_rhodesian","","","",["CUP_20Rnd_762x51_FNFAL_Woodland_M",20],[],"CUP_bipod_FNFAL"]
     , ["CUP_arifle_FNFAL5060_rhodesian","CUP_muzzle_mfsup_CSA","","",["CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Woodland_M",20],[],""]    
-    , ["CUP_arifle_FNFAL5060_rhodesian","","","",["CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M",20],[],""]    
+    , ["CUP_arifle_FNFAL5060_rhodesian","ACE_muzzle_mzls_B","","",["CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M",20],[],""]    
     , ["CUP_arifle_FNFAL5061_railed","","","CUP_optic_Aimpoint_5000",["CUP_20Rnd_762x51_FNFAL_M",20],[],"CUP_bipod_FNFAL"]
     , ["CUP_arifle_FNFAL5061_railed","","CUP_acc_Flashlight_wdl","",["CUP_30Rnd_762x51_FNFAL_M",30],[],""]
     , ["CUP_arifle_FNFAL_railed_woodland","","","CUP_optic_1P87_RIS_woodland",["CUP_30Rnd_762x51_FNFAL_M",30],[],""]
@@ -653,13 +648,17 @@ _militaryLoadoutData set ["SMGs", [
 ]];
 _militaryLoadoutData set ["machineGuns", [
     ["CUP_lmg_FNMAG_RIS","","","",["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",100],[],""]
+    , ["CUP_lmg_FNMAG_RIS","","CUP_optic_SUSAT","CUP_optic_AIMM_MICROT1_OD",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M",27],[],""]
     , ["CUP_lmg_FNMAG_RIS","","","CUP_optic_AIMM_MICROT1_OD",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M",27],[],""]
     , ["CUP_lmg_M60","","","",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M",32],[],""]
+    , ["CUP_lmg_M60","","","CUP_optic_Aimpoint_5000",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M",32],[],""]
+
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
-    ["CUP_srifle_M14","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR",0],[],"CUP_bipod_Harris_1A2_L"]
-    , ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM",["CUP_20Rnd_762x51_DMR",0],[],"CUP_bipod_Harris_1A2_L"]
+    ["CUP_srifle_M14","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR",0],[],""]
+    , ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR",0],[],""]
     , ["CUP_arifle_FNFAL5060_railed_woodland","ACE_muzzle_mzls_B","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M",20],[],"CUP_bipod_FNFAL"]
+    , ["CUP_arifle_FNFAL5060_railed_woodland","ACE_muzzle_mzls_B","","CUP_optic_SUSAT",["CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M",20],[],"CUP_bipod_FNFAL"]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
     ["CUP_arifle_DSA_SA58_DMR","ACE_muzzle_mzls_B","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_10Rnd_762x51_FNFAL_M",3],[],"CUP_bipod_Harris_1A2_L_BLK"]
@@ -698,13 +697,11 @@ _policeLoadoutData set ["SMGs", [
 , ["CUP_arifle_FNFAL5061_wooden", "", "", "", ["CUP_10Rnd_762x51_FNFAL_M"], [], ""]
 , ["CUP_smg_M3A1_grn","","","",["CUP_30Rnd_45ACP_Red_Tracer_M3A1_GRN_M",30],[],""]
 , ["CUP_arifle_Sa58s_rearris","","","",["CUP_30Rnd_Sa58_M",30],[],""]
-
 ]];
 
 _policeLoadoutData set ["sidearms", [
 ["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"], [], ""]
 , ["CUP_hgun_SA61","","","",["CUP_10Rnd_B_765x17_Ball_M",10],[],""]
-
 ]];
 
 ////////////////////////////////
@@ -725,7 +722,10 @@ _militiaLoadoutData set ["vests", [
     , "V_TacVest_camo"
     , "V_TacVest_oli"
 ]];
-_militiaLoadoutData set ["backpacks", []];
+_militiaLoadoutData set ["backpacks", [
+    "CUP_B_AlicePack_OD"
+    , "CUP_B_AlicePack_Khaki"
+]];
 _militiaLoadoutData set ["helmets", [
     "CUP_H_Booniehat_Rhodesian"
     , "CUP_H_Booniehat_CCE"
@@ -759,8 +759,9 @@ _militiaLoadoutData set ["SMGs", [
 _militiaLoadoutData set ["machineGuns", [
     ["CUP_lmg_M60","","","",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M",32],[],""]
 ]];
+//add a railed fal and/or mk14 - use lower grade scopes.
 _militiaLoadoutData set ["marksmanRifles", [
-    ["CUP_srifle_LeeEnfield_rail","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_10x_303_M",10],[],"CUP_bipod_Harris_1A2_L_BLK"]
+    ["CUP_srifle_LeeEnfield_rail","","","CUP_optic_SUSAT",["CUP_10x_303_M",10],[],""]
 ]];
 _militiaLoadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911","","","",["CUP_7Rnd_45ACP_1911",7],[],""]

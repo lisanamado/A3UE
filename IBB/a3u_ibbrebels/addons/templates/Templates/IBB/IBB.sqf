@@ -67,6 +67,8 @@
 ]] call _fnc_saveToTemplate;
 
 //vehicle skins
+
+//ADD VARIANTS FOR PLANES
 ["variants", [
     ["CUP_C_Tigr_4x4_CIV", ["Generic_Zebra",1]],
     ["CUP_O_Tigr_M_233114_KORD_RU", ["Generic_Zebra",1]],
@@ -110,7 +112,8 @@ private _initialRebelEquipment = [
     "CUP_6Rnd_FlareRed_GP25_M",
     "CUP_6Rnd_HE_GP25_M",
     "CUP_30Rnd_45ACP_MAC10_M",
-    "CUP_30Rnd_9x19_UZI" "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
+    "CUP_30Rnd_9x19_UZI",
+    "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
     "CUP_20Rnd_B_765x17_Ball_M",
     "CUP_30Rnd_45ACP_M3A1_SND_M",
     "1Rnd_SmokePurple_Grenade_shell",
@@ -154,9 +157,7 @@ private _initialRebelEquipment = [
     "CUP_V_CDF_OfficerBelt", 
     "CUP_V_CDF_OfficerBelt2", 
     "CUP_V_B_BAF_MTP_Osprey_Mk4_Belt", 
-    "V_LegStrapBag_coyote_F", 
     "V_BandollierB_cbr", 
-    "CUP_V_OI_TKI_Jacket3_01",
 
     "CUP_B_SLA_Medicbag", 
     "CUP_B_RUS_Raid_bag_Desert",
@@ -194,11 +195,7 @@ private _rebUniforms =  [
     "TCGM_F_Mini_Marshal",
     "TCGM_F_Sport_5",
     "TCGM_F_Sport_4",
-    "TCGM_F_Sport_1",
-    "TCGM_f_Swimsuit_Hearts",
-    "TCGM_f_Swimsuit_Poker",
-    "TCGM_f_Thong_Blk"
-
+    "TCGM_F_Sport_1"
 ];          
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
@@ -245,21 +242,11 @@ private _rebUniforms =  [
     "TCGM_Fem_Eillish",
     "TCGM_Fem_Fenty",    
     "TCGM_Fem_Fox",   
-    "TCGM_Fem_FoxBun",
     "TCGM_Fem_Gonzalez",
     "TCGM_Fem_Hudson",
     "TCGM_Fem_Portman",
     "TCGM_Fem_Stone",
-    "TCGM_Fem_Zhu",
-    "TCGM_Fem_Liu",
-    "Max_faceWS1",
-    "Max_faceWS10",
-    "Max_faceWS2",
-    "Max_faceWS3",
-    "Max_faceWS4",
-    "Max_faceWS6",
-    "Max_faceWS9"
-
+    "TCGM_Fem_Zhu"
 ]] call _fnc_saveToTemplate;
 ["voices", ["CUP_D_Female01_D_EN"]] call _fnc_saveToTemplate;
 
