@@ -12,95 +12,78 @@
 
 ["vehiclesCivCar", [
 
-     "CUP_C_TT650_RU" , 0.7
-	,"CUP_C_TT650_TK_CIV" , 0.7
+	"CUP_C_TT650_TK_CIV" , 0.7
 	,"CUP_C_TT650_CIV" , 0.7
-	,"CUP_C_S1203_CIV" , 0.5
+    , "C_Quadbike_01_F", 0.9
+    , "C_Kart_01_F", 0.01
+	
+	,"CUP_C_Lada_TK_CIV" , 0.2
+	,"CUP_C_Lada_GreenTK_CIV" , 0.8
+	,"CUP_C_Lada_Red_CIV" , 0.5
+	,"CUP_C_Lada_White_CIV" , 0.7
+	,"CUP_C_Skoda_CR_CIV" , 0.2
+	,"CUP_C_Skoda_Blue_CIV" , 0.7
+	,"CUP_C_Skoda_Red_CIV" , 0.7
+	,"CUP_C_Skoda_White_CIV" , 0.7
 	,"CUP_C_Volha_Gray_TKCIV" , 0.8
 	,"CUP_C_Volha_Blue_TKCIV" , 0.6
 	,"CUP_C_Volha_Limo_TKCIV" , 0.4
-	,"CUP_O_Hilux_unarmed_TK_CIV" , 0.3
-	,"CUP_O_Hilux_unarmed_TK_CIV_Red" , 0.3
-	,"CUP_O_Hilux_unarmed_TK_CIV_Tan" , 0.2
-	,"CUP_O_Hilux_unarmed_TK_CIV_White" , 0.2
-	,"CUP_C_Ikarus_TKC" , 0.1
-	,"CUP_C_LR_Transport_CTK" , 0.3
-	,"CUP_C_SUV_TK" , 0.4
-	,"CUP_C_UAZ_Unarmed_TK_CIV" , 0.7
-	,"CUP_C_UAZ_Open_TK_CIV" , 0.7
-	,"CUP_C_Lada_TK_CIV" , 0.7
-	,"CUP_C_Lada_GreenTK_CIV" , 0.2
-	,"CUP_C_Datsun_Covered" , 0.6
-	,"CUP_C_Skoda_CR_CIV" , 0.9
-	,"CUP_C_Skoda_Blue_CIV" , 0.5
-	,"CUP_C_Skoda_Green_CIV" , 0.2
-	,"CUP_C_Skoda_Red_CIV" , 0.5
-	,"CUP_C_Skoda_White_CIV" , 0.7
-	,"CUP_C_S1203_CIV_CR" , 0.5
-	,"CUP_C_Datsun_Plain" , 0.5
-	,"CUP_C_Datsun_Tubeframe" , 0.5
-	,"CUP_C_Datsun" , 0.6
-	,"CUP_C_Datsun_4seat" , 0.4
-	,"CUP_C_Volha_CR_CIV" , 0.7
-	,"CUP_O_Hilux_unarmed_CR_CIV" , 0.2
-	,"CUP_O_Hilux_unarmed_CR_CIV_Red" , 0.3
-	,"CUP_O_Hilux_unarmed_CR_CIV_Tan" , 0.3
-	,"CUP_O_Hilux_unarmed_CR_CIV_White" , 0.3
+	,"CUP_C_S1203_CIV" , 0.5
+
 	,"CUP_C_Golf4_red_Civ" , 0.4
-	,"CUP_C_Golf4_Sport_CR_Civ" , 0.2
-	,"CUP_C_Golf4_CR_Civ" , 0.4
-	,"CUP_C_Bus_City_CRCIV" , 0.3
-	,"CUP_C_SUV_CIV" , 0.4
-	,"CUP_C_Lada_CIV" , 0.7
-	,"CUP_C_Lada_Red_CIV" , 0.5
-	,"CUP_C_Lada_White_CIV" , 0.7
 	,"CUP_C_Golf4_black_Civ" , 0.2
 	,"CUP_C_Golf4_blue_Civ" , 0.2
-	,"CUP_C_Golf4_camodark_Civ" , 0.05
-	,"CUP_C_Golf4_camodigital_Civ" , 0.05
-	,"CUP_C_Golf4_camo_Civ" , 0.05
-	,"CUP_C_Golf4_crowe_Civ" , 0.05
-	,"CUP_C_Golf4_whiteblood_Civ" , 0.05
 	,"CUP_C_Golf4_white_Civ" , 0.2
 	,"CUP_C_Golf4_yellow_Civ" , 0.2
-	,"CUP_C_Golf4_reptile_Civ" , 0.05
 	,"CUP_C_Golf4_Sport_random_Civ" , 0.1
-	,"CUP_C_Pickup_unarmed_CIV" , 0.8
+	,"CUP_C_Golf4_kitty_Civ", 0.001
+	,"CUP_C_Pickup_unarmed_CIV" , 0.9
 	,"CUP_C_Octavia_CIV" , 0.5
-	,"CUP_I_TT650_NAPA" , 0.3
-	,"CUP_I_TT650_TKA" , 0.3
-    , "C_Quadbike_01_F", 0.9
-    , "C_Kart_01_F", 0.02
+
+	, "C_Hatchback_01_F", 0.3
+	, "C_Hatchback_01_sport_F", 0.05
+
+	,"CUP_C_UAZ_Unarmed_TK_CIV" , 0.7
+	,"CUP_C_UAZ_Open_TK_CIV" , 0.7
+	,"CUP_C_Datsun" , 0.6
+	,"CUP_C_Datsun_4seat" , 0.4
+	,"CUP_C_Datsun_Plain" , 0.5
+	,"CUP_C_Datsun_Tubeframe" , 0.3
+	,"CUP_C_Datsun_Covered" , 0.6
+	,"CUP_O_Hilux_unarmed_TK_CIV" , 0.05
+	,"CUP_O_Hilux_unarmed_TK_CIV_Red" , 0.2
+	,"CUP_O_Hilux_unarmed_TK_CIV_Tan" , 0.2
+	,"CUP_O_Hilux_unarmed_TK_CIV_White" , 0.2
+	,"CUP_C_LR_Transport_CTK" , 0.3
+	,"CUP_C_SUV_CIV" , 0.4
+
     , "C_Offroad_01_F", 0.1
-	, "a3a_Offroad_01_black_F", 0.1
-	, "a3a_Offroad_01_green_F", 0.1
-	, "a3a_Offroad_01_tan_F", 0.1
-    , "a3a_Offroad_01_comms_tan_F", 0.03
-	, "C_Hatchback_01_F", 0.4
-	, "C_Hatchback_01_sport_F", 0.2
 
 ]] call _fnc_saveToTemplate;             //this line determines civilian cars -- Example: ["vehiclesCivCar", ["C_Offroad_01_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivIndustrial", [
 
-	"CUP_C_Ural_Open_Civ_01" , 0.1
-	,"CUP_C_Ural_Open_Civ_02" , 0.2
-	,"CUP_C_Ural_Civ_02" , 0.2
-	,"CUP_C_V3S_Open_TKC" , 0.6
+	"CUP_C_V3S_Open_TKC" , 0.6
 	,"CUP_C_V3S_Covered_TKC" , 0.4
-	,"CUP_C_Ural_Civ_01" , 0.2
-	,"CUP_O_Ural_Empty_RU", 0.2
 	,"CUP_C_Tractor_CIV" , 0.4
 	,"CUP_C_Tractor_Old_CIV" , 0.3
 	,"CUP_C_TowingTractor_CIV" , 0.01
-	,"CUP_I_Tractor_UN" , 0.2
+    , "C_Van_01_box_F", 0.2
+    , "C_Van_01_transport_F", 0.3
+	,"CUP_C_Ural_Civ_01" , 0.2
+	,"CUP_C_Ural_Open_Civ_01" , 0.1
+	,"CUP_C_Ural_Open_Civ_02" , 0.2
+	,"CUP_C_Ural_Civ_02" , 0.2
+
     , "CUP_C_Ikarus_Chernarus", 0.05
 	, "CUP_C_Bus_City_CIV" , 0.3
 	, "CUP_C_Bus_City_TKCIV" , 0.2
-    , "C_Van_01_box_F", 0.2
-    , "C_Van_01_transport_F", 0.3
-    , "O_Truck_02_covered_F", 0.1
-    
+	,"CUP_C_Ikarus_TKC" , 0.1
+	,"CUP_C_Bus_City_CRCIV" , 0.3
+
+	,"C_Truck_02_covered_F", 0.2
+	,"C_Truck_02_transport_F", 0.2
+
 ]] call _fnc_saveToTemplate;             //this line determines civilian trucks -- Example: ["vehiclesCivIndustrial", ["C_Truck_02_transport_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivBoat", [
@@ -119,22 +102,16 @@
 ]] call _fnc_saveToTemplate;            //this line determines civilian repair vehicles
 
 ["vehiclesCivMedical", [
-
       "CUP_C_S1203_Ambulance_CIV", 0.4
-
 ]] call _fnc_saveToTemplate;        //this line determines civilian medic vehicles
 
 ["vehiclesCivFuel", [
-
-	"CUP_I_V3S_Refuel_TKG" , 0.1
-    , "C_Truck_02_fuel_F", 0.1
+    "C_Truck_02_fuel_F", 0.1
     , "C_Van_01_fuel_F", 0.1
-
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivHeli", [
-
-	 "CUP_C_Mi17_Civilian_RU"
+	"CUP_C_Mi17_Civilian_RU"
 	,"CUP_C_SA330_Puma_HC1_ChernAvia"
 	,"CUP_C_412"
 	,"CUP_C_412_Sheriff"
@@ -144,12 +121,10 @@
 	,"CUP_C_M_412_Medic"
 	,"CUP_C_Merlin_HC3_CIV_Lux"
 	,"CUP_C_Merlin_HC3_CIV_Rescue"
-
 ]] call _fnc_saveToTemplate;             //this line determines civilian helis -- Example: ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivPlanes", [
-	 "CUP_C_C47_CIV"
-	,"CUP_C_Plane_Orbit"
+	"CUP_C_Plane_Orbit"
 	,"CUP_C_DC3_CIV"
 	,"CUP_C_DC3_TanoAir_CIV"	
 	,"CUP_C_DC3_ChernAvia_CIV"	
@@ -187,22 +162,20 @@
     "Max_faceWS4",
     "Max_faceWS6",
     "Max_faceWS9",
-    "PersianHead_A3_01",
     "PersianHead_A3_02",
 	"PersianHead_A3_03",
     "AfricanHead_01",
 	"AfricanHead_02",
     "AfricanHead_03",
     "AsianHead_A3_03",
-    "WhiteHead_02",
-	"WhiteHead_14",
+    "WhiteHead_02", 
+	"WhiteHead_14",	
 	"WhiteHead_08",
 	"WhiteHead_21",
 	"WhiteHead_17",
 	"GreekHead_A3_03",
 	"GreekHead_A3_09",
-	"GreekHead_A3_04",
-	"GreekHead_A3_03"
+	"GreekHead_A3_04"
 
 ]] call _fnc_saveToTemplate;
 
@@ -236,7 +209,6 @@ private _pressUniforms = [
 
 private _workerUniforms = [
 
-    "CUP_U_C_Fireman_01",
     "U_C_ConstructionCoverall_Blue_F",
     "U_C_ConstructionCoverall_Black_F",
     "U_C_ConstructionCoverall_Red_F"

@@ -160,7 +160,7 @@ private _initialRebelEquipment = [
     "B_AssaultPack_cbr",
     "B_AssaultPack_rgr",
     "B_AssaultPack_khk",
-    "CUP_B_HikingPack_Civ"
+    "CUP_B_HikingPack_Civ",
 
     "Binocular"
 ];

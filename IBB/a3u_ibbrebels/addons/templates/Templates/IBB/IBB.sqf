@@ -22,9 +22,9 @@
 ["vehiclesBasic", ["I_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["CUP_C_Tigr_4x4_CIV"]] call _fnc_saveToTemplate; //assign zebra skin
 ["vehiclesLightArmed", ["CUP_O_Tigr_M_233114_KORD_RU"]] call _fnc_saveToTemplate; //assign zebra skin
-["vehiclesTruck", ["CUP_O_Kamaz_6396_transport_RUS_M"]] call _fnc_saveToTemplate; //change to a usable one
+["vehiclesTruck", ["C_Truck_02_covered_F", "CUP_C_Bus_City_CIV"]] call _fnc_saveToTemplate; //change to a usable one
 ["vehiclesAT", ["CUP_I_Hilux_armored_BMP1_TK"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_B_nM1097_AVENGER_USA_DES", "CUP_I_Hilux_zu23_NAPA"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_I_SUV_Armored_ION", "CUP_O_Hilux_armored_zu23_TK_INS"]] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_ION", "CUP_B_AC47_Spooky_USA"]] call _fnc_saveToTemplate;                    
@@ -70,10 +70,9 @@
 
 //ADD VARIANTS FOR PLANES
 ["variants", [
-    ["CUP_C_Tigr_4x4_CIV", ["Generic_Zebra",1]],
-    ["CUP_O_Tigr_M_233114_KORD_RU", ["Generic_Zebra",1]],
-    ["CUP_O_Kamaz_6396_transport_RUS_M", ["GreenHex",1]]
-    
+    ["CUP_C_Tigr_4x4_CIV", ["Generic_Hippie",1]]
+    , ["CUP_O_Tigr_M_233114_KORD_RU", ["Generic_Hippie",1]]
+    , ["CUP_I_CESSNA_T41_ARMED_ION", ["Generic_Hippie",1]]
 ]] call _fnc_saveToTemplate;
 
 
@@ -88,17 +87,14 @@ private _initialRebelEquipment = [
     "CUP_hgun_Deagle",
     "CUP_hgun_TEC9_FA",
     "CUP_hgun_MicroUzi",
-    "CUP_hgun_MicroUzi_snds",
 
     "sgun_HunterShotgun_01_sawedoff_F",
     "CUP_glaunch_6G30",
     "CUP_glaunch_M79",
 
-    "CUP_smg_Mac10",
     "CUP_smg_BallisticShield_Sa61",
     "CUP_smg_M3A1_snd",
     "CUP_smg_Mac10_snd",
-    "CUP_smg_Mac10_rail",
 
     "CUP_arifle_Sa58s",
     "CUP_arifle_SR3M_Vikhr_VFG",
@@ -134,7 +130,6 @@ private _initialRebelEquipment = [
     "CUP_PG7VM_M",
     "CUP_PG7VL_M",
     "CUP_PG7VR_M",
-    "RPG7_F",
     "CUP_TBG7V_M",
     "CUP_6Rnd_45ACP_M", 
     "CUP_7Rnd_50AE_Deagle",

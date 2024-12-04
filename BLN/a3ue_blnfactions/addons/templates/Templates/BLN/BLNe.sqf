@@ -30,7 +30,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
-//check how vehicles work, I'll probably change the HIL vics
 
 ["vehiclesBasic", ["I_E_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
@@ -40,7 +39,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS", "CUP_I_Datsun_AA_Random"]] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["CUP_B_AC47_Spooky_USA"]] call _fnc_saveToTemplate;                    
+["vehiclesPlane", ["CUP_C_DC3_CIV"]] call _fnc_saveToTemplate;                    
 ["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_C47_CIV"]] call _fnc_saveToTemplate;
 
 ["vehiclesMedical", ["CUP_B_LR_Ambulance_CZ_D"]] call _fnc_saveToTemplate;
@@ -101,7 +100,6 @@ private _initialRebelEquipment = [
     "CUP_srifle_Mosin_Nagant",
     "CUP_srifle_LeeEnfield",
     "CUP_srifle_LeeEnfield_rail",
-    "CUP_srifle_Remington700",
 
     "CUP_smg_M3A1_blk",
 

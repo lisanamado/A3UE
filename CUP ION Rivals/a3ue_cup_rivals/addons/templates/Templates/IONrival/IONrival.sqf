@@ -28,21 +28,18 @@
 ["surrenderCrate", "Box_Syndicate_Wps_F"] call _fnc_saveToTemplate;
 
 ["vehiclesRivalsLightArmed", [
-    "CUP_I_SUV_Armored_ION"
-    , "CUP_B_nM1025_SOV_Mk19_ION"
+    "CUP_B_nM1025_SOV_Mk19_ION"
     , "CUP_B_nM1025_SOV_M2_ION"
-    , "CUP_I_SUV_Armored_ION"
-    , "CUP_I_4WD_LMG_ION"
     , "CUP_I_FENNEK_HMG_ION"
     , "CUP_I_FENNEK_GMG_ION"
     , "CUP_I_MATV_HMG_ION"
     , "CUP_I_MATV_GMG_ION"
     , "CUP_I_RG31_M2_GC_ION"
     , "CUP_I_RG31_Mk19_ION"
-
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", [
     "I_G_Van_01_transport_F"
+	, "CUP_B_MTVR_BAF_WOOD"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", [
     "CUP_I_SUV_ION"
@@ -51,15 +48,15 @@
     , "CUP_I_FENNEK_ION"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", [
-    "CUP_I_BTR80_ION"
+    "CUP_I_SUV_Armored_ION"
+	,"CUP_I_BTR80_ION"
     , "CUP_I_BTR80A_ION"
     , "CUP_I_RG31E_M2_ION"
-    , "CUP_B_FV432_Bulldog_GB_W"
-    , "CUP_B_FV432_Bulldog_GB_W_RWS"
+	, "CUP_B_BAF_Coyote_GMG_W"
+	, "CUP_B_BAF_Coyote_L2A1_W"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", [
-    "CUP_B_Challenger2_Woodland_BAF"
-	, "CUP_B_FV510_GB_W"
+	"CUP_B_FV510_GB_W"
 	, "CUP_B_FV510_GB_W_SLAT"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", [
@@ -95,60 +92,61 @@
 
 private _loadoutData = call _fnc_createLoadoutData;
 private _rifles = [
-    ["CUP_arifle_M4A1_standard_black", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_M4A1_standard_black", "", "", "", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_M4A3_black", "", "", "", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_M4A3_black", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_AK101_top_rail", "", "", "", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""],
-    ["CUP_arifle_AK101_top_rail", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""]
+    ["CUP_arifle_M4A1_camo_carryhandle", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
+    ["CUP_arifle_M4A1_camo_carryhandle", "", "", "", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
+    ["CUP_arifle_HK416_Wood", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
+    ["CUP_arifle_AK101_railed", "", "", "", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""],
+    ["CUP_arifle_AK101_railed", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""]
 ];
 private _tunedRifles = [
-    ["CUP_arifle_HK417_12", "", "", "CUP_optic_AIMM_MICROT1_BLK", ["CUP_20Rnd_762x51_HK417"], [], ""],
-    ["CUP_arifle_M4A1_SOMMOD_black", "CUP_muzzle_snds_M16", "", "CUP_optic_G33_HWS_BLK", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],
-    ["CUP_arifle_M4A1_SOMMOD_black", "", "", "CUP_optic_AIMM_MICROT1_BLK", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],
-    ["CUP_arifle_mk18_black", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],  
-    ["CUP_arifle_AK19_bicolor", "", "", "CUP_optic_AIMM_M68_BLK", ["CUP_30Rnd_556x45_Tracer_Red_AK19_M"], [], ""]
+    ["CUP_arifle_HK417_12", "CUP_muzzle_mfsup_Flashhider_762x51_Black", "CUP_acc_ANPEQ_2_Flashlight_Black_L", "CUP_optic_Elcan_reflex", ["CUP_20Rnd_762x51_HK417"], [], "CUP_bipod_VLTOR_Modpod_black"],
+    ["CUP_arifle_M4A3_camo", "CUP_muzzle_mfsup_Flashhider_762x51_Black", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "CUP_optic_Elcan_reflex", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],
+    ["CUP_arifle_mk18_black", "CUP_muzzle_mfsup_Flashhider_762x51_Black", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "CUP_optic_AC11704_Coyote", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],  
+    ["CUP_arifle_AK19_bicolor", "muzzle_snds_M", "CUP_acc_ANPEQ_2_camo", "CUP_optic_Elcan_reflex", ["CUP_30Rnd_556x45_Tracer_Red_AK19_M"], [], ""],
+    ["CUP_arifle_G36KA3_grip_hex", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "CUP_acc_ANPEQ_2_camo", "CUP_optic_Elcan_SpecterDR_KF_RMR_coyote", ["CUP_30Rnd_556x45_G36_hex", "CUP_30Rnd_TE1_Red_Tracer_556x45_G36"], [], ""]
 ];
 private _enforcerRifles = [
-    ["CUP_arifle_M4A1_standard_black", "", "", "CUP_optic_G33_HWS_BLK", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_M4A1_standard_black", "", "", "CUP_optic_Elcan_pip", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_M4A3_black", "", "", "CUP_optic_G33_HWS_BLK", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_M4A3_black", "", "", "CUP_optic_Elcan_pip", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_AK101_top_rail", "", "", "CUP_optic_AIMM_MICROT1_BLK", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""],
-    ["CUP_arifle_AK101_top_rail", "", "", "CUP_optic_Elcan_pip", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""]
+    ["CUP_arifle_M4A1_SOMMOD_Grip_green", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
+    ["CUP_arifle_M4A1_SOMMOD_Grip_green", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
+    ["CUP_arifle_AK19_bicolor", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_AK19_Tan_M",30], [], ""],
+    ["CUP_arifle_HK416_Wood", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_Emag",30], [], ""]
 ];
 private _carbines = [
     ["CUP_arifle_M4A1_standard_short_black", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
     ["CUP_arifle_M4A1_standard_short_black", "", "", "", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_Mk16_CQC", "", "", "", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_Mk16_CQC", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_AK102_top_rail", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""],
-	["CUP_arifle_AK102_railed", "", "", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_AK"], [], ""],
-    ["CUP_smg_MP5A5", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_9x19_MP5", "CUP_30Rnd_Yellow_Tracer_9x19_MP5"], [], ""],
-    ["CUP_smg_MP5A5", "", "", "", ["CUP_30Rnd_9x19_MP5", "CUP_30Rnd_Yellow_Tracer_9x19_MP5"], [], ""]
+    ["CUP_arifle_AK102_railed", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Green_Tracer_556x45_AK"], [], ""],
+	["CUP_arifle_AK102_railed", "", "", "", ["CUP_30Rnd_556x45_AK"], [], ""],
+    ["CUP_arifle_G36CA3_afg_wdl", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_TE1_Red_Tracer_556x45_G36", "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_hex"], [], ""],
+	["CUP_arifle_G36CA3_afg_wdl", "", "", "", ["CUP_30Rnd_TE1_Red_Tracer_556x45_G36", "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_hex"], [], ""]
 ];
 private _gls = [
 	["CUP_arifle_AK101_GL_railed", "CUP_muzzle_snds_M16", "", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_AK"], ["CUP_1Rnd_HE_GP25_M", "CUP_1Rnd_SmokeRed_GP25_M"], ""],
-    ["CUP_arifle_AK101_GL_railed", "CUP_muzzle_snds_M16", "", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_AK"], ["CUP_1Rnd_HE_GP25_M", "CUP_1Rnd_SmokeRed_GP25_M"], ""],
-	["CUP_arifle_mk18_m203_black", "CUP_muzzle_snds_M16", "", "CUP_optic_AIMM_MICROT1_BLK", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], ["CUP_1Rnd_HE_M203", "CUP_1Rnd_Smoke_M203"], ""]
+    ["CUP_arifle_AK101_GL_railed", "CUP_muzzle_snds_M16", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_AK"], ["CUP_1Rnd_HE_GP25_M", "CUP_1Rnd_SmokeRed_GP25_M"], ""],
+	["CUP_arifle_mk18_m203_black", "CUP_muzzle_snds_M16", "", "CUP_optic_AIMM_MICROT1_BLK", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], ["CUP_1Rnd_HE_M203", "CUP_1Rnd_Smoke_M203"], ""],
+	["CUP_arifle_M4A1_GL_carryhandle_camo", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
+	["CUP_arifle_M4A1_GL_carryhandle_camo", "", "", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""]
 ];
 private _mgs = [
-	["CUP_lmg_Mk48", "muzzle_snds_H_MG_blk_F", "", "CUP_optic_CompM2_Black", ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], [], ""],
-	["CUP_lmg_Mk48", "muzzle_snds_H_MG_blk_F", "", "CUP_optic_HensoldtZO_low_RDS", ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], [], ""]
+	["CUP_lmg_Mk48_wdl", "", "", "CUP_optic_Elcan_SpecterDR_KF_RMR_coyote", ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], [], ""],
+	["CUP_lmg_Mk48_wdl", "", "", "CUP_optic_HoloBlack", ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], [], ""],
+	["CUP_arifle_MG36_wdl", CUP_muzzle_mfsup_Flashhider_556x45_Black", "", "CUP_optic_MicroT1", ["CUP_100Rnd_556x45_BetaCMag_wdl"], [], ""],
+	["CUP_arifle_MG36_wdl", "", "", "CUP_optic_Elcan_SpecterDR_KF_RMR_coyote", ["CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex"], [], ""]
 ];
 private _marksmanRifles = [
-	["CUP_srifle_RSASS_Black", "CUP_muzzle_snds_socom762rc", "", "CUP_optic_LeupoldM3LR", ["CUP_20Rnd_762x51_B_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110" ], [], "CUP_bipod_Harris_1A2_L_BLK"],
-    ["CUP_arifle_HK417_20", "CUP_muzzle_snds_socom762rc", "", "CUP_optic_LeupoldM3LR", ["CUP_20Rnd_762x51_HK417", "CUP_20Rnd_TE1_Green_Tracer_762x51_HK417"], [], "CUP_bipod_Harris_1A2_L_BLK"]
+	["CUP_srifle_RSASS_Black", "CUP_muzzle_snds_socom762rc", "", "CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND", ["CUP_20Rnd_762x51_B_M110",20], [], "CUP_bipod_VLTOR_Modpod_black"],
+	["CUP_srifle_RSASS_Black", "CUP_muzzle_mfsup_Flashhider_762x51_Black", "", "CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND", ["CUP_20Rnd_762x51_B_M110",20], [], "CUP_bipod_VLTOR_Modpod_black"],
+    ["CUP_arifle_HK417_20_Wood", "CUP_muzzle_mfsup_Flashhider_762x51_Black", "", "CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND", ["CUP_20Rnd_762x51_HK417_Camo_Wood",20], [], "CUP_bipod_VLTOR_Modpod_black"],
+	["CUP_arifle_HK417_20_Wood", "CUP_muzzle_snds_socom762rc", "", "CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND", ["CUP_20Rnd_762x51_HK417_Camo_Wood",20], [], "CUP_bipod_VLTOR_Modpod_black"]
 ];
 
 private _rpgs = [
     ["CUP_launch_M136", "", "", "", [""], [], ""],
-    ["CUP_launch_Mk153Mod0_blk", "", "", "CUP_optic_SMAW_Scope", ["CUP_SMAW_HEAA_M", "CUP_SMAW_HEDP_M"], [], ""],
-    ["CUP_launch_Mk153Mod0_blk", "", "", "", ["CUP_SMAW_HEAA_M", "CUP_SMAW_NE_M"], [], ""]
+    ["CUP_launch_Mk153Mod0_blk", "", "", "CUP_optic_SMAW_Scope", ["CUP_SMAW_HEAA_M", "CUP_SMAW_HEDP_M"], [], ""]
 ];
 
 private _pistols = [
-	["CUP_hgun_Deagle", "", "", "", ["CUP_7Rnd_50AE_Deagle"], [], ""]
+	["CUP_hgun_Deagle", "", "", "", ["CUP_7Rnd_50AE_Deagle"], [], ""],
+	["CUP_hgun_Glock17", "", "", "", ["CUP_17Rnd_9x19_glock17"], [], ""]
 ];
 
 _loadoutData set ["rifles", _rifles];
@@ -160,7 +158,7 @@ _loadoutData set ["machineGuns", _mgs];
 _loadoutData set ["marksmanRifles", _marksmanRifles];
 _loadoutData set ["lightATLaunchers", _rpgs];
 _loadoutData set ["lightHELaunchers", [
-	["launch_RPG32_F", "", "", "", ["RPG32_HE_F", "RPG32_HE_F"], [], ""]
+    ["CUP_launch_M136", "", "", "", [""], [], ""]
 ]];
 _loadoutData set ["AALaunchers", [
     ["CUP_launch_FIM92Stinger", "", "", "", [""], [], ""]
@@ -178,19 +176,9 @@ _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "
 
 //check and add
 _loadoutData set ["facewear", [
+	"",
 	"G_Aviator",
-	"G_Shades_Black",
-	"G_Spectacles",
-	"G_Spectacles_Tinted",
-	"G_Sport_Blackred",
-	"G_Sport_Greenblack",
-	"G_Bandanna_aviator",
-	"G_Bandanna_beast",
-	"G_Bandanna_blk",
-	"G_Bandanna_shades",
-	"G_Bandanna_sport",
-	"G_Bandanna_khk",
-	"G_Bandanna_tan",	
+	"G_Spectacles_Tinted",,
 	"G_Lowprofile",
 	"CUP_G_PMC_Facewrap_Tropical_Glasses_Dark_Headset",
 	"CUP_PMC_Facewrap_Skull",
@@ -201,16 +189,14 @@ _loadoutData set ["facewear", [
 _loadoutData set ["fullmask", [	"G_Balaclava_combat", "G_Balaclava_lowprofile", "G_Balaclava_blk"]];
 
 //check and add
-_loadoutData set ["headgear", [
-	"H_Cap_blk_ION"
-]];
+_loadoutData set ["headgear", ["H_Cap_blk_ION"]];
 
-loadoutData set ["maps", ["ItemMap"]];
+_loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", ["ItemGPS"]];
-_loadoutData set ["NVGs", ["NVGoggles_INDEP"]];
+_loadoutData set ["NVGs", ["CUP_NVG_PVS15_green"]];
 _loadoutData set ["binoculars", ["Binocular"]];
 _loadoutData set ["Rangefinder", ["Rangefinder"]];
 

@@ -36,7 +36,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //////////////////////////
 
 ["vehiclesBasic", ["I_E_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;  //add , "CUP_I_Hilux_armored_unarmed_NAPA"?
+["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["CUP_O_Hilux_armored_M2_TK_INS"]] call _fnc_saveToTemplate;
 
 //truck not loading class mistake?
@@ -45,10 +45,10 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS", "CUP_I_Datsun_AA_Random"]] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_RACS", "CUP_B_AC47_Spooky_USA"]] call _fnc_saveToTemplate;                    
-["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_C47_CIV", "CUP_C_Cessna_172_CIV"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_RACS", "CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
+["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_Cessna_172_CIV"]] call _fnc_saveToTemplate;
 
-["vehiclesMedical", ["CUP_O_UAZ_AMB_RU"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["CUP_B_UAZ_AMB_AFU"]] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["CUP_C_Skoda_CR_CIV", "CUP_C_Datsun"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
@@ -85,12 +85,9 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 
 
 ["variants", [
-//Check if I can get these on classes instead of variants
     ["CUP_C_Lada_CIV", ["hideLightBar",1,"hideMilitiaLogo",1]] 
     , ["CUP_I_CESSNA_T41_ARMED_RACS",["mil_vsr", 1]]
     , ["CUP_I_Datsun_AA_Random",["greenBrownBeigeWoodland", 1]]
-    , ["CUP_B_AC47_Spooky_USA", ["SLAWoodland",1]]
-    , ¨["CUP_O_UAZ_AMB_RU", ["Green_FIA",1]]
     ]
 ] call _fnc_saveToTemplate;
 
@@ -136,7 +133,7 @@ private _initialRebelEquipment = [
     "CUP_B_AlicePack_OD", 
     "CUP_B_CivPack_WDL", 
     "CUP_B_SLA_Medicbag",
-    "CUP_B_HikingPack_Civ"
+    "CUP_B_HikingPack_Civ",
 
     "Binocular"
 ];
