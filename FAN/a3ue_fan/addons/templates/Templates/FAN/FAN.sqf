@@ -49,7 +49,7 @@
 
 // must be unarmed, unarmoured to lightly armoured, with 0-4 passengers:
 ["vehiclesLightUnarmed", [
-    "CUP_O_Tigr_2330114_SLA"
+    "CUP_O_Tigr_233014_SLA"
 ]] call _fnc_saveToTemplate; 
 
 // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
@@ -90,7 +90,6 @@
 // vehicle with capability to provide healing
 ["vehiclesMedical", [
     "CUP_O_UAZ_AMB_RU"
-    , "CUP_O_BMP2_AMB_sla"
     , "CUP_B_M113A1_Med_olive_USA"
     , "I_E_Truck_02_Medical_F"
 ]] call _fnc_saveToTemplate;
@@ -100,12 +99,12 @@
     "CUP_B_RG31E_M2_OD_USA"
     , "CUP_O_BTR60_SLA"
     , "CUP_O_BTR80_SLA"
+    , "CUP_O_BTR80A_SLA"
 ]] call _fnc_saveToTemplate;             
 
 // armed with enclosed turret, armoured, with 6-8 passengers
 ["vehiclesAPCs", [
     "CUP_O_MTLB_pk_SLA"
-    , "CUP_O_BMP1_TKM"
     , "CUP_O_BMP2_SLA"
     , "CUP_B_M113A1_olive_USA"
     , "CUP_B_M113A1_HQ_olive_USA"
@@ -161,6 +160,7 @@
     , "CUP_O_BRDM2_ATGM_SLA"
     , "CUP_O_BTR60_SLA"
     , "CUP_O_BTR80_SLA"
+    , "CUP_O_BTR80A_SLA"
 ]] call _fnc_saveToTemplate;          // armed or unarmed wheled or tracked based vehicle with light armor(?) and passengers(?)
 
 
@@ -357,14 +357,16 @@ _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 _loadoutData set ["lightATLaunchers", [
-    ["CUP_launch_M72A6", "", "", "", [""], [], ""]
+    "CUP_launch_M72A6"
+    , "CUP_launch_RPG26"
 ]];
 _loadoutData set ["lightHELaunchers", [
-    ["CUP_launch_RShG2", "", "", "", [""], [], ""]
+    "CUP_launch_RShG2"
+    , ["CUP_launch_RPG7V", "", "", "", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
 ]];
 _loadoutData set ["ATLaunchers", [
-    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_OG7_M", "CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M", "CUP_TBG7V_M"], [], ""]
-    , ["CUP_launch_RPG7V", "", "", "", ["CUP_OG7_M", "CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M", "CUP_TBG7V_M"], [], ""]
+    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_PG7V", "CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M"], [], ""]
+    , ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V", "CUP_PG7V_M"], [], ""]
     , ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M", "CUP_MAAWS_HEAT_M"], [], ""]
 ]];
 _loadoutData set ["missileATLaunchers", [
@@ -601,7 +603,7 @@ _militaryLoadoutData set ["machineGuns", [
 
 _militaryLoadoutData set ["marksmanRifles", [
     ["CUP_srifle_M14","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
-    , ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR",],[],"CUP_bipod_Harris_1A2_L"]
+    , ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
     ["CUP_srifle_M14_DMR","muzzle_snds_B","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
@@ -642,7 +644,7 @@ _policeLoadoutData set ["SMGs", [
 ]];
 
 _policeLoadoutData set ["sidearms", [
-["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"], [], ""]
+["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"],[],""]
 , ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M", "CUP_12Rnd_9x18_PMM_M"],[],""]
 ]];
 
@@ -696,8 +698,8 @@ _militiaLoadoutData set ["rifles", [
 _militiaLoadoutData set ["carbines", [
      ["CUP_arifle_Sa58s_rearris","","","",["CUP_30Rnd_Sa58_M", "CUP_30Rnd_Sa58_M_TracerG", "CUP_15Rnd_Sa58_M"],[],""]
     , ["CUP_arifle_Galil_SAR_black","","","",["CUP_35Rnd_556x45_Galil_Mag", "CUP_35Rnd_556x45_Red_Tracer_Galil_Mag"],[],""]
-    , ["CUP_arifle_FNFAL_OSW","","","",["CUP_10Rnd_762x51_FNFAL_M, "CUP_20Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"],[],""]
-    , ["CUP_arifle_FNFAL_OSW","","","",["CUP_10Rnd_762x51_FNFAL_M, "CUP_20Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
+    , ["CUP_arifle_FNFAL_OSW","","","",["CUP_10Rnd_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"],[],""]
+    , ["CUP_arifle_FNFAL_OSW","","","",["CUP_10Rnd_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
     ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203"],[],""]

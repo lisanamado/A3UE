@@ -129,7 +129,7 @@ private _gls = [
 private _mgs = [
 	["CUP_lmg_Mk48_wdl", "", "", "CUP_optic_Elcan_SpecterDR_KF_RMR_coyote", ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], [], ""],
 	["CUP_lmg_Mk48_wdl", "", "", "CUP_optic_HoloBlack", ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], [], ""],
-	["CUP_arifle_MG36_wdl", CUP_muzzle_mfsup_Flashhider_556x45_Black", "", "CUP_optic_MicroT1", ["CUP_100Rnd_556x45_BetaCMag_wdl"], [], ""],
+	["CUP_arifle_MG36_wdl", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "", "CUP_optic_MicroT1", ["CUP_100Rnd_556x45_BetaCMag_wdl"], [], ""],
 	["CUP_arifle_MG36_wdl", "", "", "CUP_optic_Elcan_SpecterDR_KF_RMR_coyote", ["CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex"], [], ""]
 ];
 private _marksmanRifles = [
@@ -178,7 +178,7 @@ _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "
 _loadoutData set ["facewear", [
 	"",
 	"G_Aviator",
-	"G_Spectacles_Tinted",,
+	"G_Spectacles_Tinted",
 	"G_Lowprofile",
 	"CUP_G_PMC_Facewrap_Tropical_Glasses_Dark_Headset",
 	"CUP_PMC_Facewrap_Skull",
