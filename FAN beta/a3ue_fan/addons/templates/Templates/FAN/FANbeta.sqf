@@ -350,7 +350,8 @@ _loadoutData set ["rifles", []];
 _loadoutData set ["carbines", []];
 _loadoutData set ["grenadeLaunchers", []];
 _loadoutData set ["designatedGrenadeLaunchers", [
-    ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M","CUP_6Rnd_Smoke_GP25","CUP_6Rnd_FlareRed_GP25_M"],[],""]
+    ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],[],""]
+    , ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M","CUP_6Rnd_Smoke_GP25","CUP_6Rnd_FlareRed_GP25_M"],[],""]
 ]];
 _loadoutData set ["SMGs", []];
 _loadoutData set ["machineGuns", []];
@@ -411,7 +412,7 @@ _loadoutData set ["officerHats", ["H_MilCap_eaf"]];
 _loadoutData set ["uniforms", []];
 _loadoutData set ["vests", []];
 _loadoutData set ["backpacks", []];
-_loadoutData set ["longRangeRadios", ["TFAR_SCR536"]];           //long range radios used by radiomen
+_loadoutData set ["longRangeRadios", []];           //long range radios used by radiomen
 _loadoutData set ["helmets", []];
 
 _loadoutData set ["facewear", [
@@ -556,8 +557,8 @@ _militiaLoadoutData set ["carbines", [
     , ["CUP_arifle_FNFAL_OSW","","","",["CUP_10Rnd_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-    ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203"],[],""]
-    , ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M"],[],""]
+    ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],[],""]
+    , ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M","CUP_6Rnd_Smoke_GP25","CUP_6Rnd_FlareRed_GP25_M"],[],""]
 ]];
 _militiaLoadoutData set ["SMGs", [
     ["CUP_smg_UZI","","","",["CUP_32Rnd_9x19_UZI_M"],[],""]    
@@ -570,8 +571,7 @@ _militiaLoadoutData set ["machineGuns", [
 ]];
 //the next ones are subject to further testing
 _militiaLoadoutData set ["marksmanRifles", [
-    ["CUP_srifle_M21","","","CUP_optic_artel_m14",["CUP_20Rnd_762x51_DMR"],[],""]
-    , ["CUP_arifle_FNFAL5061_railed","","","CUP_optic_SUSAT",["CUP_10Rnd_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
+    ["CUP_arifle_FNFAL5061_railed","","","CUP_optic_SUSAT",["CUP_10Rnd_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
 ]];
 _militiaLoadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911","","","",["CUP_7Rnd_45ACP_1911"],[],""]
@@ -653,6 +653,7 @@ _militaryLoadoutData set ["machineGuns", [
 _militaryLoadoutData set ["marksmanRifles", [
     ["CUP_srifle_M14","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
     , ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
+    , ["CUP_srifle_M21_ris","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
     ["CUP_srifle_M14_DMR","muzzle_snds_B","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
