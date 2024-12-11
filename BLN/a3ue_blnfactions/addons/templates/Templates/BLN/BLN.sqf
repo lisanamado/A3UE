@@ -14,21 +14,15 @@
 
 #include "..\..\script_component.hpp"
 
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasTanks = "tank" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
 
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
 
-["name", "BLN (basic version)"] call _fnc_saveToTemplate;
+["name", "BLN"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_BLN"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\oktubre.paa)] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLN.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "a3a_flag_BLN"] call _fnc_saveToTemplate;
 
 //////////////////////////
@@ -52,10 +46,10 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 
 ["vehiclesCivCar", ["CUP_C_Skoda_CR_CIV", "CUP_C_Datsun"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["CUP_C_412", "CUP_C_Mi17_Civilian_RU", "CUP_C_SA330_Puma_HC1_ChernAvia","CUP_I_Merlin_HC3_PMC_Lux_3C"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["CUP_C_412","CUP_C_Mi17_Civilian_RU","CUP_C_SA330_Puma_HC1_ChernAvia","CUP_I_Merlin_HC3_PMC_Lux_3C"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["CUP_B_L111A1_BAF_DDPM", "CUP_B_L111A1_BAF_MiniTripod_DDPM"]] call _fnc_saveToTemplate;
+["staticMGs", ["O_G_HMG_02_high_F", "O_G_HMG_02_F"]] call _fnc_saveToTemplate;
 ["staticAT", ["CUP_I_SPG9_TK_GUE"]] call _fnc_saveToTemplate;
 ["staticAA", ["CUP_I_ZU23_TK_GUE"]] call _fnc_saveToTemplate;
 
@@ -104,7 +98,7 @@ private _initialRebelEquipment = [
 
     "CUP_sgun_CZ584",
     "sgun_HunterShotgun_01_sawedoff_F",
-    ["CUP_srifle_Remington700", 20],
+    ["CUP_srifle_Remington700", 10],
     ["CUP_srifle_CZ550", 5],
 
     "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 
@@ -163,13 +157,12 @@ private _rebUniforms =  [
     "U_B_CombatUniform_mcam_tshirt_W",
     "WU_B_T_Soldier_AR_F",
     "WU_B_T_Soldier_F",
-    "WU_B_HeliPilotCoveralls",
 // male uniforms:
     "U_BG_Guerrilla_6_1",
-    "CUP_I_B_PARA_unit_3",
-    "CUP_I_B_PARA_unit_6",
-    "CUP_I_B_PARA_unit_14",
-    "CUP_I_B_PARA_unit_5"
+    "CUP_I_B_PARA_Unit_3",
+    "CUP_I_B_PARA_Unit_6",
+    "CUP_I_B_PARA_Unit_14",
+    "CUP_I_B_PARA_Unit_5"
 ];          
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
@@ -180,7 +173,6 @@ private _rebUniforms =  [
 
 ["headgear", [
     "CUP_H_Booniehat_CCE",
-    "CUP_H_Booniehat_Rodhesian",
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
@@ -190,16 +182,11 @@ private _rebUniforms =  [
     "H_Cap_grn",
     "H_Beret_blk",
     ""
-
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
 /////////////////////
-
-//I added english female voice, spanish voice, and male greek English voices.
-//They seem to work or not as they please, got to investigate on it
-
 ["faces", [
     
     "Max_faceWS1",

@@ -6,7 +6,6 @@ class CfgMarkers
 	{
 		name = "FAN"
 		icon = QPATHTOFOLDER(Templates\FAN\FAN.paa);
-
-		texture = QPATHTOFOLDER(Templates\FAN\FAN.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\FAN.paa);
 	};
 };

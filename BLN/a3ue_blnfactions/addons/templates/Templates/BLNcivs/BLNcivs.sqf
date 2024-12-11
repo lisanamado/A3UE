@@ -136,15 +136,13 @@
 	,"CUP_C_Cessna_172_CIV_BLUE" //Ambient
 	,"CUP_C_Cessna_172_CIV_GREEN" //Ambient
 	,"CUP_C_Cessna_172_CIV" //Ambient
-	,"CUP_C_CESSNA_CIV" //Ambient
-
+	,"CUP_C_CESSNA_CIV"
 ]] call _fnc_saveToTemplate;
 
 //vehicle skins
 ["variants", [
 [["CUP_C_S1203_Ambulance_CIV"], ["Ambulance",1]]
-]
-] call _fnc_saveToTemplate;
+]] call _fnc_saveToTemplate;
 
 
 /////////////////////////////////
@@ -184,8 +182,6 @@
 //////////////////////////
 
 private _civUniforms = [
-
-    "CUP_U_C_Priest_01",
     "CUP_O_TKI_Khet_Jeans_03",
     "CUP_O_TKI_Khet_Partug_05",
     "CUP_O_TKI_Khet_Partug_07",
@@ -197,7 +193,6 @@ private _civUniforms = [
     "CUP_U_C_Worker_03",
     "CUP_U_C_Worker_02",
     "CUP_U_C_Worker_01"
-
 ];          //Uniforms given to Normal Civs
 
 private _pressUniforms = [
@@ -222,11 +217,12 @@ _civHats = [
      "",
      "CUP_H_C_Beret_03", 
 	 "H_StrawHat_dark",
-	 "H_Hat_tan",  
-     "CUP_H_PMC_Cap_Burberry",
-	 "CUP_H_PMC_Cap_Grey",
-     "H_Cap_MaldenTours"
-	 
+	 "H_Hat_grey",  
+     "H_Cap_surfer",
+	 "H_Cap_red",
+	 "H_Hat_Safari_olive_F",
+	 "H_Hat_Safari_sand_F",
+     "H_Cap_MaldenTours" 
     ];
 
 ["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.

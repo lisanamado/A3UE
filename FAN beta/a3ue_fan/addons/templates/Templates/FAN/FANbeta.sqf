@@ -44,7 +44,6 @@
 // unarmed or armed, with 0-2 passengers:
 ["vehiclesBasic", [
     "B_Quadbike_01_F"
-    , "CUP_O_TT650_TKA"
 ]] call _fnc_saveToTemplate;
 
 // must be unarmed, unarmoured to lightly armoured, with 0-4 passengers:
@@ -190,8 +189,7 @@
 ]] call _fnc_saveToTemplate;            // ideally fragile & unarmed helis seating 4+
 
 ["vehiclesHelisTransport", [
-    "CUP_B_UH60M_US"
-    , "I_Heli_light_03_unarmed_F"
+    "I_Heli_light_03_unarmed_F"
     , "CUP_I_Wildcat_Green_AAF"
 ]] call _fnc_saveToTemplate;        // bigger heli with more passengers. 
 //Should be capable of dealing damage to ground targets without additional scripting
@@ -282,11 +280,6 @@
 ["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;                   // anti-tank mines
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;                // anti-personal mines
 
-//SLAT cages, camo nets, logs, doors etc
-["animations", [
-    ["vehClass", ["animsourcefromgarage1", 0.3, "animsourcefromgarage2", 0.25, "animsourcefromgarage3", 0.3, "animsourcefromgarage4", 0.3]],
-    ["", []]
-]] call _fnc_saveToTemplate;
 
 //vehicle skins
 ["variants", [
@@ -428,9 +421,9 @@ _loadoutData set ["items_medical_medic", ["MEDIC"] call A3A_fnc_itemset_medicalS
 _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials];
 
 //Unit type specific item sets. Add or remove these, depending on the unit types in use.
-private _slItems = ["Laserbatteries", "Laserbatteries", "Laserbatteries"];
+private _slItems = ["Laserbatteries"];
 private _eeItems = ["ToolKit", "MineDetector"];
-private _mmItems = [];
+private _mmItems = ["Rangefinder"];
 
 if (A3A_hasACE) then {
 	_slItems append ["ACE_microDAGR", "ACE_DAGR"];
@@ -490,8 +483,8 @@ _policeLoadoutData set ["helmets", [
 
 _policeLoadoutData set ["SMGs", [
  ["CUP_smg_BallisticShield_Sa61","","","",["CUP_20Rnd_B_765x17_Ball_M", "CUP_10Rnd_B_765x17_Ball_M", "CUP_50Rnd_B_765x17_Ball_M"],[],""]
-, ["CUP_hgun_BallisticShield_PMM","","","",["CUP_12Rnd_9x18_PMM_M "],[],""]
-, ["CUP_sgun_M1014_solidstock","","","",["CUP_8Rnd_12Gauge_Slug"], [], ""]
+, ["CUP_hgun_BallisticShield_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
+, ["CUP_sgun_M1014_solidstock","","","",["CUP_8Rnd_12Gauge_Pellets_No2_Buck","CUP_8Rnd_12Gauge_Pellets_No3_Buck","CUP_8Rnd_12Gauge_Slug","CUP_8Rnd_12Gauge_Pellets_No0_Buck","CUP_8Rnd_12Gauge_Pellets_No1_Buck"], [], ""]
 , ["CUP_arifle_FNFAL5061_wooden", "", "", "", ["CUP_10Rnd_762x51_FNFAL_M"], [], ""]
 , ["CUP_smg_M3A1_grn","","","",["CUP_30Rnd_45ACP_Red_Tracer_M3A1_GRN_M", "CUP_30Rnd_45ACP_M3A1_GRN_M"],[],""]
 , ["CUP_arifle_Sa58s_rearris","","","",["CUP_15Rnd_Sa58_M"],[],""]
@@ -651,14 +644,12 @@ _militaryLoadoutData set ["machineGuns", [
 ]];
 
 _militaryLoadoutData set ["marksmanRifles", [
-    ["CUP_srifle_M14","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
-    , ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
-    , ["CUP_srifle_M21_ris","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
+    ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
+    , ["CUP_srifle_M21_ris","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
     ["CUP_srifle_M14_DMR","muzzle_snds_B","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
-//the next one might be better replaced for a more consequent srifle
-    , ["CUP_srifle_CZ750","","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_10Rnd_762x51_CZ750"],[],""]
+    , ["CUP_srifle_M21_ris","","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
 ]];
 _militaryLoadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911","","","",["CUP_7Rnd_45ACP_1911"],[],""]

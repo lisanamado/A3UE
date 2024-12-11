@@ -9,22 +9,15 @@
 
 #include "..\..\script_component.hpp"
 
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasTanks = "tank" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
 
-["name", "BLN (standard version)"] call _fnc_saveToTemplate;
+["name", "BLN"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_BLNe"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\oktubre.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "a3a_flag_BLN"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNe.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_BLNe"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -76,10 +69,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //I made this values higher
 ["animations", [
     ["vehClass", ["animsource_example_1", 0.5, "animsource_example_2", 0.75]]
-]] call _fnc_saveToTemplate;
-
-["variants", [
-    ["CUP_B_AC47_Spooky_USA", ["SLAWoodland",1]]
 ]] call _fnc_saveToTemplate;
 
 
@@ -159,7 +148,6 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
-
 //UNIFORMS
 
 private _rebUniforms =  [
@@ -169,7 +157,6 @@ private _rebUniforms =  [
     "U_B_CombatUniform_mcam_tshirt_W",
     "WU_B_T_Soldier_AR_F",
     "WU_B_T_Soldier_F",
-    "WU_B_HeliPilotCoveralls",
 // male uniforms:
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_unit_3",
@@ -179,7 +166,6 @@ private _rebUniforms =  [
 ];          
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
-
 
 
 //HEADGEAR

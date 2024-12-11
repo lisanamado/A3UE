@@ -8,22 +8,15 @@
 
 #include "..\..\script_component.hpp"
 
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasTanks = "tank" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
 
-["name", "BLN (xtended version)"] call _fnc_saveToTemplate;
+["name", "BLN"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_BLNex"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\oktubre.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "a3a_flag_BLN"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNex.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_BLNex"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
