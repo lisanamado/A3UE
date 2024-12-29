@@ -3,14 +3,10 @@
 //including female soldiers, spanish radio voiceovers, and a really basic initial arsenal.
 
 //It's meant for a slow game starting, using the hunting rifles to take down enemies and gather police/military loot.
-//As revolutionary forces grow and get more support, some extra vehicle buying options become possible.
 
 //It is not possible to assign bodies and faces in two sepparate classes, so female and male bodies and heads are going to mix
 //I've chosen bodies and jackets trying to make this not to obvious. Think of them as strong women and slim man. Or just transgender people, use your imagination :D.
 
-//I´ve borrowed HIL and TKA camo for some vehicles, as they have consistent green-yellow multicamo and militia looking skins 
-//on HIL case, it shouldn't make a trouble as they don't spawn the old jeep-willys-like car.
-//it might confuse with TKA trucks if playing against that faction, might check for other option.
 
 #include "..\..\script_component.hpp"
 
@@ -71,16 +67,8 @@
 ["lootCrate", "A3AP_Box_Syndicate_Ammo_F"] call _fnc_saveToTemplate;
 ["rallyPoint", "B_RadioBag_01_wdl_F"] call _fnc_saveToTemplate;
 
-//animation sources - camo nets, slat cages, decals etc, digit is probability of appearance
-//I made this values higher
-["animations", [
-    ["vehClass", ["animsource_example_1", 0.5, "animsource_example_2", 0.75]]
-]] call _fnc_saveToTemplate;
-
-
-["variants", [
-    ["CUP_C_Lada_CIV", ["hideLightBar",1,"hideMilitiaLogo",1]] 
-    , ["CUP_I_CESSNA_T41_ARMED_RACS",["mil_vsr", 1]]
+["variants", [ 
+    ["CUP_I_CESSNA_T41_ARMED_RACS",["mil_vsr", 1]]
     , ["CUP_I_Datsun_AA_Random",["greenBrownBeigeWoodland", 1]]
     ]
 ] call _fnc_saveToTemplate;
@@ -99,17 +87,17 @@ private _initialRebelEquipment = [
     "CUP_sgun_CZ584",
     "sgun_HunterShotgun_01_sawedoff_F",
     ["CUP_srifle_Remington700", 10],
-    ["CUP_srifle_CZ550", 5],
+    ["CUP_srifle_CZ550", 2],
 
     "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 
     "CUP_1Rnd_12Gauge_Pellets_No3_Buck", 
-    "CUP_5x_22_LR_17_HMR_M", 
+    "CUP_5x_22_LR_17_HMR_M",
     "CUP_6Rnd_45ACP_M", 
     "CUP_1Rnd_762x51_CZ584",
     "CUP_2Rnd_12Gauge_Pellets_No0_Buck",
     "CUP_6Rnd_762x51_R700",
     
-    ["IEDUrbanSmall_Remote_Mag", 30], ["IEDLandSmall_Remote_Mag", 30], ["IEDUrbanBig_Remote_Mag", 5], ["IEDLandBig_Remote_Mag", 5],
+    ["IEDUrbanSmall_Remote_Mag", 20], ["IEDLandSmall_Remote_Mag", 20], ["IEDUrbanBig_Remote_Mag", 5], ["IEDLandBig_Remote_Mag", 5],
 
     //I preferred jackets over vests to dissemble the bodies unmatching faces. They should look light, as for tropical climate
     "CUP_V_OI_TKI_Jacket2_02", 
@@ -154,25 +142,28 @@ private _rebUniforms =  [
 // female uniforms:
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
-    "U_B_CombatUniform_mcam_tshirt_W",
-    "WU_B_T_Soldier_AR_F",
     "WU_B_T_Soldier_F",
 // male uniforms:
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_Unit_3",
-    "CUP_I_B_PARA_Unit_6",
-    "CUP_I_B_PARA_Unit_14",
-    "CUP_I_B_PARA_Unit_5"
-];          
+    "CUP_I_B_PARA_Unit_10"
+];         
+
+
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
+//A uniform for Petros, he looks too weird on female uniforms
+private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
 
+["Puniform", _petrosUniform] call _fnc_saveToTemplate;
 
 //HEADGEAR
 
 ["headgear", [
     "CUP_H_Booniehat_CCE",
+    "CUP_H_Booniehat_TTS",
+    "CUP_H_USMC_BOONIE_WDL"
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
@@ -220,7 +211,7 @@ _loadoutData set ["uniforms", _rebUniforms];
 
 //set a red neckscarf as identifier
 _loadoutData set ["facewear", [
-     "CUP_FR_NeckScarf5", 
+    "CUP_FR_NeckScarf5", 
     "CUP_G_Scarf_Face_Red"
 ]];
 
@@ -232,6 +223,16 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 ////////////////////////
 //  Rebel Unit Types  //
 ///////////////////////.
+
+private _PetrosTemplate = {
+    ["Puniform"] call _fnc_setUniform;
+    ["facewear"] call _fnc_setFacewear;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["binoculars"] call _fnc_addBinoculars;
+};
 
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -254,7 +255,8 @@ private _riflemanTemplate = {
 
 private _prefix = "militia";
 private _unitTypes = [
-    ["Petros", _squadLeaderTemplate],
+//CHANGE THIS SO PETROS GETS A DETERMINED MALE BODY ()
+    ["Petros", _PetrosTemplate],
     ["SquadLeader", _squadLeaderTemplate],
     ["Rifleman", _riflemanTemplate],
     ["staticCrew", _riflemanTemplate],

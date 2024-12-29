@@ -5,13 +5,10 @@
 //Fuerzas Armadas Nacionales
 
 //This aims to represent a generic occupier faction resembling a caribbean/latin-american authoritarian government
-//It's meant to have present time and cold war era versions
 
-//The assets are made up of cold war western equipment and modern cheap weapons from diverse origins
-//This faction was supported by US in the 70's and 80's as part of anti-communist Plan Cóndor,
-//But in XXI century it developed commercial relations with eastern and western nations
-//developing a mixed arsenal to fight gangs and then, after the empowering and corruption of armed forces,
-//become an oppresive regime with abusive police and militias
+//The assets are made up of outdated infantry weapons which are still produced in Latin-America like FAL and Galil,
+//Alongside with mostly cw era gear from diverse origins
+
 
 #include "..\..\script_component.hpp"
 
@@ -315,19 +312,6 @@
     "MALEO1ESPA", "male06gre", "Male04GRE", "Male06GRE", "Male05GRE"
 ]] call _fnc_saveToTemplate;
 
-["sfFaces", [
-        "WhiteHead_22_a"
-        , "WhiteHead_22_l"
-        , "WhiteHead_22_sa"
-        , "PersianHead_A3_04_a"
-        , "PersianHead_A3_04_a"
-        , "PersianHead_A3_04_l"
-        , "PersianHead_A3_04_sa"
-        , "GreekHead_A3_10_a"
-        , "GreekHead_A3_10_l"
-        , "GreekHead_A3_10_sa"
-]] call _fnc_saveToTemplate;
-
 ["insignia", []] call _fnc_saveToTemplate;
 ["sfInsignia", []] call _fnc_saveToTemplate;
 ["milInsignia", []] call _fnc_saveToTemplate;
@@ -342,35 +326,16 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["rifles", []];
 _loadoutData set ["carbines", []];
 _loadoutData set ["grenadeLaunchers", []];
-_loadoutData set ["designatedGrenadeLaunchers", [
-    ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],[],""]
-    , ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M","CUP_6Rnd_Smoke_GP25","CUP_6Rnd_FlareRed_GP25_M"],[],""]
-]];
+_loadoutData set ["designatedGrenadeLaunchers", []];
 _loadoutData set ["SMGs", []];
 _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
-_loadoutData set ["lightATLaunchers", [
-    "CUP_launch_M72A6"
-    , "CUP_launch_RPG26"
-]];
-_loadoutData set ["lightHELaunchers", [
-    "CUP_launch_RShG2"
-    , ["CUP_launch_RPG7V", "", "", "", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
-]];
-_loadoutData set ["ATLaunchers", [
-    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M"], [], ""]
-    , ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V_M"], [], ""]
-    , ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M", "CUP_MAAWS_HEAT_M"], [], ""]
-]];
-_loadoutData set ["missileATLaunchers", [
-    ["CUP_launch_M47", "", "", "", ["CUP_Dragon_EP1_M"], [], ""]
-    , ["CUP_launch_Metis", "", "", "", ["CUP_AT13_M"], [], ""]
-
-]];
-_loadoutData set ["AALaunchers", [
-    ["CUP_launch_9K32Strela", "", "", "", [""], [], ""]
-]];
+_loadoutData set ["lightATLaunchers", []];
+_loadoutData set ["lightHELaunchers", []];
+_loadoutData set ["ATLaunchers", []];
+_loadoutData set ["missileATLaunchers", []];
+_loadoutData set ["AALaunchers", []];
 _loadoutData set ["sidearms", []];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];
@@ -383,8 +348,6 @@ _loadoutData set ["smokeGrenades", ["SmokeShell"]];
 _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
 
 
-//Basic equipment. Shouldn't need touching most of the time.
-//Mods might override this, or certain mods might want items removed (No GPSs in WW2, for example)
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
@@ -395,23 +358,21 @@ _loadoutData set ["binoculars", ["Binocular"]];
 _loadoutData set ["rangefinders", ["Rangefinder"]];
 
 _loadoutData set ["traitorUniforms", ["CUP_U_B_BDUv2_roll2_dirty_DPM_OD"]];
-_loadoutData set ["traitorVests", ["CUP_V_B_PASGT_no_bags_OD", "CUP_V_B_PASGT_CCE"]];
+_loadoutData set ["traitorVests", ["CUP_V_B_PASGT_CCE"]];
 _loadoutData set ["traitorHats", ["H_Booniehat_mcamo"]];
 
-_loadoutData set ["officerUniforms", ["CUP_U_B_BDUv2_gloves_Rhodesian"]];
-_loadoutData set ["officerVests", ["CUP_V_B_PASGT_CCE"]];
-_loadoutData set ["officerHats", ["H_MilCap_eaf"]];
+_loadoutData set ["officerUniforms", ["CUP_U_B_BDUv2_Alpenflage"]];
+_loadoutData set ["officerVests", ["V_Rangemaster_belt"]];
+_loadoutData set ["officerHats", ["CUP_H_SLA_BeretRed"]];
 
 _loadoutData set ["uniforms", []];
 _loadoutData set ["vests", []];
 _loadoutData set ["backpacks", []];
-_loadoutData set ["longRangeRadios", []];           //long range radios used by radiomen
+_loadoutData set ["longRangeRadios", ["CUP_B_Kombat_Radio_Olive"]];
 _loadoutData set ["helmets", []];
 
 _loadoutData set ["facewear", [
-    ""
-    , "CUP_FR_NeckScarf"
-    , "None"
+    "CUP_FR_NeckScarf"
 ]];     
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
@@ -421,14 +382,17 @@ _loadoutData set ["items_medical_medic", ["MEDIC"] call A3A_fnc_itemset_medicalS
 _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials];
 
 //Unit type specific item sets. Add or remove these, depending on the unit types in use.
-private _slItems = ["Laserbatteries"];
+private _slItems = ["Laserbatteries", "ItemGPS"];
 private _eeItems = ["ToolKit", "MineDetector"];
 private _mmItems = ["Rangefinder"];
+private _mgItems = [];
+
 
 if (A3A_hasACE) then {
 	_slItems append ["ACE_microDAGR", "ACE_DAGR"];
 	_eeItems append ["ACE_Clacker", "ACE_DefusalKit"];
 	_mmItems append ["ACE_RangeCard", "ACE_ATragMX", "ACE_Kestrel4500"];
+    _mgItems append ["ACE_Tripod","ACE_SpareBarrel"];
 };
 
 _loadoutData set ["items_squadLeader_extras",  _slItems];
@@ -440,27 +404,24 @@ _loadoutData set ["items_engineer_extras", _eeItems];
 _loadoutData set ["items_lat_extras", []];
 _loadoutData set ["items_at_extras", []];
 _loadoutData set ["items_aa_extras", []];
-_loadoutData set ["items_machineGunner_extras", []];
+_loadoutData set ["items_machineGunner_extras", _mgItems];
 _loadoutData set ["items_marksman_extras", _mmItems];
 _loadoutData set ["items_sniper_extras", _mmItems];
 _loadoutData set ["items_police_extras", []];
-_loadoutData set ["items_crew_extras", []];
+_loadoutData set ["items_crew_extras", ["ToolKit"]];
 _loadoutData set ["items_unarmed_extras", []];
 
 _loadoutData set ["glasses", [
     "G_Aviator"
     ,"G_Shades_Black"
-    , ""
     , "G_Squares_Tinted"
     , "G_Spectacles_Tinted"
-    , "None"
     , "G_Squares"
     , "G_Spectacles"
 ]];
 _loadoutData set ["goggles", [
     "G_Combat"
     , "CUP_G_ESS_BLK_Dark"
-    , ""
     , "G_Lowprofile"
 ]];
 
@@ -472,27 +433,39 @@ private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
 _policeLoadoutData set ["uniforms", [
     "U_B_GEN_Soldier_F"
-    , "U_B_GEN_Commander_F"
 ]];
 _policeLoadoutData set ["vests", [
-    "V_TacVest_blk_POLICE"
+    "V_TacVestIR_blk"
+    , "CUP_V_O_TK_OfficerBelt"
+    , "CUP_V_O_TK_OfficerBelt2"
 ]];
 _policeLoadoutData set ["helmets", [
-    "H_Cap_police"
+    "H_Beret_gen_F"
 ]];
 
-_policeLoadoutData set ["SMGs", [
- ["CUP_smg_BallisticShield_Sa61","","","",["CUP_20Rnd_B_765x17_Ball_M", "CUP_10Rnd_B_765x17_Ball_M", "CUP_50Rnd_B_765x17_Ball_M"],[],""]
-, ["CUP_hgun_BallisticShield_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
-, ["CUP_sgun_M1014_solidstock","","","",["CUP_8Rnd_12Gauge_Pellets_No2_Buck","CUP_8Rnd_12Gauge_Pellets_No3_Buck","CUP_8Rnd_12Gauge_Slug","CUP_8Rnd_12Gauge_Pellets_No0_Buck","CUP_8Rnd_12Gauge_Pellets_No1_Buck"], [], ""]
-, ["CUP_arifle_FNFAL5061_wooden", "", "", "", ["CUP_10Rnd_762x51_FNFAL_M"], [], ""]
-, ["CUP_smg_M3A1_grn","","","",["CUP_30Rnd_45ACP_Red_Tracer_M3A1_GRN_M", "CUP_30Rnd_45ACP_M3A1_GRN_M"],[],""]
-, ["CUP_arifle_Sa58s_rearris","","","",["CUP_15Rnd_Sa58_M"],[],""]
+_policeLoadoutData set ["shotGuns", [
+    ["CUP_sgun_M1014_solidstock","","","",["CUP_8Rnd_12Gauge_Pellets_No2_Buck","CUP_8Rnd_12Gauge_Pellets_No3_Buck","CUP_8Rnd_12Gauge_Slug","CUP_8Rnd_12Gauge_Pellets_No0_Buck"], [], ""]
+    , ["CUP_sgun_Saiga12K_top_rail","","","",["CUP_5Rnd_B_Saiga12_Buck_0","CUP_5Rnd_B_Saiga12_Slug","CUP_12Rnd_B_Saiga12_Buck_0"], [], ""]
+    , ["CUP_sgun_SPAS12","","","",["CUP_8Rnd_12Gauge_Pellets_No2_Buck","CUP_8Rnd_12Gauge_Pellets_No3_Buck","CUP_8Rnd_12Gauge_Slug","CUP_8Rnd_12Gauge_Pellets_No0_Buck"], [], ""]
 ]];
+_policeLoadoutData set ["rifles", [
+    ["CUP_arifle_FNFAL5061_wooden", "", "", "", ["CUP_10Rnd_762x51_FNFAL_M"], [], ""]
+]];
+_policeLoadoutData set ["carbines", [
+    ["CUP_arifle_Sa58s_rearris","","","",["CUP_15Rnd_Sa58_M","CUP_20Rnd_Sa58_M"],[],""]
+]];
+_policeLoadoutData set ["SMGs", [
+    ["CUP_smg_M3A1_grn","","","",["CUP_30Rnd_45ACP_Red_Tracer_M3A1_GRN_M", "CUP_30Rnd_45ACP_M3A1_GRN_M"],[],""]
+    , ["CUP_smg_SA61","","","",["CUP_20Rnd_B_765x17_Ball_M"],[],""]
+]];
+_policeLoadoutData set ["Shields", [
+    ["CUP_smg_BallisticShield_Sa61","","","",["CUP_20Rnd_B_765x17_Ball_M", "CUP_10Rnd_B_765x17_Ball_M", "CUP_50Rnd_B_765x17_Ball_M"],[],""]
+    , ["CUP_hgun_BallisticShield_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
+ ]];
 
 _policeLoadoutData set ["sidearms", [
-["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911"],[],""]
-, ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
+    ["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911"],[],""]
+    , ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
 ]];
 
 ////////////////////////////////
@@ -501,40 +474,44 @@ _policeLoadoutData set ["sidearms", [
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", [
-    "CUP_U_B_BDUv2_roll2_gloves_dirty_OD"
-    , "CUP_U_B_BDUv2_roll2_gloves_OD"
-    , "CUP_U_B_BDUv2_roll_gloves_dirty_OD"
-    , "CUP_U_B_BDUv2_roll_gloves_OD"
-    , "CUP_U_B_BDUv2_gloves_dirty_OD"
-    , "CUP_U_B_BDUv2_gloves_OD"
-    , "CUP_U_B_BDUv2_roll2_dirty_OD"
-    , "CUP_U_B_BDUv2_roll2_OD"
-    , "CUP_U_B_BDUv2_roll_dirty_OD"
-    , "CUP_U_B_BDUv2_roll_OD"
-    , "CUP_U_B_BDUv2_dirty_OD"
-    , "CUP_U_B_BDUv2_OD"
+    "CUP_U_B_BDUv2_DPM_OD"
+    , "CUP_U_B_BDUv2_dirty_DPM_OD"
+    , "CUP_U_B_BDUv2_gloves_DPM_OD"
+    , "CUP_U_B_BDUv2_gloves_dirty_DPM_OD"
+    , "CUP_U_B_BDUv2_roll2_DPM_OD"
+    , "CUP_U_B_BDUv2_roll2_dirty_DPM_OD"
+    , "CUP_U_B_BDUv2_roll2_gloves_DPM_OD"
+    , "CUP_U_B_BDUv2_roll2_gloves_dirty_DPM_OD"
+    , "CUP_U_B_BDUv2_roll_DPM_OD"
+    , "CUP_U_B_BDUv2_roll_dirty_DPM_OD"
+    , "CUP_U_B_BDUv2_roll_gloves_DPM_OD"
+    , "CUP_U_B_BDUv2_roll_gloves_dirty_DPM_OD"
 ]];
 _militiaLoadoutData set ["vests", [
-    "CUP_V_CDF_OfficerBelt2"
-    , "CUP_V_I_RACS_Carrier_Rig_wdl_2"
-    , "CUP_V_RUS_Smersh_New_Buttpack_Spectre"
-    , "V_TacVest_camo"
-    , "V_TacVest_oli"
-    , "V_I_G_resistanceLeader_F"
+    "V_I_G_resistanceLeader_F"
 ]];
+_militiaLoadoutData set ["Hvests", [
+    "CUP_V_O_SLA_M23_1_OD"
+    , "CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive"
+]];
+
 _militiaLoadoutData set ["backpacks", [
     "CUP_B_AlicePack_OD"
     , "CUP_B_AlicePack_Khaki"
 ]];
 _militiaLoadoutData set ["helmets", [
-    "CUP_H_Booniehat_Rhodesian"
-    , "CUP_H_Booniehat_CCE"
-    , "H_Booniehat_oli"
-    , "CUP_H_SLA_Boonie"
-    , "CUP_H_USArmy_Helmet_M1_btp"
-    , "CUP_H_USArmy_Helmet_M1_Olive"
+    "CUP_H_USArmy_Helmet_M1_Olive"
     , "CUP_H_USArmy_Helmet_M1_plain_Olive"
-    , "CUP_H_USArmy_Helmet_M1_plain_M81"
+]];
+_militiaLoadoutData set ["sniHats", [
+    "H_Booniehat_oli"
+]];
+_militiaLoadoutData set ["slHat", [
+    "CUP_H_US_patrol_cap_OD"
+]];
+
+_militiaLoadoutData set ["slRifles", [
+    ["CUP_arifle_FNFAL5061_railed","","","CUP_optic_1P87_RIS_woodland",["CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
 ]];
 
 _militiaLoadoutData set ["rifles", [
@@ -550,7 +527,7 @@ _militiaLoadoutData set ["carbines", [
     , ["CUP_arifle_FNFAL_OSW","","","",["CUP_10Rnd_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-    ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],[],""]
+    ["CUP_glaunch_M79","","","",["CUP_1Rnd_HE_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],[],""]
     , ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M","CUP_6Rnd_Smoke_GP25","CUP_6Rnd_FlareRed_GP25_M"],[],""]
 ]];
 _militiaLoadoutData set ["SMGs", [
@@ -562,13 +539,21 @@ _militiaLoadoutData set ["machineGuns", [
     ["CUP_lmg_M60","","","",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"],[],""]
     , ["CUP_lmg_FNMAG","","","",["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"],[],""]
 ]];
-//the next ones are subject to further testing
 _militiaLoadoutData set ["marksmanRifles", [
     ["CUP_arifle_FNFAL5061_railed","","","CUP_optic_SUSAT",["CUP_10Rnd_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
 ]];
 _militiaLoadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911","","","",["CUP_7Rnd_45ACP_1911"],[],""]
     , ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
+]];
+_militiaLoadoutData set ["lightHELaunchers", [
+    "CUP_launch_RShG2"
+]];
+_militiaLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V_M"], [], ""]
+]];
+_loadoutData set ["missileATLaunchers", [
+    ["CUP_launch_M47", "", "", "", ["CUP_Dragon_EP1_M"], [], ""]
 ]];
 
 /////////////////////////////////
@@ -577,22 +562,21 @@ _militiaLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", [
-    "CUP_U_B_BDUv2_DPM_OD"
-    , "CUP_U_B_BDUv2_dirty_DPM_OD"
-    , "CUP_U_B_BDUv2_gloves_DPM_OD"
-    , "CUP_U_B_BDUv2_gloves_dirty_DPM_OD"
-    , "CUP_U_B_BDUv2_roll2_DPM_OD"
-    , "CUP_U_B_BDUv2_roll2_dirty_DPM_OD"
-    , "CUP_U_B_BDUv2_roll2_gloves_DPM_OD"
-    , "CUP_U_B_BDUv2_roll2_gloves_dirty_DPM_OD"
-    , "CUP_U_B_BDUv2_roll_DPM_OD"
-    , "CUP_U_B_BDUv2_roll_dirty_DPM_OD"
-    , "CUP_U_B_BDUv2_roll_gloves_DPM_OD"
-    , "CUP_U_B_BDUv2_roll_gloves_dirty_DPM_OD"
+    "CUP_U_B_BDUv2_ERDL_highland"
+    , "CUP_U_B_BDUv2_dirty_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll2_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll2_dirty_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll2_gloves_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll2_gloves_dirty_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll_dirty_ERDL_highland"
+    , "CUP_U_B_BDUv2_roll_gloves_dirty_ERDL_highland"
 ]];
 _militaryLoadoutData set ["vests", [
-"CUP_V_B_PASGT"
-, "CUP_V_B_PASGT_no_bags"
+"CUP_V_B_PASGT_no_bags"
+]];
+_militaryLoadoutData set ["Hvests", [
+    "CUP_V_B_PASGT"
 ]];
 _militaryLoadoutData set ["backpacks", [
 "B_Kitbag_rgr"
@@ -602,11 +586,21 @@ _militaryLoadoutData set ["backpacks", [
 , "CUP_B_RUS_Patrol_bag_Summer"
 ]];
 _militaryLoadoutData set ["helmets", [
-"CUP_H_PASGTv2_OD"
-, "CUP_H_PASGTv2_NVG_OD"
+"CUP_H_PASGTv2_ERDL_highland"
+]];
+_militaryLoadoutData set ["sniHats", [
+    "CUP_H_USA_Boonie_wdl"
+]];
+_militaryLoadoutData set ["slHat", [
+    "CUP_H_US_patrol_cap_WDL"
 ]];
 _militaryLoadoutData set ["binoculars", [
     "Binocular"
+]];
+
+_militaryLoadoutData set ["slRifles", [
+    ["CUP_arifle_FNFAL5061_railed","","","CUP_optic_ACOG_Reflex_Wood",["CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"]
+    , ["CUP_arifle_FNFAL_railed_woodland","","","CUP_optic_ACOG_Reflex_Wood",["CUP_20Rnd_762x51_FNFAL_Woodland_M", "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M"],[],""]
 ]];
 
 _militaryLoadoutData set ["rifles", [
@@ -628,9 +622,9 @@ _militaryLoadoutData set ["carbines", [
     , ["CUP_arfile_Sa58_Carbine_RIS_AFG_woodland","CUP_acc_Flashlight_wdl","","CUP_optic_MicroT1",["CUP_30Rnd_Sa58_M", "CUP_30Rnd_Sa58_M_TracerG", "CUP_45Rnd_Sa58_M", "CUP_45Rnd_Sa58_M_TracerR"],[],""]
 ]]; 
 _militaryLoadoutData set ["grenadeLaunchers", [
-     ["CUP_arifle_Sa58RIS2_gl_woodland","CUP_muzzle_mfsup_Zendl","","",["CUP_30Rnd_Sa58_woodland_M_TracerY", "CUP_30Rnd_Sa58_woodland_M"],["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],""]
+     ["CUP_arifle_Sa58RIS2_gl_woodland","CUP_muzzle_mfsup_Zendl","","",["CUP_30Rnd_Sa58_woodland_M_TracerY", "CUP_30Rnd_Sa58_woodland_M"],["CUP_1Rnd_HE_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],""]
     , ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M","CUP_6Rnd_Smoke_GP25","CUP_6Rnd_FlareRed_GP25_M"],[],""]
-    , ["CUP_arifle_M16A1GL","","","",["CUP_20Rnd_556x45_Stanag", "CUP_20Rnd_556x45_Stanag_Tracer_Yellow"],["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],""]
+    , ["CUP_arifle_M16A1GL","","","",["CUP_20Rnd_556x45_Stanag", "CUP_20Rnd_556x45_Stanag_Tracer_Yellow"],["CUP_1Rnd_HE_M203","CUP_FlareWhite_M203","CUP_1Rnd_Smoke_M203"],""]
 ]];
 _militaryLoadoutData set ["SMGs", [
     ["CUP_smg_UZI","","","",["CUP_32Rnd_9x19_UZI_M"],[],""]
@@ -640,9 +634,7 @@ _militaryLoadoutData set ["machineGuns", [
     ["CUP_lmg_FNMAG_RIS","","","",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"],[],""]
     , ["CUP_lmg_FNMAG_RIS","","","CUP_optic_SUSAT",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"],[],""]
     , ["CUP_lmg_M60","","","CUP_optic_CompM2_low_OD",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"],[],""]
-    , ["CUP_arifle_Sa58_Klec_ris","","","CUP_optic_CompM2_low_OD",["CUP_45Rnd_Sa58_M_TracerR"],[],""]
 ]];
-
 _militaryLoadoutData set ["marksmanRifles", [
     ["CUP_srifle_M14","","","CUP_optic_SB_11_4x20_PM_od",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
     , ["CUP_srifle_M21_ris","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"]
@@ -657,46 +649,67 @@ _militaryLoadoutData set ["sidearms", [
     , ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
 ]];
 
+_loadoutData set ["lightHELaunchers", [
+    "CUP_launch_RShG2"
+    , ["CUP_launch_RPG7V", "", "", "", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
+]];
+_loadoutData set ["ATLaunchers", [
+    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M"], [], ""]
+    , ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V_M"], [], ""]
+    , ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M", "CUP_MAAWS_HEAT_M"], [], ""]
+]];
+_loadoutData set ["missileATLaunchers", [
+    ["CUP_launch_M47", "", "", "", ["CUP_Dragon_EP1_M"], [], ""]
+]];
+_loadoutData set ["AALaunchers", [
+    ["CUP_launch_9K32Strela", "", "", "", [""], [], ""]
+]];
+
 /////////////////////////////////
 //    Elite Loadout Data       //
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", [
-    "CUP_U_B_BDUv2_ERDL_highland"
-    , "CUP_U_B_BDUv2_roll2_ERDL_highland"
-    , "CUP_U_B_BDUv2_dirty_ERDL_highland"
-    , "CUP_U_B_BDUv2_roll2_dirty_ERDL_highland"
-    , "CUP_U_B_BDUv2_roll_ERDL_highland"
-    , "CUP_U_B_BDUv2_roll_dirty_ERDL_highland"
+    "CUP_U_B_BDUv2_gloves_Tigerstripe"
+    , "CUP_U_B_BDUv2_roll_Tigerstripe"
+    , "CUP_U_B_BDUv2_Tigerstripe"
+    , "CUP_U_B_BDUv2_dirty_Tigerstripe"
+    , "CUP_U_B_BDUv2_roll2_Tigerstripe"
+    , "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe"
 ]];
 _eliteLoadoutData set ["slUniform", [
     "CUP_U_B_BDUv2_gloves_ERDL_highland"
     , "CUP_U_B_BDUv2_roll2_gloves_dirty_ERDL_highland"]];
 _eliteLoadoutData set ["vests", [
-    "CUP_V_B_PASGT_CCE"
-    , "CUP_V_B_PASGT_no_bags_CCE"
+    "CUP_V_O_RUS_6B45_6Sh117_AK_Summer"
     ]];
+_eliteLoadoutData set ["Hvests", [
+    "CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Summer"
+]];
 _eliteLoadoutData set ["backpacks", [
     "CUP_B_RUS_Patrol_bag_6E5_Summer"
     , "CUP_B_RUS_Patrol_bag_Summer"
     ]];
 _eliteLoadoutData set ["helmets", [
-    "CUP_H_PASGTv2_NVG_ERDL_highland"
+    "CUP_H_PASGTv2_tigerstripe"
     ]];
 _eliteLoadoutData set ["sniHats", [
-    "CUP_H_Booniehat_TTS"
+    "CUP_H_FR_PRR_BoonieWDL"
     ]];
-
+_eliteLoadoutData set ["slHat", [
+    "CUP_H_US_patrol_cap_tigerstripe"
+]];
+_eliteLoadoutData set ["NVGs", [
+    "CUP_NVG_PVS15_green"
+]];
 _eliteLoadoutData set ["slRifles", [
-    ["CUP_arifle_Galil_SAR_black", "", "", "CUP_optic_AC11704_Jungle", ["CUP_35Rnd_556x45_Galil_Mag","CUP_35Rnd_556x45_Red_Tracer_Galil_Mag","CUP_50Rnd_556x45_Red_Tracer_Galil_Mag","CUP_50Rnd_556x45_Galil_Mag"], [], ""]
-    , ["CUP_arifle_FNFAL_OSW_railed","CUP_muzzle_mfsup_Flashhider_762x51_OD","CUP_acc_Flashlight_wdl","CUP_optic_ACOG_Reflex_Wood",["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"],[],""]
+    ["CUP_arifle_FNFAL_OSW_railed","CUP_muzzle_mfsup_Flashhider_762x51_OD","CUP_acc_Flashlight_wdl","CUP_optic_ACOG_Reflex_Wood",["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"],[],""]
     , ["CUP_arifle_FNFAL_OSW_railed","","CUP_acc_Flashlight_wdl","CUP_optic_AC11704_Jungle",["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"],[],""]
 ]];
 _eliteLoadoutData set ["rifles", [
     ["CUP_arifle_Galil_black", "", "", "CUP_optic_SUSAT", ["CUP_arifle_Galil_black","CUP_25Rnd_762x51_Red_Tracers_Galil_Mag"], [], ""]
 	, ["CUP_arifle_FNFAL_railed_woodland", "CUP_muzzle_mfsup_Flashhider_762x51_OD", "", "CUP_optic_ACOG_Reflex_Wood", ["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"], [], "CUP_bipod_FNFAL"]
-    , ["CUP_arifle_Galil_black", "", "", "CUP_optic_AC11704_Jungle", ["CUP_arifle_Galil_black","CUP_25Rnd_762x51_Red_Tracers_Galil_Mag"], [], ""]
 	, ["CUP_arifle_FNFAL_railed_woodland", "CUP_muzzle_mfsup_Flashhider_762x39_OD", "CUP_acc_Flashlight_wdl", "CUP_optic_AC11704_Jungle", ["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M", "CUP_20Rnd_762x51_FNFAL_M", "CUP_30Rnd_762x51_FNFAL_M", "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M"], [], ""]
 ]];
 _eliteLoadoutData set ["carbines", [
@@ -704,23 +717,35 @@ _eliteLoadoutData set ["carbines", [
     , ["CUP_arfile_Sa58_Carbine_RIS_AFG_woodland","CUP_muzzle_mfsup_Zendl","CUP_acc_Flashlight_wdl","CUP_optic_AC11704_Jungle",["CUP_30Rnd_Sa58_M", "CUP_30Rnd_Sa58_M_TracerG", "CUP_45Rnd_Sa58_M", "CUP_45Rnd_Sa58_M_TracerR"],[],""]
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-    ["CUP_arifle_Sa58RIS2_gl_woodland","CUP_muzzle_mfsup_Zendl","CUP_acc_Flashlight_wdl","CUP_optic_AC11704_Jungle",["CUP_30Rnd_Sa58_woodland_M_TracerY", "CUP_30Rnd_Sa58_woodland_M"],["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],""]
+    ["CUP_arifle_Sa58RIS2_gl_woodland","CUP_muzzle_mfsup_Zendl","CUP_acc_Flashlight_wdl","CUP_optic_AC11704_Jungle",["CUP_30Rnd_Sa58_woodland_M_TracerY", "CUP_30Rnd_Sa58_woodland_M"],["CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_Smoke_M203"],""]
 ]];
 _eliteLoadoutData set ["SMGs", [
     ["CUP_smg_UZI","","","CUP_optic_AC11704_Jungle",["CUP_32Rnd_9x19_UZI_M","CUP_72Rnd_9x19_UZI_M"],[],""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
-    ["CUP_lmg_FNMAG_RIS","","","CUP_optic_SB_11_4x20_PM_od",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"],[],""]
-    , ["CUP_lmg_FNMAG_RIS","","","CUP_optic_ACOG_Reflex_Wood",["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"],[],""]
+    ["CUP_lmg_M240_B","","","CUP_optic_ACOG_Reflex_Wood",["CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M"],[],""]
+    , ["CUP_lmg_M240_B","","","CUP_optic_SB_11_4x20_PM_od",["CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M"],[],""]
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
     ["CUP_srifle_M14_DMR","","","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_VLTOR_Modpod_od"]
 ]];
 _eliteLoadoutData set ["sniperRifles", [
-    ["CUP_srifle_CZ750","","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_10Rnd_762x51_CZ750"],[],""]
+    ["CUP_srifle_CZ750","","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_10Rnd_762x51_CZ750"],[],"CUP_bipod_VLTOR_Modpod_od"]
 ]];
 _eliteLoadoutData set ["sidearms", [
     ["CUP_hgun_SA61","","","",["CUP_10Rnd_B_765x17_Ball_M"],[],""]
+]];
+_eliteLoadoutData set ["lightHELaunchers", [
+    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
+]];
+_eliteLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M"], [], ""]
+]];
+_eliteLoadoutData set ["missileATLaunchers", [
+    ["CUP_launch_Metis", "", "", "", ["CUP_AT13_M"], [], ""]
+]];
+_eliteLoadoutData set ["AALaunchers", [
+    ["CUP_launch_Igla", "", "", "", [""], [], ""]
 ]];
 
 ///////////////////////////////////////
@@ -729,55 +754,70 @@ _eliteLoadoutData set ["sidearms", [
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _sfLoadoutData set ["uniforms", [
-"CUP_U_B_BDUv2_gloves_Tigerstripe"
-, "CUP_U_B_BDUv2_roll_Tigerstripe"
-, "CUP_U_B_BDUv2_Tigerstripe"
-, "CUP_U_B_BDUv2_dirty_Tigerstripe"
-, "CUP_U_B_BDUv2_roll2_Tigerstripe"
-, "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe"
+"CUP_U_O_RUS_Ghillie"
 ]];
 _sfLoadoutData set ["vests", [
-    "CUP_V_B_Ciras_MCam"
-    , "CUP_V_B_Ciras_Mcam4"
+    "CUP_V_B_MTV_noCB"
+]];
+_sfLoadoutData set ["Hvests", [
+    "CUP_V_B_MTV_Pouches"
 ]];
 _sfLoadoutData set ["backpacks", ["CUP_B_Kombat_Radio_Olive"]];
-_sfLoadoutData set ["helmets", ["CUP_H_OpsCore_Covered_Tigerstripe"]];
+_sfLoadoutData set ["helmets", ["H_HelmetSpecB_snakeskin"]];
 _sfLoadoutData set ["binoculars", ["CUP_SOFLAM", "CUP_LRTV"]];
-//["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
+_sfLoadoutData set ["sniHats", [
+    "CUP_H_FR_BoonieWDL"
+    ]];
+_sfLoadoutData set ["slHat", [
+    "CUP_H_US_patrol_cap_tigerstripe"
+]];
+_sfLoadoutData set ["NVGs", [
+    "CUP_NVG_PVS15_green"
+]];
+
+_eliteLoadoutData set ["slRifles", [
+    ["CUP_arifle_AUG_A1","muzzle_snds_M","","",["CUP_30Rnd_556x45_AUG"],[],""]
+]];
 
 _sfLoadoutData set ["rifles", [
-    ["CUP_arifle_AK101_railed","CUP_muzzle_mfsup_Flashhider_556x45_OD","CUP_acc_ANPEQ_15_OD","CUP_optic_AN_PAS_13c1",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],[],""]
-    , ["CUP_arifle_AK101_railed","CUP_muzzle_mfsup_Flashhider_545x39_OD","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],[],""]
-    , ["CUP_arifle_AK101_railed","CUP_muzzle_mfsup_Flashhider_545x39_OD","CUP_acc_ANPEQ_15_OD","CUP_optic_ACOG_Reflex_Wood",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],[],""]
-    , ["CUP_arifle_AK101_railed","muzzle_snds_M","CUP_acc_ANPEQ_15_OD","CUP_optic_ACOG_Reflex_Wood",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],[],"CUP_bipod_VLTOR_Modpod_od"]
-    , ["CUP_arifle_AUG_A1","muzzle_snds_M","","",["CUP_30Rnd_556x45_AUG"],[],""]
+    ["arifle_TRG21_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_AN_PAS_13c1",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
+    , ["arifle_TRG21_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
+    , ["arifle_TRG21_F","muzzle_snds_M","CUP_acc_ANPEQ_15_OD","CUP_optic_ACOG_Reflex_Wood",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
 ]];
 _sfLoadoutData set ["carbines", [
-    ["CUP_arifle_AK102_railed","CUP_muzzle_mfsup_Flashhider_545x39_OD","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],[],""]
-    , ["CUP_arifle_AK102_railed","muzzle_snds_M","CUP_acc_ANPEQ_15_OD","CUP_optic_ACOG_Reflex_Wood",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],[],""]
-    , ["CUP_arifle_OTS14_GROZA_762_Grip","","","",["CUP_30Rnd_762x39_AK47_bakelite_M", "CUP_30Rnd_TE1_Yellow_Tracer_762x39_bakelite_AK47_M"],[],""]
+    ["arifle_TRG20_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-    ["CUP_arifle_OTS14_GROZA_762_GL","","","",["CUP_30Rnd_762x39_AK15_Tan_M", "CUP_30Rnd_762x39_AK47_bakelite_M", "CUP_30Rnd_TE1_Yellow_Tracer_762x39_bakelite_AK47_M"],["CUP_1Rnd_HE_GP25_M","CUP_1Rnd_SMOKE_GP25_M","CUP_IlumFlareWhite_GP25_M","CUP_FlareRed_GP25_M","CUP_1Rnd_SmokeRed_GP25_M","CUP_1Rnd_SmokeGreen_GP25_M"],""]
-    , ["CUP_arifle_AK101_GL_railed ","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_AK", "CUP_30Rnd_TE1_Red_Tracer_556x45_AK"],["CUP_1Rnd_HE_GP25_M","CUP_1Rnd_SMOKE_GP25_M","CUP_IlumFlareWhite_GP25_M","CUP_FlareRed_GP25_M","CUP_1Rnd_SmokeRed_GP25_M","CUP_1Rnd_SmokeGreen_GP25_M"],""]
+    ["arifle_TRG21_GL_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],["1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","ACE_40mm_Flare_ir","1Rnd_Smoke_Grenade_shell","CUP_1Rnd_StarFlare_White_M203"],""]
 ]];
 _sfLoadoutData set ["SMGs", [
-    ["CUP_arifle_OTS14_GROZA_Grip","","","",["CUP_20Rnd_9x39_SP5_GROZA_M"],[],""]
+    ["CUP_arifle_X95_Grippod","","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
 ]];
 _sfLoadoutData set ["machineGuns", [
-    ["CUP_lmg_Pecheneg_top_rail_B50_vfg","CUP_muzzle_mfsup_Flashhider_PK_OD","","CUP_optic_SB_11_4x20_PM_od",["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"],[],""]
-    , ["CUP_arifle_AK109_railed","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],[],"CUP_bipod_VLTOR_Modpod_black"]
+    ["LMG_Zafir_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_SB_11_4x20_PM_od",["150Rnd_762x54_Box_Tracer"],[],""]
+    , ["LMG_Zafir_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_ACOG_Reflex_Wood",["150Rnd_762x54_Box_Tracer"],[],""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-    ["CUP_srifle_M14_DMR","muzzle_snds_B","CUP_acc_ANPEQ_2_camo","CUP_optic_SB_3_12x50_PMII_Tan",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_VLTOR_Modpod_od"]
-    , ["CUP_srifle_SVD_top_rail","","CUP_SVD_camo_g","CUP_optic_LeupoldMk4_10x40_LRT_Woodland",["CUP_10Rnd_762x54_SVD_M"],[],""] 
+    ["CUP_srifle_M14_DMR","muzzle_snds_B","CUP_acc_ANPEQ_2_camo","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_VLTOR_Modpod_od"]
     ]];
 _sfLoadoutData set ["sniperRifles", [
-    ["CUP_srifle_ksvk","","","CUP_optic_PSO_3",["CUP_5Rnd_127x108_KSVK_M"],[],""]
+    ["CUP_srifle_M107_Woodland","CUP_muzzle_mfsup_Suppressor_M107_Woodland","","CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND",["CUP_10Rnd_127x99_M107"],[],""]
 ]];
 _sfLoadoutData set ["sidearms", [
-    ["CUP_hgun_SA61","","","",["CUP_10Rnd_B_765x17_Ball_M"],[],""]
-    , ["CUP_hgun_MicroUzi","","","",["CUP_32Rnd_9x19_UZI_M"],[],""]
+    ["CUP_hgun_MicroUzi","","","",["CUP_32Rnd_9x19_UZI_M"],[],""]
+]];
+
+_sfLoadoutData set ["lightHELaunchers", [
+    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
+]];
+_sfLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M"], [], ""]
+]];
+_sfLoadoutData set ["missileATLaunchers", [
+    ["CUP_launch_Metis", "", "", "", ["CUP_AT13_M"], [], ""]
+]];
+_sfLoadoutData set ["AALaunchers", [
+    ["CUP_launch_Igla", "", "", "", [""], [], ""]
 ]];
 
 //////////////////////////
@@ -797,15 +837,11 @@ _pilotLoadoutData set ["helmets", ["CUP_H_SPH4_green_visor"]];
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////
-//These define the loadouts for different unit types.
-//For example, rifleman, grenadier, squad leader, etc.
-//In 95% of situations, you *should not need to edit these*.
-//Almost all factions can be set up just by modifying the loadout data above.
-//However, these exist in case you really do want to do a lot of custom alterations.
+
 private _squadLeaderTemplate = {
-    [selectRandomWeighted ["helmets", 2]] call _fnc_setHelmet;
+    ["slHat"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    [["vests"] call _fnc_fallback] call _fnc_setVest;
     [["slUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
     ["backpacks"] call _fnc_setBackpack;
@@ -842,8 +878,13 @@ private _riflemanTemplate = {
     [selectRandom ["rifles"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
+    if (random 1 < 0.15) then {
+		[["lightHELaunchers"] call _fnc_fallback] call _fnc_setLauncher;
+		["launcher", 1] call _fnc_addMagazines;
+	} else {
+		["sidearms"] call _fnc_setHandgun;
+		["handgun", 2] call _fnc_addMagazines;
+	};
 
     ["items_medical_standard"] call _fnc_addItemSet;
     ["items_rifleman_extras"] call _fnc_addItemSet;
@@ -864,7 +905,6 @@ private _radiomanTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["longRangeRadios"] call _fnc_setBackpack;
-
 
     [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
@@ -888,10 +928,10 @@ private _radiomanTemplate = {
 private _medicTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    [["vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
-      [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -913,18 +953,12 @@ private _medicTemplate = {
 private _grenadierTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1.25]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    [["Hvests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
-
-    if (random 1 < 0.3) then {
-        [["designatedGrenadeLaunchers", "grenadeLaunchers"] call _fnc_fallback] call _fnc_setPrimary;
-    } else {
-        ["grenadeLaunchers"] call _fnc_setPrimary;
-    };
-    
+    ["grenadeLaunchers"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
-    ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
+    ["primary", 12] call _fnc_addAdditionalMuzzleMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
     ["handgun", 2] call _fnc_addMagazines;
@@ -945,7 +979,7 @@ private _grenadierTemplate = {
 private _explosivesExpertTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    [["Hvests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
@@ -978,7 +1012,7 @@ private _explosivesExpertTemplate = {
 private _engineerTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
+    ["vests", "Hvests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
@@ -1009,13 +1043,12 @@ private _latTemplate = {
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["carbines"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     [["lightATLaunchers", "ATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
-    //TODO - Add a check if it's disposable.
     ["launcher", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -1037,15 +1070,14 @@ private _latTemplate = {
 private _atTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
+    ["Hvests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
-    //TODO - Add a check if it's disposable.
     ["launcher", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -1069,13 +1101,12 @@ private _aaTemplate = {
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;
-    //TODO - Add a check if it's disposable.
     ["launcher", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -1097,7 +1128,7 @@ private _aaTemplate = {
 private _machineGunnerTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
+    ["Hvests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
@@ -1149,7 +1180,7 @@ private _marksmanTemplate = {
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["sniVests","vests"] call _fnc_fallback] call _fnc_setVest;
+    [["vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
     [["sniperRifles"] call _fnc_fallback] call _fnc_setPrimary;
@@ -1177,7 +1208,8 @@ private _policeTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    ["SMGs"] call _fnc_setPrimary;
+
+    [selectRandomWeighted ["shotGuns", 1.25, "rifles", 0.5, "carbines", 0.5, "SMGs", 0.75, "Shields", 1.25]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

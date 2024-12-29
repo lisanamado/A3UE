@@ -65,13 +65,6 @@
 ["lootCrate", "A3AP_Box_Syndicate_Ammo_F"] call _fnc_saveToTemplate;
 ["rallyPoint", "B_RadioBag_01_wdl_F"] call _fnc_saveToTemplate;
 
-//animation sources - camo nets, slat cages, decals etc, digit is probability of appearance
-//I made this values higher
-["animations", [
-    ["vehClass", ["animsource_example_1", 0.5, "animsource_example_2", 0.75]]
-]] call _fnc_saveToTemplate;
-
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -154,35 +147,36 @@ private _rebUniforms =  [
 // female uniforms:
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
-    "U_B_CombatUniform_mcam_tshirt_W",
-    "WU_B_T_Soldier_AR_F",
     "WU_B_T_Soldier_F",
 // male uniforms:
     "U_BG_Guerrilla_6_1",
-    "CUP_I_B_PARA_unit_3",
-    "CUP_I_B_PARA_unit_6",
-    "CUP_I_B_PARA_unit_14",
-    "CUP_I_B_PARA_unit_5"
-];          
+    "CUP_I_B_PARA_Unit_3",
+    "CUP_I_B_PARA_Unit_10"
+];         
+
+
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
+//A uniform for Petros, he looks too weird on female uniforms
+private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
+["Puniform", _petrosUniform] call _fnc_saveToTemplate;
 
 //HEADGEAR
 
 ["headgear", [
     "CUP_H_Booniehat_CCE",
-    "CUP_H_Booniehat_Rodhesian",
+    "CUP_H_Booniehat_TTS",
+    "CUP_H_USMC_BOONIE_WDL"
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
+    "CUP_H_ChDKZ_Beret",
     "H_ShemagOpen_tan",
     "H_Bandanna_sgg",
     "H_Cap_grn",
     "H_Beret_blk",
-    "CUP_H_ChDKZ_Beret",
     ""
-
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -190,7 +184,6 @@ private _rebUniforms =  [
 /////////////////////
 
 //I added english female voice, spanish voice, and male greek English voices.
-//They seem to work or not as they please, got to investigate on it
 
 ["faces", [
     
@@ -238,6 +231,16 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 //  Rebel Unit Types  //
 ///////////////////////.
 
+private _PetrosTemplate = {
+    ["Puniform"] call _fnc_setUniform;
+    ["facewear"] call _fnc_setFacewear;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["binoculars"] call _fnc_addBinoculars;
+};
+
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["facewear"] call _fnc_setFacewear;
@@ -259,7 +262,7 @@ private _riflemanTemplate = {
 
 private _prefix = "militia";
 private _unitTypes = [
-    ["Petros", _squadLeaderTemplate],
+    ["Petros", _PetrosTemplate],
     ["SquadLeader", _squadLeaderTemplate],
     ["Rifleman", _riflemanTemplate],
     ["staticCrew", _riflemanTemplate],

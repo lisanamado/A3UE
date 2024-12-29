@@ -11,8 +11,8 @@ class Templates
         name = "FAN"; // Name shown in the select menu.
         file = "FAN"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
-        climate[] = {}; // climate that the template can be selected on.
-        description = "Fuerzas Armadas de la Nación:\nAn opressive regime in an small Caribbean/Latin American nation\nIt still uses NATO weapons supplied by US during Plan Cóndor era\nmixed with more modern cheap guns bought to diverse nations"; // If this isn't included, no description will show (unless inherited from the base class.)
+        climate[] = {"tropical", "temperate"}; // climate that the template can be selected on.
+        description = "Fuerzas Armadas de la Nación:\nAn opressive regime in an small Caribbean/Latin American nation.\nInfantry is armed mostly with Latin American produced FAL's and Galil's\nsupplemented with some cold war era US and CZ remnants\nTheir mobile forces rely on outdated vehicles importd from various suppliers."; // If this isn't included, no description will show (unless inherited from the base class.)
     };
 };
 
