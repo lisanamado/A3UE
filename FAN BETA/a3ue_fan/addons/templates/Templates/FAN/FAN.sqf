@@ -170,6 +170,8 @@
 
 ["vehiclesPlanesAA", [
     "CUP_I_SU34_AAF"
+    , "CUP_I_L39_AAF"
+
 ]] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
 
@@ -644,7 +646,6 @@ _militaryLoadoutData set ["sidearms", [
     , ["CUP_hgun_SA61","","","",["CUP_10Rnd_B_765x17_Ball_M"],[],""]
     , ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
 ]];
-
 _militaryLoadoutData set ["lightHELaunchers", [
     "CUP_launch_RShG2"
     , ["CUP_launch_RPG7V", "", "", "", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
@@ -654,7 +655,7 @@ _militaryLoadoutData set ["ATLaunchers", [
     , ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V_M"], [], ""]
     , ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M", "CUP_MAAWS_HEAT_M"], [], ""]
 ]];
-_loadout_militaryLoadoutDataData set ["missileATLaunchers", [
+_militaryLoadoutData set ["missileATLaunchers", [
     ["CUP_launch_M47", "", "", "", ["CUP_Dragon_EP1_M"], [], ""]
 ]];
 _militaryLoadoutData set ["AALaunchers", [
@@ -787,7 +788,7 @@ _sfLoadoutData set ["grenadeLaunchers", [
     ["arifle_TRG21_GL_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],["1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","ACE_40mm_Flare_ir","1Rnd_Smoke_Grenade_shell","CUP_1Rnd_StarFlare_White_M203"],""]
 ]];
 _sfLoadoutData set ["SMGs", [
-    ["CUP_arifle_X95_Grippod","","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
+    ["CUP_arifle_X95_Grippod","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
 ]];
 _sfLoadoutData set ["machineGuns", [
     ["LMG_Zafir_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_SB_11_4x20_PM_od",["150Rnd_762x54_Box_Tracer"],[],""]

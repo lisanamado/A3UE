@@ -30,7 +30,7 @@ class cfgHALsStore
 
 	class stores 
 	{
-		class stock_FAN
+		class FAN_stock_CUP
 				{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
@@ -42,7 +42,6 @@ class cfgHALsStore
 				"launchersFAN",
 				"launcherMagazinesFAN",
 				"navigationFAN",
-				"pointersFAN",
 				"muzzlesFAN",
 				"opticsFAN",
 				"magazinesFAN",  

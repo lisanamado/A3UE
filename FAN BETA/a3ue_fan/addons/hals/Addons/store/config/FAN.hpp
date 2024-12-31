@@ -1,4 +1,4 @@
-		class handgunsFAN 
+		class handgunsFAN
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_handguns"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
@@ -7,7 +7,7 @@
 			ITEM(CUP_hgun_Mac10, 1000, 9); 
         };
 
-		class riflesFAN 
+		class riflesFAN
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_rifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
@@ -59,7 +59,7 @@
 
 			ITEM(CUP_smg_MP5A5, 1250, RIFLE_STOCK);
 			ITEM(CUP_smg_MP5A5_Rail_VFG, 1500, 12);
-			ITEM(CUP_smg_MP5SD6, 2000, 4);
+			ITEM(CUP_smg_MP5SD6, 2000, 8);
 		};
 
 		class launchersFAN 
@@ -71,7 +71,7 @@
 			ITEM(CUP_launch_Mk153Mod0, 6000, 13);
 			ITEM(CUP_launch_Igla, 12500, 6);
 			ITEM(CUP_launch_FIM92Stinger, 14000, 8);
-			ITEM(CUP_launch_Metis, 15000, 4);
+			ITEM(CUP_launch_Metis, 15000, 5);
 			ITEM(CUP_launch_Javelin, 20000, 2);
 
 		};
@@ -165,7 +165,7 @@
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
 
 			class Laserbatteries {
-				price = 250;
+				price = 50;
 				stock = MAGAZINE_STOCK;
 			};
 
@@ -173,64 +173,64 @@
 			// Underbarrel
 			///////////////////////////////////////////////////////
 			class 1Rnd_HE_Grenade_shell {
-				price = 100;
+				price = 25;
 				stock = MAGAZINE_STOCK;
 			};
 			class CUP_1Rnd_HEDP_M203 {
-				price = 300;
+				price = 60;
 				stock = MAGAZINE_STOCK;
 			};
 
 			class CUP_FlareWhite_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
 			class CUP_1Rnd_StarFlare_White_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_StarCluster_White_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_FlareGreen_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_StarCluster_Green_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_StarFlare_Green_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_FlareRed_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_StarCluster_Red_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_StarFlare_Red_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_SmokeRed_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_Smoke_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_SmokeGreen_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
             class CUP_1Rnd_SmokeYellow_M203 {
-				price = 25;
+				price = 10;
 				stock = MAGAZINE_STOCK;
 			};       
 
@@ -264,33 +264,33 @@
 				price = 50;
 				stock = MAGAZINE_STOCK;
 			};
-			class CUP_45Rnd_Sa58_M_TracerG {
+			class CUP_45Rnd_Sa58_M {
 				price = 75;
 				stock = MAGAZINE_STOCK;
 			};
-			class CUP_45Rnd_Sa58_M {
+			class CUP_45Rnd_Sa58_M_TracerG {
 				price = 75;
 				stock = MAGAZINE_STOCK;
 			};
 			class CUP_30Rnd_556x45_AK {
 				price = 60;
-				stock = MAGAZINE_STOCK;
+				stock = 85;
 			};
 			class CUP_30Rnd_TE1_Red_Tracer_556x45_AK {
 				price = 65;
-				stock = MAGAZINE_STOCK;
+				stock = 60;
 			};
 			class CUP_30Rnd_762x39_AK47_bakelite_M {
 				price = 60;
-				stock = MAGAZINE_STOCK;
+				stock = 80;
 			};
 			class CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_bakelite_M {
 				price = 65;
-				stock = MAGAZINE_STOCK;
+				stock = 60;
 			};
 			class CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M {
 				price = 110;
-				stock = MAGAZINE_STOCK;
+				stock = 40;
 			};
 
 			class CUP_30Rnd_556x45_Stanag {
@@ -299,19 +299,19 @@
 			};
 			class CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Yellow {
 				price = 55;
-				stock = MAGAZINE_STOCK;
+				stock = 75;
 			};
 			class CUP_60Rnd_556x45_SureFire {
 				price = 90;
-				stock = MAGAZINE_STOCK;
+				stock = 60;
 			};
 			class CUP_60Rnd_556x45_SureFire_Tracer_Red {
 				price = 100;
-				stock = MAGAZINE_STOCK;
+				stock = 40;
 			};
 				class CUP_30Rnd_556x45_AUG {
 				price = 50;
-				stock = MAGAZINE_STOCK;
+				stock = 50;
 			};
 
 			///////////////////////////////////////////////////////
@@ -348,11 +348,11 @@
 
 			class CUP_100Rnd_TE4_Green_Tracer_556x45_M249 {
 				price = 100;
-				stock = MAGAZINE_STOCK;
+				stock = 75;
 			};
 			class CUP_200Rnd_TE4_Green_Tracer_556x45_M249 {
 				price = 170;
-				stock = MAGAZINE_STOCK;
+				stock = 45;
 			};
 			///////////////////////////////////////////////////////
 			// SMGs
@@ -371,24 +371,24 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_misc"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-			ITEM(U_I_FullGhillie_ard, 1500, MISC_STOCK);
+			ITEM(U_I_FullGhillie_ard, 1500, 40);
 
-			ITEM(U_I_FullGhillie_lsh, 1500, MISC_STOCK);
+			ITEM(U_I_FullGhillie_lsh, 1500, 40);
 
-			ITEM(U_I_FullGhillie_sard, 1500, MISC_STOCK);
+			ITEM(U_I_FullGhillie_sard, 1500, 40);
 
-			ITEM(U_I_GhillieSuit, 1500 MISC_STOCK);
+			ITEM(U_I_GhillieSuit, 1500 40);
 
-			ITEM(B_Carryall_mcamo, 500, MISC_STOCK);
-			ITEM(B_Carryall_khk, 500, MISC_STOCK);
+			ITEM(B_Carryall_mcamo, 500, 25);
+			ITEM(B_Carryall_khk, 500, 45);
 
-			ITEM(V_TacVest_blk, 3500, MISC_STOCK);
+			ITEM(V_TacVest_blk, 3500, 35);
 
 
-			ITEM(G_Diving, 100, MISC_STOCK);
-			ITEM(V_RebreatherIA, 5000, MISC_STOCK);
-			ITEM(U_B_survival_uniform, 300, MISC_STOCK);
-			ITEM(U_I_Wetsuit, 500, MISC_STOCK);
+			ITEM(G_Diving, 100, 70);
+			ITEM(V_RebreatherIA, 5000, 25);
+			ITEM(U_B_survival_uniform, 300, 25);
+			ITEM(U_I_Wetsuit, 500, 15);
 
 			ITEM(HandGrenade, 100, MISC_STOCK);
 
@@ -397,15 +397,15 @@
 			ITEM(IEDLandBig_Remote_Mag, 100, MISC_STOCK);
 			ITEM(IEDUrbanBig_Remote_Mag, 100, MISC_STOCK);
 
-			ITEM(SatchelCharge_Remote_Mag, 500, MISC_STOCK);
-			ITEM(SLAMDirectionalMine_Wire_Mag, 300, MISC_STOCK);
-			ITEM(ATMine_Range_Mag, 400, MISC_STOCK);
-			ITEM(APERSMine_Range_Mag, 250, MISC_STOCK);
-			ITEM(APERSBoundingMine_Range_Mag, 350, MISC_STOCK);
-			ITEM(APERSTripMine_Wire_Mag, 300, MISC_STOCK);
+			ITEM(SatchelCharge_Remote_Mag, 500, 32);
+			ITEM(SLAMDirectionalMine_Wire_Mag, 300, 30);
+			ITEM(ATMine_Range_Mag, 400, 25);
+			ITEM(APERSMine_Range_Mag, 250, 50);
+			ITEM(APERSBoundingMine_Range_Mag, 350, 35);
+			ITEM(APERSTripMine_Wire_Mag, 300, 40);
 			
-			ITEM(I_UavTerminal, 2000, MISC_STOCK);
-			ITEM(O_UavTerminal, 2000, MISC_STOCK);
-			ITEM(B_UavTerminal, 2000, MISC_STOCK);
+			ITEM(I_UavTerminal, 2000, 15);
+			ITEM(O_UavTerminal, 2000, 15);
+			ITEM(B_UavTerminal, 2000, 15);
 
 		};

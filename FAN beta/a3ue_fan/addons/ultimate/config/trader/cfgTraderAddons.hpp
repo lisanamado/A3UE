@@ -5,16 +5,16 @@
         vehicles = traderVehicles entry;
 
         Essentially, this is the core file. It links to other files.
-    */
+
     
     class addons_vanilla : addons_base
     {
- /*       addons[] = {"A3_Armor_F", "A3_Weapons_F"};
+      addons[] = {"A3_Armor_F", "A3_Weapons_F"};
         weapons = "my_extension_weapons_vanilla";
         vehicles = "my_extension_vehicles_vanilla";
-*/    };
-
-    class addons_FAN : addons_base
+    };
+*/
+    class addons_CUP : addons_base
     {
         addons[] = {
         , "CUP_Weapons_WeaponsCore"
@@ -66,7 +66,7 @@
         , "A3_Static_F_Mortar_01"
         
         };
-        weapons = "stock_FAN";
-        vehicles = "vehicles_FAN";
+        weapons = "FAN_stock_CUP";
+        vehicles = "FAN_vehicles_CUP";
     };
     
