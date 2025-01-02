@@ -772,7 +772,7 @@ _sfLoadoutData set ["NVGs", [
     "CUP_NVG_PVS15_green"
 ]];
 
-_eliteLoadoutData set ["slRifles", [
+_sfLoadoutData set ["slRifles", [
     ["CUP_arifle_AUG_A1","muzzle_snds_M","","",["CUP_30Rnd_556x45_AUG"],[],""]
 ]];
 

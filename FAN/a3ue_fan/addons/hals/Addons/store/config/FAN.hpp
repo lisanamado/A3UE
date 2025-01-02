@@ -41,8 +41,8 @@
 			ITEM(CUP_srifle_M14_DMR, 3000, 10);
 			ITEM(CUP_srifle_M24_wdl, 3500, 7);
 			ITEM(CUP_srifle_G22_wdl, 6000	5);
-			ITEM(CUP_srifle_ksvk_PSO3, 8000, 3);
-			ITEM(CUP_srifle_M107_Woodland, 10000, 2);
+			ITEM(CUP_srifle_ksvk_PSO3, 7000, 3);
+			ITEM(CUP_srifle_M107_Woodland, 10000, 3);
 		};
 
 		class mgFAN 
@@ -50,8 +50,9 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_mgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(CUP_lmg_m60, 1800, 25);
-			ITEM(CUP_lmg_m249_pip2, 2500, 12);
+			ITEM(CUP_lmg_m60, 1800, RIFLE_STOCK);
+			ITEM(CUP_lmg_m249_pip2, 2500, 15);
+			ITEM(CUP_lmg_FNMAG_RIS, 2000, RIFLE_STOCK);
 		};
 
 		class smgFAN 
@@ -69,12 +70,13 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_launchers"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
 
-			ITEM(CUP_launch_M72A6_Special_Loaded, 650, 35);
+			ITEM(CUP_launch_M72A6_Special_Loaded, 650, 40);
+			ITEM(CUP_launch_RPG7V, 1500, 30);
 			ITEM(CUP_launch_Mk153Mod0, 2000, 20);
 			ITEM(CUP_launch_Igla_Loaded, 3250, 12);
 			ITEM(CUP_launch_FIM92Stinger_Loaded, 3500, 8);
 			ITEM(CUP_launch_Metis, 6000, 5);
-			ITEM(CUP_launch_Javelin, 9000, 2);
+			ITEM(CUP_launch_Javelin, 9000, 3);
 
 		};
 
@@ -82,6 +84,32 @@
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_launcherAmmo"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
+
+			class CUP_OG7_M {
+				price = 50;
+				stock = MISC_STOCK;
+			};
+			class CUP_PG7V_M {
+				price = 75;
+				stock = MISC_STOCK;
+			};
+			class CUP_PG7VM_M {
+				price = 100;
+				stock = MISC_STOCK;
+			};
+			class CUP_PG7VL_M {
+				price = 125;
+				stock = PN_STOCK;
+			};
+			class CUP_TBG7V_M {
+				price = 150;
+				stock = PN_STOCK;
+			};
+			class CUP_PG7VR_M {
+				price = 175;
+				stock = PN_STOCK;
+			};			
+
 
 			class CUP_SMAW_NE_M {
 				price = 100;
@@ -137,28 +165,62 @@
 			};
 			class CUP_optic_Elcan_reflex {
 				price = 1000;
-				stock = 10;
+				stock = 25;
 			};
 			class CUP_optic_LeupoldMk4_25x50_LRT_WOODLAND {
 				price = 2000;
-				stock = 7;
+				stock = 15;
 			};
 			class CUP_optic_AN_PAS_13c1 {
 				price = 3500;
-				stock = 4;
+				stock = 10;
 			};
 			class CUP_optic_AN_PAS_13c2 {
 				price = 4500;
-				stock = 2;
+				stock = 5;
 			};
 			class CUP_optic_AN_PVS_10_od {
-				price = 5000;
+				price = 3500;
 				stock = 6;
 			};
 			class CUP_optic_CWS {
 				price = 4000;
 				stock = 5;
 			};
+			class CUP_optic_SUSAT {
+				price = 250;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_SB_3_12x50_PMII_Tan {
+				price = 1000;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_1P87_RIS_woodland {
+				price = 100;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_CompM2_low_OD {
+				price = 100	;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_AC11704_Jungle {
+				price = 150;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_ACOG_Reflex_Wood {
+				price = 1000;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_PGO7V3 {
+				price = 150;
+				stock = NN_STOCK;
+			};
+			class CUP_optic_PSO_3 {
+				price = 150;
+				stock = 5;
+			};
+			
+//add sight for ksvk			
 		};
 
 		class magazinesFAN 
@@ -400,20 +462,22 @@
 
 			ITEM(HandGrenade, 20, MISC_STOCK);
 
-			ITEM(IEDUrbanSmall_Remote_Mag, 10, MISC_STOCK);
-			ITEM(IEDLandSmall_Remote_Mag, 10, MISC_STOCK);
-			ITEM(IEDLandBig_Remote_Mag, 20, MISC_STOCK);
-			ITEM(IEDUrbanBig_Remote_Mag, 20, MISC_STOCK);
+			ITEM(IEDUrbanSmall_Remote_Mag, 25, MISC_STOCK);
+			ITEM(IEDLandSmall_Remote_Mag, 25, MISC_STOCK);
+			ITEM(IEDLandBig_Remote_Mag, 50, MISC_STOCK);
+			ITEM(IEDUrbanBig_Remote_Mag, 50, MISC_STOCK);
 
-			ITEM(SatchelCharge_Remote_Mag, 100, 32);
-			ITEM(SLAMDirectionalMine_Wire_Mag, 80, 30);
-			ITEM(ATMine_Range_Mag, 200, 25);
-			ITEM(APERSMine_Range_Mag, 750, 50);
-			ITEM(APERSBoundingMine_Range_Mag, 500, 35);
-			ITEM(APERSTripMine_Wire_Mag, 125, 40);
+			ITEM(SatchelCharge_Remote_Mag, 300, 30);
+			ITEM(SLAMDirectionalMine_Wire_Mag, 250, 30);
+			ITEM(ATMine_Range_Mag, 400, 25);
+			ITEM(APERSMine_Range_Mag, 100, MISC_STOCK);
+			ITEM(APERSBoundingMine_Range_Mag, 200, 45);
+			ITEM(APERSTripMine_Wire_Mag, 75, MISC_STOCK);
 			
 			ITEM(I_UavTerminal, 1000, 15);
 			ITEM(O_UavTerminal, 1000, 15);
-			ITEM(B_UavTerminal, 000, 15);
+			ITEM(B_UavTerminal, 1000, 15);
 
+			ITEM(CUP_bipod_Harris_1A2_L_BLK, 75, MISC_STOCK);
+			ITEM(CUP_bipod_VLTOR_Modpod_od, 100, MISC_STOCK);	
 		};

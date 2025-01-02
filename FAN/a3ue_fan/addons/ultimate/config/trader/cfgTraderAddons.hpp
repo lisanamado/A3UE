@@ -29,7 +29,7 @@
             , "CUP_Weapons_M14"
             , "CUP_Weapons_M14_DMR"
             , "CUP_Weapons_M24"
-            , "CUP_Weapons_AWM"
+            , "CUP_Weapons_Curator"
             , "CUP_Weapons_KSVK"
             , "CUP_Weapons_M107"
             , "CUP_Weapons_M249"
@@ -85,10 +85,7 @@
             , "CUP_WaterVehicles_RHIB"
             , "A3_Static_F_HMG_02"
             , "CUP_Creatures_StaticWeapons"
-            , "A3_Static_F_Mortar_01"
-            
-
-        
+            , "A3_Static_F_Mortar_01"                    
          };
         weapons = "FAN_weapons_CUP";
         vehicles = "FAN_vehicles_CUP";
