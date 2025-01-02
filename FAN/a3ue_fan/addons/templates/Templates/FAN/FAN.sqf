@@ -170,6 +170,8 @@
 
 ["vehiclesPlanesAA", [
     "CUP_I_SU34_AAF"
+    , "CUP_I_L39_AAF"
+
 ]] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
 
@@ -435,9 +437,8 @@ _policeLoadoutData set ["uniforms", [
     "U_B_GEN_Soldier_F"
 ]];
 _policeLoadoutData set ["vests", [
-    "V_TacVestIR_blk"
+    "V_TacVest_blk_POLICE"
     , "CUP_V_O_TK_OfficerBelt"
-    , "CUP_V_O_TK_OfficerBelt2"
 ]];
 _policeLoadoutData set ["helmets", [
     "H_Beret_gen_F"
@@ -552,9 +553,6 @@ _militiaLoadoutData set ["lightHELaunchers", [
 _militiaLoadoutData set ["ATLaunchers", [
     ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V_M"], [], ""]
 ]];
-_loadoutData set ["missileATLaunchers", [
-    ["CUP_launch_M47", "", "", "", ["CUP_Dragon_EP1_M"], [], ""]
-]];
 
 /////////////////////////////////
 //    Military Loadout Data    //
@@ -648,20 +646,19 @@ _militaryLoadoutData set ["sidearms", [
     , ["CUP_hgun_SA61","","","",["CUP_10Rnd_B_765x17_Ball_M"],[],""]
     , ["CUP_hgun_PMM","","","",["CUP_12Rnd_9x18_PMM_M"],[],""]
 ]];
-
-_loadoutData set ["lightHELaunchers", [
+_militaryLoadoutData set ["lightHELaunchers", [
     "CUP_launch_RShG2"
     , ["CUP_launch_RPG7V", "", "", "", ["CUP_OG7_M", "CUP_TBG7V_M"], [], ""]
 ]];
-_loadoutData set ["ATLaunchers", [
+_militaryLoadoutData set ["ATLaunchers", [
     ["CUP_launch_RPG7V", "", "", "CUP_optic_PGO7V3", ["CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M"], [], ""]
     , ["CUP_launch_RPG7V", "", "", "", ["CUP_PG7V_M"], [], ""]
     , ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M", "CUP_MAAWS_HEAT_M"], [], ""]
 ]];
-_loadoutData set ["missileATLaunchers", [
+_militaryLoadoutData set ["missileATLaunchers", [
     ["CUP_launch_M47", "", "", "", ["CUP_Dragon_EP1_M"], [], ""]
 ]];
-_loadoutData set ["AALaunchers", [
+_militaryLoadoutData set ["AALaunchers", [
     ["CUP_launch_9K32Strela", "", "", "", [""], [], ""]
 ]];
 
@@ -791,7 +788,7 @@ _sfLoadoutData set ["grenadeLaunchers", [
     ["arifle_TRG21_GL_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],["1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","ACE_40mm_Flare_ir","1Rnd_Smoke_Grenade_shell","CUP_1Rnd_StarFlare_White_M203"],""]
 ]];
 _sfLoadoutData set ["SMGs", [
-    ["CUP_arifle_X95_Grippod","","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
+    ["CUP_arifle_X95_Grippod","","CUP_acc_ANPEQ_15_OD","CUP_optic_AC11704_Jungle",["CUP_30Rnd_556x45_PMAG_OD_PULL", "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green"],[],""]
 ]];
 _sfLoadoutData set ["machineGuns", [
     ["LMG_Zafir_F","","CUP_acc_ANPEQ_15_OD","CUP_optic_SB_11_4x20_PM_od",["150Rnd_762x54_Box_Tracer"],[],""]
@@ -878,7 +875,7 @@ private _riflemanTemplate = {
     [selectRandom ["rifles"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
-    if (random 1 < 0.15) then {
+    if (random 1 < 0.20) then {
 		[["lightHELaunchers"] call _fnc_fallback] call _fnc_setLauncher;
 		["launcher", 1] call _fnc_addMagazines;
 	} else {
@@ -958,7 +955,7 @@ private _grenadierTemplate = {
     ["backpacks"] call _fnc_setBackpack;
     ["grenadeLaunchers"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
-    ["primary", 12] call _fnc_addAdditionalMuzzleMagazines;
+    ["primary", 8] call _fnc_addAdditionalMuzzleMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
     ["handgun", 2] call _fnc_addMagazines;
@@ -1209,7 +1206,7 @@ private _policeTemplate = {
     ["uniforms"] call _fnc_setUniform;
 
 
-    [selectRandomWeighted ["shotGuns", 1.25, "rifles", 0.5, "carbines", 0.5, "SMGs", 0.75, "Shields", 1.25]] call _fnc_setPrimary;
+    [selectRandomWeighted ["shotGuns", 1.5, "rifles", 0.5, "carbines", 0.5, "SMGs", 0.75, "Shields", 1.00]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

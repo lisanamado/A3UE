@@ -8,42 +8,58 @@ class planeLoadouts
     // diveParams[]
     class CASDIVE
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class CUP_O_Su25_Dyn_SLA
         {
-            loadout[] = {"","","","","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","","","",""};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
+            loadout[] = {"","","","","CUP_PylonPod_1Rnd_FAB250_plane_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_FAB250_plane_M","","","",""};
+            mainGun = "CUP_GSh302K_W";
+            bombRacks[] = {"CUP_Vblauncher_KAB250_veh", "CUP_Vblauncher_Fab250_veh"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class CUP_I_L39_AAF
+        {
+            loadout[] = {"CUP_PylonPod_1Rnd_FAB250_plane_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_FAB250_plane_M"};
+            mainGun = "CUP_Vacannon_GSh23L_L39";
+            bombRacks[] = {"CUP_Vblauncher_KAB250_veh", "CUP_Vblauncher_Fab250_veh"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
     };
 
     class CAS
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class CUP_O_Su25_Dyn_SLA
         {
-            loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
-            missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
+            loadout[] = {"","","CUP_PylonPod_1Rnd_Kh29_M","CUP_PylonPod_20Rnd_S8_plane_M","CUP_PylonPod_20Rnd_S8_plane_M","CUP_PylonPod_1Rnd_KAB250_M",
+                    "CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_20Rnd_S8_plane_M","CUP_PylonPod_20Rnd_S8_plane_M","CUP_PylonPod_1Rnd_Kh29_M","",""};
+            mainGun = "CUP_GSh302K_W";
+            rocketLauncher[] = {"CUP_Vmlauncher_S8_veh"};
+            missileLauncher[] = {"CUP_Vmlauncher_Kh29L_veh"};
+        };
+        class CUP_I_L39_AAF
+        {
+            loadout[] = {"CUP_PylonPod_1Rnd_Kh29_M","CUP_PylonPod_20Rnd_S8_plane_M","CUP_PylonPod_20Rnd_S8_plane_M","CUP_PylonPod_1Rnd_Kh29_M"};
+            mainGun = "CUP_Vacannon_GSh23L_L39";
+            rocketLauncher[] = {"CUP_Vmlauncher_S8_veh"};
+            missileLauncher[] = {"CUP_Vmlauncher_Kh29L_veh"};
         };
     };
    
     class AA
     {
-        class AMF_RAFALE_C_01_F
+        class CUP_I_L39_AAF
         {
-            loadout[] = {"PylonMissile_Missile_MICAEM_x1","PylonMissile_Missile_MICAEM_x1","PylonRack_3_Missile_MICAEM_x1","PylonRack_3_Missile_MICAEM_x1","PylonRack_Missile_MICAIR_x1","PylonRack_Missile_MICAIR_x1","PylonRack_Missile_TANK_02_x1_f","PylonRack_Missile_TANK_02_x1_f","PylonRack_Missile_METEOR_INT_x1","PylonRack_Missile_METEOR_INT_x1","PylonRack_Missile_TANK_01_x1_f"};
-            mainGun = "weapon_30m791";
-            missileLauncher[] = {"weapon_MICAIRLauncher","weapon_MICAEMLauncher","weapon_METEORLauncher"};
+            loadout[] = {"CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_R73_Vympel"};
+            mainGun = "CUP_Vacannon_GSh23L_L39";
+            missileLauncher[] = {"CUP_Vmlauncher_R73_veh"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
-        class AMF_RAFALE_CRO_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_EGYPTIAN_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_ARABIAN_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_GREEK_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_INDIA_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_INDO_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_QATARIAN_01_C : AMF_RAFALE_C_01_F {};
-        // Variants inherit from the main one
+
+        class CUP_I_SU34_AAF
+        {
+            loadout[] = {"CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_Kh29_M","","","","","","CUP_PylonPod_1Rnd_Kh29_M","CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_R73_Vympel"};
+            mainGun = "CUP_GSh302K_W";
+            missileLauncher[] = {"CUP_Vmlauncher_R73_veh","CUP_Vmlauncher_Kh29L_veh"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+
     };
 };
