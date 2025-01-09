@@ -23,3 +23,4 @@ class A3A
 };
 
 #include "CfgMarkers.hpp"
+#include "CfgUnitInsignia.hpp"

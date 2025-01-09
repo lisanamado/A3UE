@@ -1,5 +1,12 @@
-name = "A3UE FAN Occ Faction";
+name = "A3UE FAN Faction";
+picture = "\x\a3ue_fan\addons\templates\Templates\FAN\FAN.paa"
 author = "Catertico";
-tooltip = "";
-actionName = "";
-action = "";
+tooltip = "Fuerzas Armadas Nacionales for Antistasi Ultimate";
+actionName = "Support the creator";
+action = "https://buymeacoffee.com/catertico";
+logo = "\x\a3ue_fan\addons\templates\Pictures\Markers\FAN.paa";
+logoOver = "\x\a3ue_fan\addons\templates\Pictures\Markers\FAN.paa";
+logoSmall = "\x\a3ue_fan\addons\templates\Pictures\Markers\FAN.paa";
+overview = "Face the FAN in Antistasi Ultimate!!<br/>The FAN represents the low-budget armed forces of an imaginary small Caribbean/tropical Latin American regime you can name as you like.<br/>Their infantry relies mainly on FAL and Galil rifles, still used in many latin american nations, under several local brand names. This will be supplemented with remnants of U.S. Plan Cóndor-era equipment and an eclectic mix of surplus guns and vehicles from diverse procedence.<br/>To keep it simple, just CUP and vanilla equipment was used.<br/><br/>By Catertico.<br/>If you like this mod, consider supporting the author";
+overviewPicture = "\x\a3ue_fan\addons\templates\Templates\FAN\FAN.paa";
+overviewText = "A3UE FAN Faction"

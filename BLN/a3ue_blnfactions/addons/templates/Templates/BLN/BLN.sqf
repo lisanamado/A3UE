@@ -139,17 +139,19 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 //UNIFORMS
 
 private _rebUniforms =  [
-// female uniforms:
-    "U_B_CombatUniform_mcam_W",
-    "WU_I_CombatUniform_AR",    
-    "WU_B_T_Soldier_F",
 // male uniforms:
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_Unit_3",
     "CUP_I_B_PARA_Unit_10"
-];         
-
-
+];
+//CHECK - To avoid naked soldiers if Max Women addon not loaded
+if (A3A_hasMax Women Soldiers) then {
+    _initialRebelEquipment append 
+    "U_B_CombatUniform_mcam_W",
+    "WU_I_CombatUniform_AR",    
+    "WU_B_T_Soldier_F",
+    ;
+};
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 

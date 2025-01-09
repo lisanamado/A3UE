@@ -7,5 +7,5 @@
 */        
         class FAN_weapons_CUP : weapons_base
         {
-            prefix = "FAN_stock_CUP"
+            prefix = "FAN_stock_CUP";
         };
