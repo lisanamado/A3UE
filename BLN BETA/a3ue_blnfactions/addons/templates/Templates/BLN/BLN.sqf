@@ -10,6 +10,8 @@
 
 #include "..\..\script_component.hpp"
 
+//private _hasMWS = "@Max Women Soldiers" in A3A_enabledDLC;
+
 
 ///////////////////////////
 //   Rebel Information   //
@@ -138,20 +140,20 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 
 //UNIFORMS//
 
-// male uniforms:
 private _rebUniforms =  [
     "U_BG_Guerrilla_6_1",
     "CUP_I_B_PARA_Unit_3",
-    "CUP_I_B_PARA_Unit_10"
-];
-// female uniforms:
-if (A3A_hasMax Women Soldiers) then 
-{_rebUniforms append [
+    "CUP_I_B_PARA_Unit_10",
+    "CUP_I_B_PARA_Unit_9",
+//];
+
+//if (A3A_hasMWS) then {    _rebUniforms append [
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
     "WU_B_T_Soldier_F",
-    ]};
-
+    "WU_O_T_Officer_F"
+//    ]};
+];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
@@ -165,7 +167,7 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
 ["headgear", [
     "CUP_H_Booniehat_CCE",
     "CUP_H_Booniehat_TTS",
-    "CUP_H_USMC_BOONIE_WDL"
+    "CUP_H_USMC_BOONIE_WDL",
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
@@ -182,26 +184,25 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
 /////////////////////
 
 ["faces", [
-
     "PersianHead_A3_01",
     "PersianHead_A3_02",
     "AfricanHead_01",
     "AfricanHead_03",
     "AsianHead_A3_03",
     "WhiteHead_20",
-    "WhiteHead_02"
-]] call _fnc_saveToTemplate;
-// female uniforms:
-if (A3A_hasMax Women Soldiers) then 
-{"faces" append [
+    "WhiteHead_02",
+// female faces:
+/*if (A3A_hasMax Women Soldiers) then 
+{"faces" append [*/
     "Max_faceWS1",
     "Max_faceWS10",
     "Max_faceWS2",
     "Max_faceWS3",
     "Max_faceWS4",
     "Max_faceWS6",
-    "Max_faceWS9",
-    ]};
+    "Max_faceWS9"//,
+/*    ]};*/
+]] call _fnc_saveToTemplate;
 
 ["voices", ["cup_d_female01_en", "MALEO1ESPA", "male06gre"]] call _fnc_saveToTemplate;
 

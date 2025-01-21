@@ -1,5 +1,5 @@
 name = "A3UE FAN Faction";
-picture = "\x\a3ue_fan\addons\templates\Templates\FAN\FAN.paa"
+picture = "\x\a3ue_fan\addons\templates\Templates\FAN\FAN.paa";
 author = "Catertico";
 tooltip = "Fuerzas Armadas Nacionales for Antistasi Ultimate";
 actionName = "Support the creator";

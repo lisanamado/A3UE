@@ -189,7 +189,7 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
 ["headgear", [
     "CUP_H_Booniehat_CCE",
     "CUP_H_Booniehat_TTS",
-    "CUP_H_USMC_BOONIE_WDL"
+    "CUP_H_USMC_BOONIE_WDL",
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",

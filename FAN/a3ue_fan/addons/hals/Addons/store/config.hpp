@@ -12,9 +12,9 @@ __________________________________________________________________*/
 		stock = STOCK;\
 	};
 
-#define MAGAZINE_STOCK 100
-#define LAUNCHER_STOCK 5
-#define PISTOL_STOCK 25
+#define MAGAZINE_STOCK 75
+#define LAUNCHER_STOCK 25
+#define PISTOL_STOCK 35
 #define RIFLE_STOCK 25
 #define MZ_STOCK 50
 #define NN_STOCK 50
@@ -27,7 +27,7 @@ class cfgHALsStore
 	{
 		#include "config\FAN.hpp"
 	};
-
+	
 	class stores 
 	{
 		class FAN_stock_CUP
@@ -35,6 +35,7 @@ class cfgHALsStore
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
 				"handgunsFAN",
+				"underbarrelFAN",
 				"riflesFAN", 
 				"sniperRiflesFAN", 
 				"mgFAN",
