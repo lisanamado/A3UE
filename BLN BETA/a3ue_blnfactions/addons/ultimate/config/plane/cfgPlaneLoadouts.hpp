@@ -8,30 +8,22 @@ class planeLoadouts
     // diveParams[]
     class CASDIVE
     {
-        class CUP_C_Cessna_172_CIV
+        class CUP_I_CESSNA_T41_ARMED_RACS
         {
-            loadout[] = {""};
+            loadout[] = {"PylonMissile_1Rnd_Mk82_F", "PylonMissile_1Rnd_Mk82_F"};
             mainGun = "";
-            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
+            bombRacks[] = {"PylonMissile_1Rnd_Mk82_F", "PylonMissile_1Rnd_Mk82_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
-        class CUP_C_AN2_CIV
-        {
-            loadout[] = {""};
-            mainGun = "";
-            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
-            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
-        };
+
     };
 
     class CAS
     {
         class CUP_I_CESSNA_T41_ARMED_RACS
         {
-            loadout[] = {""};
-            mainGun = "";
-            rocketLauncher[] = {""};
-            missileLauncher[] = {"",""};
+            loadout[] = {"PylonRack_7Rnd_Rocket_04_AP_F","PylonRack_7Rnd_Rocket_04_HE_F"};
+            rocketLauncher[] = {"PylonRack_7Rnd_Rocket_04_AP_F","PylonRack_7Rnd_Rocket_04_HE_F"};
         };
     };
    
@@ -39,10 +31,12 @@ class planeLoadouts
     {
         class CUP_I_CESSNA_T41_ARMED_RACS
         {
-            loadout[] = {""};
-            mainGun = "";
+            loadout[] = {"CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M","CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M"};
+            mainGun = "CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M";
             missileLauncher[] = {"","",""};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
     };
 };
+
+

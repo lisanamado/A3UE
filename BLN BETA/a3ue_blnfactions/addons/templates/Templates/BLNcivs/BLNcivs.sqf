@@ -14,8 +14,8 @@
 
 	"CUP_C_TT650_TK_CIV" , 0.7
 	,"CUP_C_TT650_CIV" , 0.7
-    , "C_Quadbike_01_F", 0.9
-    , "C_Kart_01_F", 0.01
+    ,"C_Quadbike_01_F", 0.9
+    ,"C_Kart_01_F", 0.01
 	
 	,"CUP_C_Lada_TK_CIV" , 0.2
 	,"CUP_C_Lada_GreenTK_CIV" , 0.8
@@ -40,8 +40,8 @@
 	,"CUP_C_Pickup_unarmed_CIV" , 0.9
 	,"CUP_C_Octavia_CIV" , 0.5
 
-	, "C_Hatchback_01_F", 0.3
-	, "C_Hatchback_01_sport_F", 0.05
+	,"C_Hatchback_01_F", 0.3
+	,"C_Hatchback_01_sport_F", 0.05
 
 	,"CUP_C_UAZ_Unarmed_TK_CIV" , 0.7
 	,"CUP_C_UAZ_Open_TK_CIV" , 0.7
@@ -96,8 +96,8 @@
 
 ["vehiclesCivRepair", [
 
-      "C_Truck_02_box_F", 0.1
-    , "C_Offroad_01_repair_F", 0.1
+      "C_Truck_02_box_F", 0.05
+    , "C_Offroad_01_repair_F", 0.05
 
 ]] call _fnc_saveToTemplate;            //this line determines civilian repair vehicles
 
@@ -106,8 +106,8 @@
 ]] call _fnc_saveToTemplate;        //this line determines civilian medic vehicles
 
 ["vehiclesCivFuel", [
-    "C_Truck_02_fuel_F", 0.1
-    , "C_Van_01_fuel_F", 0.1
+    "C_Truck_02_fuel_F", 0.05
+    , "C_Van_01_fuel_F", 0.05
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivHeli", [
@@ -183,6 +183,8 @@
 
 private _civUniforms = [
     "CUP_O_TKI_Khet_Jeans_03",
+	"CUP_O_TKI_Khet_Jeans_02",
+	"CUP_O_TKI_Khet_Jeans_04",
     "CUP_O_TKI_Khet_Partug_05",
     "CUP_O_TKI_Khet_Partug_07",
     "CUP_U_C_Tracksuit_01",
@@ -192,13 +194,15 @@ private _civUniforms = [
     "CUP_U_C_Villager_03",
     "CUP_U_C_Worker_03",
     "CUP_U_C_Worker_02",
-    "CUP_U_C_Worker_01"
+    "CUP_U_C_Worker_01",
+	"CUP_U_C_Woodlander_01",
+	"CUP_U_C_Woodlander_04"
 ];          //Uniforms given to Normal Civs
 
 private _pressUniforms = [
 
-    "U_C_FormalSuit_01_tshirt_black_F",
-	"U_C_FormalSuit_01_tshirt_gray_F"
+    "CUP_O_TKI_Khet_Jeans_02",
+	"CUP_O_TKI_Khet_Jeans_04"
 
 ];            //Uniforms given to Press/Journalists
 
@@ -209,6 +213,7 @@ private _workerUniforms = [
     "U_C_ConstructionCoverall_Red_F"
 
 ];           //Uniforms given to Workers at Factories/Resources
+
 
 ["uniforms", _civUniforms + _pressUniforms + _workerUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
 
@@ -232,9 +237,10 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["uniforms", _civUniforms];
 _loadoutData set ["pressUniforms", _pressUniforms];
 _loadoutData set ["workerUniforms", _workerUniforms];
-_loadoutData set ["pressVests", []];
+_loadoutData set ["pressVests", ["V_Press_F"]];
 _loadoutData set ["helmets", _civHats];
-_loadoutData set ["pressHelmets", []];
+_loadoutData set ["workerHelmets", ["H_Construction_earprot_yellow_F","H_Construction_basic_vrana_F","H_Construction_earprot_vrana_F"]];
+_loadoutData set ["pressHelmets", ["H_Cap_press", "H_PASGT_basic_blue_press_F", "H_PASGT_neckprot_blue_press_F"]];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
@@ -245,21 +251,11 @@ private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
     ["uniforms"] call _fnc_setUniform;
 
-    ["items_medical_standard"] call _fnc_addItemSet;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
 };
 private _workerTemplate = {
-    ["helmets"] call _fnc_setHelmet;
+    ["workerHelmets"] call _fnc_setHelmet;
     ["workerUniforms"] call _fnc_setUniform;
 
-    ["items_medical_standard"] call _fnc_addItemSet;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
 };
 private _pressTemplate = {
     ["pressHelmets"] call _fnc_setHelmet;
@@ -271,6 +267,9 @@ private _pressTemplate = {
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
+	
+	if (isClass (configFile >> "CfgWeapons" >> "Nikon_DSLR_HUD")) then {
+	["Nikon_DSLR_HUD"] call _fnc_addBinoculars;};	
 };
 private _prefix = "militia";
 private _unitTypes = [

@@ -10,8 +10,6 @@
 
 #include "..\..\script_component.hpp"
 
-//private _hasMWS = "@Max Women Soldiers" in A3A_enabledDLC;
-
 
 ///////////////////////////
 //   Rebel Information   //
@@ -20,8 +18,8 @@
 ["name", "BLN"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_BLN"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\BLN.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "a3a_flag_BLN"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNfL.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -31,10 +29,9 @@
 ["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["CUP_O_Hilux_armored_M2_TK_INS"]] call _fnc_saveToTemplate;
 
-//truck not loading class mistake?
 ["vehiclesTruck", ["CUP_V3S_Open_NAPA"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["CUP_O_Hilux_armored_SPG9_TK_INS"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS", "CUP_I_Datsun_AA_Random"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS"]] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_RACS", "CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
@@ -112,14 +109,15 @@ private _initialRebelEquipment = [
     "CUP_V_OI_TKI_Jacket3_06", 
     "CUP_V_OI_TKI_Jacket3_01",
 
-    "B_FieldPack_oucamo", 
     "CUP_B_AlicePack_Khaki", 
     "CUP_B_AlicePack_OD", 
     "CUP_B_CivPack_WDL", 
-    "CUP_B_SLA_Medicbag",
     "CUP_B_HikingPack_Civ",
 
-    "Binocular"
+    "Binocular",
+
+    "CUP_acc_Zenit_2DS"
+
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr", "tf_anprc154"]};
@@ -132,8 +130,18 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {
     _initialRebelEquipment pushBack "TFAR_anprc155";
     _initialRebelEquipment pushBack "TFAR_anprc155_coyote";
 };
-
-_initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
+//add sawed shotgun only if found
+	if (isClass (configFile >> "CfgWeapons" >> "sgun_HunterShotgun_01_sawedoff_F")) then {
+	_initialRebelEquipment append ["sgun_HunterShotgun_01_sawedoff_F"]
+};
+//add a camera if has hate's mod
+	if (isClass (configFile >> "CfgWeapons" >> "Nikon_DSLR_HUD")) then {
+	_initialRebelEquipment append ["Nikon_DSLR_HUD","Nikon_DSLR"]
+};
+//add spraypaint if using ACE - TODO add more 
+	if (isClass (configFile >> "CfgWeapons" >> "ACE_SpraypaintBlack")) then {
+	_initialRebelEquipment append ["ACE_SpraypaintBlack"]
+};
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
@@ -141,26 +149,27 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 //UNIFORMS//
 
 private _rebUniforms =  [
-    "U_BG_Guerrilla_6_1",
+
+    "CUP_I_B_PARA_Unit_1",
     "CUP_I_B_PARA_Unit_3",
     "CUP_I_B_PARA_Unit_10",
     "CUP_I_B_PARA_Unit_9",
-//];
+    "CUP_I_B_PARA_Unit_15",
 
-//if (A3A_hasMWS) then {    _rebUniforms append [
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
     "WU_B_T_Soldier_F",
-    "WU_O_T_Officer_F"
-//    ]};
+    "WU_O_T_Officer_F",
+    "WU_O_OfficerUniform_ocamo"
 ];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
-//A uniform for Petros, he looks too weird on female uniforms
-private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
+private _petrosUniform =  ["U_I_L_Uniform_01_camo_F"];
+["petrosuniform", _rebUniforms] call _fnc_saveToTemplate; 
 
-["Puniform", _petrosUniform] call _fnc_saveToTemplate;
+private _petrosBeret =  ["CUP_H_ChDKZ_Beret"];
+["petrosberet", _petrosBeret] call _fnc_saveToTemplate; 
 
 //HEADGEAR
 
@@ -171,12 +180,10 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
-    "CUP_H_ChDKZ_Beret",
     "H_ShemagOpen_tan",
     "H_Bandanna_sgg",
     "H_Cap_grn",
-    "H_Beret_blk",
-    ""
+    "H_Beret_blk"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -189,19 +196,16 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
     "AfricanHead_01",
     "AfricanHead_03",
     "AsianHead_A3_03",
-    "WhiteHead_20",
+    "Mavros",
     "WhiteHead_02",
 // female faces:
-/*if (A3A_hasMax Women Soldiers) then 
-{"faces" append [*/
     "Max_faceWS1",
     "Max_faceWS10",
     "Max_faceWS2",
     "Max_faceWS3",
     "Max_faceWS4",
     "Max_faceWS6",
-    "Max_faceWS9"//,
-/*    ]};*/
+    "Max_faceWS9"
 ]] call _fnc_saveToTemplate;
 
 ["voices", ["cup_d_female01_en", "MALEO1ESPA", "male06gre"]] call _fnc_saveToTemplate;
@@ -215,7 +219,7 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
 
-_loadoutData set ["uniforms", _rebUniforms];
+_loadoutData set ["petrosuniform","uniforms", _rebUniforms];
 
 //set a red neckscarf as identifier
 _loadoutData set ["facewear", [
@@ -228,12 +232,19 @@ _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_me
 _loadoutData set ["items_medical_medic", ["MEDIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials];
 
+///////////////////////
+////   INSIGNIA   ////
+/////////////////////
+["insignia", ["BLN"]] call _fnc_saveToTemplate;
+
+
 ////////////////////////
 //  Rebel Unit Types  //
 ///////////////////////.
 
 private _petrosTemplate = {
-    ["Puniform"] call _fnc_setUniform;
+    ["petrosuniform"] call _fnc_setUniform;
+    ["petrosberet"] call _fnc_setHelmet;
     ["facewear"] call _fnc_setFacewear;
 
     ["maps"] call _fnc_addMap;
@@ -250,6 +261,7 @@ private _squadLeaderTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
+
 };
 
 private _riflemanTemplate = {
@@ -263,7 +275,7 @@ private _riflemanTemplate = {
 
 private _prefix = "militia";
 private _unitTypes = [
-    ["Petros", _petrosTemplate],
+    ["Petros", _squadLeaderTemplate],
     ["SquadLeader", _squadLeaderTemplate],
     ["Rifleman", _riflemanTemplate],
     ["staticCrew", _riflemanTemplate],

@@ -481,14 +481,6 @@
 				price = 75;
 				stock = MAGAZINE_STOCK;
 			};
-			class CUP_30Rnd_556x45_AK {
-				price = 60;
-				stock = 85;
-			};
-			class CUP_30Rnd_TE1_Red_Tracer_556x45_AK {
-				price = 65;
-				stock = 60;
-			};
 			class CUP_20Rnd_556x45_Stanag {
 				price = 30;
 				stock = MAGAZINE_STOCK;

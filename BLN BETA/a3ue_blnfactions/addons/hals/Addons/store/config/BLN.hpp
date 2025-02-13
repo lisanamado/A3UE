@@ -73,7 +73,6 @@
 			ITEM(CUP_smg_Mac10, 250, RIFLE_STOCK);
 			ITEM(CUP_smg_Mac10_rail, 300, RIFLE_STOCK);
 
-
 		};
 
 		class launchersBLN 
@@ -87,11 +86,8 @@
 			ITEM(CUP_launch_RPG26, 200, LAUNCHER_STOCK);
 
 			ITEM(CUP_launch_M72A6_Special, 300, LAUNCHER_STOCK);
-
 			ITEM(CUP_launch_M136, 400, 15);
-
 			ITEM(CUP_launch_RPG7V, 600, 10);
-
 			ITEM(CUP_launch_9K32Strela, 1750, 12);
 
 		};
@@ -137,6 +133,7 @@
 			ITEM(CUP_SOFLAM, 700, NN_STOCK);
 			ITEM(CUP_LRTV, 800, NN_STOCK);
 			ITEM(CUP_NVG_PVS15_black, 500, NN_STOCK);
+
 		};
 
 		class muzzlesBLN 

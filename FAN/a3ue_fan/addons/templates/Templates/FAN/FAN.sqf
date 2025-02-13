@@ -49,11 +49,11 @@
 // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
 ["vehiclesLightArmed", [
     "CUP_O_Tigr_233014_PK_SLA"
-    , "CUP_B_RG31_M2_OD_GC_USA"
     , "CUP_B_RG31_Mk19_OD_USA"
     , "CUP_B_RG31_M2_OD_USA"
     , "CUP_B_HMMWV_Crows_M2_NATO_T"
     , "CUP_O_Tigr_M_233114_GREEN_KORD_RU"
+    , "CUP_B_nM1025_M240_DF_NATO"
 ]] call _fnc_saveToTemplate;            
 
 // vehicle that can carry troops and cargoboxes:
@@ -83,7 +83,6 @@
 
 // vehicle with capability to provide healing
 ["vehiclesMedical", [
-    //give this one a skin
     "CUP_O_UAZ_AMB_RU"
     , "O_T_Truck_02_Medical_F"
     , "CUP_I_LR_Ambulance_AAF"
@@ -92,8 +91,7 @@
 
 // armed, lightly armoured, with 6-8 passengers 
 ["vehiclesLightAPCs", [
-    "CUP_B_RG31E_M2_OD_USA"
-    , "CUP_O_BTR60_SLA"
+    "CUP_O_BTR60_SLA"
     , "CUP_O_BTR80_SLA"
     , "CUP_O_BTR80A_SLA"
 ]] call _fnc_saveToTemplate;        
@@ -108,8 +106,12 @@
 
 // airborne vehicles, could be with passenger seats or just a crew 
 ["vehiclesAirborne", [
-    "CUP_B_RG31_M2_OD_GC_USA"
+    "CUP_O_Tigr_233014_PK_SLA"
     , "CUP_B_RG31_Mk19_OD_USA"
+    , "CUP_B_RG31_M2_OD_USA"
+    , "CUP_B_HMMWV_Crows_M2_NATO_T"
+    , "CUP_O_Tigr_M_233114_GREEN_KORD_RU"
+    , "CUP_B_nM1025_M240_DF_NATO"
 ]] call _fnc_saveToTemplate;              
 
 // capable of surviving multiple rockets, cannon armed, with 6-8 passengers

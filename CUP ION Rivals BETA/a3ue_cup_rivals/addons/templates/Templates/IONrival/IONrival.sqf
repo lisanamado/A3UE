@@ -3,7 +3,7 @@
 
 #include "..\..\script_component.hpp"
 
-["name", "ION Ops (WDL)"] call _fnc_saveToTemplate;
+["name", "ION"] call _fnc_saveToTemplate;
 ["nameLeader", "Xavier Sperts"] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
@@ -38,7 +38,6 @@
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", [
     "I_G_Van_01_transport_F"
-	, "CUP_B_MTVR_BAF_WOOD"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", [
     "CUP_I_SUV_ION"
@@ -50,8 +49,6 @@
 	"CUP_I_BTR80_ION"
     , "CUP_I_BTR80A_ION"
     , "CUP_I_RG31E_M2_ION"
-	, "CUP_B_BAF_Coyote_GMG_W"
-	, "CUP_B_BAF_Coyote_L2A1_W"
 	, "CUP_B_FV432_Bulldog_GB_W_RWS"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", [
@@ -110,7 +107,7 @@ private _tunedRifles = [
 private _enforcerRifles = [
     ["CUP_arifle_M4A1_SOMMOD_Grip_green", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
     ["CUP_arifle_M4A1_SOMMOD_Grip_green", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
-    ["CUP_arifle_HK416_Wood", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag",30], [], ""],
+    ["CUP_arifle_HK416_Wood", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag"], [], ""],
     ["CUP_arifle_G36KA3_grip_hex", "", "CUP_acc_ANPEQ_2_camo", "CUP_optic_Elcan_SpecterDR_KF_RMR_coyote", ["CUP_30Rnd_556x45_G36_hex", "CUP_30Rnd_TE1_Red_Tracer_556x45_G36"], [], ""],
     ["CUP_arifle_HK417_12", "CUP_muzzle_snds_socom762rc", "", "CUP_optic_AIMM_MICROT1_BLK", ["CUP_20Rnd_762x51_HK417"], [], ""],
     ["CUP_arifle_AK19_bicolor", "", "CUP_acc_ANPEQ_2_camo", "CUP_optic_Elcan_reflex", ["CUP_30Rnd_556x45_Tracer_Red_AK19_M"], [], ""]
@@ -124,10 +121,9 @@ private _carbines = [
     ["CUP_arifle_Mk16_CQC", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
     ["CUP_Weapon_srifle_Mk18_wdl", "", "", "CUP_optic_AC11704_Black", ["CUP_20Rnd_762x51_DMR", "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR"], [], "CUP_bipod_Harris_1A2_L_BLK"],
     ["CUP_smg_MP5A5", "", "", "CUP_optic_AC11704_Black", ["CUP_30Rnd_9x19_MP5", "CUP_30Rnd_Yellow_Tracer_9x19_MP5"], [], ""],
-    ["CUP_smg_MP5A5", "", "", "", ["CUP_30Rnd_9x19_MP5", "CUP_30Rnd_Yellow_Tracer_9x19_MP5"], [], ""],
     ["CUP_arifle_X95", "", "", "", ["CUP_30Rnd_556x45_X95", "CUP_30Rnd_556x45_X95_Tracer_Red"], [], ""],
     ["CUP_smg_MP7", "", "", "CUP_optic_AC11704_Black", ["CUP_40Rnd_46x30_MP7", "CUP_40Rnd_46x30_MP7_Red_Tracer"], [], ""],
-	["CUP_arifle_mk18_black", "CUP_muzzle_snds_M16", "", "CUP_optic_G33_HWS_BLK", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],
+	["CUP_arifle_mk18_black", "", "", "CUP_optic_G33_HWS_BLK", ["CUP_30Rnd_556x45_Emag_Tracer_Red"], [], ""],
 	["CUP_smg_p90_black", "muzzle_snds_570", "", "CUP_optic_MicroT1", ["CUP_50Rnd_570x28_Red_Tracer_P90_M"], [], ""],
     ["CUP_smg_EVO", "", "", "CUP_optic_HoloBlack", ["CUP_30Rnd_9x19_EVO"], [], ""]
 ];

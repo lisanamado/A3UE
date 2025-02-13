@@ -30,9 +30,11 @@
 			ITEM(CUP_arifle_M4A1_camo_carryhandle, 750, RIFLE_STOCK);
 			ITEM(CUP_arifle_M4A1_SOMMOD_Grip_green, 850, RIFLE_STOCK);
 			ITEM(CUP_arifle_M4A3_camo, 1000, RIFLE_STOCK);
+			ITEM(CUP_arifle_mk18_black, 1100, RIFLE_STOCK);
+
 			ITEM(CUP_arifle_M4A1_GL_carryhandle_camo, 1200, RIFLE_STOCK);
 			ITEM(CUP_arifle_M4A1_BUIS_GL, 1200, RIFLE_STOCK);
-			ITEM(CUP_arifle_mk18_m203_black, 1500, RIFLE_STOCK);
+			ITEM(CUP_arifle_mk18_m203_black, 1300, RIFLE_STOCK);
 
 			ITEM(CUP_arifle_G36CA3_afg_wdl, 1000, RIFLE_STOCK);
 			ITEM(CUP_arifle_G36KA3_grip_hex, 1250, RIFLE_STOCK);
@@ -173,10 +175,6 @@
 				price = 100;
 				stock = NN_STOCK;
 			};
-			class CUP_acc_ANPEQ_2_camo {
-				price = 150;
-				stock = NN_STOCK;
-			};
 			class CUP_optic_Elcan_SpecterDR_KF_RMR_coyote {
 				price = 400;
 				stock = NN_STOCK;
@@ -198,6 +196,10 @@
 			///////////////////////////////////////////////////////
 			class CUP_1Rnd_HEDP_M203 {
 				price = 60;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_1Rnd_HE_M203 {
+				price = 50;
 				stock = MAGAZINE_STOCK;
 			};
 			class CUP_FlareWhite_M203 {
@@ -253,12 +255,43 @@
 				stock = MAGAZINE_STOCK;
 			};
 
-//ADD GP25s
 			class CUP_1Rnd_HE_GP25_M {
-				price = 60;
+				price = 50;
 				stock = MAGAZINE_STOCK;
 			};
 			class CUP_1Rnd_SmokeRed_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_1Rnd_SmokeGreen_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_1Rnd_SMOKE_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_1Rnd_SmokeYellow_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_IlumFlareGreen_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_IlumFlareRed_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_IlumFlareWhite_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_FlareWhite_GP25_M {
+				price = 10;
+				stock = MAGAZINE_STOCK;
+			};
+			class CUP_FlareYellow_GP25_M {
 				price = 10;
 				stock = MAGAZINE_STOCK;
 			};
@@ -380,7 +413,7 @@
 				price = 50;
 				stock = 50;
 			};
-				class CUP_30Rnd_762x51_2_SCAR {
+				class CUP_30Rnd_762x51_2_B_SCAR {
 				price = 60;
 				stock = 50;
 			};
@@ -388,7 +421,7 @@
 				price = 60;
 				stock = 50;
 			};
-				class CUP_50Rnd_TE1_White_Tracer_762x51_SCAR_White_Tracer_762x51_2_SCAR {
+				class CUP_50Rnd_TE1_White_Tracer_762x51_SCAR {
 				price = 100;
 				stock = 50;
 			};
@@ -486,6 +519,11 @@
 			ITEM(U_I_FullGhillie_sard, 250, 40);
 
 			ITEM(U_I_GhillieSuit, 250 40);
+
+			class CUP_acc_ANPEQ_2_camo {
+				price = 150;
+				stock = NN_STOCK;
+			};
 
 			ITEM(CUP_B_AlicePack_OD, 10, MISC_STOCK);
 			ITEM(CUP_B_AlicePack_Khaki, 10, MISC_STOCK);
