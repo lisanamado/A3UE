@@ -220,7 +220,8 @@ private _petrosBeret =  ["CUP_H_ChDKZ_Beret"];
 
 ["voices", ["CUP_D_Female01_EN", "MALEO1ESPA", "Male04GRE", "Male02FRE"]] call _fnc_saveToTemplate;
 
-"SahraniNames" call _fnc_saveNames;
+//CHECK IF IT WORKS:
+configfile >> "CfgWorlds" >> "GenericNames" >> "SahraniNames" >> "LastNames" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
