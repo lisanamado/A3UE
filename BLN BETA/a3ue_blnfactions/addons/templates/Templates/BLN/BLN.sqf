@@ -19,7 +19,7 @@
 
 ["flag", "Flag_BLN"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNfL.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_BLN"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -138,9 +138,19 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {
 	if (isClass (configFile >> "CfgWeapons" >> "Nikon_DSLR_HUD")) then {
 	_initialRebelEquipment append ["Nikon_DSLR_HUD","Nikon_DSLR"]
 };
-//add spraypaint if using ACE - TODO add more 
-	if (isClass (configFile >> "CfgWeapons" >> "ACE_SpraypaintBlack")) then {
-	_initialRebelEquipment append ["ACE_SpraypaintBlack"]
+//adds ACE items
+
+if (A3A_hasACE) then {
+    _initialRebelEquipment append ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_SpraypaintWhite","ACE_SpraypaintYellow"
+        ,"ACE_UAVBattery"
+        ,"ace_flags_black"
+        ,"ace_flags_blue"
+        ,"ace_flags_green"
+        ,"ace_flags_orange"
+        ,"ace_flags_purple"
+        ,"ace_flags_red"
+        ,"ace_flags_white"
+        ,"ace_flags_yellow"];
 };
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
@@ -164,13 +174,13 @@ private _rebUniforms =  [
 ];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
-
+/*
 private _petrosUniform =  ["U_I_L_Uniform_01_camo_F"];
 ["petrosuniform", _rebUniforms] call _fnc_saveToTemplate; 
 
 private _petrosBeret =  ["CUP_H_ChDKZ_Beret"];
 ["petrosberet", _petrosBeret] call _fnc_saveToTemplate; 
-
+*/
 //HEADGEAR
 
 ["headgear", [
@@ -208,7 +218,9 @@ private _petrosBeret =  ["CUP_H_ChDKZ_Beret"];
     "Max_faceWS9"
 ]] call _fnc_saveToTemplate;
 
-["voices", ["cup_d_female01_en", "MALEO1ESPA", "male06gre"]] call _fnc_saveToTemplate;
+["voices", ["CUP_D_Female01_EN", "MALEO1ESPA", "Male04GRE", "Male02FRE"]] call _fnc_saveToTemplate;
+
+"SahraniNames" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
@@ -219,7 +231,7 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
 
-_loadoutData set ["petrosuniform","uniforms", _rebUniforms];
+_loadoutData set [/*"petrosuniform",*/"uniforms", _rebUniforms];
 
 //set a red neckscarf as identifier
 _loadoutData set ["facewear", [
@@ -235,14 +247,14 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 ///////////////////////
 ////   INSIGNIA   ////
 /////////////////////
-["insignia", ["BLN"]] call _fnc_saveToTemplate;
+//["insignia", ["BLN"]] call _fnc_saveToTemplate;
 
 
 ////////////////////////
 //  Rebel Unit Types  //
 ///////////////////////.
 
-private _petrosTemplate = {
+/*private _petrosTemplate = {
     ["petrosuniform"] call _fnc_setUniform;
     ["petrosberet"] call _fnc_setHelmet;
     ["facewear"] call _fnc_setFacewear;
@@ -251,7 +263,7 @@ private _petrosTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
-};
+};*/
 
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -261,7 +273,6 @@ private _squadLeaderTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
-
 };
 
 private _riflemanTemplate = {

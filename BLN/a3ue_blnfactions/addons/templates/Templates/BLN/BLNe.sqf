@@ -16,8 +16,8 @@
 ["name", "BLN"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_BLNe"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNe.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "a3a_flag_BLNe"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNfV.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -29,7 +29,7 @@
 ["vehiclesLightArmed", ["CUP_O_Hilux_armored_M2_TK_INS"]] call _fnc_saveToTemplate;
 ["vehiclesTruck", ["CUP_V3S_Open_NAPA"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["CUP_O_Hilux_armored_SPG9_TK_INS"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS", "CUP_I_Datsun_AA_Random"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS"]] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlane", ["CUP_C_DC3_CIV"]] call _fnc_saveToTemplate;                    
@@ -137,6 +137,15 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {
     _initialRebelEquipment pushBack "TFAR_anprc155_coyote";
 };
 
+//add a camera if has hate's mod
+	if (isClass (configFile >> "CfgWeapons" >> "Nikon_DSLR_HUD")) then {
+	_initialRebelEquipment append ["Nikon_DSLR_HUD","Nikon_DSLR"]
+};
+//add spraypaint if using ACE
+	if (isClass (configFile >> "CfgWeapons" >> "ACE_SpraypaintBlack")) then {
+	_initialRebelEquipment append ["ACE_SpraypaintBlack"]
+};
+
 _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
@@ -144,14 +153,17 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 //UNIFORMS
 
 private _rebUniforms =  [
-// female uniforms:
+    "U_BG_Guerrilla_6_1",
+    "CUP_I_B_PARA_Unit_3",
+    "CUP_I_B_PARA_Unit_10",
+    "CUP_I_B_PARA_Unit_9",
+    "CUP_I_B_PARA_Unit_15",
+
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
     "WU_B_T_Soldier_F",
-// male uniforms:
-    "U_BG_Guerrilla_6_1",
-    "CUP_I_B_PARA_Unit_3",
-    "CUP_I_B_PARA_Unit_10"
+    "WU_O_T_Officer_F",
+    "WU_O_OfficerUniform_ocamo"
 ];         
 
 
@@ -167,11 +179,10 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
 ["headgear", [
     "CUP_H_Booniehat_CCE",
     "CUP_H_Booniehat_TTS",
-    "CUP_H_USMC_BOONIE_WDL"
+    "CUP_H_USMC_BOONIE_WDL",
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
-    "CUP_H_ChDKZ_Beret",
     "H_ShemagOpen_tan",
     "H_Bandanna_sgg",
     "H_Cap_grn",
@@ -179,6 +190,10 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
     ""
 ]] call _fnc_saveToTemplate;
 
+/*//Special outfit for Petros
+["Puniform", ["U_I_L_Uniform_01_camo_F"]] call _fnc_saveToTemplate;
+["Pheadgear", ["CUP_H_ChDKZ_Beret"]] call _fnc_saveToTemplate;
+*/
 /////////////////////
 ///  Identities   ///
 /////////////////////
@@ -227,19 +242,24 @@ _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_me
 _loadoutData set ["items_medical_medic", ["MEDIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials];
 
+///////////////////////
+////   INSIGNIA   ////
+/////////////////////
+["insignia", ["BLN"]] call _fnc_saveToTemplate;
 ////////////////////////
 //  Rebel Unit Types  //
 ///////////////////////.
 
-private _PetrosTemplate = {
-    ["Puniform"] call _fnc_setUniform;
+/*private _petrosTemplate = {
+    ["uniform"] call _fnc_setUniform;
     ["facewear"] call _fnc_setFacewear;
+    ["headgear"] call _fnc_setHeadgear;
 
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
-};
+};*/
 
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -262,7 +282,7 @@ private _riflemanTemplate = {
 
 private _prefix = "militia";
 private _unitTypes = [
-    ["Petros", _PetrosTemplate],
+    ["Petros", _squadLeaderTemplate],
     ["SquadLeader", _squadLeaderTemplate],
     ["Rifleman", _riflemanTemplate],
     ["staticCrew", _riflemanTemplate],

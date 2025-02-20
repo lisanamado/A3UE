@@ -15,8 +15,8 @@
 ["name", "BLN"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_BLNex"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNex.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "a3a_flag_BLNex"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNfR.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -25,28 +25,28 @@
 //check how vehicles work, I'll probably change the HIL vics
 
 ["vehiclesBasic", ["I_E_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["CUP_O_Hilux_armored_M2_TK_INS"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["CUP_V3S_Open_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesAT", ["CUP_O_Hilux_armored_SPG9_TK_INS"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS", "CUP_I_Datsun_AA_Random"]] call _fnc_saveToTemplate;
-["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["a3u_cup_uaz_unarmed_convertible_1"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["CUP_B_UAZ_MG_CDF"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["a3u_cup_kamaz_olive"]] call _fnc_saveToTemplate;
+["vehiclesAT", ["CUP_B_UAZ_METIS_CDF"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_O_Hilux_igla_CHDKZ"]] call _fnc_saveToTemplate;
+["vehiclesBoat", ["CUP_O_PBX_RU"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_ION", "CUP_B_AC47_Spooky_USA"]] call _fnc_saveToTemplate;                    
-["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_C47_CIV"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_RACS","CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
+["vehiclesCivPlane", ["CUP_C_CESSNA_CIV"]] call _fnc_saveToTemplate;
 
 ["vehiclesMedical", ["CUP_B_LR_Ambulance_CZ_D"]] call _fnc_saveToTemplate;
 
-["vehiclesCivCar", ["CUP_O_Hilux_unarmed_CR_CIV"]] call _fnc_saveToTemplate;
+["vehiclesCivCar", ["CUP_C_Lada_CIV"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["CUP_C_412", "CUP_C_Mi17_Civilian_RU","CUP_C_Merlin_HC3_CIV_Lux"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["O_G_HMG_02_high_F", "O_G_HMG_02_F"]] call _fnc_saveToTemplate;
-["staticAT", ["CUP_I_SPG9_NAPA"]] call _fnc_saveToTemplate;
-["staticAA", ["CUP_I_ZU23_NAPA"]] call _fnc_saveToTemplate;
+["staticMGs", ["CUP_O_DSHKM_ChDKZ", "CUP_O_DSHkM_MiniTriPod_ChDKZ"]] call _fnc_saveToTemplate;
+["staticAT", ["CUP_O_SPG9_ChDKZ"]] call _fnc_saveToTemplate;
+["staticAA", ["CUP_O_ZU23_ChDKZ"]] call _fnc_saveToTemplate;
 
-["staticMortars", ["CUP_I_2b14_82mm_NAPA"]] call _fnc_saveToTemplate;
+["staticMortars", ["CUP_O_2b14_82mm_ChDKZ"]] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
@@ -64,12 +64,6 @@
 ["lootCrate", "A3AP_Box_Syndicate_Ammo_F"] call _fnc_saveToTemplate;
 ["rallyPoint", "B_RadioBag_01_wdl_F"] call _fnc_saveToTemplate;
 
-["variants", [
-    [
-     "CUP_B_AC47_Spooky_USA", ["SLAWoodland",1]
-    ]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -77,55 +71,42 @@
 
 private _initialRebelEquipment = [
 
-    "CUP_hgun_TaurusTracker455_Gold",
     "CUP_hgun_TT",
-    "CUP_hgun_SA61",
+    "CUP_hgun_Compact",
 
     "CUP_sgun_CZ584",
     "sgun_HunterShotgun_01_sawedoff_F",
-    "CUP_sgun_slamfire",
     
     "CUP_srifle_Mosin_Nagant",
-    "CUP_srifle_LeeEnfield",
-    "CUP_srifle_LeeEnfield_rail",
-    "CUP_srifle_Remington700",
-    "CUP_arifle_Sa58_sporter_compact",
+    "CUP_SKS_rail",
+    "CUP_arifle_SIAGE_MK03_Wood_top_rail",
 
-    "CUP_smg_M3A1_blk",
-    "CUP_smg_Mac10",
+    "CUP_smg_vityaz",
 
-    ["CUP_launch_M72A6_Special"],
-    ["CUP_launch_FIM92Stinger", 10],
+    ["CUP_launch_RPG18", 50],
+    ["CUP_launch_9K32Strela", 10],
     ["CUP_launch_RPG7V", 10],
+
+    "CUP_8Rnd_762x25_TT",
+    "CUP_10Rnd_9x19_Compact",
 
     "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 
     "CUP_1Rnd_12Gauge_Pellets_No3_Buck", 
-    "CUP_6Rnd_45ACP_M", 
     "CUP_1Rnd_762x51_CZ584",
     "CUP_2Rnd_12Gauge_Pellets_No0_Buck",
+
+    "CUP_30Rnd_9x19AP_Vityaz",
+
     "CUP_5Rnd_762x54_Mosin_M",
-    "CUP_10x_303_M",
-    "CUP_6Rnd_762x51_R700",
-    "CUP_30Rnd_45ACP_M3A1_BLK_M",
-    "CUP_8Rnd_762x25_TT",
-    "CUP_30Rnd_45ACP_MAC10_M",
-    "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
-    "CUP_10Rnd_B_765x17_Ball_M",
-    "CUP_20Rnd_B_765x17_Ball_M",
-    "CUP_30Rnd_Sa58_M_TracerR",
-    "CUP_15Rnd_Sa58_M",
-    "CUP_PG7V_M", 
-    "CUP_PG7VM_M",
-    "CUP_PG7VL_M",
-    "CUP_PG7VR_M",
-    "CUP_TBG7V_M",
+    "CUP_10Rnd_762x39_SaigaMk03_M",
+    "CUP_10Rnd_762x39_SKS_M".
+
+    ["CUP_PG7V_M", 25],
 
     "CUP_HandGrenade_RGD5", "SmokeShell",
     
     ["IEDUrbanSmall_Remote_Mag", 10], 
     ["IEDLandSmall_Remote_Mag", 10], 
-    ["IEDUrbanBig_Remote_Mag", 3], 
-    ["IEDLandBig_Remote_Mag", 3],
 
     //I preferred jackets over vests to dissemble the bodies unmatching faces. They should look light, as for tropical climate
     "CUP_V_OI_TKI_Jacket2_02", 
@@ -160,6 +141,15 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {
     _initialRebelEquipment pushBack "TFAR_anprc155_coyote";
 };
 
+//add a camera if has hate's mod
+	if (isClass (configFile >> "CfgWeapons" >> "Nikon_DSLR_HUD")) then {
+	_initialRebelEquipment append ["Nikon_DSLR_HUD","Nikon_DSLR"]
+};
+//add spraypaint if using ACE
+	if (isClass (configFile >> "CfgWeapons" >> "ACE_SpraypaintBlack")) then {
+	_initialRebelEquipment append ["ACE_SpraypaintBlack"]
+};
+
 _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
@@ -168,21 +158,20 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 //UNIFORMS
 
 private _rebUniforms =  [
-// female uniforms:
+    "U_BG_Guerrilla_6_1",
+    "CUP_I_B_PARA_Unit_3",
+    "CUP_I_B_PARA_Unit_10",
+    "CUP_I_B_PARA_Unit_9",
+    "CUP_I_B_PARA_Unit_15",
+
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
     "WU_B_T_Soldier_F",
-// male uniforms:
-    "U_BG_Guerrilla_6_1",
-    "CUP_I_B_PARA_Unit_3",
-    "CUP_I_B_PARA_Unit_10"
+    "WU_O_T_Officer_F",
+    "WU_O_OfficerUniform_ocamo"
 ];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
-
-//A uniform for Petros, he looks too weird on female uniforms
-private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
-["Puniform", _petrosUniform] call _fnc_saveToTemplate;
 
 //HEADGEAR
 
@@ -193,7 +182,6 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
     "CUP_H_SLA_Boonie",
     "CUP_H_C_Beret_01",
     "CUP_H_C_Beret_02",
-    "CUP_H_ChDKZ_Beret",
     "H_ShemagOpen_tan",
     "H_Bandanna_sgg",
     "H_Cap_grn",
@@ -201,6 +189,14 @@ private _petrosUniform = ["U_I_L_Uniform_01_deserter_F"];
     ""
 ]] call _fnc_saveToTemplate;
 
+/*//Special outfit for Petros
+["Puniform", ["U_I_L_Uniform_01_camo_F"]] call _fnc_saveToTemplate;
+["Pheadgear", ["CUP_H_ChDKZ_Beret"]] call _fnc_saveToTemplate;
+*/
+///////////////////////
+////   INSIGNIA   ////
+/////////////////////
+["insignia", ["BLN"]] call _fnc_saveToTemplate;
 /////////////////////
 ///  Identities   ///
 /////////////////////
@@ -253,15 +249,16 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 //  Rebel Unit Types  //
 ///////////////////////.
 
-private _PetrosTemplate = {
-    ["Puniform"] call _fnc_setUniform;
+/*private _PetrosTemplate = {
+    ["uniform"] call _fnc_setUniform;
     ["facewear"] call _fnc_setFacewear;
+    ["headgear"] call _fnc_setHeadgear;
 
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
-};
+};*/
 
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -284,7 +281,7 @@ private _riflemanTemplate = {
 
 private _prefix = "militia";
 private _unitTypes = [
-    ["Petros", _PetrosTemplate],
+    ["Petros", _squadLeaderTemplate],
     ["SquadLeader", _squadLeaderTemplate],
     ["Rifleman", _riflemanTemplate],
     ["staticCrew", _riflemanTemplate],
