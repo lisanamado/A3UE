@@ -12,9 +12,8 @@
 
 ["vehiclesCivCar", [
 
-	"CUP_C_TT650_TK_CIV" , 0.7
-	,"CUP_C_TT650_CIV" , 0.7
-    ,"C_Quadbike_01_F", 0.9
+
+    "C_Quadbike_01_F", 0.9
     ,"C_Kart_01_F", 0.01
 	
 	,"CUP_C_Lada_TK_CIV" , 0.2

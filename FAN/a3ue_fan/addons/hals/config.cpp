@@ -17,5 +17,5 @@ class CfgPatches
 };
 
 class CfgHALsAddons {
-    #include "..\hals\Addons\store\config.hpp"
+    #include "Addons\store\config.hpp"
 };

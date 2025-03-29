@@ -315,6 +315,8 @@
     "MALEO1ESPA", "male06gre", "Male04GRE", "Male06GRE", "Male05GRE"
 ]] call _fnc_saveToTemplate;
 
+"SahraniNames" call _fnc_saveNames;
+
 ["insignia", ["FANinSOL"]] call _fnc_saveToTemplate;
 ["sfInsignia", ["FANinCAM"]] call _fnc_saveToTemplate;
 ["milInsignia", ["FANinSOL"]] call _fnc_saveToTemplate;

@@ -4,9 +4,9 @@ class Templates
 
     class CUP_ION_Riv : CUP_Reb
     {
-        basepath = QPATHTOFOLDER(Templates\IONrival); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
+        basepath = QPATHTOFOLDER(Pictures); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Riv"; // Inv, Occ, Reb, Riv, Civ
-        flagTexture = QPATHTOFOLDER(Templates\IONrival\ION.paa); // Path to an icon to be displayed in the select menu.
+        flagTexture = QPATHTOFOLDER(Pictures\ION.paa); // Path to an icon to be displayed in the select menu.
         name = "ION"; // Name shown in the select menu.
         file = "IONrival"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)

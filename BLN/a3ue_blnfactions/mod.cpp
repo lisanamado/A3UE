@@ -1,5 +1,5 @@
-name = "BETA A3UE BLN Rebels and Civilians";
-picture = "\x\a3ue_blnfactions\addons\templates\Templates\BLN\BLN.paa";
+name = "A3UE BLN Rebels";
+picture = "\x\a3ue_blnfactions\addons\templates\Pictures\petrosBLN.paa";
 author = "Catertico";
 tooltip = "Brigadas de Liberación Nacional for Antistasi Ultimate";
 actionName = "Support the creator";
@@ -7,6 +7,6 @@ action = "https://buymeacoffee.com/catertico";
 logo = "\x\a3ue_blnfactions\addons\templates\Pictures\Markers\BLN.paa";
 logoOver = "\x\a3ue_blnfactions\addons\templates\Pictures\Markers\BLN.paa";
 logoSmall = "\x\a3ue_blnfactions\addons\templates\Pictures\Markers\BLN.paa";
-overview = "Brigadas de Liberación Nacional (National Liberation Brigades) is a rebel faction loosely based on latin-american guerrillas, including female combatants and a very basic initial default loadout, strictly based on civil hunting weapons. There's two scoped rifles in the arsenal, use them wisely to get semi-automatic weapons, smgs, launchers and grenades, because you have none of these at start. <br/> <br/> If you want a faster start, choose Standard, Western backed, or Eastern Backed versions. <br/> <br/> By Catertico. <br/> <br/> If you like this mod, consider supporting the author";
-overviewPicture = "\x\a3ue_blnfactions\addons\templates\Templates\BLN\BLN.paa";
+overview = "Brigadas de Liberación Nacional (National Liberation Brigades) is a rebel faction loosely based on latin-american guerrillas, including female combatants and a very basic initial default loadout, strictly based on civil hunting weapons. There's two scoped rifles in the arsenal, use them wisely to get semi-automatic weapons, smgs, launchers and grenades, because you have none of these at start. <br/>  If you want a faster start, choose Standard, Western backed, or Eastern Backed versions. <br/> By Catertico. <br/> If you like this mod, consider supporting the author";
+overviewPicture = "\x\a3ue_blnfactions\addons\templates\Pictures\petrosBLN.paa";
 overviewText = "A3UE BLN Rebel and civilian factions";

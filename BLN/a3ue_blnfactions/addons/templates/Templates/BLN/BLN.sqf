@@ -17,8 +17,8 @@
 
 ["name", "BLN"] call _fnc_saveToTemplate;
 
-["flag", "Flag_BLN"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\BLN\BLNfL.paa)] call _fnc_saveToTemplate;
+["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\BLN\BLN.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "a3a_flag_BLN"] call _fnc_saveToTemplate;
 
 //////////////////////////
@@ -34,8 +34,8 @@
 ["vehiclesAA", ["CUP_O_Hilux_armored_zu23_TK_INS"]] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["CUP_I_CESSNA_T41_ARMED_RACS", "CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
-["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_Cessna_172_CIV"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
+["vehiclesCivPlane", ["CUP_C_AN2_CIV","CUP_C_CESSNA_CIV"]] call _fnc_saveToTemplate;
 
 ["vehiclesMedical", ["CUP_B_UAZ_AMB_AFU"]] call _fnc_saveToTemplate;
 
@@ -116,7 +116,100 @@ private _initialRebelEquipment = [
 
     "Binocular",
 
-    "CUP_acc_Zenit_2DS"
+    "CUP_acc_Zenit_2DS",
+
+    "U_C_IDAP_Man_cargo_F"
+    , "U_C_IDAP_Man_Jeans_F"
+    , "U_C_IDAP_Man_casual_F"
+    , "U_C_IDAP_Man_shorts_F"
+    , "U_C_IDAP_Man_Tee_F"
+    , "U_C_IDAP_Man_TeeShorts_F"
+    //medics
+    , "CUP_U_C_AirMedic_orange_01"
+    , "CUP_U_C_AirMedic_red_01"
+    , "CUP_U_C_AirMedic_yellow_01"
+    , "CUP_U_C_Rescuer_01"
+    , "U_C_Paramedic_01_F"
+    //misc
+    , "CUP_U_C_Priest_01"
+    , "U_Competitor"
+    , "U_C_Driver_1_black"
+    , "U_C_Driver_1_blue"
+    , "U_C_Driver_2"
+    , "U_C_Driver_1"
+    , "U_C_Driver_1_green"
+    , "U_C_Driver_1_orange"
+    , "U_C_Driver_1_red"
+    , "U_C_Driver_3"
+    , "U_C_Driver_4"
+    , "U_C_Driver_1_white"
+    , "U_C_Driver_1_yellow"
+    , "CUP_U_C_Fireman_01"
+    , "U_C_Scientist"
+    , "U_C_Uniform_Scientist_01_formal_F"
+    , "U_C_Uniform_Scientist_01_F"
+        //bandits-summer
+        , "U_I_C_Soldier_Bandit_4_F"
+        , "U_I_C_Soldier_Bandit_1_F"
+        , "U_I_C_Soldier_Bandit_2_F"
+        , "U_I_C_Soldier_Bandit_5_F"
+        , "U_I_C_Soldier_Bandit_3_F"
+            //guerrilla-summer
+            , "U_I_G_resistanceLeader_F"
+            , "U_I_E_Uniform_01_tanktop_F"
+            , "CUP_U_CRYE_BLK_Full"
+            , "CUP_U_CRYE_ATACSFG_Roll"
+            , "CUP_U_CRYE_BLK_Roll"
+            , "U_B_CTRG_Soldier_3_Arid_F"
+            , "U_B_CTRG_Soldier_2_F"
+            , "U_B_CTRG_Soldier_2_Arid_F"
+            , "U_B_CTRG_Soldier_3_F"
+            , "U_I_L_Uniform_01_deserter_F"
+            , "U_BG_Guerilla1_1"
+            , "U_BG_Guerilla1_2_F"
+            , "U_BG_Guerilla2_2"
+            , "U_BG_Guerilla2_1"
+            , "U_BG_Guerilla2_3"
+            , "U_BG_leader"
+            , "U_I_L_Uniform_01_tshirt_olive_F"
+            , "CUP_U_I_GUE_Woodland1"
+            , "CUP_U_I_GUE_Flecktarn"
+            //guerrilla-winter
+            , "CUP_U_O_CHDKZ_Bardak"
+            , "U_I_E_Uniform_01_sweater_F"
+            , "CUP_U_CRYE_ATACSAU_Full"
+            , "CUP_U_CRYE_ATACSFG_Full"
+            , "CUP_U_CRYE_BLK_Full"
+            , "U_B_CTRG_Soldier_F"
+            , "U_B_CTRG_Soldier_Arid_F"
+            , "U_B_CTRG_Soldier_urb_1_F"
+            , "U_I_L_Uniform_01_camo_F"
+        //Partisans
+        , "CUP_U_O_Partisan_TTsKO"
+        , "CUP_U_O_Partisan_TTsKO_Mixed"
+        , "CUP_U_O_Partisan_VSR_Mixed1"
+        , "CUP_U_O_Partisan_VSR_Mixed2"
+        //Paramilitary
+        , "CUP_I_B_PARA_Unit_1"
+        , "CUP_I_B_PARA_Unit_2"
+        , "CUP_I_B_PARA_Unit_3"
+        , "CUP_I_B_PARA_Unit_4"
+        , "CUP_I_B_PARA_Unit_5"
+        , "CUP_I_B_PARA_Unit_6"
+        , "CUP_I_B_PARA_Unit_7"
+        , "CUP_I_B_PARA_Unit_8"
+        , "CUP_I_B_PARA_Unit_9"
+        , "CUP_I_B_PARA_Unit_10"
+        , "CUP_I_B_PARA_Unit_11"
+        , "CUP_I_B_PARA_Unit_12"
+        , "CUP_I_B_PARA_Unit_13"
+        , "CUP_I_B_PARA_Unit_14"
+        , "CUP_I_B_PARA_Unit_15"
+        , "U_I_C_Soldier_Para_2_F"
+        , "U_I_C_Soldier_Para_3_F"
+        , "U_I_C_Soldier_Para_5_F"
+        , "U_I_C_Soldier_Para_4_F"
+        , "U_I_C_Soldier_Para_1_F"    
 
 ];
 
@@ -152,6 +245,9 @@ if (A3A_hasACE) then {
         ,"ace_flags_white"
         ,"ace_flags_yellow"];
 };
+
+_initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
+
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
@@ -218,7 +314,7 @@ private _petrosBeret =  ["CUP_H_ChDKZ_Beret"];
     "Max_faceWS9"
 ]] call _fnc_saveToTemplate;
 
-["voices", ["CUP_D_Female01_EN", "MALEO1ESPA", "Male04GRE", "Male02FRE"]] call _fnc_saveToTemplate;
+["voices", ["CUP_D_Female01_EN", "Male04GRE", "Male02FRE"]] call _fnc_saveToTemplate;
 
 "SahraniNames" call _fnc_saveNames;
 
@@ -247,8 +343,7 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 ///////////////////////
 ////   INSIGNIA   ////
 /////////////////////
-//["insignia", ["BLN"]] call _fnc_saveToTemplate;
-
+["insignia", ["BLN"]] call _fnc_saveToTemplate;
 
 ////////////////////////
 //  Rebel Unit Types  //
