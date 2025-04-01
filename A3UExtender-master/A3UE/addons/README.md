@@ -26,7 +26,7 @@
 
         - You can use the config viewer to find these. [Advanced Developer Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=2369477168) makes this much easier by allowing you to search for CfgPatches and specific entries.
 
-            - An alternate way to do this (at least for vehicles) is to place down the object in the editor, right click on it and find in config viewer. At8 the bottom it should list the "addons" it requires, pick the one that relates most to the addon it comes from.
+            - An alternate way to do this (at least for vehicles) is to place down the object in the editor, right click on it and find in config viewer. At the bottom it should list the "addons" it requires, pick the one that relates most to the addon it comes from.
 
 ## Weapons
 
@@ -46,9 +46,7 @@
 
         - Fill in each class as you see fit and delete classes you don't need.
 
-
-
-    - Once you've done your `mod.hpp` (SE REFIERE AL QUE ACABO DE HACER) file, you can now add a new "stock" entry in the main `config.hpp` under the following config path `cfgHALsStore >> stores >> my_extension_stock_mod`
+    - Once you've done your `mod.hpp` file, you can now add a new "stock" entry in the main `config.hpp` under the following config path `cfgHALsStore >> stores >> my_extension_stock_mod`
 
         - Make sure to `#include` your `mod.hpp` file in `cfgHALsStore >> categories`
 

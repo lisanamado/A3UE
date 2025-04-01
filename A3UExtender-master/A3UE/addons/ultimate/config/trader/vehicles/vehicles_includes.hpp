@@ -1,1 +1,1 @@
-#include "vehicles_fan.hpp"
+#include "vehicles_vanilla.hpp"
