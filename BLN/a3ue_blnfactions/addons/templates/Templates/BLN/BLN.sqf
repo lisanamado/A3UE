@@ -72,7 +72,7 @@
     ]
 ] call _fnc_saveToTemplate;
 
-
+#include "CUP_Vehicle_Attributes.sqf"
 
 ///////////////////////////
 //  Rebel Starting Gear  //
