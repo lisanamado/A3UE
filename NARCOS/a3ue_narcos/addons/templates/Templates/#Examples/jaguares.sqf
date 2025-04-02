@@ -630,9 +630,8 @@ _militaryLoadoutData set ["grenadeLaunchers", [
     ["CUP_glaunch_6G30","","","",[],[],""],1
 ]];
 _militaryLoadoutData set ["SMGs", [
-    //hasta acá llegué
     ["CUP_smg_bizon","","","_AKOptics",[],[],""],1,
-    ["CUP_smg_MP5A5","","","",[],[],""],3,
+    ["CUP_smg_MP5A5","","","",[],[],""],4,
     ["CUP_smg_MP5A5_Rail_VFG","","","_militaryRISOptics",[],[],""],1.5,
     ["CUP_smg_vityaz_vfg_top_rail","","","",[],[],""],2,
 ]];
@@ -713,6 +712,8 @@ _eliteLoadoutData set ["helmets", [
 ]];
 _eliteLoadoutData set ["binoculars", ["ACE_VectorDay","Binocular","CUP_Vector21Nite"]];
 _eliteLoadoutData set ["rangefinders", ["CUP_LRTV","CUP_Vector21Nite"]];
+    //hasta acá llegué
+
 _eliteLoadoutData set ["backpacks", []];
 _eliteLoadoutData set ["atBackpacks", []];
 
