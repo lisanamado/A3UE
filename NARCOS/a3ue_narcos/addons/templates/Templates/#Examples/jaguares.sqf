@@ -483,7 +483,7 @@ _militiaLoadoutData set ["rifles", [
 _militiaLoadoutData set ["carbines", [
     ["CUP_arifle_Colt727","","","",[],[],""],1,
     ["CUP_arifle_FNFAL_OSW_railed","","","",[],[],""],1,
-    ["CUP_Famas_F1","","","",[],[],""],0.25,
+    ["CUP_Famas_F1","","","",[],[],""],0.25
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
     ["CUP_arifle_M16wA1GL_FS","","","",[],[],""],1,
@@ -633,7 +633,7 @@ _militaryLoadoutData set ["SMGs", [
     ["CUP_smg_bizon","","","_AKOptics",[],[],""],1,
     ["CUP_smg_MP5A5","","","",[],[],""],4,
     ["CUP_smg_MP5A5_Rail_VFG","","","_militaryRISOptics",[],[],""],1.5,
-    ["CUP_smg_vityaz_vfg_top_rail","","","",[],[],""],2,
+    ["CUP_smg_vityaz_vfg_top_rail","","","",[],[],""],2
 ]];
 _militaryLoadoutData set ["machineGuns", [
     ["CUP_lmg_FNMAG_RIS","","","",[],[],""],2,
@@ -744,13 +744,13 @@ _eliteLoadoutData set ["rifles", [
     ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L","_eliteRISOptics",[],[],""],3,
     ["CUP_arifle_FNFAL_OSW_railed","","","_eliteRISOptics",[],[],"CUP_bipod_FNFAL"],2,
     ["CUP_arifle_M4A1_SOMMOD_Grip_black","","CUP_acc_ANPEQ_15","_militaryRISOptics",[],[],""],3,
-    ["CUP_arifle_AUG_A1","","","",[],[],""],0.5
+    ["CUP_arifle_AUG_A1","","","",[],[],""],0.5,
     ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L","_eliteRISOptics",[],[],""],3,
     ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","","","_eliteRISOptics",[],[],""],0.5
 ]];
 _eliteLoadoutData set ["carbines", [
     ["CUP_arifle_M4_MOE_BW","","CUP_acc_ANPEQ_15_Flashlight_Tan_L","_militaryRISOptics",[],[],""],3,
-    ["CUP_arifle_XM8_Compact_FG_Rail_Green","","CUP_acc_ANPEQ_15_Flashlight_Tan_L","_militaryRISOptics",[],[],""],1
+    ["CUP_arifle_XM8_Compact_FG_Rail_Green","","CUP_acc_ANPEQ_15_Flashlight_Tan_L","_militaryRISOptics",[],[],""],1,
     ["CUP_Famas_F1","","","",[],[],""],0.5,
     ["CUP_arifle_AK104","","CUP_acc_ANPEQ_2_Flashlight_Black_L","_AKOptics",[],[],""],3
 ]];
@@ -837,14 +837,6 @@ _sfLoadoutData set ["sniperRifles", [
     ["CUP_srifle_M107_Pristine","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_10Rnd_127x99_M107","ACE_10Rnd_127x99_Mag","ACE_10Rnd_127x99_AMAX_Mag","ACE_10Rnd_127x99_API_Mag"],[],""]
 ]];
 _sfLoadoutData set ["sidearms", []];
-
-
-
-
-
-
-
-
 
 //////////////////////////
 //    Misc Loadouts     //
