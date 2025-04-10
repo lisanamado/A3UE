@@ -9,4 +9,4 @@ logoOver = "\x\a3ue_cup_ion_r\addons\templates\Pictures\ION.paa";
 logoSmall = "\x\a3ue_cup_ion_r\addons\templates\Pictures\ION.paa";
 overview = "ION rebel and rival factions for Antistasi on a CUP base<br/> By Catertico. <br/> If you like this mod, consider supporting the author";
 overviewPicture = "\x\a3ue_cup_ion_r\addons\templates\Pictures\ION.paa";
-overviewText = "A3UE ION CUP Rebel and Rival factions";
+overviewText = "A3UE CUP Rebel and Rival factions";

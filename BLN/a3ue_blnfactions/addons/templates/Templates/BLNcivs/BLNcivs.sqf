@@ -8,8 +8,6 @@
 //       Vehicles       //
 //////////////////////////    
 
-
-
 ["vehiclesCivCar", [
 
 
@@ -149,6 +147,7 @@
 ////////////////////////////////
 
 ["currencySymbol", "$"] call _fnc_saveToTemplate;
+"SahraniNames" call _fnc_saveNames;
 
 ["faces", [
 
@@ -173,7 +172,6 @@
 	"GreekHead_A3_03",
 	"GreekHead_A3_09",
 	"GreekHead_A3_04"
-
 ]] call _fnc_saveToTemplate;
 
 //////////////////////////

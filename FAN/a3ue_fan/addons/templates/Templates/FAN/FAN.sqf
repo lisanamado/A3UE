@@ -206,15 +206,14 @@
     , "CUP_O_BM21_SLA"
 ]] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
 
-["magazines", createHashMapFromArray [["CUP_O_BM21_SLA", ["CUP_40Rnd_GRAD_HE"]], ["CUP_I_M270_HE_RACS", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
+["magazines", createHashMapFromArray [["CUP_O_BM21_SLA", ["CUP_40Rnd_GRAD_HE"]], ["CUP_B_M270_HE_USMC", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
 
 ["uavsAttack", [
     "O_T_UAV_04_CAS_F"
     , "CUP_B_USMC_DYN_MQ9"
 ]] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
 ["uavsPortable", [
-    "CUP_O_Pchela1T_RU"
-    , "I_UAV_01_F"
+    "I_UAV_01_F"
 ]] call _fnc_saveToTemplate;                  // unmanned aerial vehicle(drone), unarmed or armed(Western Sahara style), must be able to be disassembled
 
 

@@ -5,7 +5,7 @@
 //It is not possible to assign bodies and faces in two sepparate classes, so female and male bodies and heads are going to mix
 //I've chosen bodies and jackets trying to make this not to obvious. Think of them as strong women and slim man. Or just transgender people, use your imagination :D.
 
-//EASTERN BACKED VERSION//
+//SLACKERS VERSION//
 
 #include "..\..\script_component.hpp"
 
@@ -23,30 +23,31 @@
 //       Vehicles       //
 //////////////////////////
 
+//check how vehicles work, I'll probably change the HIL vics
 
 ["vehiclesBasic", ["I_E_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["a3u_cup_uaz_unarmed_convertible_1"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["CUP_B_UAZ_MG_CDF"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["a3u_cup_kamaz_olive"]] call _fnc_saveToTemplate;
-["vehiclesAT", ["CUP_B_UAZ_METIS_CDF"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_O_Hilux_igla_CHDKZ"]] call _fnc_saveToTemplate;
-["vehiclesBoat", ["CUP_O_PBX_RU"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["CUP_O_GAZ_Vodnik_Unarmed_RU"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["CUP_I_Hilux_armored_BTR60_TK"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["CUP_O_Kamaz_6396_transport_RUS_M"]] call _fnc_saveToTemplate;
+["vehiclesAT", ["CUP_I_Hilux_armored_BMP1_TK"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_I_Datsun_AA"]] call _fnc_saveToTemplate;
+["vehiclesBoat", ["CUP_B_RHIB_USMC"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlane", ["CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
 ["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_C47_CIV"]] call _fnc_saveToTemplate;
 
-["vehiclesMedical", ["CUP_B_UAZ_AMB_AFU"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["CUP_B_LR_Ambulance_CZ_D"]] call _fnc_saveToTemplate;
 
-["vehiclesCivCar", ["CUP_C_Lada_CIV"]] call _fnc_saveToTemplate;
-["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU"]] call _fnc_saveToTemplate;
+["vehiclesCivCar", ["CUP_C_Tigr_4x4_CIV"]] call _fnc_saveToTemplate;
+["vehiclesCivTruck", ["C_Truck_02_transport_F"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["CUP_C_412"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["CUP_O_DSHKM_ChDKZ", "CUP_O_DSHkM_MiniTriPod_ChDKZ"]] call _fnc_saveToTemplate;
-["staticAT", ["CUP_O_SPG9_ChDKZ"]] call _fnc_saveToTemplate;
-["staticAA", ["CUP_O_ZU23_ChDKZ"]] call _fnc_saveToTemplate;
+["staticMGs", ["CUP_B_M2StaticMG_US", "CUP_B_M2StaticMG_MiniTripod_US"]] call _fnc_saveToTemplate;
+["staticAT", ["CUP_B_TOW_TriPod_US"]] call _fnc_saveToTemplate;
+["staticAA", ["CUP_B_CUP_Stinger_AA_pod_US"]] call _fnc_saveToTemplate;
 
-["staticMortars", ["CUP_O_2b14_82mm_ChDKZ"]] call _fnc_saveToTemplate;
+["staticMortars", ["CUP_B_L16A2_BAF_WDL"]] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
@@ -64,6 +65,7 @@
 ["lootCrate", "A3AP_Box_Syndicate_Ammo_F"] call _fnc_saveToTemplate;
 ["rallyPoint", "B_RadioBag_01_wdl_F"] call _fnc_saveToTemplate;
 
+
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -71,39 +73,45 @@
 
 private _initialRebelEquipment = [
 
-    "CUP_hgun_TT",
-    "CUP_hgun_Compact",
+    "CUP_hgun_Glock17_blk",
+    "CUP_hgun_M9",
+    "CUP_hgun_Makarov",
 
-    "CUP_sgun_CZ584",
-    "sgun_HunterShotgun_01_sawedoff_F",
-    
-    "CUP_srifle_Mosin_Nagant",
-    "CUP_SKS_rail",
-    "CUP_arifle_SIAGE_MK03_Wood_top_rail",
+    "CUP_arifle_FNFAL5060_railed",
+    "CUP_arifle_FNFAL5060_railed_desert",
+    "CUP_arifle_FNFAL5060_railed_woodland",
 
+    "CUP_arifle_AKM",
+    "CUP_arifle_AKS74U",
+
+    "CUP_arifle_M16A1",
+    "CUP_arifle_Colt727",
+
+    "CUP_smg_Mac10",
     "CUP_smg_vityaz",
 
-    ["CUP_launch_RPG18", 50],
-    ["CUP_launch_9K32Strela", 10],
-    ["CUP_launch_RPG7V", 10],
+    "CUP_launch_M72A6_Special",
+    "CUP_launch_RPG7V",
+    ["CUP_launch_FIM92Stinger", 5],
+    ["CUP_launch_9K32Strela", 15],
+    
+    "CUP_17Rnd_9x19_glock17",
+    "CUP_15Rnd_9x19_M9",
+    "CUP_hgun_Makarov",
 
-    "CUP_8Rnd_762x25_TT",
-    "CUP_10Rnd_9x19_Compact",
+    "CUP_10Rnd_762x51_FNFAL_M",
+    "CUP_30Rnd_762x39_AK47_bakelite_M",
+    "CUP_30Rnd_545x39_AK_M",
+    "CUP_20Rnd_556x45_Stanag",
 
-    "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 
-    "CUP_1Rnd_12Gauge_Pellets_No3_Buck", 
-    "CUP_1Rnd_762x51_CZ584",
-    "CUP_2Rnd_12Gauge_Pellets_No0_Buck",
-
+    "CUP_30Rnd_45ACP_MAC10_M",
+    "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M",
     "CUP_30Rnd_9x19AP_Vityaz",
 
-    "CUP_5Rnd_762x54_Mosin_M",
-    "CUP_10Rnd_762x39_SaigaMk03_M",
-    "CUP_10Rnd_762x39_SKS_M",
+    "CUP_PG7V_M",
 
-    ["CUP_PG7V_M", 25],
-
-    "CUP_HandGrenade_RGD5", "SmokeShell",
+    "CUP_HandGrenade_M67",
+    "SmokeShell",
     
     ["IEDUrbanSmall_Remote_Mag", 10], 
     ["IEDLandSmall_Remote_Mag", 10], 
@@ -128,131 +136,6 @@ private _initialRebelEquipment = [
     "CUP_B_HikingPack_Civ",
 
     "Binocular"
-
-    //UNIFORMS FOR PLAYERS
-    //guerrilla-summer
-    , "U_I_G_resistanceLeader_F"
-    , "U_I_E_Uniform_01_tanktop_F"
-    , "CUP_U_CRYE_BLK_Full"
-    , "CUP_U_CRYE_ATACSFG_Roll"
-    , "CUP_U_CRYE_BLK_Roll"
-    , "U_B_CTRG_Soldier_3_Arid_F"
-    , "U_B_CTRG_Soldier_2_F"
-    , "U_B_CTRG_Soldier_2_Arid_F"
-    , "U_B_CTRG_Soldier_3_F"
-    , "U_I_L_Uniform_01_deserter_F"
-    , "U_BG_Guerilla1_1"
-    , "U_BG_Guerilla1_2_F"
-    , "U_BG_Guerilla2_2"
-    , "U_BG_Guerilla2_1"
-    , "U_BG_Guerilla2_3"
-    , "U_BG_leader"
-    , "U_I_L_Uniform_01_tshirt_olive_F"
-    , "CUP_U_I_GUE_Woodland1"
-    , "CUP_U_I_GUE_Flecktarn"
-    //guerrilla-winter
-    , "CUP_U_O_CHDKZ_Bardak"
-    , "U_I_E_Uniform_01_sweater_F"
-    , "CUP_U_CRYE_ATACSAU_Full"
-    , "CUP_U_CRYE_ATACSFG_Full"
-    , "CUP_U_CRYE_BLK_Full"
-    , "U_B_CTRG_Soldier_F"
-    , "U_B_CTRG_Soldier_Arid_F"
-    , "U_B_CTRG_Soldier_urb_1_F"
-    , "U_I_L_Uniform_01_camo_F"
-    , "U_BG_Guerrilla_6_1"
-    , "U_BG_Guerilla3_1"
-    , "U_C_HunterBody_grn"
-    , "CUP_U_I_GUE_Anorak_01"
-    , "CUP_U_I_GUE_Anorak_03"
-    , "CUP_U_I_GUE_Anorak_02"
-    , "CUP_U_I_GUE_WorkU_01"
-    , "CUP_U_I_GUE_WorkU_02"
-    , "CUP_U_I_GUE_Flecktarn2"
-    , "CUP_U_I_GUE_Flecktarn3"
-    , "CUP_U_I_GUE_Flecktarn4"
-    , "CUP_U_C_Woodlander_03"
-    , "CUP_U_C_Woodlander_04"
-    //Paramilitary
-    , "CUP_I_B_PARA_Unit_2"
-    , "CUP_I_B_PARA_Unit_4"
-    , "CUP_I_B_PARA_Unit_5"
-    , "CUP_I_B_PARA_Unit_6"
-    , "CUP_I_B_PARA_Unit_7"
-    , "CUP_I_B_PARA_Unit_8"
-    , "CUP_I_B_PARA_Unit_11"
-    , "CUP_I_B_PARA_Unit_12"
-    , "CUP_I_B_PARA_Unit_13"
-    , "CUP_I_B_PARA_Unit_14"
-    , "U_I_C_Soldier_Para_2_F"
-    , "U_I_C_Soldier_Para_3_F"
-    , "U_I_C_Soldier_Para_5_F"
-    , "U_I_C_Soldier_Para_4_F"
-    , "U_I_C_Soldier_Para_1_F"
-    //Partisans
-    , "CUP_U_O_Partisan_TTsKO"
-    , "CUP_U_O_Partisan_TTsKO_Mixed"
-    , "CUP_U_O_Partisan_VSR_Mixed1"
-    , "CUP_U_O_Partisan_VSR_Mixed2"
-    //bandits-summer
-    , "U_I_C_Soldier_Bandit_4_F"
-    , "U_I_C_Soldier_Bandit_1_F"
-    , "U_I_C_Soldier_Bandit_2_F"
-    , "U_I_C_Soldier_Bandit_5_F"
-    , "U_I_C_Soldier_Bandit_3_F"
-    //military
-    , "CUP_U_USNavy_LHD_crew_Blue"
-    , "CUP_U_USNavy_LHD_crew_Brown"
-    , "CUP_U_USNavy_LHD_crew_Green"
-    , "CUP_U_USNavy_LHD_crew_Red"
-    , "CUP_U_USNavy_LHD_crew_Violet"
-    , "CUP_U_USNavy_LHD_crew_White"
-    , "CUP_U_USNavy_LHD_crew_Yellow"
-    , "CUP_U_B_USArmy_PilotOverall"
-    , "CUP_U_B_USMC_PilotOverall"
-    , "U_I_ParadeUniform_01_AAF_decorated_F"
-    , "U_O_ParadeUniform_01_CSAT_decorated_F"
-    , "U_I_E_ParadeUniform_01_LDF_decorated_F"
-    , "U_B_ParadeUniform_01_US_decorated_F"
-    , "U_I_ParadeUniform_01_AAF_F"
-    , "U_O_ParadeUniform_01_CSAT_F"
-    , "U_I_E_ParadeUniform_01_LDF_F"
-    , "U_B_ParadeUniform_01_US_F"
-    //medics
-    , "CUP_U_C_AirMedic_orange_01"
-    , "CUP_U_C_AirMedic_red_01"
-    , "CUP_U_C_AirMedic_yellow_01"
-    , "U_C_Paramedic_01_F"
-    //worker-overalls
-    , "U_C_ConstructionCoverall_Black_F"
-    , "U_C_ConstructionCoverall_Blue_F"
-    , "U_C_ConstructionCoverall_Red_F"
-    , "U_C_ConstructionCoverall_Vrana_F"
-    //idap
-    ,"U_C_IDAP_Man_cargo_F"
-    , "U_C_IDAP_Man_Jeans_F"
-    , "U_C_IDAP_Man_casual_F"
-    , "U_C_IDAP_Man_shorts_F"
-    , "U_C_IDAP_Man_Tee_F"
-    , "U_C_IDAP_Man_TeeShorts_F"
-    //misc
-    , "CUP_U_C_Priest_01"
-    , "U_Competitor"
-    , "U_C_Driver_1_black"
-    , "U_C_Driver_1_blue"
-    , "U_C_Driver_2"
-    , "U_C_Driver_1"
-    , "U_C_Driver_1_green"
-    , "U_C_Driver_1_orange"
-    , "U_C_Driver_1_red"
-    , "U_C_Driver_3"
-    , "U_C_Driver_4"
-    , "U_C_Driver_1_white"
-    , "U_C_Driver_1_yellow"
-    , "CUP_U_C_Fireman_01"
-    , "U_C_Scientist"
-    , "U_C_Uniform_Scientist_01_formal_F"
-    , "U_C_Uniform_Scientist_01_F"
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr", "tf_anprc154"]};
@@ -288,7 +171,6 @@ if (A3A_hasACE) then {
 _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
-
 
 //UNIFORMS
 

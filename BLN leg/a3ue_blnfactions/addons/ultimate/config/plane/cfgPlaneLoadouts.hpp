@@ -8,7 +8,7 @@ class planeLoadouts
     // diveParams[]
     class CASDIVE
     {
-        class CUP_O_C47_SLA
+        class CUP_I_CESSNA_T41_ARMED_RACS
         {
             loadout[] = {"PylonMissile_1Rnd_Mk82_F", "PylonMissile_1Rnd_Mk82_F"};
             mainGun = "";
@@ -20,7 +20,7 @@ class planeLoadouts
 
     class CAS
     {
-        class CUP_O_C47_SLA
+        class CUP_I_CESSNA_T41_ARMED_RACS
         {
             loadout[] = {"PylonRack_7Rnd_Rocket_04_AP_F","PylonRack_7Rnd_Rocket_04_HE_F"};
             rocketLauncher[] = {"PylonRack_7Rnd_Rocket_04_AP_F","PylonRack_7Rnd_Rocket_04_HE_F"};
@@ -29,7 +29,7 @@ class planeLoadouts
    
     class AA
     {
-        class CUP_O_C47_SLA
+        class CUP_I_CESSNA_T41_ARMED_RACS
         {
             loadout[] = {"CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M","CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M"};
             mainGun = "CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M";

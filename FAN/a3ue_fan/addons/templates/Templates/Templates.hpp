@@ -16,7 +16,7 @@ class Templates
         priority = 850;
     };
 
-    class FANinv : CUP_RACS_Tropical
+    class FANInv : CUP_RACS_Tropical
     {
         basepath = QPATHTOFOLDER(Templates\FAN); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Inv"; // Inv, Occ, Reb, Riv, Civ

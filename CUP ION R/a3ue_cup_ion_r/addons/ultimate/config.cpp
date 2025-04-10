@@ -19,6 +19,4 @@ class CfgPatches
 class A3U
 {
     #include "config\plane\cfgPlaneLoadouts.hpp"
-    #include "config\trader\cfgTraderMods.hpp"
-    #include "config\cfgForbiddenItems.hpp"
 };
