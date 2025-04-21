@@ -836,7 +836,7 @@ _militaryLoadoutData set ["grenadeLaunchers", [
     ["CUP_glaunch_6G30","","","",[],[],""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-    ["CUP_smg_bizon","","","_AKOptics",[],[],""],1,
+    ["CUP_smg_bizon","","",_AKOptics,[],[],""],1,
     ["CUP_smg_MP5A5","","","",[],[],""],4,
     ["CUP_smg_MP5A5_Rail_VFG","","",_militaryRISOptics,[],[],""],1.5,
     ["CUP_smg_vityaz_vfg_top_rail","","","",[],[],""],2
