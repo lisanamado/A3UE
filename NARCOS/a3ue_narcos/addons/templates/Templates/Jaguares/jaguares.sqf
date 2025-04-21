@@ -62,6 +62,7 @@ _sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the o
 
 
 //REPLACED "vehiclesType" by _vehiclesType in order to make it a local variable, enabling the adding of vehicles to the list with append and pushback
+//I provisionally made private definitions for each vehicle type, but they should be "pruned", as having so many makes template loading time longer.
 private _vehiclesBasic = [
     "C_Quadbike_01_F"];			 // unarmed or armed, with 0-2 passengers
 private _vehiclesLightUnarmed = [
