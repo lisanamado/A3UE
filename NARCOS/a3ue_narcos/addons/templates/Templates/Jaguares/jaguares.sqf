@@ -2,40 +2,10 @@
 //   Side Information   //
 //////////////////////////
 
-//Example on how to use mod content
-//If CUP
-/* if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
-    #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_AAF.sqf"
-}; */
+// NEW IDEA FOR mod defined OPTIONAL itema: DEFINE FIRST "_modItem class' and then include those definitions in the arrays for save to template
+//if (ModTruck is class then _ModTrucks = "ModTruck1","ModTruck2") else (_ModTrucks = "") ... Trucks = ["truck1", "truck2", _ModTrucks]
+// that's intended to give the vehicle Templates' arrays optional items if they are loaded and nothing else if they are not. probably the correct it's not "" but something else meaning absence of entry rather than an entry with empty value
 
-
-//or like this
-
-//Example on how to use mod content
-/* if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	_gunship pushBack "vnx_b_air_ac119_01_01";
-  	_transportplanes append ["vnx_b_air_ac119_02_01","vnx_b_air_ac119_02_02"];
-	_planesCAS pushBack "vnx_b_air_ac119_04_01";
-}; */
-
-/*
-// Note: muzzle, rail, sight, and bipod slots can be either a string for a specific item, or an array for a list of items. Arrays can be defined separately from weapons.
-// Arrays (both for attachments and for the larger lists of weapons) can either be a regular list or a weighted list that alternates between item and weight.
-// See https://community.bistudio.com/wiki/selectRandomWeighted for details.
-// If a given spawn list is made a weighted list, make sure that anything that adds to that list (e.g. optional DLC compatibility) is also a weighted list, or everything breaks.
-// Everything in this also applies to e.g. uniforms and equipment, but does NOT apply to vehicles.
-
-// Example of a weighted spawn list, with attachments and etc, using all possible methods of declaring lists:
-
-_sfM4Optics = ["optic_holo", 2, "optic_acog", 1, "", 1]; //weighted list - 50% chance holo, 25% chance acog, 25% chance nothing
-_sfM4Attachments = ["flashlight", ""]; //unweighted list, even distribution between flashlight or nothing
-_sfLoadoutData set ["rifles", [
-    ["rifle_-m4a1", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 2,
-    ["rifle_m4a1_camo", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 1 //2:1 ratio of regular and camo M4s
-]]; 
-_sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the optics lists are applied since _sfM4Optics is stored as a reference, which is useful for DLC/mod compats
-
-*/
 
 #include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
@@ -62,6 +32,7 @@ _sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the o
 
 
 //REPLACED "vehiclesType" by _vehiclesType in order to make it a local variable, enabling the adding of vehicles to the list with append and pushback
+//I provisionally made private definitions for each vehicle type, but they should be "pruned", as having so many makes template loading time longer.
 private _vehiclesBasic = [
     "C_Quadbike_01_F"];			 // unarmed or armed, with 0-2 passengers
 private _vehiclesLightUnarmed = [
@@ -828,7 +799,7 @@ _militaryLoadoutData set ["grenadeLaunchers", [
     ["CUP_glaunch_6G30","","","",[],[],""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-    ["CUP_smg_bizon","","","_AKOptics",[],[],""],1,
+    ["CUP_smg_bizon","","",_AKOptics,[],[],""],1,
     ["CUP_smg_MP5A5","","","",[],[],""],4,
     ["CUP_smg_MP5A5_Rail_VFG","","",_militaryRISOptics,[],[],""],1.5,
     ["CUP_smg_vityaz_vfg_top_rail","","","",[],[],""],2
