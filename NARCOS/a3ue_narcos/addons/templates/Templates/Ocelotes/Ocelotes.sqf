@@ -1,21 +1,36 @@
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
+#include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
 ////////////////////////////
 //   Rivals Information   //
 ///////////////////////////
 
-["name", "" ] call _fnc_saveToTemplate;
-["nameLeader", ""] call _fnc_saveToTemplate;
+["name", "Ocelotes" ] call _fnc_saveToTemplate;
+["nameLeader", "Tomás Farlunga"] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
 //       	Identities    			//
 //////////////////////////////////////
-["faces", []] call _fnc_saveToTemplate; 
-["voices", []] call _fnc_saveToTemplate;
+["faces", [
+    "PersianHead_A3_01"
+    , "PersianHead_A3_02"
+    , "AfricanHead_01"
+    , "AfricanHead_03"
+    , "AsianHead_A3_03"
+    , "WhiteHead_20"
+    , "WhiteHead_02"
+    , "GreekHead_A3_13"
+    , "TanoanHead_A3_03"
+    , "GreekHead_A3_03"
+    , "AsianHead_A3_04"
+    , "TanoanHead_A3_05"
+    , "GreekHead_A3_12"
+    , "Mavros"
+    , "TanoanHead_A3_07"
+    , "TanoanHead_A3_06"
+]] call _fnc_saveToTemplate; 
+["voices", [
+	"Male02FRE","Male03FRE","Male01FRE","male06gre", "Male04GRE", "Male06GRE", "Male05GRE"
+]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -23,83 +38,238 @@ private _hasMarksman = "mark" in A3A_enabledDLC;
 ["ammobox", "Box_FIA_Support_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_Syndicate_Wps_F"] call _fnc_saveToTemplate;
 
-private _lightArmedVehicles = [];
-private _lightUnarmedVehicles = [];
-
-if (_hasAddonX) then {
-	_lightArmedVehicles append ["I_C_Offroad_02_AT_F", "I_C_Offroad_02_LMG_F"];
-	_lightUnarmedVehicles pushBack "I_C_Offroad_02_unarmed_F";
-} else {
-	_lightArmedVehicles append ["O_G_Offroad_01_AT_F", "O_G_Offroad_01_armed_F"];
-	_lightUnarmedVehicles pushBack "I_C_Offroad_02_unarmed_F";
+private _lightArmedVehicles = [
+    "CUP_I_Hilux_SPG9_IND_G_F","CUP_I_Hilux_armored_SPG9_IND_G_F",
+    "I_G_Offroad_01_AT_F","I_G_Offroad_01_armed_F",
+    "CUP_I_Datsun_PK_Random","CUP_I_Hilux_M2_IND_G_F",
+    "CUP_B_LR_MG_CZ_W","CUP_O_LR_SPG9_TKA",
+    "CUP_I_Hilux_BMP1_IND_G_F","CUP_I_Hilux_btr60_IND_G_F",
+    "CUP_I_nM1025_M2_ION","CUP_I_nM1025_M240_ION","CUP_I_nM1025_Mk19_ION",
+    "CUP_B_nM1025_SOV_M2_ION","CUP_B_nM1025_SOV_Mk19_ION",
+    "CUP_I_Hilux_armored_BMP1_IND_G_F", "CUP_I_Hilux_armored_BTR60_IND_G_F"
+];
+private _lightUnarmedVehicles = [
+    "CUP_O_Hilux_unarmed_TK_CIV","CUP_I_Hilux_armored_unarmed_IND_G_F","I_G_Offroad_01_F","CUP_I_Datsun_4seat","CUP_C_Datsun","C_Offroad_01_F","CUP_C_SUV_TK","CUP_C_SUV_CIV"
+];
+private _vehiclesTrucks = [
+	"CUP_B_MTVR_HIL",
+	"CUP_B_MTVR_USMC",
+    "C_Truck_02_covered_F",
+    "CUP_C_Ural_Civ_03",
+    "CUP_C_V3S_Covered_TKC"
+];
+//VEHICLES ADDED IF MODS ARE PRESENT
+//BRAF
+if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
+    _vehiclesLightArmed pushBack "BRAF_AM11_Armed_CFN";
+    _vehiclesLightUnarmed pushBack "BRAF_AM11_CFN";
+    _vehiclesTrucks pushBack "BRAF_Worker_CFN";;
 };
-
+//Cytech Agrale and Armored Vehicle
+if (isClass (configFile >> "CfgVehicles" >> "cytech_rt_amv")) then {
+    _lightUnarmedVehicles append ["cytech_rt_amv_Camouflage","cytech_rt_amv_Desert","cytech_rt_amv","cytech_rt_amv_Green","cytech_rt_agrale_blue","cytech_rt_agrale_Green"];
+    _vehiclesTrucks pushBack "cytech_rt_agrale_blue";
+};
+//Toyota Hilux 2016
+if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
+    _lightUnarmedVehicles append ["rt_16luxi_AFR", "rt_16luxi_ME_S","rt_16Luxi_dirty"];
+    _lightArmedVehicles append ["rt_16Luxi_at", "rt_16Luxi_GMG", "rt_16Luxi_m2"];
+};
+//Toyota rt_j
+if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
+    _lightUnarmedVehicles append ["rt_j79_opfor", "rt_j79_ME_S","rt_j79_AFR_N","rt_j79_CAFR","rt_j79_AFR","rt_j76_IND","rt_j76"];
+    _lightArmedVehicles append ["rt_j79_GMG", "rt_j79_m2", "rt_j79_at"];
+};
 ["vehiclesRivalsLightArmed", _lightArmedVehicles] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", _trucks] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", _lightUnarmedVehicles] call _fnc_saveToTemplate;
-["vehiclesRivalsAPCs", [""]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", [""]] call _fnc_saveToTemplate;
-["vehiclesRivalsHelis", [""]] call _fnc_saveToTemplate;			
-["vehiclesRivalsUavs", ["O_UAV_01_F"]] call _fnc_saveToTemplate;			
+["vehiclesRivalsAPCs", [
+	"CUP_B_LR_Special_CZ_W","CUP_I_SUV_Armored_ION",
+    "CUP_B_nM1025_SOV_Mk19_ION","CUP_B_nM1025_SOV_M2_ION",
+    "CUP_O_BRDM2_CSAT_T","CUP_O_BRDM2_HQ_CSAT_T",
+    "CUP_B_Jackal2_L2A1_FIA","CUP_B_Jackal2_GMG_FIA",
+    "CUP_B_MTLB_pk_FIA","CUP_B_BTR80_FIA","CUP_B_BTR60_FIA",
+    "CUP_B_M113A1_USA","CUP_B_M113A3_USA","CUP_O_BRDM2_CSAT_T"
+	]] call _fnc_saveToTemplate;
+["vehiclesRivalsTanks", []] call _fnc_saveToTemplate;
+["vehiclesRivalsHelis", [
+    "B_Heli_Light_01_F",
+    "CUP_I_412_Mil_Transport_PMC",
+    "CUP_I_UH1H_TK_GUE",
+    "CUP_B_UH1Y_UNA_USMC",
+    "CUP_I_UH1H_gunship_TK_GUE",
+    "B_Heli_Light_01_dynamicLoadout_F",
+	"CUP_I_412_Military_Armed_AT_PMC"
+	]] call _fnc_saveToTemplate;			
+["vehiclesRivalsUavs", []] call _fnc_saveToTemplate;			
 
 ["staticLowWeapons", ["O_G_HMG_02_F"]] call _fnc_saveToTemplate;
-["staticAT", ["O_static_AT_F"]] call _fnc_saveToTemplate;
-["staticMortars", ["O_Mortar_01_F"]] call _fnc_saveToTemplate;
+["staticAT", ["CUP_B_SPG9_AFU"]] call _fnc_saveToTemplate;
+["staticMortars", ["CUP_B_M252_HIL"]] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 
-["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;
+["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;
 
+["variants", [
+    ["CUP_B_nM1025_SOV_M2_ION", ["Black", 1]],
+    ["CUP_B_nM1025_SOV_Mk19_ION", ["Black", 1]],
+    ["CUP_B_LR_MG_CZ_W", ["CIV", 1]],
+    ["CUP_O_LR_SPG9_TKA", ["CIV", 1]]
+]]; call _fnc_saveToTemplate;
+
+#include "..\NARCOS_Vehicle_Attributes.sqf"
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
+
+private _militaryRISOptics = [
+    "CUP_optic_AC11704_Black",
+    "CUP_optic_Aimpoint_5000",
+    "CUP_optic_G33_HWS_BLK",
+    "CUP_optic_HoloBlack",
+    "CUP_optic_ZeissZPoint_hex",
+    "CUP_optic_Elcan_SpecterDR_coyote",
+    ""
+];
+private _eliteRISOptics = [
+    "CUP_optic_AC11704_Black",1,
+    "CUP_optic_G33_HWS_BLK",1,
+    "CUP_optic_ZeissZPoint_hex",1,
+    "CUP_optic_Elcan_SpecterDR_coyote",1,
+    "CUP_optic_Elcan_SpecterDR_KF_black",1,
+    "optic_DMS",1,
+    "CUP_optic_ACOG_TA648_308_RDS_Black",0.5,
+    "",1
+];
+private _militiaRISOptics = [
+    "CUP_optic_CompM2_low",1,
+    "CUP_optic_CompM4",1,
+	"CUP_optic_Eotech553_Black",1,
+    "CUP_optic_HoloBlack",1,
+    "CUP_optic_CompM2_Coyote",1,
+    "",4
+];
+private _AKOptics = [
+    "CUP_optic_1p63",1,
+    "CUP_optic_PSO_3",0.1,
+    "CUP_optic_OKP_7",0.8,
+    "CUP_optic_Kobra",0.5,
+    "CUP_optic_PSO_1_AK",0.7,
+    "CUP_optic_PSO_1_1",0.2,
+    "",2
+];
+
+private _AKMags = [
+    ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],0.1,
+    ["CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],0.5,
+    ["CUP_30Rnd_762x39_AK47_M"],1.5,
+    ["CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_bakelite_M"],1,
+    ["CUP_30Rnd_Subsonic_762x39_AK103_bakelite_M"],0.25
+];
+private _M1014Mags = [
+    ["CUP_8Rnd_12Gauge_Pellets_No00_Buck"],1.5,
+    ["CUP_8Rnd_12Gauge_Slug"],1,
+    ["CUP_8Rnd_12Gauge_HE"],0.5
+];
+private _UziMags = [
+    ["CUP_32Rnd_9x19_UZI_M"],1,
+    ["CUP_72Rnd_9x19_UZI_M"],0.25
+];
+private _FALMags = [
+    ["CUP_20Rnd_762x51_FNFAL_M"],1,
+    ["CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M"],0.75,
+    ["CUP_30Rnd_762x51_FNFAL_M"],0.5,
+    ["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M"],0.25
+];
+private _GalilMags = [
+    ["CUP_35Rnd_556x45_Galil_Mag"],1,
+    ["CUP_35Rnd_556x45_Green_Tracer_Galil_Mag"],0.5,
+    ["CUP_50Rnd_556x45_Galil_Mag"],0.25,
+    ["CUP_50Rnd_556x45_Green_Tracer_Galil_Mag"],0.25
+];
+private _M4Mags = [
+    ["CUP_30Rnd_556x45_Stanag"],1,
+    ["CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Green"],0.5,
+    ["CUP_60Rnd_556x45_SureFire"],0.25,
+    ["CUP_60Rnd_556x45_SureFire_Tracer_Green"],0.25
+];
 
 /*
 	["Weapon Classname", "Muzzle Classname", "Accessory Classname", "Scope Classname", ["Magazine Classname 1", "Magazine Classname 2"], ["GL Magazine Classname 1"], "Bipod Classname"]
 */
 private _loadoutData = call _fnc_createLoadoutData;
 private _rifles = [
-	["arifle_TRG21_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-	["arifle_Mk20_plain_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""]
+    ["CUP_arifle_AKM","","","", selectRandomWeighted _AKMags,[],""],4,
+    ["CUP_arifle_M16A1","","","",[],[],""],2,
+    ["CUP_arifle_Galil_SAR_black","","",selectRandomWeighted _GalilMags,[],""],2,
+    ["CUP_sgun_AA12","","","",["CUP_20Rnd_B_AA12_Slug","CUP_20Rnd_B_AA12_Buck_00","CUP_20Rnd_B_AA12_Buck_0","CUP_20Rnd_B_AA12_Buck_00"],[],""],2,
+    ["CUP_arifle_FNFAL5060","","","",selectRandomWeighted _FALMags,[],""],3,
+    ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,selectRandomWeighted _FALMags,[],""],1,
+    ["CUP_arifle_M16A2","","",_militiaRISOptics,[],[],""],1
 ];
 private _tunedRifles = [
-	["arifle_TRG21_F", "", "acc_flashlight", "optic_MRCO", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-	["arifle_Mk20_plain_F", "", "acc_flashlight", "optic_MRCO", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-	["arifle_TRG21_F", "", "acc_flashlight", "optic_ACO_grn", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-	["arifle_Mk20_plain_F", "", "acc_flashlight", "optic_ACO_grn", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""]
+    ["CUP_arifle_AKMN_railed","","",_militiaRISOptics,selectRandomWeighted _AKMags,[],""],1,
+    ["CUP_arifle_FNFAL5060_railed","","",_militaryRISOptics,selectRandomWeighted _FALMags,[],""],3,
+    ["CUP_arifle_Galil_SAR_black","","",_militiaRISOptics,selectRandomWeighted _GalilMags,[],""],2,
+    ["CUP_arifle_M16A4_Grip","","",_militiaRISOptics,[],[],""],1
 ];
 private _enforcerRifles = [
-	["arifle_TRG21_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-	["arifle_Mk20_plain_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""]
+    ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,selectRandomWeighted _AKMags,[],""],2,
+    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _AKMags,[],""],3,
+    ["CUP_arifle_FNFAL_OSW_railed","","",_eliteRISOptics,selectRandomWeighted _FALMags,[],"CUP_bipod_FNFAL"],2,
+    ["CUP_arifle_M4A1_SOMMOD_Grip_black","","CUP_acc_ANPEQ_15",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],3,
+    ["CUP_arifle_AUG_A1","","","",[],[],""],0.5,
+    ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],3,
+    ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","","",_eliteRISOptics,[],[],""],0.5
 ];
 private _carbines = [
-	["arifle_TRG20_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-	["arifle_Mk20C_plain_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""]
+    ["CUP_arifle_Colt727","","","",selectRandomWeighted _M4Mags,[],""],1,
+    ["CUP_arifle_FNFAL_OSW_railed","","","",selectRandomWeighted _FALMags,[],""],1,
+    ["CUP_Famas_F1","","","",[],[],""],0.1,
+    ["CUP_smg_M3A1","","","",[],[],""],5,
+    ["CUP_smg_Mac10","","","",[],[],""],3,
+    ["CUP_smg_MP5A5","","","",[],[],""],2,
+    ["CUP_smg_MP5A5_Rail_VFG","","","",[],[],""],0.5,
+    ["CUP_smg_UZI","","","",selectRandomWeighted _UziMags,[],""],3
 ];
 private _gls = [
-	["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "1Rnd_Smoke_Grenade_shell"], ""],
-	["arifle_Mk20_GL_plain_F", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Green"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "1Rnd_Smoke_Grenade_shell"], ""]
+    ["CUP_arifle_M16A1GL_FS","","","",[],[],""],1,
+    ["CUP_glaunch_M79","","","",[],[],""],5,
+    ["CUP_glaunch_6G30","","","",[],[],""],2
 ];
 private _mgs = [
-	["LMG_Zafir_F", "", "", "", ["150Rnd_762x54_Box", "150Rnd_762x54_Box", "150Rnd_762x54_Box_Tracer"], [], ""]
+    ["CUP_arifle_RPK74","","","",[],[],""],1,
+    ["CUP_lmg_M60","","","",[],[],""],1,
+    ["CUP_lmg_FNMAG_RIS","","","",[],[],""],2
 ];
 private _marksmanRifles = [
-	["srifle_EBR_F", "", "", "optic_MRCO", ["20Rnd_762x51_Mag"], [], ""]
+    ["CUP_srifle_M14","","","optic_DMS",[],[],""],2,
+    ["CUP_srifle_LeeEnfield","","","CUP_optic_no23mk2",[],[],""],3,
+    ["CUP_srifle_CZ550","","","",[],[],""],1,
+    ["CUP_srifle_M21","","","CUP_optic_artel_m14",[],[],""],1
 ];
 
 private _rpgs = [
-	["launch_RPG32_F", "", "", "", ["RPG32_F", "RPG32_F", "RPG32_HE_F"], [], ""],
-	["launch_RPG32_F", "", "", "", ["RPG32_F", "RPG32_F", "RPG32_HE_F"], [], ""],
-	["launch_RPG32_F", "", "", "", ["RPG32_F", "RPG32_F", "RPG32_HE_F"], [], ""],
-	["launch_O_Vorona_green_F", "", "", "", ["Vorona_HEAT", "Vorona_HE"], [], ""]
+	"CUP_launch_M72A6_Special",
+	["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]
 ];
 
-private _pistols = ["hgun_Rook40_F"];
-
+private _pistols = [
+    ["CUP_hgun_Glock17_blk","","","",[],[],""],2,
+    ["CUP_hgun_PB6P9","","","",[],[],""],2,
+    ["CUP_hgun_Compact","","","",[],[],""],2,
+    ["CUP_hgun_TT","","","",[],[],""],3,
+    ["CUP_hgun_SWM327MP","","","",[],[],""],2,
+    ["CUP_hgun_TEC9_FA","","","",[],[],""],2,
+    ["CUP_hgun_Mac10","","","",[],[],""],1
+];
+/*
 if (_hasContact) then {
 	_carbines pushBack ["arifle_AK12U_F", "", "", "", ["30Rnd_762x39_Mag_Green_F", "30Rnd_762x39_Mag_Green_F", "30Rnd_762x39_Mag_Tracer_Green_F"], [], ""];
 	_tunedRifles pushBack ["arifle_AK12U_F", "", "acc_flashlight", "optic_ACO_grn", ["30Rnd_762x39_Mag_Green_F", "30Rnd_762x39_Mag_Green_F", "30Rnd_762x39_Mag_Tracer_Green_F"], [], ""];
@@ -155,7 +325,7 @@ if (_hasWs) then {
 		["sgun_aa40_lxWS", "", "", "", ["20Rnd_12Gauge_AA40_Pellets_lxWS", "20Rnd_12Gauge_AA40_Slug_lxWS", "20Rnd_12Gauge_AA40_HE_lxWS"], [], ""]
 	];
 };
-
+*/
 _loadoutData set ["rifles", _rifles];
 _loadoutData set ["tunedRifles", _tunedRifles];
 _loadoutData set ["enforcerRifles", _enforcerRifles];
@@ -165,10 +335,11 @@ _loadoutData set ["machineGuns", _mgs];
 _loadoutData set ["marksmanRifles", _marksmanRifles];
 _loadoutData set ["lightATLaunchers", _rpgs];
 _loadoutData set ["lightHELaunchers", [
-	["launch_RPG32_F", "", "", "", ["RPG32_HE_F", "RPG32_HE_F"], [], ""]
+	"CUP_launch_RShG2",
+	["CUP_launch_RPG7V","","","CUP_optic_PGO7V",["CUP_TBG7V_M","CUP_OG7_M"],[],""]
 ]];
 _loadoutData set ["AALaunchers", [
-	["launch_O_Titan_F", "", "acc_pointer_IR", "", ["Titan_AA"], [], ""]
+	"CUP_launch_9K32Strela"
 ]];
 _loadoutData set ["sidearms", _pistols];
 
@@ -177,28 +348,25 @@ _loadoutData set ["APMines", ["APERSMine_Range_Mag", "APERSBoundingMine_Range_Ma
 _loadoutData set ["lightExplosives", ["IEDLandSmall_Remote_Mag"]];
 _loadoutData set ["heavyExplosives", ["IEDLandBig_Remote_Mag"]];
 
-_loadoutData set ["antiInfantryGrenades", ["HandGrenade", "MiniGrenade"]];
+_loadoutData set ["antiInfantryGrenades", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]];
 _loadoutData set ["smokeGrenades", ["SmokeShell"]];
 _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
 
 _loadoutData set ["facewear", [
-	"G_Aviator",
-	"G_Combat",
-	"G_Bandanna_aviator",
-	"G_Bandanna_beast",
-	"G_Bandanna_sport",
-	"G_Bandanna_shades",
-	"G_Bandanna_blk"
+	"G_Bandanna_RedFlame1",
+	"G_Bandanna_Skull1",
+	"G_Bandanna_beast"
 ]];
-_loadoutData set ["fullmask", [	"G_Balaclava_combat", "G_Balaclava_lowprofile", "G_Balaclava_blk"]];
+_loadoutData set ["fullmask", ["G_Balaclava_lowprofile", "G_Balaclava_blk","G_Balaclava_Skull1"]];
 
 _loadoutData set ["headgear", [
-    "H_Shemag_olive",
-    "H_Booniehat_oli",
-    "H_Beret_blk",
-    "H_Cap_oli",
-    "H_Cap_headphones",
-	"H_Watchcap_camo"
+    "H_Cap_oli_hs"
+    , "H_Hat_Safari_olive_F"
+    , "CUP_H_FR_Bandana_Headset"
+    , "CUP_H_USA_Boonie_wdl"
+    , "CUP_H_Booniehat_Rhodesian"
+    , "CUP_H_USArmy_Boonie_hs_OCP"
+    , "CUP_H_SLA_Boonie_URB"
 ]];
 
 _loadoutData set ["maps", ["ItemMap"]];
@@ -206,40 +374,75 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", ["ItemGPS"]];
-_loadoutData set ["NVGs", ["NVGoggles_INDEP"]];
+_loadoutData set ["NVGs", ["CUP_NVG_PVS14"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["Rangefinder", ["Rangefinder"]];
+_loadoutData set ["Rangefinder", ["CUP_LRTV"]];
 
 
 _loadoutData set ["uniforms", [
-	"U_I_C_Soldier_Para_4_F",
-	"U_I_C_Soldier_Para_2_F",
-	"U_I_C_Soldier_Para_3_F",
-	"U_I_C_Soldier_Para_1_F",
-	"U_I_C_Soldier_Camo_F"
+    "U_I_C_Soldier_Bandit_2_F"
+    , "U_I_C_Soldier_Bandit_5_F"
+    , "U_I_C_Soldier_Bandit_3_F"
+    , "U_C_ArtTShirt_01_v6_F"
+    , "U_C_ArtTShirt_01_v1_F"
+    , "U_C_ArtTShirt_01_v4_F"
+    , "U_C_ArtTShirt_01_v5_F"
+    , "U_C_Uniform_Farmer_01_F"
+    , "U_C_Mechanic_01_F"
+    , "U_C_E_LooterJacket_01_F"
 ]];
-_loadoutData set ["heavyUniforms", []];
-
-private _helmets = [];
-
-if (_hasWs) then {
-	_helmets append ["lxWS_H_bmask_camo02", "lxWS_H_PASGT_facewear_olive_F"];
-};
-
-if (_hasLawsOfWar) then {
-	_helmets pushBack "H_PASGT_basic_olive_F";
-};
-
-if (_helmets isEqualTo []) then {
-	_helmets = ["H_HelmetB"];
-};
-
-_loadoutData set ["offuniforms", ["U_I_C_Soldier_Camo_F"]];
-_loadoutData set ["vests", ["V_Chestrig_oli", "V_TacChestrig_oli_F", "V_TacVest_oli"]];
-_loadoutData set ["heavyVests", ["V_TacVestIR_blk"]];
-_loadoutData set ["backpacks", ["B_TacticalPack_oli", "B_Carryall_oli"]];
-_loadoutData set ["helmets", _helmets];
-_loadoutData set ["crewHelmets", ["H_Tank_black_F"]];
+_loadoutData set ["heavyUniforms", [
+    "U_BG_Guerilla1_1"
+    , "U_BG_leader"
+    , "U_I_C_Soldier_Para_5_F"
+    , "U_I_C_Soldier_Para_4_F"
+    , "U_I_C_Soldier_Para_2_F"
+    , "U_I_C_Soldier_Para_1_F"
+    , "U_I_E_Uniform_01_tanktop_F"
+    , "U_I_L_Uniform_01_deserter_F"
+    , "U_I_L_Uniform_01_tshirt_olive_F"
+    , "U_BG_Guerilla1_2_F"
+]];
+_loadoutData set ["vests", [
+    "CUP_V_I_RACS_Carrier_Rig_wdl_3"
+    , "CUP_V_I_RACS_Carrier_Rig_3"
+    , "CUP_V_B_RRV_Scout_CB"
+    , "CUP_V_B_GER_Carrier_Rig_3_Brown"
+    , "CUP_V_O_TK_Vest_2"
+    , "V_BandollierB_khk"
+    , "CUP_V_CZ_vest15"
+    , "V_Pocketed_coyote_F"
+    , "V_Pocketed_black_F"
+    , "V_Pocketed_olive_F"
+]];
+_loadoutData set ["heavyVests", [
+    "CUP_V_CZ_vest15"
+    , "V_TacVest_camo"
+    , "V_TacVest_oli"
+    , "CUP_V_CZ_vest16"
+    , "CUP_V_B_PASGT"
+    , "CUP_V_B_PASGT_OD"
+]];
+_loadoutData set ["backpacks", [
+    "B_AssaultPack_blk"
+    , "B_AssaultPack_khk"
+    , "B_AssaultPack_cbr"
+    , "B_AssaultPack_rgr"
+    , "B_AssaultPack_sgg"
+    , "CUP_B_TacticalPack_CCE"
+    , "B_TacticalPack_ocamo"
+    , "CUP_B_TacticalPack_TTS"
+    , "B_Kitbag_sgg"
+    , "CUP_B_GER_Pack_Flecktarn"
+]];
+_loadoutData set ["helmets"[
+    "CUP_H_HIL_HelmetACH_CCE"
+    , "CUP_H_HIL_HelmetACH_ESS_TTS"
+    , "CUP_H_USArmy_Helmet_ECH1_Black"
+    , "CUP_H_USArmy_ECH_MARPAT"
+    , "CUP_H_USArmy_Helmet_M1_btp"
+    , "CUP_H_USArmy_Helmet_M1_plain_M81"
+]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies]; //this line defines the basic medical loadout for vanilla
@@ -279,12 +482,24 @@ _loadoutData set ["items_unarmed_extras", []];
 //////////////////////////
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["vests", ["V_BandollierB_oli"]];
-_crewLoadoutData set ["helmets", ["H_Tank_black_F"]];
+_crewLoadoutData set ["vests", [    "CUP_V_I_RACS_Carrier_Rig_wdl_3"
+    , "CUP_V_I_RACS_Carrier_Rig_3"
+    , "CUP_V_B_RRV_Scout_CB"
+]];
+_crewLoadoutData set ["helmets", ["H_Cap_oli_hs"
+    , "H_Hat_Safari_olive_F"
+    , "CUP_H_FR_Bandana_Headset"
+    , "CUP_H_USA_Boonie_wdl"
+    , "CUP_H_Booniehat_Rhodesian"
+    , "CUP_H_USArmy_Boonie_hs_OCP"
+]];
 
 private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["vests", ["V_BandollierB_oli"]];
-_pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_O"]];
+_pilotLoadoutData set ["vests", [    "CUP_V_I_RACS_Carrier_Rig_wdl_3"
+    , "CUP_V_I_RACS_Carrier_Rig_3"
+    , "CUP_V_B_RRV_Scout_CB"
+]];
+_pilotLoadoutData set ["helmets", ["H_Cap_oli_hs"]];
 
 
 // ##################### DO NOT TOUCH ANYTHING BELOW THIS LINE #####################
@@ -299,7 +514,7 @@ _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_O"]];
 //However, these exist in case you really do want to do a lot of custom alterations.
 
 private _cellLeaderTemplate = {
-	if (random 100 > 60) then {
+	if (random 100 < 60) then {
 		["helmets"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "fullmask", 1]] call _fnc_setFacewear;
 	} else {
@@ -307,9 +522,9 @@ private _cellLeaderTemplate = {
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
 	[selectRandom ["vests", "heavyVests"]] call _fnc_setVest;
-	[["offuniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
+	["uniforms"] call _fnc_setUniform;
 
-	[selectRandom ["grenadeLaunchers", "rifles"]] call _fnc_setPrimary;
+	[selectRandom ["grenadeLaunchers", "rifles","tunedRifles"]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 	["primary", 5] call _fnc_addAdditionalMuzzleMagazines;
 
@@ -333,12 +548,12 @@ private _cellLeaderTemplate = {
 };
 
 private _mercenaryTemplate = {
-	["helmets"] call _fnc_setHelmet;
+	["headgear"] call _fnc_setHelmet;
 	[selectRandomWeighted [[], 1.5, "facewear", 1, "fullmask", 1]] call _fnc_setFacewear;
 	["heavyVests"] call _fnc_setVest;
 	["uniforms"] call _fnc_setUniform;
 
-	[selectRandom ["grenadeLaunchers", "rifles", "tunedRifles"]] call _fnc_setPrimary;
+	[selectRandom ["grenadeLaunchers", "rifles"]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;
@@ -368,7 +583,7 @@ private _enforcerTemplate = {
 		["headgear"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
-	["vests"] call _fnc_setVest;
+	["vests","heavyVests"] call _fnc_setVest;
 	["uniforms"] call _fnc_setUniform;
 
 	[["enforcerRifles", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
@@ -743,7 +958,7 @@ private _commanderTemplate = {
 	["handgun", 2] call _fnc_addMagazines;
 
 	["vests"] call _fnc_setVest;
-	[["offuniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
+	["uniforms"] call _fnc_setUniform;
 
 	["items_medical_basic"] call _fnc_addItemSet;
 	["items_unarmed_extras"] call _fnc_addItemSet;
