@@ -49,7 +49,8 @@ private _lightArmedVehicles = [
     "CUP_I_Hilux_armored_BMP1_IND_G_F", "CUP_I_Hilux_armored_BTR60_IND_G_F"
 ];
 private _lightUnarmedVehicles = [
-    "CUP_O_Hilux_unarmed_TK_CIV","CUP_I_Hilux_armored_unarmed_IND_G_F","I_G_Offroad_01_F","CUP_I_Datsun_4seat","CUP_C_Datsun","C_Offroad_01_F","CUP_C_SUV_TK","CUP_C_SUV_CIV"
+    "CUP_O_Hilux_unarmed_TK_CIV","CUP_I_Hilux_armored_unarmed_IND_G_F",
+	"I_G_Offroad_01_F","CUP_I_Datsun_4seat","CUP_C_Datsun","C_Offroad_01_F","CUP_C_SUV_TK","CUP_C_SUV_CIV"
 ];
 private _vehiclesTrucks = [
 	"CUP_B_MTVR_HIL",
@@ -63,11 +64,12 @@ private _vehiclesTrucks = [
 if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
     _vehiclesLightArmed pushBack "BRAF_AM11_Armed_CFN";
     _vehiclesLightUnarmed pushBack "BRAF_AM11_CFN";
-    _vehiclesTrucks pushBack "BRAF_Worker_CFN";;
+    _vehiclesTrucks pushBack "BRAF_Worker_CFN";
 };
 //Cytech Agrale and Armored Vehicle
 if (isClass (configFile >> "CfgVehicles" >> "cytech_rt_amv")) then {
-    _lightUnarmedVehicles append ["cytech_rt_amv_Camouflage","cytech_rt_amv_Desert","cytech_rt_amv","cytech_rt_amv_Green","cytech_rt_agrale_blue","cytech_rt_agrale_Green"];
+    _lightUnarmedVehicles append ["cytech_rt_amv_Camouflage","cytech_rt_amv_Desert",
+	"cytech_rt_amv","cytech_rt_amv_Green","cytech_rt_agrale_blue","cytech_rt_agrale_Green"];
     _vehiclesTrucks pushBack "cytech_rt_agrale_blue";
 };
 //Toyota Hilux 2016
@@ -107,7 +109,7 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["staticAT", ["CUP_B_SPG9_AFU"]] call _fnc_saveToTemplate;
 ["staticMortars", ["CUP_B_M252_HIL"]] call _fnc_saveToTemplate;
 
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["mortarMagazineHE", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
@@ -214,12 +216,6 @@ private _rifles = [
     ["CUP_arifle_M16A2","","",_militiaRISOptics,[],[],""],1
 ];
 private _tunedRifles = [
-    ["CUP_arifle_AKMN_railed","","",_militiaRISOptics,selectRandomWeighted _AKMags,[],""],1,
-    ["CUP_arifle_FNFAL5060_railed","","",_militaryRISOptics,selectRandomWeighted _FALMags,[],""],3,
-    ["CUP_arifle_Galil_SAR_black","","",_militiaRISOptics,selectRandomWeighted _GalilMags,[],""],2,
-    ["CUP_arifle_M16A4_Grip","","",_militiaRISOptics,[],[],""],1
-];
-private _enforcerRifles = [
     ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,selectRandomWeighted _AKMags,[],""],2,
     ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _AKMags,[],""],3,
     ["CUP_arifle_FNFAL_OSW_railed","","",_eliteRISOptics,selectRandomWeighted _FALMags,[],"CUP_bipod_FNFAL"],2,
@@ -227,6 +223,12 @@ private _enforcerRifles = [
     ["CUP_arifle_AUG_A1","","","",[],[],""],0.5,
     ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],3,
     ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","","",_eliteRISOptics,[],[],""],0.5
+];
+private _enforcerRifles = [
+    ["CUP_arifle_AKMN_railed","","",_militiaRISOptics,selectRandomWeighted _AKMags,[],""],1,
+    ["CUP_arifle_FNFAL5060_railed","","",_militaryRISOptics,selectRandomWeighted _FALMags,[],""],3,
+    ["CUP_arifle_Galil_SAR_black","","",_militiaRISOptics,selectRandomWeighted _GalilMags,[],""],2,
+    ["CUP_arifle_M16A4_Grip","","",_militiaRISOptics,[],[],""],1
 ];
 private _carbines = [
     ["CUP_arifle_Colt727","","","",selectRandomWeighted _M4Mags,[],""],1,
@@ -435,7 +437,7 @@ _loadoutData set ["backpacks", [
     , "B_Kitbag_sgg"
     , "CUP_B_GER_Pack_Flecktarn"
 ]];
-_loadoutData set ["helmets"[
+_loadoutData set ["helmets", [
     "CUP_H_HIL_HelmetACH_CCE"
     , "CUP_H_HIL_HelmetACH_ESS_TTS"
     , "CUP_H_USArmy_Helmet_ECH1_Black"
@@ -482,7 +484,7 @@ _loadoutData set ["items_unarmed_extras", []];
 //////////////////////////
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["vests", [    "CUP_V_I_RACS_Carrier_Rig_wdl_3"
+_crewLoadoutData set ["vests", ["CUP_V_I_RACS_Carrier_Rig_wdl_3"
     , "CUP_V_I_RACS_Carrier_Rig_3"
     , "CUP_V_B_RRV_Scout_CB"
 ]];
@@ -495,7 +497,7 @@ _crewLoadoutData set ["helmets", ["H_Cap_oli_hs"
 ]];
 
 private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["vests", [    "CUP_V_I_RACS_Carrier_Rig_wdl_3"
+_pilotLoadoutData set ["vests", ["CUP_V_I_RACS_Carrier_Rig_wdl_3"
     , "CUP_V_I_RACS_Carrier_Rig_3"
     , "CUP_V_B_RRV_Scout_CB"
 ]];
@@ -514,7 +516,7 @@ _pilotLoadoutData set ["helmets", ["H_Cap_oli_hs"]];
 //However, these exist in case you really do want to do a lot of custom alterations.
 
 private _cellLeaderTemplate = {
-	if (random 100 < 60) then {
+	if (random 100 > 60) then {
 		["helmets"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "fullmask", 1]] call _fnc_setFacewear;
 	} else {
@@ -522,9 +524,9 @@ private _cellLeaderTemplate = {
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
 	[selectRandom ["vests", "heavyVests"]] call _fnc_setVest;
-	["uniforms"] call _fnc_setUniform;
+	[["offuniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
-	[selectRandom ["grenadeLaunchers", "rifles","tunedRifles"]] call _fnc_setPrimary;
+	[selectRandom ["grenadeLaunchers", "rifles"]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 	["primary", 5] call _fnc_addAdditionalMuzzleMagazines;
 
@@ -548,12 +550,12 @@ private _cellLeaderTemplate = {
 };
 
 private _mercenaryTemplate = {
-	["headgear"] call _fnc_setHelmet;
+	["helmets"] call _fnc_setHelmet;
 	[selectRandomWeighted [[], 1.5, "facewear", 1, "fullmask", 1]] call _fnc_setFacewear;
 	["heavyVests"] call _fnc_setVest;
 	["uniforms"] call _fnc_setUniform;
 
-	[selectRandom ["grenadeLaunchers", "rifles"]] call _fnc_setPrimary;
+	[selectRandom ["grenadeLaunchers", "rifles", "tunedRifles"]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;
@@ -583,7 +585,7 @@ private _enforcerTemplate = {
 		["headgear"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
-	["vests","heavyVests"] call _fnc_setVest;
+	["vests"] call _fnc_setVest;
 	["uniforms"] call _fnc_setUniform;
 
 	[["enforcerRifles", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
@@ -958,7 +960,7 @@ private _commanderTemplate = {
 	["handgun", 2] call _fnc_addMagazines;
 
 	["vests"] call _fnc_setVest;
-	["uniforms"] call _fnc_setUniform;
+	[["offuniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
 	["items_medical_basic"] call _fnc_addItemSet;
 	["items_unarmed_extras"] call _fnc_addItemSet;

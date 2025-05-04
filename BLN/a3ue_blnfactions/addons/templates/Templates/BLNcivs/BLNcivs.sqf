@@ -9,9 +9,7 @@
 //////////////////////////    
 
 ["vehiclesCivCar", [
-
-
-    "C_Quadbike_01_F", 0.9
+	"C_Quadbike_01_F", 0.9
     ,"C_Kart_01_F", 0.01
 	
 	,"CUP_C_Lada_TK_CIV" , 0.2
@@ -55,7 +53,6 @@
 	,"CUP_C_SUV_CIV" , 0.4
 
     , "C_Offroad_01_F", 0.1
-
 ]] call _fnc_saveToTemplate;             //this line determines civilian cars -- Example: ["vehiclesCivCar", ["C_Offroad_01_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivIndustrial", [
@@ -84,22 +81,19 @@
 ]] call _fnc_saveToTemplate;             //this line determines civilian trucks -- Example: ["vehiclesCivIndustrial", ["C_Truck_02_transport_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivBoat", [
-
-      "CUP_C_Fishing_Boat_Chernarus", 0.4
+    "CUP_C_Fishing_Boat_Chernarus", 0.4
     , "CUP_C_PBX_CIV", 0.7
     , "CUP_C_Zodiac_CIV", 0.7
 
 ]] call _fnc_saveToTemplate;             //this line determines civilian boats -- Example: ["vehiclesCivBoat", ["C_Boat_Civil_01_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivRepair", [
-
-      "C_Truck_02_box_F", 0.05
+    "C_Truck_02_box_F", 0.05
     , "C_Offroad_01_repair_F", 0.05
-
 ]] call _fnc_saveToTemplate;            //this line determines civilian repair vehicles
 
 ["vehiclesCivMedical", [
-      "CUP_C_S1203_Ambulance_CIV", 0.4
+	"CUP_C_S1203_Ambulance_CIV",0.4
 ]] call _fnc_saveToTemplate;        //this line determines civilian medic vehicles
 
 ["vehiclesCivFuel", [
@@ -108,32 +102,26 @@
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivHeli", [
-	"CUP_C_Mi17_Civilian_RU"
-	,"CUP_C_SA330_Puma_HC1_ChernAvia"
-	,"CUP_C_412"
-	,"CUP_C_412_Sheriff"
-	,"CUP_C_412_Luxury"
-	,"CUP_C_412_Medic"
-	,"CUP_C_CG_412_Medic"
-	,"CUP_C_M_412_Medic"
-	,"CUP_C_Merlin_HC3_CIV_Lux"
-	,"CUP_C_Merlin_HC3_CIV_Rescue"
+	"CUP_C_Mi17_Civilian_RU", 0.2
+	,"CUP_C_SA330_Puma_HC1_ChernAvia", 0.2
+	,"CUP_C_412", 0.2
+	,"CUP_C_412_Luxury", 0.2
+	,"CUP_C_412_Medic", 0.2
+	,"CUP_C_CG_412_Medic", 0.2
+	,"CUP_C_M_412_Medic", 0.2
+	,"CUP_C_Merlin_HC3_CIV_Lux", 0.2
+	,"CUP_C_Merlin_HC3_CIV_Rescue", 0.2
 ]] call _fnc_saveToTemplate;             //this line determines civilian helis -- Example: ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivPlanes", [
-	"CUP_C_Plane_Orbit"
-	,"CUP_C_DC3_CIV"
-	,"CUP_C_DC3_TanoAir_CIV"	
-	,"CUP_C_DC3_ChernAvia_CIV"	
-	,"CUP_C_AN2_AEROSCHROT_TK_CIV"
-	,"CUP_C_AN2_AIRTAK_TK_CIV"
-	,"CUP_C_AN2_CIV"
-	,"CUP_C_A300_CIV" //Ambient
-	,"CUP_C_B737_CIV" //Ambient
-	,"CUP_C_Cessna_172_CIV_BLUE" //Ambient
-	,"CUP_C_Cessna_172_CIV_GREEN" //Ambient
-	,"CUP_C_Cessna_172_CIV" //Ambient
-	,"CUP_C_CESSNA_CIV"
+	"CUP_C_Plane_Orbit", 0.1
+	,"CUP_C_DC3_CIV", 0.1
+	,"CUP_C_DC3_TanoAir_CIV", 0.1
+	,"CUP_C_DC3_ChernAvia_CIV", 0.1
+	,"CUP_C_AN2_AEROSCHROT_TK_CIV", 0.05
+	,"CUP_C_AN2_AIRTAK_TK_CIV", 0.05
+	,"CUP_C_AN2_CIV", 0.05
+	,"CUP_C_CESSNA_CIV",0.5
 ]] call _fnc_saveToTemplate;
 
 //vehicle skins

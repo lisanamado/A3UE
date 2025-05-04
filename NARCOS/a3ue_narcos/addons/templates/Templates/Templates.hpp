@@ -13,8 +13,8 @@ class Templates
         file = "Jaguares\jaguares"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"arid", "temperate","tropical"}; // climate that the template can be selected on.
-        description = "A powerful narco cartel which took full control of the area\nCUP based, diverse arsenal, scaling from civilian shotguns to high tech assault rifles as war level rises."; // If this isn't included, no description will show (unless inherited from the base class.)
-        prority = 990;
+        description = "A powerful narco cartel allied to corrupt military forces\nCUP based, diverse arsenal, scaling from civilian shotguns to high tech assault rifles as war level rises."; // If this isn't included, no description will show (unless inherited from the base class.)
+        prority = 999;
     };
 
     class JaguaresInv : CUP_Base
@@ -26,7 +26,7 @@ class Templates
         file = "Jaguares\jaguares"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"arid", "temperate", "tropical"}; // climate that the template can be selected on.
-        description = "A powerful narco cartel which tries to take full control of the area\nCUP based, diverse arsenal, scaling from civilian shotguns to high tech assault rifles as war level rises."; // If this isn't included, no description will show (unless inherited from the base class.)
+        description = "A powerful narco cartel allied to corrupt military forces\nCUP based, diverse arsenal, scaling from civilian shotguns to high tech assault rifles as war level rises."; // If this isn't included, no description will show (unless inherited from the base class.)
     }
     class Ocelotes : CUP_Base
     {
@@ -37,7 +37,7 @@ class Templates
         file = "Ocelotes\Ocelotes"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"arid", "temperate", "tropical"}; // climate that the template can be selected on.
-        description = "A highly armed narco Organization, smaller but similar to Los Jaguares."; // If this isn't included, no description will show (unless inherited from the base class.)
+        description = "A heavily armed narco cartel, secretly promoted by the invader force."; // If this isn't included, no description will show (unless inherited from the base class.)
     }
 };
 
