@@ -2,40 +2,10 @@
 //   Side Information   //
 //////////////////////////
 
-//Example on how to use mod content
-//If CUP
-/* if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
-    #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_AAF.sqf"
-}; */
+// NEW IDEA FOR mod defined OPTIONAL itema: DEFINE FIRST "_modItem class' and then include those definitions in the arrays for save to template
+//if (ModTruck is class then _ModTrucks = "ModTruck1","ModTruck2") else (_ModTrucks = "") ... Trucks = ["truck1", "truck2", _ModTrucks]
+// that's intended to give the vehicle Templates' arrays optional items if they are loaded and nothing else if they are not. probably the correct it's not "" but something else meaning absence of entry rather than an entry with empty value
 
-
-//or like this
-
-//Example on how to use mod content
-/* if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	_gunship pushBack "vnx_b_air_ac119_01_01";
-  	_transportplanes append ["vnx_b_air_ac119_02_01","vnx_b_air_ac119_02_02"];
-	_planesCAS pushBack "vnx_b_air_ac119_04_01";
-}; */
-
-/*
-// Note: muzzle, rail, sight, and bipod slots can be either a string for a specific item, or an array for a list of items. Arrays can be defined separately from weapons.
-// Arrays (both for attachments and for the larger lists of weapons) can either be a regular list or a weighted list that alternates between item and weight.
-// See https://community.bistudio.com/wiki/selectRandomWeighted for details.
-// If a given spawn list is made a weighted list, make sure that anything that adds to that list (e.g. optional DLC compatibility) is also a weighted list, or everything breaks.
-// Everything in this also applies to e.g. uniforms and equipment, but does NOT apply to vehicles.
-
-// Example of a weighted spawn list, with attachments and etc, using all possible methods of declaring lists:
-
-_sfM4Optics = ["optic_holo", 2, "optic_acog", 1, "", 1]; //weighted list - 50% chance holo, 25% chance acog, 25% chance nothing
-_sfM4Attachments = ["flashlight", ""]; //unweighted list, even distribution between flashlight or nothing
-_sfLoadoutData set ["rifles", [
-    ["rifle_-m4a1", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 2,
-    ["rifle_m4a1_camo", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 1 //2:1 ratio of regular and camo M4s
-]]; 
-_sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the optics lists are applied since _sfM4Optics is stored as a reference, which is useful for DLC/mod compats
-
-*/
 
 #include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
@@ -62,10 +32,11 @@ _sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the o
 
 
 //REPLACED "vehiclesType" by _vehiclesType in order to make it a local variable, enabling the adding of vehicles to the list with append and pushback
+//I provisionally made private definitions for each vehicle type, but they should be "pruned", as having so many makes template loading time longer.
 private _vehiclesBasic = [
     "C_Quadbike_01_F"];			 // unarmed or armed, with 0-2 passengers
 private _vehiclesLightUnarmed = [
-    "CUP_O_Hilux_unarmed_TK_CIV","CUP_I_Hilux_armored_unarmed_IND_G_F","I_G_Offroad_01_F","CUP_I_Datsun_4seat","CUP_C_Datsun","C_Offroad_01_F","CUP_C_SUV_TK","CUP_C_SUV_CIV"
+    "CUP_I_Hilux_armored_unarmed_IND_G_F","I_G_Offroad_01_F","CUP_I_Datsun_4seat","CUP_C_Datsun","C_Offroad_01_F","CUP_C_SUV_TK","CUP_C_SUV_CIV"
 ]; 		 // must be unarmed, unarmoured to lightly armoured, with 0-4 passengers
 private _vehiclesLightArmed = [
     "CUP_I_nM1025_M2_ION","CUP_I_nM1025_M240_ION","CUP_I_nM1025_Mk19_ION",
@@ -73,7 +44,7 @@ private _vehiclesLightArmed = [
     "CUP_I_Hilux_armored_BMP1_IND_G_F", "CUP_I_Hilux_armored_BTR60_IND_G_F"
 ];              // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
 private _vehiclesCars = [
-    "C_Offroad_01_F","C_Hatchback_01_sport_F","CUP_C_Golf4_Sport_random_Civ","CUP_C_Octavia_CIV"
+    "CUP_O_Hilux_unarmed_TK_CIV","C_Offroad_01_F","C_Hatchback_01_sport_F","CUP_C_Golf4_Sport_random_Civ","CUP_C_Octavia_CIV"
 ]; 		 // vehicle that can carry only passengers
 private _vehiclesTrucks = [
     "CUP_B_MTVR_HIL",
@@ -209,8 +180,8 @@ private _vehiclesPolice = [
     "CUP_C_SUV_TK","I_G_Offroad_01_F","CUP_O_Hilux_unarmed_TK_CIV"
 ];                 // cars used by police forces
 
-//TO BE TESTED, SHOULD ADD VEHICLES IF MODS LOADED
-
+//VEHICLES ADDED IF MODS ARE PRESENT
+//BRAF
 if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
     _vehiclesLightArmed pushBack "BRAF_AM11_Armed_CFN";
     _vehiclesLightUnarmed pushBack "BRAF_AM11_CFN";
@@ -225,15 +196,26 @@ if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
     _vehiclesLightTanks pushBack "BRAF_EE9_Cascavel_EB";
     _vehiclesPlanesAA pushBack "BRAF_A29_Super_Tucano";
 };
+//Cytech Agrale and Armored Vehicle
 if (isClass (configFile >> "CfgVehicles" >> "cytech_rt_amv")) then {
-    _vehiclesLightUnarmed pushBack "cytech_rt_amv";
-    _vehiclesMilitiaCars pushBack "cytech_rt_amv";
+    _vehiclesLightUnarmed append ["cytech_rt_amv_Camouflage","cytech_rt_amv_Desert"];
+    _vehiclesMilitiaCars append ["cytech_rt_amv","cytech_rt_amv_Green","cytech_rt_agrale_blue","cytech_rt_agrale_Green"];
+    _vehiclesMedical pushBack "cytech_rt_agrale_Rescue";
+    _vehiclesTrucks pushBack "cytech_rt_agrale_blue";
 };
+//Toyota Hilux 2016
 if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
-    _vehiclesLightUnarmed append ["rt_16luxi_AFR", "rt_16luxi_ME_S","rt_16Luxi_dirty"];
+    _vehiclesLightUnarmed append ["rt_16luxi_AFR", "rt_16luxi_ME_S"];
     _vehiclesLightArmed append ["rt_16Luxi_at", "rt_16Luxi_GMG", "rt_16Luxi_m2"];
-    _vehiclesMilitiaCars append ["rt_16Luxi_dirty"];
-    _vehiclesMilitiaLightArmed append ["rt_16Luxi_m2"];
+    _vehiclesMilitiaCars pushBack "rt_16Luxi_dirty";
+    _vehiclesMilitiaLightArmed pushBack "rt_16Luxi_m2";
+};
+//Toyota rt_j
+if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
+    _vehiclesLightUnarmed append ["rt_j79_opfor", "rt_j79_ME_S","rt_j79_AFR_N","rt_j79_CAFR","rt_j79_AFR"];
+    _vehiclesLightArmed append ["rt_j79_GMG", "rt_j79_m2", "rt_j79_at"];
+    _vehiclesMilitiaCars append ["rt_j76_IND","rt_j76","rt_j79","rt_j79_dirty","rt_j79_Dusty","rt_j79_used"];
+    _vehiclesMilitiaLightArmed pushBack "rt_j79_m2";
 };
 
 ["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
@@ -305,7 +287,7 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 //Minefield definition
 //CFGVehicles variant of Mines are needed "ATMine", "APERSTripMine", "APERSMine"
 ["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;                   // anti-tank mines
-["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;                // anti-personal mines
+["minefieldAPERS", ["APERSMine","APERSBoundingMine"]] call _fnc_saveToTemplate;                // anti-personal mines
 
 
 //vehicle skins
@@ -360,12 +342,6 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["sfFaces", [
     "Sturrock","WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_05"
 ]] call _fnc_saveToTemplate;
-["eliteVoices", [
-    "Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG"
-]] call _fnc_saveToTemplate;
-["eliteFaces", [
-    "WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09"
-]] call _fnc_saveToTemplate;
 
 
 ///////////////////////////
@@ -411,7 +387,7 @@ private _eliteRISOptics = [
 private _militiaRISOptics = [
     "CUP_optic_CompM2_low",1,
     "CUP_optic_CompM4",1,
-//FIX"CUP_optic_Eotech553",1,
+    "CUP_optic_Eotech553_Black",1,
     "CUP_optic_HoloBlack",1,
     "CUP_optic_CompM2_Coyote",1,
     "",4
@@ -426,35 +402,35 @@ private _AKOptics = [
     "",2
 ];
 
-private _AKMags = selectRandomWeighted [
+private _AKMags = [
     ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],0.1,
     ["CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],0.5,
     ["CUP_30Rnd_762x39_AK47_M"],1.5,
     ["CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_bakelite_M"],1,
     ["CUP_30Rnd_Subsonic_762x39_AK103_bakelite_M"],0.25
 ];
-private _M1014Mags = selectRandomWeighted [
+private _M1014Mags = [
     ["CUP_8Rnd_12Gauge_Pellets_No00_Buck"],1.5,
     ["CUP_8Rnd_12Gauge_Slug"],1,
     ["CUP_8Rnd_12Gauge_HE"],0.5
 ];
-private _UziMags = selectRandomWeighted [
+private _UziMags = [
     ["CUP_32Rnd_9x19_UZI_M"],1,
     ["CUP_72Rnd_9x19_UZI_M"],0.25
 ];
-private _FALMags = selectRandomWeighted [
+private _FALMags = [
     ["CUP_20Rnd_762x51_FNFAL_M"],1,
     ["CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M"],0.75,
     ["CUP_30Rnd_762x51_FNFAL_M"],0.5,
     ["CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M"],0.25
 ];
-private _GalilMags = selectRandomWeighted [
+private _GalilMags = [
     ["CUP_35Rnd_556x45_Galil_Mag"],1,
     ["CUP_35Rnd_556x45_Green_Tracer_Galil_Mag"],0.5,
     ["CUP_50Rnd_556x45_Galil_Mag"],0.25,
     ["CUP_50Rnd_556x45_Green_Tracer_Galil_Mag"],0.25
 ];
-private _M4Mags = selectRandomWeighted [
+private _M4Mags = [
     ["CUP_30Rnd_556x45_Stanag"],1,
     ["CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Green"],0.5,
     ["CUP_60Rnd_556x45_SureFire"],0.25,
@@ -586,13 +562,13 @@ _policeLoadoutData set ["helmets", [
 ]];
 
 _policeLoadoutData set ["PoliceGuns", [
-    ["CUP_sgun_M1014_solidstock","","","",_M1014Mags,[],""],3,
+    ["CUP_sgun_M1014_solidstock","","","",selectRandomWeighted _M1014Mags,[],""],3,
     ["CUP_smg_M3A1","","","",[],[],""],3,
     ["CUP_sgun_CZ584","","","",[],[],""],4,
-    ["CUP_sgun_SPAS12","","","",_M1014Mags,[],""],1,
+    ["CUP_sgun_SPAS12","","","",selectRandomWeighted _M1014Mags,[],""],1,
     ["sgun_HunterShotgun_01_sawedoff_F","","","",[],[],""],2,
     ["CUP_smg_Mac10","","","",[],[],""],2,
-    ["CUP_smg_UZI","","","",_UziMags,[],""],1
+    ["CUP_smg_UZI","","","",selectRandomWeighted _UziMags,[],""],1
 ]];
 _policeLoadoutData set ["sidearms", [
     ["CUP_hgun_TaurusTracker455","","","",[],[],""],4,
@@ -621,19 +597,7 @@ _militiaLoadoutData set ["uniforms", [
 _militiaLoadoutData set ["Slmasks", [
     "G_Bandanna_Skull2"
 ]];
-/*_militiaLoadoutData set ["masks", [
-    "G_Bandanna_aviator"
-    , "G_Bandanna_khk"
-    , "G_Bandanna_blk"
-    , "G_Bandanna_oli"
-    , "G_Bandanna_sport"
-    , "G_Bandanna_beast"
-    , "G_Bandanna_BlueFlame1"
-    , "G_Bandanna_BlueFlame2"
-    , "G_Bandanna_OrangeFlame1"
-    , "G_Bandanna_shades"
-    , "G_Bandanna_Vampire_01"
-]];*/
+
 _militiaLoadoutData set ["vests", [
     "CUP_V_I_RACS_Carrier_Rig_wdl_3"
     , "CUP_V_I_RACS_Carrier_Rig_3"
@@ -671,23 +635,24 @@ _militiaLoadoutData set ["helmets", [
     , "CUP_H_USArmy_Helmet_M1_plain_M81"
 ]];
 _militiaLoadoutData set ["slRifles", [
-    ["CUP_arifle_AKMN_railed","","",_militiaRISOptics,_AKMags,[],""],1,
-    ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,_FALMags,[],""],3,
-    ["CUP_arifle_Galil_SAR_black","","",_militiaRISOptics,_GalilMags,[],""],2,
+    ["CUP_arifle_AKMN_railed","","",_militiaRISOptics,selectRandomWeighted _AKMags,[],""],1,
+    ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,selectRandomWeighted _FALMags,[],""],3,
+    ["CUP_arifle_Galil_SAR_black","","",_militiaRISOptics,selectRandomWeighted _GalilMags,[],""],2,
     ["CUP_arifle_M16A4_Grip","","",_militiaRISOptics,[],[],""],1
 ]];
 _militiaLoadoutData set ["rifles", [
-    ["CUP_arifle_AKM","","","",_AKMags,[],""],4,
+    ["CUP_arifle_AKM","","","", selectRandomWeighted _AKMags,[],""],4,
     ["CUP_arifle_M16A1","","","",[],[],""],2,
+    ["CUP_arifle_Galil_SAR_black","","",selectRandomWeighted _GalilMags,[],""],2,
     ["CUP_sgun_AA12","","","",["CUP_20Rnd_B_AA12_Slug","CUP_20Rnd_B_AA12_Buck_00","CUP_20Rnd_B_AA12_Buck_0","CUP_20Rnd_B_AA12_Buck_00"],[],""],2,
-    ["CUP_arifle_FNFAL5060","","","",_FALMags,[],""],3,
-    ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,_FALMags,[],""],1,
+    ["CUP_arifle_FNFAL5060","","","",selectRandomWeighted _FALMags,[],""],3,
+    ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,selectRandomWeighted _FALMags,[],""],1,
     ["CUP_arifle_M16A2","","",_militiaRISOptics,[],[],""],1
 ]];
 
 _militiaLoadoutData set ["carbines", [
-    ["CUP_arifle_Colt727","","","",_M4Mags,[],""],1,
-    ["CUP_arifle_FNFAL_OSW_railed","","","",_FALMags,[],""],1,
+    ["CUP_arifle_Colt727","","","",selectRandomWeighted _M4Mags,[],""],1,
+    ["CUP_arifle_FNFAL_OSW_railed","","","",selectRandomWeighted _FALMags,[],""],1,
     ["CUP_Famas_F1","","","",[],[],""],0.1
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
@@ -700,7 +665,7 @@ _militiaLoadoutData set ["SMGs", [
     ["CUP_smg_Mac10","","","",[],[],""],3,
     ["CUP_smg_MP5A5","","","",[],[],""],2,
     ["CUP_smg_MP5A5_Rail_VFG","","","",[],[],""],0.5,
-    ["CUP_smg_UZI","","","",_UziMags,[],""],3
+    ["CUP_smg_UZI","","","",selectRandomWeighted _UziMags,[],""],3
 ]];
 _militiaLoadoutData set ["machineGuns", [
     ["CUP_arifle_RPK74","","","",[],[],""],1,
@@ -725,9 +690,9 @@ _militiaLoadoutData set ["sidearms", [
 //doesn't find CUP_PG7V_M
 _militiaLoadoutData set ["lightATLaunchers", ["CUP_launch_M72A6_Special"]];
 _militiaLoadoutData set ["lightHELaunchers", ["CUP_launch_RShG2"]];
-_militiaLoadoutData set ["ATLaunchers", [["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]]];
+_militiaLoadoutData set ["ATLaunchers", ["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]];
 _militiaLoadoutData set ["missileATLaunchers", []];
-_militiaLoadoutData set ["AALaunchers", [["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M"],[],""]]];
+_militiaLoadoutData set ["AALaunchers", ["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M"],[],""]];
 
 /////////////////////////////////
 //    Military Loadout Data    //
@@ -737,20 +702,6 @@ private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["NVGs", ["CUP_NVG_PVS14", "CUP_NVG_HMNVS"]];
 _militaryLoadoutData set ["slHat", ["H_Cap_headphones"]];
 _militaryLoadoutData set ["Slmasks", ["CUP_PMC_Facewrap_Skull"]];
-/*_militaryLoadoutData set ["masks", [
-    "CUP_G_PMC_Facewrap_Black_Glasses_Dark_Headset"
-    , "CUP_G_PMC_Facewrap_Black_Glasses_Ember"
-    , "CUP_G_PMC_Facewrap_Black_Glasses_Dark"
-    , "CUP_PMC_Facewrap_Black"
-    , "CUP_PMC_Facewrap_Ranger"
-    , "CUP_PMC_Facewrap_Red"
-    , "CUP_PMC_Facewrap_Smilie"
-    , "CUP_G_PMC_Facewrap_Tan_Glasses_Dark_Headset"
-    , "CUP_G_PMC_Facewrap_Tan_Glasses_Ember"
-    , "CUP_G_PMC_Facewrap_Tropical_Glasses_Dark_Headset"
-    , "CUP_G_PMC_Facewrap_Tropical_Glasses_Ember"
-    , "CUP_PMC_Facewrap_Tropical"
-]];*/
 _militaryLoadoutData set ["uniforms", [
     "U_BG_Guerilla1_1"
     , "U_BG_leader"
@@ -807,27 +758,27 @@ _militaryLoadoutData set ["helmets", [
 ]];
 
 _militaryLoadoutData set ["slRifles", [
-    ["CUP_arifle_M4_MOE_BW","","",_militaryRISOptics,_M4Mags,[],""],1,
-    ["CUP_arifle_M4A1_SOMMOD_hex","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,_M4Mags,[],""],0.5,
-    ["CUP_arifle_FNFAL_OSW_railed","","",_militaryRISOptics,_FALMags,[],"CUP_bipod_FNFAL"],4,
-    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,_AKMags,[],""],3
+    ["CUP_arifle_M4_MOE_BW","","",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],1,
+    ["CUP_arifle_M4A1_SOMMOD_hex","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],0.5,
+    ["CUP_arifle_FNFAL_OSW_railed","","",_militaryRISOptics,selectRandomWeighted _FALMags,[],"CUP_bipod_FNFAL"],4,
+    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,selectRandomWeighted _AKMags,[],""],3
 ]];
 _militaryLoadoutData set ["rifles", [
-    ["CUP_arifle_M16A4_Grip","","",_militaryRISOptics,_M4Mags,[],""],2,
-    ["CUP_arifle_AKM","","","",_AKMags,[],""],5,
-    ["CUP_arifle_M16A1","","",_militiaRISOptics,_FALMags,[],""],3,
-    ["CUP_arifle_AKS","","",_AKOptics,_AKMags,[],""],2,
-    ["CUP_arifle_FNFAL5062_railed","","",_militiaRISOptics,_FALMags,[],"CUP_bipod_FNFAL"],2,
-    ["CUP_arifle_FNFAL_railed_woodland","","",_militiaRISOptics,_FALMags,[],"CUP_bipod_FNFAL"],3,
+    ["CUP_arifle_M16A4_Grip","","",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],2,
+    ["CUP_arifle_AKM","","","",selectRandomWeighted _AKMags,[],""],5,
+    ["CUP_arifle_M16A1","","",_militiaRISOptics,selectRandomWeighted _FALMags,[],""],3,
+    ["CUP_arifle_AKS","","",_AKOptics,selectRandomWeighted _AKMags,[],""],2,
+    ["CUP_arifle_FNFAL5062_railed","","",_militiaRISOptics,selectRandomWeighted _FALMags,[],"CUP_bipod_FNFAL"],2,
+    ["CUP_arifle_FNFAL_railed_woodland","","",_militiaRISOptics,selectRandomWeighted _FALMags,[],"CUP_bipod_FNFAL"],3,
     ["CUP_arifle_FNFAL5060_railed","","",_militaryRISOptics,["CUP_30Rnd_762x51_FNFAL_M"],[],""],2,
-    ["CUP_arifle_M4A1","","","",_M4Mags,[],""],3,
+    ["CUP_arifle_M4A1","","","",selectRandomWeighted _M4Mags,[],""],3,
     ["CUP_arifle_M16A2","","",_militaryRISOptics,[],[],""],1
 ]];
 _militaryLoadoutData set ["carbines", [
-    ["CUP_arifle_M4A1_standard_short_dsrt","","",_militiaRISOptics,_M4Mags,[],""],2,
+    ["CUP_arifle_M4A1_standard_short_dsrt","","",_militiaRISOptics,selectRandomWeighted _M4Mags,[],""],2,
     ["CUP_arifle_Colt727","","","",[],[],""],2,
     ["CUP_Famas_F1","","","",[],[],""],0.2,
-    ["CUP_arifle_FNFAL_OSW_railed","","",_militaryRISOptics,_FALMags,[],""],1,
+    ["CUP_arifle_FNFAL_OSW_railed","","",_militaryRISOptics,selectRandomWeighted _FALMags,[],""],1,
     ["CUP_arifle_XM8_Compact_FG_Rail_Green","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,[],[],""],0.3
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
@@ -836,7 +787,7 @@ _militaryLoadoutData set ["grenadeLaunchers", [
     ["CUP_glaunch_6G30","","","",[],[],""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-    ["CUP_smg_bizon","","","_AKOptics",[],[],""],1,
+    ["CUP_smg_bizon","","",_AKOptics,[],[],""],1,
     ["CUP_smg_MP5A5","","","",[],[],""],4,
     ["CUP_smg_MP5A5_Rail_VFG","","",_militaryRISOptics,[],[],""],1.5,
     ["CUP_smg_vityaz_vfg_top_rail","","","",[],[],""],2
@@ -871,7 +822,7 @@ _militaryLoadoutData set ["sidearms", [
 _militaryLoadoutData set ["lightATLaunchers", ["CUP_launch_M136"]];
 _militaryLoadoutData set ["lightHELaunchers", ["CUP_launch_RPG7V","","","CUP_optic_PGO7V",["CUP_TBG7V_M","CUP_OG7_M"],[],""]];
 _militaryLoadoutData set ["ATLaunchers", ["CUP_launch_RPG7V","","","CUP_optic_PGO7V",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_PG7VR_M"],[],""]];
-_militaryLoadoutData set ["missileATLaunchers", ["CUP_launch_Mk153Mod0_blk","","","CUP_optic_SMAW_Scope",["C","CUP_SMAW_HEAA_M","CUP_SMAW_NE_M"],[],""]];
+_militaryLoadoutData set ["missileATLaunchers", ["CUP_launch_Mk153Mod0_blk","","","CUP_optic_SMAW_Scope",["CUP_SMAW_HEDP_M","CUP_SMAW_HEAA_M"],[],""]];
 _militaryLoadoutData set ["AALaunchers", ["CUP_launch_9K32Strela"]];
 
 /////////////////////////////////
@@ -884,13 +835,6 @@ _eliteLoadoutData set ["Slmasks", ["CUP_PMC_Facewrap_Skull"]];
 _eliteLoadoutData set ["slHat", ["CUP_H_PMC_Cap_Back_EP_Tan","CUP_H_PMC_Cap_EP_Tan"]];
 _eliteLoadoutData set ["masks", [
     "CUP_G_RUS_Ratnik_Balaclava_Desert_3"
-    /*"CUP_G_PMC_Facewrap_Black_Glasses_Dark_Headset"
-    , "CUP_G_PMC_Facewrap_Black_Glasses_Ember"
-    , "CUP_G_PMC_Facewrap_Black_Glasses_Dark"
-    , "CUP_G_ESS_BLK_Facewrap_Black_GPS"
-    , "CUP_G_ESS_BLK_Scarf_Face_Blk"
-    , "CUP_G_ESS_RGR_Facewrap_Tropical"
-    , "CUP_G_ESS_KHK_Facewrap_Tan"*/
 ]];
 _eliteLoadoutData set ["uniforms", [
     "CUP_I_B_PARA_Unit_10"
@@ -943,30 +887,30 @@ _eliteLoadoutData set ["sidearms", [
     ["CUP_hgun_SWM327MP","","","",[],[],""],3
 ]];
 _eliteLoadoutData set ["slRifles", [
-    ["CUP_arifle_SBR_black","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_eliteRISOptics,_M4Mags,[],""],2,
-    ["CUP_arifle_M4A1_SOMMOD_hex","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,_M4Mags,[],""],2,
-    ["CUP_arifle_AK109","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_AKOptics,_AKMags,[],""],3
+    ["CUP_arifle_SBR_black","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],2,
+    ["CUP_arifle_M4A1_SOMMOD_hex","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],2,
+    ["CUP_arifle_AK109","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_AKOptics,selectRandomWeighted _AKMags,[],""],3
 ]];
 _eliteLoadoutData set ["rifles", [
-    ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,_AKMags,[],""],2,
-    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,_AKMags,[],""],3,
-    ["CUP_arifle_FNFAL_OSW_railed","","",_eliteRISOptics,_FALMags,[],"CUP_bipod_FNFAL"],2,
-    ["CUP_arifle_M4A1_SOMMOD_Grip_black","","CUP_acc_ANPEQ_15",_militaryRISOptics,_M4Mags,[],""],3,
+    ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,selectRandomWeighted _AKMags,[],""],2,
+    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _AKMags,[],""],3,
+    ["CUP_arifle_FNFAL_OSW_railed","","",_eliteRISOptics,selectRandomWeighted _FALMags,[],"CUP_bipod_FNFAL"],2,
+    ["CUP_arifle_M4A1_SOMMOD_Grip_black","","CUP_acc_ANPEQ_15",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],3,
     ["CUP_arifle_AUG_A1","","","",[],[],""],0.5,
-    ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,_M4Mags,[],""],3,
+    ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],3,
     ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","","",_eliteRISOptics,[],[],""],0.5
 ]];
 _eliteLoadoutData set ["carbines", [
-    ["CUP_arifle_M4_MOE_BW","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,_M4Mags,[],""],3,
+    ["CUP_arifle_M4_MOE_BW","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],3,
     ["CUP_arifle_XM8_Compact_FG_Rail_Green","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,[],[],""],1,
     ["CUP_Famas_F1","","","",[],[],""],0.2,
-    ["CUP_arifle_AK104","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,_AKMags,[],""],3
+    ["CUP_arifle_AK104","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,selectRandomWeighted _AKMags,[],""],3
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
     ["CUP_glaunch_6G30","","","",[],[],""],1,
     ["CUP_glaunch_M32","","","",[],[],""],1,
-    ["CUP_arifle_AK103_GL","","",_AKOptics,_AKMags,[],""],1,
-    ["CUP_arifle_M4A1_GL_carryhandle","","","",_M4Mags,[],""],1
+    ["CUP_arifle_AK103_GL","","",_AKOptics,selectRandomWeighted _AKMags,[],""],1,
+    ["CUP_arifle_M4A1_GL_carryhandle","","","",selectRandomWeighted _M4Mags,[],""],1
 ]];
 _eliteLoadoutData set ["machineGuns", [
     ["CUP_lmg_m249_para_gl","","",_militaryRISOptics,[],[],""],0.5,
@@ -1014,24 +958,24 @@ _sfLoadoutData set ["backpacks", ["B_AssaultPack_blk"]];
 _sfLoadoutData set ["atBackpacks", ["B_Carryall_blk"]];
 
 _sfLoadoutData set ["slRifles", [
-    ["CUP_arifle_SBR_od","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,_M4Mags,[],""],
-    ["CUP_arifle_mk18_black","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L","CUP_optic_AN_PAS_13c1",_M4Mags,[],""],
-    ["CUP_arifle_AK109","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_15_Flashlight_Tan_L","CUP_optic_GOSHAWK",_AKMags,[],""]
+    ["CUP_arifle_SBR_od","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],
+    ["CUP_arifle_mk18_black","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L","CUP_optic_AN_PAS_13c1",selectRandomWeighted _M4Mags,[],""],
+    ["CUP_arifle_AK109","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_15_Flashlight_Tan_L","CUP_optic_GOSHAWK",selectRandomWeighted _AKMags,[],""]
 ]];
 _sfLoadoutData set ["rifles", [
-    ["CUP_arifle_SBR_od","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,_M4Mags,[],""],
-    ["CUP_arifle_mk18_black","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,_M4Mags,[],""],
-    ["CUP_arifle_AK109","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,_AKMags,[],""],
+    ["CUP_arifle_SBR_od","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],
+    ["CUP_arifle_mk18_black","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,selectRandomWeighted _M4Mags,[],""],
+    ["CUP_arifle_AK109","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,selectRandomWeighted _AKMags,[],""],
     ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,[],[],""]
 ]];
 _sfLoadoutData set ["carbines", [
     ["CUP_arifle_XM8_Compact_FG_Rail_Green","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,[],[],""],
-    ["CUP_arifle_M4_MOE_BW","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,_M4Mags,[],""],
-    ["CUP_arifle_AK104","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,_AKMags,[],""]
+    ["CUP_arifle_M4_MOE_BW","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],
+    ["CUP_arifle_AK104","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,selectRandomWeighted _AKMags,[],""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-    ["CUP_arifle_mk18_m203_black","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_militaryRISOptics,_M4Mags,[],""],
-    ["CUP_arifle_AK103_GL","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_15_Flashlight_Black_L",_AKOptics,_AKMags,[],""]
+    ["CUP_arifle_mk18_m203_black","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_militaryRISOptics,selectRandomWeighted _M4Mags,[],""],
+    ["CUP_arifle_AK103_GL","CUP_muzzle_snds_socom762rc","CUP_acc_ANPEQ_15_Flashlight_Black_L",_AKOptics,selectRandomWeighted _AKMags,[],""]
 ]];
 _sfLoadoutData set ["machineGuns", [
     ["CUP_lmg_m249_para_gl","muzzle_snds_M","CUP_acc_ANPEQ_15_Flashlight_Black_L",_eliteRISOptics,[],[],""],0.5,
@@ -1386,11 +1330,6 @@ private _aaTemplate = {
 
     [selectRandom ["carbines"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
-//CHECK THIS - It should turn militia AA soldiers into light AT or HE launcher armed
-/*  NOT WORKING BY NOW
-    if ("AALaunchers" = "") then {
-    ["lightHELaunchers","lightATLaunchers"] call _fnc_setLauncher;
-    } else {*/
     ["AALaunchers"] call _fnc_setLauncher;
     ["launcher", 3] call _fnc_addMagazines;
 //    };
