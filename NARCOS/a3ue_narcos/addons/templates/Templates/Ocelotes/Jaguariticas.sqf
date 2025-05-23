@@ -66,7 +66,7 @@ private _vehiclesTrucks = [
 //BRAF
 if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
     _vehiclesLightArmed pushBack "BRAF_AM11_Armed_CFN";
-    _vehiclesLightUnarmed pushBack "BRAF_AM11_CFN";
+    _lightUnarmedVehicles pushBack "BRAF_AM11_CFN";
     _vehiclesTrucks pushBack "BRAF_Worker_CFN";
 };
 //Cytech Agrale and Armored Vehicle
@@ -81,12 +81,6 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
     _lightArmedVehicles append ["rt_16Luxi_at", "rt_16Luxi_GMG", "rt_16Luxi_m2"];
 };
 
-//Toyota rt_j
-//CHECK IF THIS CLASS SHOULD BE IN CfgVehicles
-/*if (isClass (configFile >> "CfgVehicles" >> "rt_j79_opfor")) then {
-    _lightUnarmedVehicles append ["rt_j79_opfor", "rt_j79_ME_S","rt_j79_AFR_N","rt_j79_CAFR","rt_j79_AFR","rt_j76_IND","rt_j76"];
-    _lightArmedVehicles append ["rt_j79_GMG", "rt_j79_m2", "rt_j79_at"];
-};*/
 ["vehiclesRivalsLightArmed", _lightArmedVehicles] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", _vehiclesTrucks] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", _lightUnarmedVehicles] call _fnc_saveToTemplate;
@@ -111,16 +105,20 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["mortarMagazineHE", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
-["mortarAmmo", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
+["mortarAmmo", ["mortar_82mm"]] call _fnc_saveToTemplate;
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;
 
 ["variants", [
-    ["CUP_B_nM1025_SOV_M2_ION", ["MERDC_DR", 1]],
-    ["CUP_B_nM1025_SOV_Mk19_ION", ["MERDC_DR", 1]],
-    ["CUP_B_LR_MG_CZ_W", ["CZD", 1]],
-    ["CUP_O_LR_SPG9_TKA", ["CZD", 1]]
+    ["CUP_B_nM1025_SOV_M2_ION", ["MERDC_TV", 1]],
+    ["CUP_B_nM1025_SOV_Mk19_ION", ["MERDC_TV", 1]],
+    ["CUP_I_nM1025_M2_ION", ["MERDC_TV", 1]],
+    ["CUP_I_nM1025_M240_ION", ["MERDC_TV", 1]],
+    ["CUP_I_nM1025_Mk19_ION", ["MERDC_TV", 1]],
+
+    ["CUP_B_LR_MG_CZ_W", ["GBW", 1]],
+    ["CUP_O_LR_SPG9_TKA", ["GBW", 1]]
 ]]; call _fnc_saveToTemplate;
 
 #include "..\NARCOS_Vehicle_Attributes.sqf"
@@ -174,7 +172,7 @@ private _loadoutData = call _fnc_createLoadoutData;
 private _rifles = [
     ["CUP_arifle_AKM","","","", [],[],""],4,
     ["CUP_arifle_M16A1","","","",[],[],""],2,
-    ["CUP_arifle_Galil_SAR_black","","",[],[],""],2
+    ["CUP_arifle_Galil_SAR_black","","","",[],[],""],2
 ];
 private _tunedRifles = [
     ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,[],[],""],2,
@@ -205,7 +203,7 @@ private _lightHELaunchers = [
 	["CUP_launch_RPG7V","","","",["CUP_TBG7V_M","CUP_OG7_M"],[],""],1
 ];
 private _AALaunchers = [
-	["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M",1],[],""],1
+	["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M"],[],""],1
 ];
 private _sidearms = [
 	["CUP_hgun_TEC9_FA","","","",[],[],""],2,
@@ -240,11 +238,11 @@ if (isClass (configFile >> "CfgWeapons" >> "Braf_MT12")) then {
 		["Braf_Lapa","","","",["braf_Lapa30Rnd_556x45"],[],""],2
 	];
 	_grenadeLaunchers append [
-		["braf_MD97LC_GL","","","",["braf_30Rnd_556x45_green"],["1Rnd_HE_Grenade_shell"],""],4,
+		["braf_MD97LC_GL","","","",["braf_30Rnd_556x45_green"],["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","UGL_FlareGreen_F","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],""],4,
 		["Braf_Fal","","","",["braf_20Rnd_762x51"],["braf_FAL_granada_mag"],""],4
 	];
 	_machineGuns append [
-		["braf_mag","","","braf_C79",["Braf_75Rnd_mag58_mag_Tracer_green",75],[],""],2,
+		["braf_mag","","","braf_C79",["Braf_75Rnd_mag58_mag_Tracer_green"],[],""],2,
 		["Braf_FAP","","","",["braf_40Rnd_762x51_red"],[],""],2,
 		["Braf_lmga4","","","braf_C79",["CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15"],[],""],1
 	];

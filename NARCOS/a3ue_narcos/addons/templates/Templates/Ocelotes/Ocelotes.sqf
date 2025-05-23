@@ -109,16 +109,20 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["mortarMagazineHE", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
-["mortarAmmo", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
+["mortarAmmo", ["mortar_82mm"]] call _fnc_saveToTemplate;
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;
 
 ["variants", [
-    ["CUP_B_nM1025_SOV_M2_ION", ["MERDC_DR", 1]],
-    ["CUP_B_nM1025_SOV_Mk19_ION", ["MERDC_DR", 1]],
-    ["CUP_B_LR_MG_CZ_W", ["CZD", 1]],
-    ["CUP_O_LR_SPG9_TKA", ["CZD", 1]]
+    ["CUP_B_nM1025_SOV_M2_ION", ["MERDC_TV", 1]],
+    ["CUP_B_nM1025_SOV_Mk19_ION", ["MERDC_TV", 1]],
+    ["CUP_I_nM1025_M2_ION", ["MERDC_TV", 1]],
+    ["CUP_I_nM1025_M240_ION", ["MERDC_TV", 1]],
+    ["CUP_I_nM1025_Mk19_ION", ["MERDC_TV", 1]],
+
+    ["CUP_B_LR_MG_CZ_W", ["GBW", 1]],
+    ["CUP_O_LR_SPG9_TKA", ["GBW", 1]]
 ]]; call _fnc_saveToTemplate;
 
 #include "..\NARCOS_Vehicle_Attributes.sqf"
@@ -172,7 +176,7 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["rifles", [
     ["CUP_arifle_AKM","","","", [],[],""],4,
     ["CUP_arifle_M16A1","","","",[],[],""],2,
-    ["CUP_arifle_Galil_SAR_black","","",[],[],""],2,
+    ["CUP_arifle_Galil_SAR_black","","","",[],[],""],2,
     ["CUP_sgun_AA12","","","",["CUP_20Rnd_B_AA12_Slug","CUP_20Rnd_B_AA12_Buck_00","CUP_20Rnd_B_AA12_Buck_0","CUP_20Rnd_B_AA12_Buck_00"],[],""],2,
     ["CUP_arifle_FNFAL5060","","","",[],[],""],3,
     ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,["CUP_30Rnd_762x51_FNFAL_M"],[],""],1,
@@ -229,7 +233,7 @@ _loadoutData set ["lightHELaunchers", [
 	["CUP_launch_RPG7V","","","",["CUP_TBG7V_M","CUP_OG7_M"],[],""]
 ]];
 _loadoutData set ["AALaunchers", [
-	["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M",1],[],""],
+	["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M"],[],""]
 ]];
 _loadoutData set ["sidearms", [
     ["CUP_hgun_Glock17_blk","","","",[],[],""],2,

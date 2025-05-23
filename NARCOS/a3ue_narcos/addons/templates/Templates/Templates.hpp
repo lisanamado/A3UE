@@ -9,7 +9,7 @@ class Templates
         basepath = QPATHTOFOLDER(Templates); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Occ"; // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Templates\Jaguares\jaguares.paa); // Path to an icon to be displayed in the select menu.
-        name = "Los Jaguares B"; // Name shown in the select menu.
+        name = "Los Jaguares"; // Name shown in the select menu.
         file = "Jaguares\jaguares"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"arid", "temperate","tropical"}; // climate that the template can be selected on.
@@ -22,7 +22,7 @@ class Templates
         basepath = QPATHTOFOLDER(Templates); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Inv"; // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Templates\Jaguares\jaguares.paa); // Path to an icon to be displayed in the select menu.
-        name = "Los Jaguares B"; // Name shown in the select menu.
+        name = "Los Jaguares"; // Name shown in the select menu.
         file = "Jaguares\jaguares"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"arid", "temperate", "tropical"}; // climate that the template can be selected on.
@@ -33,7 +33,7 @@ class Templates
         basepath = QPATHTOFOLDER(Templates); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Riv"; // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Templates\Ocelotes\Ocelotes.paa); // Path to an icon to be displayed in the select menu.
-        name = "Ocelotes B"; // Name shown in the select menu.
+        name = "Ocelotes"; // Name shown in the select menu.
         file = "Ocelotes\Ocelotes"; // The template file name - .sqf, that gets appended automatically.
         maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"arid", "temperate", "tropical"}; // climate that the template can be selected on.
