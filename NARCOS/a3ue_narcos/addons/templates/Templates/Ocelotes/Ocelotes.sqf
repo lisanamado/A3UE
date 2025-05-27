@@ -48,7 +48,8 @@ private _lightArmedVehicles = [
     "CUP_I_Hilux_BMP1_IND_G_F","CUP_I_Hilux_btr60_IND_G_F",
     "CUP_I_nM1025_M2_ION","CUP_I_nM1025_M240_ION","CUP_I_nM1025_Mk19_ION",
     "CUP_B_nM1025_SOV_M2_ION","CUP_B_nM1025_SOV_Mk19_ION",
-    "CUP_I_Hilux_armored_BTR60_IND_G_F"
+    "CUP_I_Hilux_armored_BTR60_IND_G_F",
+	"CUP_O_BRDM2_CSAT_T","CUP_O_BRDM2_HQ_CSAT_T"
 ];
 private _lightUnarmedVehicles = [
     "CUP_O_Hilux_unarmed_TK_CIV","CUP_I_Hilux_armored_unarmed_IND_G_F",
@@ -64,8 +65,8 @@ private _vehiclesTrucks = [
 //VEHICLES ADDED IF MODS ARE PRESENT
 //BRAF
 if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
-    _vehiclesLightArmed pushBack "BRAF_AM11_Armed_CFN";
-    _vehiclesLightUnarmed pushBack "BRAF_AM11_CFN";
+    _lightArmedVehicles pushBack "BRAF_AM11_Armed_CFN";
+    _lightUnarmedVehicles pushBack "BRAF_AM11_CFN";
     _vehiclesTrucks pushBack "BRAF_Worker_CFN";
 };
 //Cytech Agrale and Armored Vehicle
@@ -79,20 +80,15 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
     _lightUnarmedVehicles append ["rt_16luxi_AFR", "rt_16luxi_ME_S","rt_16Luxi_dirty"];
     _lightArmedVehicles append ["rt_16Luxi_at", "rt_16Luxi_GMG", "rt_16Luxi_m2"];
 };
-//Toyota rt_j
-//CHECK IF THIS CLASS SHOULD BE IN CfgVehicles
-/*if (isClass (configFile >> "CfgVehicles" >> "rt_j79_opfor")) then {
-    _lightUnarmedVehicles append ["rt_j79_opfor", "rt_j79_ME_S","rt_j79_AFR_N","rt_j79_CAFR","rt_j79_AFR","rt_j76_IND","rt_j76"];
-    _lightArmedVehicles append ["rt_j79_GMG", "rt_j79_m2", "rt_j79_at"];
-};*/
+
 ["vehiclesRivalsLightArmed", _lightArmedVehicles] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", _vehiclesTrucks] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", _lightUnarmedVehicles] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", [
 	"CUP_B_LR_Special_CZ_W","CUP_I_SUV_Armored_ION",
     "CUP_B_nM1025_SOV_Mk19_ION","CUP_B_nM1025_SOV_M2_ION",
-    "CUP_O_BRDM2_CSAT_T","CUP_O_BRDM2_HQ_CSAT_T",
-    "CUP_B_Jackal2_L2A1_FIA","CUP_B_Jackal2_GMG_FIA"
+    "CUP_B_Jackal2_L2A1_FIA","CUP_B_Jackal2_GMG_FIA",
+	"CUP_B_BTR60_FIA"
 	]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", ["CUP_I_Hilux_armored_BMP1_IND_G_F"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", [
@@ -109,7 +105,7 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["mortarMagazineHE", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
-["mortarAmmo", ["mortar_82mm"]] call _fnc_saveToTemplate;
+["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;

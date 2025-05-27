@@ -1,25 +1,28 @@
 class planeLoadouts
 {
-//["PylonRack_7Rnd_Rocket_04_HE_F","CUP_PylonPod_2000Rnd_TE5_Red_Tracer_762x51_M134A_M"]HYDRAS Y MINIGUN
-//["PylonMissile_1Rnd_Mk82_F","PylonRack_12Rnd_missiles"] BOMBA E HYDRAS
-//["CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M","CUP_PylonPod_1200Rnd_TE1_Red_Tracer_M621_20mm_HE_M"] CAÑONES
-//["CUP_PylonPod_1Rnd_AIM_9L_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M"] AA MIS
-
+//"diveParams": params ["_startAlt", "_endAlt", "_diveSpeed m/s", "_diveAngle", "_turnRate", "_bombDrag"];
     class CASDIVE
     {
+        class CUP_B_AC47_Spooky_USA
+        {
+            loadout[] = {};
+            mainGun = "";
+            bombRacks[] = {"CUP_Vblauncher_Mk82_veh"};
+            diveParams[] = {600, 100, 80, 75, 15, {0,0}};
+        };        
         class CUP_I_CESSNA_T41_ARMED_ION
         {
             loadout[] = {"PylonMissile_1Rnd_Mk82_F","CUP_PylonPod_2000Rnd_TE5_Red_Tracer_762x51_M134A_M"}; //BASE Y MINIG
             mainGun = "CUP_Vlmg_M134_A_veh";
             bombRacks[] = {"CUP_Vblauncher_Mk82_veh"};
-            diveParams[] = {1000, 200, 50, 55, 15, {0,0}};
+            diveParams[] = {500, 100, 56, 75, 15, {0,0}};
         };
         class CUP_I_CESSNA_T41_ARMED_RACS
         {
-            loadout[] = {"PylonMissile_1Rnd_Mk82_F","CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M"}; //BASE Y MINIG
+            loadout[] = {"PylonMissile_1Rnd_Mk82_F","CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M"};
             mainGun = "CUP_Vacannon_M621_AW159_veh";
             bombRacks[] = {"CUP_Vblauncher_Mk82_veh"};
-            diveParams[] = {1000, 200, 50, 55, 15, {0,0}};
+            diveParams[] = {700, 200, 56, 55, 25, {0,0}};
         };
     };
     class CAS

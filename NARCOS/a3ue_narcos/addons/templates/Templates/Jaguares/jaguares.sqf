@@ -2,11 +2,6 @@
 //   Side Information   //
 //////////////////////////
 
-// NEW IDEA FOR mod defined OPTIONAL itema: DEFINE FIRST "_modItem class' and then include those definitions in the arrays for save to template
-//if (ModTruck is class then _ModTrucks = "ModTruck1","ModTruck2") else (_ModTrucks = "") ... Trucks = ["truck1", "truck2", _ModTrucks]
-// that's intended to give the vehicle Templates' arrays optional items if they are loaded and nothing else if they are not. probably the correct it's not "" but something else meaning absence of entry rather than an entry with empty value
-
-
 #include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
 ["name", "Los Jaguares"] call _fnc_saveToTemplate;
@@ -40,8 +35,9 @@ private _vehiclesLightUnarmed = [
 ]; 		 // must be unarmed, unarmoured to lightly armoured, with 0-4 passengers
 private _vehiclesLightArmed = [
     "CUP_I_nM1025_M2_ION","CUP_I_nM1025_M240_ION","CUP_I_nM1025_Mk19_ION",
-    "CUP_I_Hilux_armored_BTR60_IND_G_F",
-    "CUP_I_Hilux_armored_SPG9_IND_G_F","CUP_I_Hilux_armored_M2_IND_G_F"
+    "CUP_I_Hilux_armored_BTR60_IND_G_F","CUP_I_Hilux_armored_AGS30_IND_G_F","CUP_I_Hilux_armored_SPG9_IND_G_F",
+    "CUP_I_Hilux_armored_SPG9_IND_G_F","CUP_I_Hilux_armored_M2_IND_G_F",
+	"CUP_O_BRDM2_CSAT_T","CUP_O_BRDM2_HQ_CSAT_T"
 ];              // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
 private _vehiclesCars = [
     "CUP_O_Hilux_unarmed_TK_CIV","C_Offroad_01_F","C_Hatchback_01_sport_F","CUP_C_Golf4_Sport_random_Civ","CUP_C_Octavia_CIV"
@@ -85,18 +81,18 @@ private _vehiclesLightAPCs = [
     "CUP_B_Jackal2_L2A1_FIA","CUP_B_Jackal2_GMG_FIA"
 ];              // armed, lightly armoured, with 6-8 passengers 
 private _vehiclesAPCs = [
-    "CUP_B_BTR80_FIA","CUP_B_BTR60_FIA",
-    "CUP_O_BRDM2_CSAT_T","CUP_O_BRDM2_HQ_CSAT_T"
+    "CUP_B_BTR80_FIA","CUP_B_BTR60_FIA","CUP_O_BTR90_HQ_RU"
 ];                   // armed with enclosed turret, armoured, with 6-8 passengers
 private _vehiclesAirborne = [
     "CUP_B_LR_Special_CZ_W","CUP_I_SUV_Armored_ION",
     "CUP_B_nM1025_SOV_Mk19_ION","CUP_B_nM1025_SOV_M2_ION",
     "CUP_O_BRDM2_CSAT_T","CUP_O_BRDM2_HQ_CSAT_T",
-    "CUP_B_Jackal2_L2A1_FIA","CUP_B_Jackal2_GMG_FIA"
+    "CUP_B_Jackal2_L2A1_FIA","CUP_B_Jackal2_GMG_FIA",
+    "CUP_I_Hilux_armored_BMP1_IND_G_F","CUP_I_Hilux_armored_BTR60_IND_G_F"
 ];               // airborne vehicles, could be with passenger seats or just a crew 
 private _vehiclesIFVs = [
     "CUP_B_LAV25M240_USMC","CUP_B_LAV25_USMC","CUP_B_BTR80A_FIA","CUP_B_M1126_ICV_M2_Woodland",
-    "CUP_O_BMP2_CSAT_T","CUP_O_BMP1_CSAT_T","CUP_O_BMP1P_CSAT_T","CUP_O_BMP3_CSAT_T"
+    "CUP_O_BMP2_CSAT_T","CUP_O_BMP1_CSAT_T","CUP_O_BMP1P_CSAT_T","CUP_O_BMP3_CSAT_T","CUP_O_BTR90_RU"
 ];                   // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
 private _vehiclesTanks = [
     "CUP_I_T55_TK_GUE","CUP_I_T72_NAPA","CUP_I_T34_TK_GUE","CUP_I_T34_NAPA","CUP_I_T55_NAPA","CUP_B_M60A3_USMC"
@@ -106,22 +102,19 @@ private _vehiclesLightTanks = [
 ];              // tanks with poor armor and weapons
 private _vehiclesAA = [
     "CUP_I_Hilux_armored_igla_IND_G_F", "CUP_I_Hilux_armored_zu23_IND_G_F",
-    "CUP_I_Hilux_igla_IND_G_F", "CUP_I_Hilux_M2_IND_G_F",
+    "CUP_I_Hilux_igla_IND_G_F",
     "CUP_I_Ural_ZU23_NAPA"
 ];                     // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
 
 private _vehiclesTransportBoats = ["CUP_B_LCU1600_USMC"]; 	// boat that can carry passengers and cargoboxes
 private _vehiclesGunBoats = ["CUP_B_RHIB_HIL","CUP_B_RHIB2Turret_HIL"];               // armed boat, with passengers(?)
-private _vehiclesPlanesCAS = ["CUP_I_CESSNA_T41_ARMED_ION","CUP_I_CESSNA_T41_ARMED_RACS"];              // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
+private _vehiclesPlanesCAS = ["CUP_I_CESSNA_T41_ARMED_ION","CUP_I_CESSNA_T41_ARMED_RACS","CUP_B_AC47_Spooky_USA"];              // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
 private _vehiclesPlanesAA = ["CUP_I_CESSNA_T41_ARMED_ION","CUP_I_CESSNA_T41_ARMED_RACS"];               //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
 private _vehiclesPlanesTransport = ["CUP_B_C130J_USMC","CUP_B_C47_USA","CUP_O_AN2_TK"]; 	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
 private _vehiclesPlanesGunship = [
     "CUP_B_AC47_Spooky_USA",
-    "CUP_I_412_Military_Armed_AT_PMC",
-    "CUP_I_UH1H_gunship_TK_GUE",
-    "CUP_I_CESSNA_T41_ARMED_ION",
-    "CUP_I_CESSNA_T41_ARMED_RACS"
+    "CUP_I_UH1H_gunship_TK_GUE"
 ];      // planes like V-44X armed, AC-130 or pelican from OPTRE, used in GUNSHIP support
 //probably can also be a helicopter
 private _vehiclesHelisLight = [
@@ -177,7 +170,7 @@ private _vehiclesPolice = [
 
 //VEHICLES ADDED IF MODS ARE PRESENT
 //BRAF
-/*if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
+if (isClass (configFile >> "CfgVehicles" >> "BRAF_AM11_CFN")) then {
     _vehiclesLightArmed pushBack "BRAF_AM11_Armed_CFN";
     _vehiclesLightUnarmed pushBack "BRAF_AM11_CFN";
     _vehiclesTrucks pushBack "BRAF_Worker_CFN";
@@ -186,10 +179,11 @@ private _vehiclesPolice = [
     _vehiclesFuelTrucks pushBack "BRAF_Worker_Fuel_CFN";
     _vehiclesRepairTrucks pushBack "BRAF_Worker_Repair_CFN";
     _vehiclesMedical pushBack "BRAF_Worker_Health_CFN";
-    _vehiclesAPCs pushBack "braf_guarani_eb_remax","braf_guarani_eb_unarmed";
+    _vehiclesAPCs pushBack "braf_guarani_eb_unarmed";
+    _vehiclesIFVs pushBack "braf_guarani_eb_remax";
     _vehiclesTanks pushBack "BRAF_EE9_Cascavel_EB";
     _vehiclesPlanesAA pushBack "BRAF_A29_Super_Tucano";
-};*/
+};
 //Cytech Agrale and Armored Vehicle
 if (isClass (configFile >> "CfgVehicles" >> "cytech_rt_amv")) then {
     _vehiclesLightUnarmed append ["cytech_rt_amv_Camouflage","cytech_rt_amv_Desert"];
@@ -272,8 +266,9 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 
 //Minefield definition
 //CFGVehicles variant of Mines are needed "ATMine", "APERSTripMine", "APERSMine"
-["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;                   // anti-tank mines
-["minefieldAPERS", ["APERSMine","APERSBoundingMine"]] call _fnc_saveToTemplate;                // anti-personal mines
+//check if works!!!
+["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
+["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;
 
 
 //vehicle skins
@@ -286,6 +281,9 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
     ["CUP_B_LR_Ambulance_CZ_W", ["CIV", 1]],
     ["CUP_B_LR_MG_CZ_W", ["CIV", 1]],
     ["CUP_O_LR_SPG9_TKA", ["CIV", 1]],
+    ["CUP_O_BTR90_RU", ["Woodland", 1]],
+    ["CUP_O_BTR90_HQ_RU", ["Woodland", 1]],
+
     ["CUP_I_CESSNA_T41_ARMED_ION", ["civ_07",1]],
     ["CUP_I_CESSNA_T41_ARMED_RACS", ["civ_14", 1]],
     ["CUP_B_AC47_Spooky_USA", ["EmeraldAirlines", 1]],
@@ -377,13 +375,13 @@ private _AKOptics = [
     "CUP_optic_Kobra",0.5,
     "CUP_optic_PSO_1_AK",0.7,
     "CUP_optic_PSO_1_1",0.2,
-    "",2
+    "",1.5
 ];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];
-_loadoutData set ["APMines", ["APERSMine_Range_Mag"]];
-_loadoutData set ["lightExplosives", ["DemoCharge_Remote_Mag"]];
-_loadoutData set ["heavyExplosives", ["SatchelCharge_Remote_Mag"]];
+_loadoutData set ["APMines", ["APERSMine_Range_Mag","APERSBoundingMine_Range_Mag"]];
+_loadoutData set ["lightExplosives", ["CUP_IED_V2_M"]];
+_loadoutData set ["heavyExplosives", ["CUP_PipeBomb_M"]];
 
 _loadoutData set ["antiInfantryGrenades", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]];
 _loadoutData set ["smokeGrenades", ["SmokeShell"]];
@@ -416,17 +414,18 @@ _loadoutData set ["officerSidearms", [
     ["CUP_hgun_TaurusTracker455_gold","","","",["CUP_6Rnd_45ACP_M"],[],""]
 ]];
 
-
 _loadoutData set ["cloakUniforms", ["CUP_U_O_RUS_Ghillie"]];
 _loadoutData set ["cloakRifles", [
     ["CUP_srifle_M21","","","CUP_optic_artel_m14",["CUP_20Rnd_762x51_DMR"],[],"CUP_bipod_Harris_1A2_L"],1,
-    ["CUP_srifle_M24_blk","","","CUP_optic_LeupoldMk4_20x40_LRT",[],[],""],0.5
+    ["CUP_srifle_M24_blk","","","CUP_optic_LeupoldMk4_20x40_LRT",["CUP_5Rnd_762x51_M24"],[],""],0.5
 ]];
 _loadoutData set ["cloakCarbines", [
     ["CUP_arifle_M4A1_standard_short_dsrt","","",_militaryRISOptics,["CUP_30Rnd_556x45_Stanag"],[],""],
     ["CUP_arifle_FNFAL_OSW_railed","","",_militaryRISOptics,["CUP_20Rnd_762x51_FNFAL_M"],[],""]
 ]];
-_loadoutData set ["cloakSidearms", []];
+_loadoutData set ["cloakSidearms", [
+    ["CUP_hgun_Compact","","","",[],[],""]
+]];
 
 _loadoutData set ["uniforms", []];
 _loadoutData set ["vests", []];
@@ -744,7 +743,7 @@ _militaryLoadoutData set ["machineGuns", [
     ["CUP_lmg_m249_SQuantoon","","","",["CUP_100Rnd_TE4_Red_Tracer_556x45_M249"],[],""],1,
     ["CUP_arifle_RPK74","","","",["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],[],""],1,
     ["CUP_lmg_m249_pip1","","","",["CUP_100Rnd_TE4_Red_Tracer_556x45_M249"],[],""],2,
-    ["CUP_lmg_Pecheneg_B50_vfg","","",_AKOptics,["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M"],[],""],2
+    ["CUP_lmg_Pecheneg","","",_AKOptics,["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M"],[],""],2
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
     ["CUP_srifle_SVD","","","CUP_optic_PSO_3",["CUP_10Rnd_762x54_SVD_M"],[],""],1,
@@ -852,8 +851,8 @@ _eliteLoadoutData set ["grenadeLaunchers", [
 ]];
 _eliteLoadoutData set ["machineGuns", [
     ["CUP_lmg_m249_para_gl","","",_militaryRISOptics,["CUP_200Rnd_TE4_Red_Tracer_556x45_M249"],[],""],0.5,
-    ["CUP_lmg_m249_pip1","","",_eliteRISOptics,["CUP_200Rnd_TE4_Red_Tracer_556x45_M249"],[],""],2.5,
-    ["CUP_lmg_Pecheneg_B50_vfg","","",_AKOptics,["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M"],[],""],2,
+    ["CUP_lmg_m249_pip1","","",_eliteRISOptics,["CUP_200Rnd_TE4_Red_Tracer_556x45_M249"],[],""],2,
+    ["CUP_lmg_Pecheneg","","",_AKOptics,["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M"],[],""],2,
     ["CUP_lmg_Mk48","","",_eliteRISOptics,["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"],[],""],2
 ]];
 _eliteLoadoutData set ["SMGs", [
@@ -868,7 +867,7 @@ _eliteLoadoutData set ["marksmanRifles", [
 ]];
 _eliteLoadoutData set ["sniperRifles", [
     ["CUP_srifle_G22_blk","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_5Rnd_762x67_G22"],[],"CUP_bipod_VLTOR_Modpod_black"],
-    ["CUP_srifle_M107_Pristine","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_10Rnd_127x99_M107","ACE_10Rnd_127x99_Mag","ACE_10Rnd_127x99_AMAX_Mag","ACE_10Rnd_127x99_API_Mag"],[],""]
+    ["CUP_srifle_M107_Pristine","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_10Rnd_127x99_M107","ACE_10Rnd_127x99_AMAX_Mag","ACE_10Rnd_127x99_API_Mag"],[],""]
 ]];
 _eliteLoadoutData set ["sidearms", [
     ["CUP_hgun_Deagle","","","",["CUP_7Rnd_50AE_Deagle"],[],""],3,
@@ -933,7 +932,7 @@ _sfLoadoutData set ["marksmanRifles", [
     ["CUP_srifle_M14_DMR","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_20Rnd_762x51_DMR","CUP_20Rnd_762x51_DMR","ACE_20Rnd_762x51_M993_AP_Mag"],[],"CUP_bipod_VLTOR_Modpod_black"]
 ]];
 _sfLoadoutData set ["sniperRifles", [
-    ["CUP_srifle_M107_Pristine","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_10Rnd_127x99_M107","ACE_10Rnd_127x99_Mag","ACE_10Rnd_127x99_AMAX_Mag","ACE_10Rnd_127x99_API_Mag"],[],""]
+    ["CUP_srifle_M107_Pristine","","","CUP_optic_LeupoldMk4_25x50_LRT",["CUP_10Rnd_127x99_M107","ACE_10Rnd_127x99_AMAX_Mag","ACE_10Rnd_127x99_API_Mag"],[],""]
 ]];
 _sfLoadoutData set ["sidearms", [
     ["CUP_hgun_Deagle","","","",["CUP_7Rnd_50AE_Deagle"],[],""],3,
@@ -1450,7 +1449,7 @@ private _officerTemplate = {
 };
 private _patrolSniperTemplate = {
     ["helmets"] call _fnc_setHelmet;
-    ["cloakmasks"] call _fnc_setFacewear;
+    ["masks"] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["cloakUniforms"] call _fnc_setUniform;
 
@@ -1474,8 +1473,8 @@ private _patrolSniperTemplate = {
 };
 
 private _patrolSpotterTemplate = {
-    ["sniHats"] call _fnc_setHelmet;
-    ["cloakmasks"] call _fnc_setFacewear;
+    ["helmets"] call _fnc_setHelmet;
+    ["masks"] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["cloakUniforms"] call _fnc_setUniform;
 
