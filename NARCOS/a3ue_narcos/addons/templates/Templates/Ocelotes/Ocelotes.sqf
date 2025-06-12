@@ -100,9 +100,9 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 
 ["staticLowWeapons", ["O_G_HMG_02_F"]] call _fnc_saveToTemplate;
 ["staticAT", ["CUP_B_SPG9_AFU"]] call _fnc_saveToTemplate;
-["staticMortars", ["CUP_B_M252_HIL"]] call _fnc_saveToTemplate;
+["staticMortars", ["CUP_B_M252_US"]] call _fnc_saveToTemplate;
 
-["mortarMagazineHE", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
+["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
@@ -170,23 +170,23 @@ private _AKOptics = [
 private _loadoutData = call _fnc_createLoadoutData;
 
 _loadoutData set ["rifles", [
-    ["CUP_arifle_AKM","","","", [],[],""],4,
-    ["CUP_arifle_M16A1","","","",[],[],""],2,
-    ["CUP_arifle_Galil_SAR_black","","","",[],[],""],2,
+    ["CUP_arifle_AKM","","","", ["CUP_30Rnd_762x39_AK47_bakelite_M","CUP_30Rnd_762x39_AK47_bakelite_M","CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_bakelite_M"],[],""],4,
+    ["CUP_arifle_M16A1","","","",["CUP_20Rnd_556x45_Stanag"],[],""],2,
+    ["CUP_arifle_Galil_SAR_black","","","",["CUP_35Rnd_556x45_Galil_Mag"],[],""],2,
     ["CUP_sgun_AA12","","","",["CUP_20Rnd_B_AA12_Slug","CUP_20Rnd_B_AA12_Buck_00","CUP_20Rnd_B_AA12_Buck_0","CUP_20Rnd_B_AA12_Buck_00"],[],""],2,
-    ["CUP_arifle_FNFAL5060","","","",[],[],""],3,
+    ["CUP_arifle_FNFAL5060","","","",["CUP_20Rnd_762x51_FNFAL_M"],[],""],3,
     ["CUP_arifle_FNFAL5060_railed","","",_militiaRISOptics,["CUP_30Rnd_762x51_FNFAL_M"],[],""],1,
     ["CUP_arifle_M16A2","","",_militiaRISOptics,[],[],""],1,
     ["CUP_arifle_Galil_SAR_black","","","",[],[],""],2
 ]];
 _loadoutData set ["tunedRifles", [
-    ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,[],[],""],2,
-    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,[],[],""],3,
+    ["CUP_arifle_AK103","","CUP_acc_ANPEQ_2_Flashlight_Black_L",_AKOptics,["CUP_30Rnd_762x39_AK103_bakelite_M","CUP_30Rnd_762x39_AK103_bakelite_M","CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_bakelite_M"],[],""],2,
+    ["CUP_arifle_AKMN_railed","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,["CUP_30Rnd_762x39_AK103_bakelite_M","CUP_30Rnd_762x39_AK103_bakelite_M","CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_bakelite_M"],[],""],3,
     ["CUP_arifle_FNFAL_OSW_railed","","",_eliteRISOptics,["CUP_30Rnd_762x51_FNFAL_M"],[],"CUP_bipod_FNFAL"],2,
     ["CUP_arifle_M4A1_SOMMOD_Grip_black","","CUP_acc_ANPEQ_15",_militaryRISOptics,["CUP_60Rnd_556x45_SureFire_Tracer_Green","CUP_60Rnd_556x45_SureFire"],[],""],3,
-    ["CUP_arifle_AUG_A1","","","",[],[],""],0.5,
-    ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,[],[],""],3,
-    ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","","",_eliteRISOptics,[],[],""],0.5
+    ["CUP_arifle_AUG_A1","","","",["CUP_30Rnd_556x45_AUG"],[],""],0.5,
+    ["CUP_arifle_M4A3_black","","CUP_acc_ANPEQ_15_Flashlight_Tan_L",_eliteRISOptics,["CUP_60Rnd_556x45_SureFire_Tracer_Green","CUP_60Rnd_556x45_SureFire"],[],""],3,
+    ["CUP_arifle_XM8_Carbine_FG_Rail_Fish","","",_eliteRISOptics,["CUP_30Rnd_556x45_XM8"],[],""],0.5
 ]];
 _loadoutData set ["enforcerRifles", [
     ["CUP_arifle_AKMN_railed","","",_militiaRISOptics,["CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],[],""],1,
@@ -195,50 +195,49 @@ _loadoutData set ["enforcerRifles", [
     ["CUP_arifle_M16A4_Grip","","",_militiaRISOptics,["CUP_100Rnd_556x45_BetaCMag_ar15"],[],""],1
 ]];
 _loadoutData set ["carbines", [
-    ["CUP_arifle_Colt727","","","",[],[],""],1,
-    ["CUP_arifle_FNFAL_OSW_railed","","","",[],[],""],1,
-    ["CUP_Famas_F1","","","",[],[],""],0.1,
-    ["CUP_smg_M3A1","","","",[],[],""],5,
-    ["CUP_smg_Mac10","","","",[],[],""],3,
-    ["CUP_smg_MP5A5","","","",[],[],""],2,
-    ["CUP_smg_MP5A5_Rail_VFG","","","",[],[],""],0.5,
+    ["CUP_arifle_Colt727","","","",["CUP_30Rnd_556x45_Stanag"],[],""],1,
+    ["CUP_Famas_F1","","","",["CUP_25Rnd_556x45_Famas"],[],""],0.1,
+    ["CUP_smg_M3A1","","","",["CUP_30Rnd_45ACP_M3A1_BLK_M","CUP_30Rnd_45ACP_Green_Tracer_M3A1_GRN_M"],[],""],5,
+    ["CUP_smg_Mac10","","","",["CUP_30Rnd_45ACP_MAC10_M","CUP_30Rnd_45ACP_Green_Tracer_MAC10_M"],[],""],3,
+    ["CUP_smg_MP5A5","","","",["CUP_30Rnd_9x19_MP5"],[],""],2,
+    ["CUP_smg_MP5A5_Rail_VFG","","","",["CUP_30Rnd_9x19_MP5"],[],""],0.5,
     ["CUP_smg_UZI","","","",["CUP_32Rnd_9x19_UZI_M","CUP_72Rnd_9x19_UZI_M"],[],""],3
 ]];
 _loadoutData set ["grenadeLaunchers", [
-    ["CUP_arifle_M16A1GL_FS","","","",[],[],""],1,
-    ["CUP_glaunch_M79","","","",[],[],""],5,
-    ["CUP_glaunch_6G30","","","",[],[],""],2
+    ["CUP_arifle_M16A1GL_FS","","","",["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Green"],["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","UGL_FlareGreen_F","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],""],1,
+    ["CUP_glaunch_M79","","","",["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","UGL_FlareGreen_F","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],[],""],5,
+    ["CUP_glaunch_6G30","","","",["CUP_6Rnd_HE_GP25_M"],[],""],2
 ]];
 _loadoutData set ["machineGuns", [
-	["CUP_arifle_RPK74","","","",[],[],""],1,
-	["CUP_lmg_M60","","","",[],[],""],1,
-	["CUP_lmg_FNMAG_RIS","","","",[],[],""],2
+	["CUP_arifle_RPK74","","",_AKOptics,["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"],[],""],1,
+	["CUP_lmg_M60","","","",["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"],[],""],1,
+	["CUP_lmg_FNMAG_RIS","","","",["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"],[],""],2
 ]];
 _loadoutData set ["marksmanRifles", [
-    ["CUP_srifle_M14","","","optic_DMS",[],[],""],2,
-    ["CUP_srifle_LeeEnfield","","","CUP_optic_no23mk2",[],[],""],3,
-    ["CUP_srifle_CZ550","","","",[],[],""],1,
-    ["CUP_srifle_M21","","","CUP_optic_artel_m14",[],[],""],1
+    ["CUP_srifle_M14","","","optic_DMS",["CUP_20Rnd_762x51_DMR"],[],""],2,
+    ["CUP_srifle_LeeEnfield","","","CUP_optic_no23mk2",["CUP_10x_303_M"],[],""],3,
+    ["CUP_srifle_CZ550","","","",["CUP_5x_22_LR_17_HMR_M"],[],""],1,
+    ["CUP_srifle_M21","","","CUP_optic_artel_m14",["CUP_20Rnd_762x51_DMR"],[],""],1
 ]];
 _loadoutData set ["lightATLaunchers", [
-	"CUP_launch_M72A6_Special",
-	["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]
+	["CUP_launch_M72A6_Special_Loaded","","","",["CUP_M72A6_M"]],2,
+	["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""],1
 ]];
 _loadoutData set ["lightHELaunchers", [
-	"CUP_launch_RShG2",
-	["CUP_launch_RPG7V","","","",["CUP_TBG7V_M","CUP_OG7_M"],[],""]
+	["CUP_launch_RShG2_Loaded","","","",["CUP_RSHG2_M"]],2,
+	["CUP_launch_RPG7V","","","",["CUP_TBG7V_M","CUP_OG7_M"],[],""],1
 ]];
 _loadoutData set ["AALaunchers", [
 	["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M"],[],""]
 ]];
 _loadoutData set ["sidearms", [
-    ["CUP_hgun_Glock17_blk","","","",[],[],""],2,
-    ["CUP_hgun_PB6P9","","","",[],[],""],2,
-    ["CUP_hgun_Compact","","","",[],[],""],2,
-    ["CUP_hgun_TT","","","",[],[],""],3,
-    ["CUP_hgun_SWM327MP","","","",[],[],""],2,
-    ["CUP_hgun_TEC9_FA","","","",[],[],""],2,
-    ["CUP_hgun_Mac10","","","",[],[],""],1
+    ["CUP_hgun_Glock17_blk","","","",["CUP_17Rnd_9x19_glock17"],[],""],2,
+    ["CUP_hgun_PB6P9","","","",["CUP_8Rnd_9x18_Makarov_M"],[],""],2,
+    ["CUP_hgun_Compact","","","",["CUP_10Rnd_9x19_Compact"],[],""],2,
+    ["CUP_hgun_TT","","","",["CUP_8Rnd_762x25_TT"],[],""],3,
+    ["CUP_hgun_SWM327MP","","","",["CUP_8Rnd_357SW_M"],[],""],2,
+    ["CUP_hgun_TEC9_FA","","","",["CUP_32Rnd_9x19_TEC9"],[],""],2,
+    ["CUP_hgun_Mac10","","","",["CUP_30Rnd_45ACP_MAC10_M"],[],""],1
 ]];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];

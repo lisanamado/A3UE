@@ -100,9 +100,9 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 
 ["staticLowWeapons", ["O_G_HMG_02_F"]] call _fnc_saveToTemplate;
 ["staticAT", ["CUP_B_SPG9_AFU"]] call _fnc_saveToTemplate;
-["staticMortars", ["CUP_B_M252_HIL"]] call _fnc_saveToTemplate;
+["staticMortars", ["CUP_B_M252_US"]] call _fnc_saveToTemplate;
 
-["mortarMagazineHE", ["8Rnd_82mm_Mo_shells"]] call _fnc_saveToTemplate;
+["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["CUP_HandGrenade_RGO","CUP_HandGrenade_M67"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
