@@ -309,9 +309,9 @@ _loadoutData set ["sniperRifles", []];
 
 _loadoutData set ["lightATLaunchers", ["CUP_launch_M72A6_Special_Loaded","","","",["CUP_M72A6_M"]]];
 _loadoutData set ["lightHELaunchers", ["CUP_launch_RShG2_Loaded","","","",["CUP_RSHG2_M"]]];
-_loadoutData set ["ATLaunchers", []];
-_loadoutData set ["missileATLaunchers", []];
-_loadoutData set ["AALaunchers", []];
+_loadoutData set ["ATLaunchers", ["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]];
+_loadoutData set ["missileATLaunchers", ["CUP_launch_M47","","","",["CUP_Dragon_EP1_M"]]];
+_loadoutData set ["AALaunchers", ["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M"],[],""]];
 _loadoutData set ["sidearms", []];
 
 private _militiaRISOptics = [
@@ -1118,7 +1118,13 @@ private _atTemplate = {
     ["carbines","SMGs"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
-    [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
+//THIS SHOULD MAKE missileATLaunchers 5% of the time, CHECK IF WORKS
+    if (random 1 < 0.05) then {
+        [["missileATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
+    } else {
+        ["ATLaunchers"] call _fnc_setLauncher;
+    };
+//ORIGINAL SCRIPT[selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
     ["launcher", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
