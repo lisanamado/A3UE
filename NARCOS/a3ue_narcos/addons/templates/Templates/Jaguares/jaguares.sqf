@@ -1216,7 +1216,7 @@ private _atTemplate = {
     ["carbines","SMGs"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
-//THIS SHOULD MAKE missileATLaunchers 5% of the time, CHECK IF WORKS
+//THIS SHOULD MAKE missileATLaunchers 5% of the time,
     if (random 1 < 0.05) then {
         [["missileATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
     } else {
