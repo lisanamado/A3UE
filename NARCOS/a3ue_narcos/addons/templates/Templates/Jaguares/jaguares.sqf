@@ -334,11 +334,11 @@ _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 
-_loadoutData set ["lightATLaunchers", ["CUP_launch_M72A6_Special_Loaded","","","",["CUP_M72A6_M"]]];
+_loadoutData set ["lightATLaunchers", ["CUP_launch_M72A6_Special_Loaded","","","",[]]];
 _loadoutData set ["lightHELaunchers", ["CUP_launch_RShG2_Loaded","","","",["CUP_RSHG2_M"]]];
 _loadoutData set ["ATLaunchers", ["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]];
-_loadoutData set ["missileATLaunchers", ["CUP_launch_M47","","","",["CUP_Dragon_EP1_M"]]];
-_loadoutData set ["AALaunchers", ["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M"],[],""]];
+_loadoutData set ["missileATLaunchers", []];
+_loadoutData set ["AALaunchers", []];
 _loadoutData set ["sidearms", []];
 
 private _militiaRISOptics = [
@@ -352,7 +352,6 @@ private _militiaRISOptics = [
 private _militaryRISOptics = [
     "CUP_optic_AC11704_Black",
     "CUP_optic_Aimpoint_5000",
-    "CUP_optic_G33_HWS_BLK",
     "CUP_optic_HoloBlack",
     "CUP_optic_ZeissZPoint_hex",
     "CUP_optic_Elcan_SpecterDR_coyote",
@@ -360,7 +359,6 @@ private _militaryRISOptics = [
 ];
 private _eliteRISOptics = [
     "CUP_optic_AC11704_Black",1,
-    "CUP_optic_G33_HWS_BLK",1,
     "CUP_optic_ZeissZPoint_hex",1,
     "CUP_optic_Elcan_SpecterDR_coyote",1,
     "CUP_optic_Elcan_SpecterDR_KF_black",1,
@@ -631,7 +629,7 @@ _militiaLoadoutData set ["sidearms", [
     ["CUP_hgun_PB6P9","","","",["CUP_8Rnd_9x18_Makarov_M"],[],""]
 ]];
 
-_militiaLoadoutData set ["lightATLaunchers", ["CUP_launch_M72A6_Special_Loaded","","","",["CUP_M72A6_M"]]];
+_militiaLoadoutData set ["lightATLaunchers", ["CUP_launch_M72A6_Special_Loaded","","","",[]]];
 _militiaLoadoutData set ["lightHELaunchers", ["CUP_launch_RShG2_Loaded","","","",["CUP_RSHG2_M"]]];
 _militiaLoadoutData set ["ATLaunchers", ["CUP_launch_RPG7V","","","",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_OG7_M"],[],""]];
 _militiaLoadoutData set ["missileATLaunchers", ["CUP_launch_Mk153Mod0_blk","","","",["CUP_SMAW_HEDP_M","CUP_SMAW_HEAA_M"]]];
@@ -768,7 +766,7 @@ _militaryLoadoutData set ["lightATLaunchers", ["CUP_launch_M136_Loaded","","",""
 _militaryLoadoutData set ["lightHELaunchers", ["CUP_launch_RPG7V","","","CUP_optic_PGO7V",["CUP_TBG7V_M","CUP_OG7_M"],[],""]];
 _militaryLoadoutData set ["ATLaunchers", ["CUP_launch_RPG7V","","","CUP_optic_PGO7V",["CUP_PG7V_M","CUP_PG7VL_M","CUP_PG7VM_M","CUP_PG7VR_M"],[],""]];
 _militaryLoadoutData set ["missileATLaunchers", ["CUP_launch_Mk153Mod0_blk","","","CUP_optic_SMAW_Scope",["CUP_SMAW_HEDP_M","CUP_SMAW_HEAA_M"],[],""]];
-_militaryLoadoutData set ["AALaunchers",["CUP_launch_9K32Strela_Loaded","","","",["CUP_Strela_2_M"],[],""]];
+_militaryLoadoutData set ["AALaunchers",["CUP_launch_9K32Strela_Loaded","","","",[],[],""]];
 
 /////////////////////////////////
 //    Elite Loadout Data       //
