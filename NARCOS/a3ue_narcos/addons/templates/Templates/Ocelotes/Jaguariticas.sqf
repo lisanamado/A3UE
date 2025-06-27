@@ -212,7 +212,6 @@ private _sidearms = [
 
 if (isClass (configFile >> "CfgWeapons" >> "Braf_MT12")) then {
 	_rifles append [
-		["Braf_Lapa","","braf_baionet_lapa","",["braf_Lapa30Rnd_556x45","braf_Lapa30Rnd_556x45_red"],[],""],1,
 		["Braf_md1","","","",["braf_20Rnd_762x51","braf_20Rnd_762x51_green"],[],""],3,
 		["Braf_ParaFal","","","",["braf_20Rnd_762x51_green","braf_20Rnd_762x51_green"],[],""],1,
 		["braf_hk33","","","",["braf_30Rnd_556x45_HK"],[],""],1,
@@ -234,8 +233,7 @@ if (isClass (configFile >> "CfgWeapons" >> "Braf_MT12")) then {
 		["Braf_MT12","","","",["30Rnd_9x21_Mag"],[],""],2,
 		["braf_boito_20_nostock","","","",["BRAF_Boito_8Rnd_buck","BRAF_Boito_8Rnd_slug"],[],""],2,
 		["Braf_m16a1_carbine_9mm","","","",["braf_30Rnd_9x19"],[],""],1,
-		["Braf_Mekanika_URU_v1","","","",["30Rnd_9x21_Mag"],[],""],2,
-		["Braf_Lapa","","","",["braf_Lapa30Rnd_556x45"],[],""],2
+		["Braf_Mekanika_URU_v1","","","",["30Rnd_9x21_Mag"],[],""],2
 	];
 	_grenadeLaunchers append [
 		["braf_MD97LC_GL","","","",["braf_30Rnd_556x45_green"],["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","CUP_1Rnd_HEDP_M203","UGL_FlareGreen_F","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],""],4,
@@ -257,7 +255,7 @@ if (isClass (configFile >> "CfgWeapons" >> "Braf_MT12")) then {
 		["braf_m20a1superbazooka","","","",["CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M"],[],""],1
 	];
 	_AALaunchers append [
-		[],["braf_Igla","","","",["braf_Igla_missile"],[],""],1
+		[],["braf_Igla","","","",["braf_Igla_missile"],[],""]
 	];
 	_sidearms append [
 		["braf_imbel_m973","","","",["braf_9Rnd_9mm"],[],""],3,

@@ -8,42 +8,54 @@ class planeLoadouts
     // diveParams[]
     class CASDIVE
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class acfaa_at6b
         {
-            loadout[] = {"","","","","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","","","",""};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
+            loadout[] = {"","","","acfaa_400Rnd_50cal_pod","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","acfaa_400Rnd_50cal_pod","","",""};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+
+        class sab_alphajet_b
+        {
+            loadout[] = {"sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_pod_mauser_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class sab_jaguar_b
+        {
+            loadout[] = {"sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","","sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","","",""};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class sab_etendard_b
+        {
+            loadout[] = {"sab_milavi_1rnd_fab250_mag","sab_milavi_3rnd_mk82_mag","sab_milavi_3rnd_mk82_mag","sab_milavi_1rnd_fab250_mag"};
         };
     };
 
     class CAS
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class acfaa_at6b
         {
-            loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
-            missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
+            loadout[] = {"","acfaa_19Rnd_FFAR","acfaa_1Rnd_GBU12","acfaa_1Rnd_GBU12","acfaa_19Rnd_FFAR",""};
+        };
+        class sab_alphajet_b
+        {
+            loadout[] = {"sab_milavi_1rnd_maverick_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_pod_mauser_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_1rnd_maverick_mag"};
+        };
+        class sab_jaguar_b
+        {
+            loadout[] = {"sab_milavi_2rnd_mk82_mag","sab_milavi_1rnd_maverick_mag","","sab_milavi_1rnd_maverick_mag","sab_milavi_2rnd_mk82_mag","","",""};
+        };
+        class sab_etendard_b
+        {
+            loadout[] = {"sab_milavi_1rnd_fab250_mag","sab_milavi_1rnd_maverick_mag","sab_milavi_1rnd_maverick_mag","sab_milavi_1rnd_fab250_mag"};
         };
     };
    
     class AA
     {
-        class AMF_RAFALE_C_01_F
+        class sab_m2000_b
         {
-            loadout[] = {"PylonMissile_Missile_MICAEM_x1","PylonMissile_Missile_MICAEM_x1","PylonRack_3_Missile_MICAEM_x1","PylonRack_3_Missile_MICAEM_x1","PylonRack_Missile_MICAIR_x1","PylonRack_Missile_MICAIR_x1","PylonRack_Missile_TANK_02_x1_f","PylonRack_Missile_TANK_02_x1_f","PylonRack_Missile_METEOR_INT_x1","PylonRack_Missile_METEOR_INT_x1","PylonRack_Missile_TANK_01_x1_f"};
-            mainGun = "weapon_30m791";
-            missileLauncher[] = {"weapon_MICAIRLauncher","weapon_MICAEMLauncher","weapon_METEORLauncher"};
+            loadout[] = {"sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag","","sab_milavi_4rnd_zuni_mag","","sab_milavi_4rnd_zuni_mag","","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
-        class AMF_RAFALE_CRO_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_EGYPTIAN_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_ARABIAN_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_GREEK_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_INDIA_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_INDO_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_QATARIAN_01_C : AMF_RAFALE_C_01_F {};
-        // Variants inherit from the main one
     };
 };
