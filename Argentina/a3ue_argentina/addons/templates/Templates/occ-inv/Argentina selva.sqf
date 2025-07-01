@@ -37,7 +37,7 @@
     ,"acfaa_gmv_m134"
 ]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["acfaa_m1083a1p2_green"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["acfaa_m1083a1p2_base"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["Unimog416_big"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["Unimog_small"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["Unimog_reapir"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["UNIMOG_COMBUSTIBLE"]] call _fnc_saveToTemplate;
@@ -75,8 +75,9 @@
 ]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["speedboat_pna"]] call _fnc_saveToTemplate;
 
-private _CAS = ["acfaa_at6b","a3a_Plane_Fighter_03_grey_F"]
-private _ASF = ["ACFAA_Gripen_NG"]
+private _CAS = ["acfaa_at6b","a3a_Plane_Fighter_03_grey_F"];
+private _ASF = ["ACFAA_Gripen_NG"];
+
 if (isClass (configFile >> "CfgVehicles" >> "sab_etendard_b")) then {
     _CAS append ["sab_alphajet_b","sab_jaguar_b","sab_etendard_b"];
     _ASF append ["sab_etendard_b","sab_jaguar_b","sab_m2000_b"];
@@ -171,12 +172,19 @@ private _ATlaunchers = [
 ["launch_MRAWS_green_rail_F", "", "acc_pointer_IR", "", ["MRAWS_HEAT_F", "MRAWS_HEAT55_F"], [], ""],
 ["launch_MRAWS_green_rail_F", "", "acc_pointer_IR", "", ["MRAWS_HEAT_F", "MRAWS_HE_F"], [], ""]
 ];
-private _missileATLaunchers = "launch_NLAW_F"
+private _missileATLaunchers = "launch_NLAW_F";
 private _AAlaunchers = ["launch_I_Titan_F", "", "acc_pointer_IR", "", ["Titan_AA"], [], ""];
+
+if (isClass (configFile >> "CfgWeapons" >> "CUP_launch_Igla")) then {
+    _AALaunchers = [[],["CUP_launch_Igla","","","CUP_Igla_M",[""],[],""]];
+    _lightATLaunchers = ["CUP_launch_M72A6","","","",["CUP_M72A6_M"],[],""];
+
+    _ATLaunchers = [["CUP_launch_MAAWS","","","CUP_optic_MAAWS_Scope",["CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M"],[],""]];
+};
 
 if (isClass (configFile >> "CfgWeapons" >> "Braf_MT12")) then {
     _AALaunchers = [[],["braf_Igla","","","",["braf_Igla_missile"],[],""]];
-    _lightATLaunchers = ["braf_launch_alac_Loaded","","","",["braf_alac_M"],[],""],
+    _lightATLaunchers = ["braf_launch_alac_Loaded","","","",["braf_alac_M"],[],""];
     _ATLaunchers = [["braf_Gustav","","","",["CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M","MRAWS_HEAT55_F"],[],""]];
 };
 
@@ -399,7 +407,6 @@ _eliteLoadoutData set ["marksmanRifles",
 ["ACFAA_FAMTD_CP", "", "acc_pointer_IR", _MMOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""]
 ,["ACFAA_FAMTD_CL", "", "acc_pointer_IR", _MMOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""]
 ,["acfaa_dd5v4", "muzzle_snds_B", "acc_pointer_IR", _MMOptics, ["acfaa_20rnd_762x51_dd5v4_993_AP_Mag","acfaa_20rnd_762x51_dd5v4_MK319_Mag"], [], "bipod_01_F_blk"]
-
 ];
 
 _eliteLoadoutData set ["sniperRifles", [
@@ -462,20 +469,6 @@ _militaryLoadoutData set ["sniperRifles", [
 ]];
 _militaryLoadoutData set ["sidearms", [["acfaa_bhipower_base","","","",["acfaa_13Rnd_9x19_Mag"],[],""]]];
 
-///////////////////////////////
-//    Police Loadout Data    //
-///////////////////////////////
-
-private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_policeLoadoutData set ["uniforms", ["uni_pna_arena", "uni_pna_camo"]];
-_policeLoadoutData set ["vests", ["chaleco_tact_pna"]];
-_policeLoadoutData set ["helmets", ["quepi_pna","boina_pna"]];
-
-_policeLoadoutData set ["SMGs", [
-["prpl_benelli_rail", "", "", "", ["prpl_6Rnd_12Gauge_Pellets","prpl_6Rnd_12Gauge_Pellets","prpl_6Rnd_12Gauge_Pellets","prpl_6Rnd_12Gauge_Slug"], [], ""]
-]];
-_policeLoadoutData set ["sidearms", [["acfaa_bhipower_base","","","",["acfaa_13Rnd_9x19_Mag"],[],""]]];
-
 ////////////////////////////////
 //    Militia Loadout Data    //
 ////////////////////////////////
@@ -517,10 +510,23 @@ _militiaLoadoutData set ["sniperRifles", ¨[
 ]];
 _militiaLoadoutData set ["sidearms", [["acfaa_bhipower_base","","","",["acfaa_13Rnd_9x19_Mag"],[],""]]];
 
+///////////////////////////////
+//    Police Loadout Data    //
+///////////////////////////////
+
+private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
+_policeLoadoutData set ["uniforms", ["uni_pna_arena", "uni_pna_camo"]];
+_policeLoadoutData set ["vests", ["chaleco_tact_pna"]];
+_policeLoadoutData set ["helmets", ["quepi_pna","boina_pna"]];
+
+_policeLoadoutData set ["SMGs", [
+["prpl_benelli_rail", "", "", "", ["prpl_6Rnd_12Gauge_Pellets","prpl_6Rnd_12Gauge_Pellets","prpl_6Rnd_12Gauge_Pellets","prpl_6Rnd_12Gauge_Slug"], [], ""]
+]];
+_policeLoadoutData set ["sidearms", [["acfaa_bhipower_base","","","",["acfaa_13Rnd_9x19_Mag"],[],""]]];
+
 //////////////////////////
 //    Misc Loadouts     //
 //////////////////////////
-
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData; 
 _crewLoadoutData set ["uniforms", ["UCAC_CAMO_OLIVA"]];

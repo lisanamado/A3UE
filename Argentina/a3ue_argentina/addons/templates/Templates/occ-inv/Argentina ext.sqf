@@ -39,7 +39,7 @@
     ,"acfaa_gmv_m134"
 ]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["acfaa_m1083a1p2_green"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["acfaa_m1083a1p2_base"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["Unimog416_big"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["Unimog_small"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["Unimog_reapir"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["UNIMOG_COMBUSTIBLE"]] call _fnc_saveToTemplate;
@@ -72,13 +72,12 @@
 ]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["clv_Dragon"]] call _fnc_saveToTemplate;
 
-["vehiclesTransportBoats", ["I_Boat_Transport_01_F"
-
-]] call _fnc_saveToTemplate;
+["vehiclesTransportBoats", ["I_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["speedboat_pna"]] call _fnc_saveToTemplate;
 
-private _CAS = ["acfaa_at6b","a3a_Plane_Fighter_03_grey_F"]
-private _ASF = ["ACFAA_Gripen_NG"]
+private _CAS = ["acfaa_at6b","a3a_Plane_Fighter_03_grey_F"];
+private _ASF = ["ACFAA_Gripen_NG"];
+
 if (isClass (configFile >> "CfgVehicles" >> "sab_etendard_b")) then {
     _CAS append ["sab_alphajet_b","sab_jaguar_b","sab_etendard_b"];
     _ASF append ["sab_etendard_b","sab_jaguar_b","sab_m2000_b"];
@@ -176,13 +175,19 @@ private _ATlaunchers = [
 ["launch_MRAWS_green_rail_F", "", "acc_pointer_IR", "", ["MRAWS_HEAT_F", "MRAWS_HEAT55_F"], [], ""],
 ["launch_MRAWS_green_rail_F", "", "acc_pointer_IR", "", ["MRAWS_HEAT_F", "MRAWS_HE_F"], [], ""]
 ];
-private _missileATLaunchers = "launch_NLAW_F"
+private _missileATLaunchers = "launch_NLAW_F";
 private _AAlaunchers = ["launch_I_Titan_F", "", "acc_pointer_IR", "", ["Titan_AA"], [], ""];
 
+if (isClass (configFile >> "CfgWeapons" >> "CUP_launch_Igla")) then {
+    _AALaunchers = [[],["CUP_launch_Igla","","","CUP_Igla_M",[""],[],""]];
+    _lightATLaunchers = ["CUP_launch_M72A6","","","",["CUP_M72A6_M"],[],""];
+
+    _ATLaunchers = [["CUP_launch_MAAWS","","","CUP_optic_MAAWS_Scope",["CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M"],[],""]];
+};
 if (isClass (configFile >> "CfgWeapons" >> "Braf_MT12")) then {
     _AALaunchers = [[],["braf_Igla","","","",["braf_Igla_missile"],[],""]];
-    _lightATLaunchers = ["braf_launch_alac_Loaded","","","",["braf_alac_M"],[],""],
-    _ATLaunchers = [["braf_Gustav","","","",["CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M","MRAWS_HEAT55_F"],[],""]];
+    _lightATLaunchers = ["braf_launch_alac_Loaded","","","",["braf_alac_M"],[],""];
+    _ATLaunchers = [["braf_Gustav","","","",["CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M"],[],""]];
 };
 
 private _loadoutData = call _fnc_createLoadoutData;
@@ -367,6 +372,7 @@ _eliteLoadoutData set ["slRifles", [
 ,["ACFAA_M16A2", "", "acc_pointer_IR", _RifOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""],2
 ,["ACFAA_FAMTD_CL", "", "acc_pointer_IR", _MMOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],2
 ,["arifle_TRG21_F", "", "", _RifOptics, ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_Mk20_plain_F","","",_RifOptics,["30Rnd_556x45_Stanag"],[],""]
 ]];
 _eliteLoadoutData set ["rifles", [
 ["ACFAA_FAMA_base", "", "acc_pointer_IR", _RifOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], "bipod_02_F_blk"],2
@@ -378,6 +384,8 @@ _eliteLoadoutData set ["rifles", [
 ,["acfaa_steyr_a1", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],1
 ,["acfaa_steyr_a2", "", "", _RifOptics, ["30Rnd_556x45_Stanag"], [], ""],1
 ,["arifle_TRG21_F", "", "", _RifOptics, ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_Mk20_plain_F","","",_RifOptics,["30Rnd_556x45_Stanag"],[],""]
+
 ]];
 _eliteLoadoutData set ["carbines", [
 ["ACFAA_FAMCA", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],5
@@ -387,6 +395,7 @@ _eliteLoadoutData set ["carbines", [
 ,["acfaa_steyr_a1_car", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2
 ,["acfaa_steyr_a2_car", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""],1
 ,["arifle_TRG20_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""],3
+,["arifle_Mk20C_plain_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
 ["ACFAA_FAMA_GL", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""]
@@ -442,16 +451,19 @@ _militaryLoadoutData set ["rifles", [
 ,["ACFAA_FNFAP", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20rnd_762x51_MK319_fal_Mag","acfaa_20Rndfal_762x51_T_Mag"], [], ""],2
 ,["ACFAA_M16A2", "", "", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""],2
 ,["arifle_TRG21_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
+,["arifle_Mk20_plain_F","","",_HoloOptics,["30Rnd_556x45_Stanag"],[],""]
 ]];
 _militaryLoadoutData set ["carbines", [
 ["ACFAA_FAMCA", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],5
 ,["ACFAA_M4A1", "", "acc_pointer_IR", _HoloOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""],3
 ,["arifle_TRG20_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_Mk20C_plain_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
 ["ACFAA_FAMA_GL", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],3
 ,["ACFAA_M4A1_M203_F", "muzzle_snds_M", "acc_pointer_IR", _HoloOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""],1
-,["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2,
+,["arifle_Mk20_GL_plain_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _militaryLoadoutData set ["SMGs", [
 ["acfaa_mp5a3_base", "", "", _HoloOptics, ["acfaa_30Rnd_9x19_FMJ_Mag"], [], ""],1
@@ -485,24 +497,26 @@ _militiaLoadoutData set ["backpacks", ["B_TacticalPack_oli", "B_FieldPack_oli", 
 _militiaLoadoutData set ["helmets", ["quepi_gna","casco_oliva"]];
 _militiaLoadoutData set ["slHat", ["boina_gna"]];
 
-
 _militiaLoadoutData set ["slRifles", [
 ["ACFAA_FAMA_base", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], "bipod_02_F_blk"],3
 ,["ACFAA_FNFAL_PARA", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],2
 ,["arifle_TRG21_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
-]];
+,["arifle_Mk20_plain_F","","","",["30Rnd_556x45_Stanag"],[],""]]];
 _militiaLoadoutData set ["rifles", [
 ["ACFAA_FNFAL", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag","acfaa_20Rndfal_762x51_T_Mag"], [], ""],4
 ,["ACFAA_FNFAP", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag","acfaa_20Rndfal_762x51_T_Mag"], [], ""],1
 ,["arifle_TRG21_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
+,["arifle_Mk20_plain_F","","","",["30Rnd_556x45_Stanag"],[],""]
 ]];
 _militiaLoadoutData set ["carbines", [
 ["ACFAA_FAMCA", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],5
-,["arifle_TRG20_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_TRG20_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_Mk20C_plain_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
 ["ACFAA_FAMA_GL", "", "acc_pointer_IR", "0012", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],4
-,["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2
+,["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2,
+,["arifle_Mk20_GL_plain_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
 ["acfaa_fmk3", "", "", "", ["acfaa_45Rnd_9x19_FMK3_Mag"], [], ""]

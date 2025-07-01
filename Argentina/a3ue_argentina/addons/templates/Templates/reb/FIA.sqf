@@ -30,7 +30,7 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["vehiclesBasic", ["I_E_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
-["vehiclesTruck", ["Unimog416_big"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["Unimog_small"]] call _fnc_saveToTemplate;
 ["vehiclesAT", _vehiclesAT] call _fnc_saveToTemplate;
 
 ["vehiclesAA", []] call _fnc_saveToTemplate;
@@ -88,15 +88,14 @@ private _initialRebelEquipment = [
     "prpl_benelli_14_rail",15,
     "acfaa_fmk3",5,
 
-
     "acfaa_13Rnd_9x19_Mag",
     "2Rnd_12Gauge_Pellets",
-    "2Rnd_12Gauge_Slug"
+    "2Rnd_12Gauge_Slug",
     "prpl_6Rnd_12Gauge_Pellets",
     "prpl_6Rnd_12Gauge_Slug",
     "acfaa_32Rnd_9x19_FMJ_Mag",
     
-    "MiniGrenade",10,"SmokeShell",15
+    "MiniGrenade",10,"SmokeShell",15,
 
     "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
     "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt",
@@ -194,10 +193,7 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {
     _initialRebelEquipment pushBack "TFAR_anprc155";
     _initialRebelEquipment pushBack "TFAR_anprc155_coyote";
 };
-//add sawed shotgun only if found
-	if (isClass (configFile >> "CfgWeapons" >> "sgun_HunterShotgun_01_sawedoff_F")) then {
-	_initialRebelEquipment append ["sgun_HunterShotgun_01_sawedoff_F"]
-};
+
 //add a camera if has hate's mod
 	if (isClass (configFile >> "CfgWeapons" >> "Nikon_DSLR_HUD")) then {
 	_initialRebelEquipment append ["Nikon_DSLR_HUD","Nikon_DSLR"]
@@ -256,7 +252,6 @@ if (isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) then {
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
-
 ["headgear", [
     "CUP_H_Booniehat_CCE",
     "CUP_H_Booniehat_TTS",
@@ -307,7 +302,7 @@ if ((isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) && (is
     _voices pushBack "CUP_D_Female01_EN";
 };
 
-["voices", []] call _fnc_saveToTemplate;
+["voices", _voices] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
@@ -318,9 +313,8 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
 
-_loadoutData set [/*"petrosuniform",*/"uniforms", _rebUniforms];
+_loadoutData set ["uniforms", _rebUniforms];
 
-//set a red neckscarf as identifier
 _loadoutData set ["facewear", [
     "G_Bandanna_blk", 
     "G_Bandanna_aviator",

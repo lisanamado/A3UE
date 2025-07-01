@@ -47,3 +47,76 @@ class Example_A3_Soft_F_Quadbike_01_Quadbike_01_F_p3d : TRIPLES(ADDON,Nodes,Base
         };
     };
 };
+
+//PRUEBAS:
+class CLV_UNIMOG416_Unimog416Big : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-3.4,1};
+        };
+        class Node2
+        {
+            offset[] = {0,-4.2,1};
+        };
+    };
+};
+
+class CLV_UNIMOG_Unimog416small : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-2.65,1};
+        };
+        class Node2
+        {
+            offset[] = {0,-3.45,1};
+        };
+    };
+};
+class acfaa_aav_acfaa_aav_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-4.9,-1.5};
+        };
+        class Node2
+        {
+            offset[] = {0,-5.7,-1.5};
+        };
+    };
+};
+class acfaa_ch47f_Chinook_ARG_ACFAA_CH_47F_RAMP_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-7.4,-3};
+        };
+        class Node2
+        {
+            offset[] = {0,-8.2,-3};
+        };
+    };
+};
+class acfaa_ch47f_Chinook_ARG_ACFAA_CH_47F_UNARMED_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-7.4,-3};
+        };
+        class Node2
+        {
+            offset[] = {0,-8.2,-3};
+        };
+    };
+};

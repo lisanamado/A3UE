@@ -25,28 +25,21 @@ class cfgHALsStore
 {
 	class categories 
 	{
-		#include "config\vanilla.hpp"
+		#include "config\Arg.hpp"
 	};
 
 	class stores 
 	{
-		class my_extension_stock_vanilla
+		class my_extension_stock_Arg
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-				"handgunsVanilla",
-				"riflesVanilla", 
-				"sniperRiflesVanilla", 
-				"mgVanilla",
-				"smgVanilla",
-				"launchersVanilla",
-				"launcherMagazinesVanilla",
-				"navigationVanilla",
-				"pointersVanilla",
-				"muzzlesVanilla",
-				"opticsVanilla",
-				"magazinesVanilla",  
-				"miscVanilla"
+				"handgunsArg",
+				"riflesArg", 
+				"sniperRiflesArg", 
+				"mgArg",
+				"smgArg",
+				"magazinesArg",  
 			};
 		};
 	};
