@@ -9,13 +9,12 @@
 ["name", "FIA - Fuerza Insurgente Argentina"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\occ-inv\arg.paa)] call _fnc_saveToTemplate; 				//this line determines the flag texture -- Example: ["flagTexture", "\A3\Data_F\Flags\Flag_NATO_CO.paa"] - ENTER ONLY ONE OPTION
-["flagMarkerType", "a3a_flag_FIA"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\reb\FIA.paa)] call _fnc_saveToTemplate; 				//this line determines the flag texture -- Example: ["flagTexture", "\A3\Data_F\Flags\Flag_NATO_CO.paa"] - ENTER ONLY ONE OPTION
+["flagMarkerType", "FIArg_marker"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
-
 
 private _vehiclesLightUnarmed = ["I_G_Offroad_01_F"];
 private _vehiclesLightArmed = ["I_G_Offroad_01_armed_F"];
@@ -36,15 +35,17 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["vehiclesAA", []] call _fnc_saveToTemplate;
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["CUP_O_C47_SLA"]] call _fnc_saveToTemplate;                    
-["vehiclesCivPlane", ["CUP_C_AN2_CIV","CUP_C_CESSNA_CIV"]] call _fnc_saveToTemplate;
+["vehiclesPlane", []] call _fnc_saveToTemplate;                    
+["vehiclesCivPlane", ["C_Plane_Civil_01_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesMedical", ["UNIMOG_MEDICO"]] call _fnc_saveToTemplate;
 
-["vehiclesCivTruck", ["C_Truck_02_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"]] call _fnc_saveToTemplate;
+//algo está mal con esto, no aparecen los vehiculos civiles
+["vehiclesCivTruck", ["C_Truck_02_transport_F","C_Van_01_transport_F"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["C_Boat_Civil_01_F", "C_Rubberboat"]] call _fnc_saveToTemplate;
-["staticMGs", ["I_G_HMG_02_high_F", "I_G_HMG_02_F"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["C_Boat_Civil_01_F","C_Rubberboat"]] call _fnc_saveToTemplate;
+
+["staticMGs", ["I_G_HMG_02_high_F","I_G_HMG_02_F"]] call _fnc_saveToTemplate;
 
 private _AT = ["B_static_AT_F"];
 if (isClass (configFile >> "CfgVehicles" >> "ace_dragon_staticAssembled")) then {
@@ -85,8 +86,8 @@ private _initialRebelEquipment = [
 
     "sgun_HunterShotgun_01_F",
     "sgun_HunterShotgun_01_sawedoff_F",
-    "prpl_benelli_14_rail",15,
-    "acfaa_fmk3",5,
+    ["prpl_benelli_14_rail",15],
+    ["acfaa_fmk3",5],
 
     "acfaa_13Rnd_9x19_Mag",
     "2Rnd_12Gauge_Pellets",
@@ -95,92 +96,14 @@ private _initialRebelEquipment = [
     "prpl_6Rnd_12Gauge_Slug",
     "acfaa_32Rnd_9x19_FMJ_Mag",
     
-    "MiniGrenade",10,"SmokeShell",15,
+    ["MiniGrenade",10],
+    ["SmokeShell",15],
 
     "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
     "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt",
     "Binocular",
 
-    ["IEDUrbanSmall_Remote_Mag", 20], ["IEDLandSmall_Remote_Mag", 20], ["IEDUrbanBig_Remote_Mag", 5], ["IEDLandBig_Remote_Mag", 5],
-
-    //UNIFORMS FOR PLAYERS
-    //guerrilla-summer
-    , "U_I_G_resistanceLeader_F"
-    , "U_I_E_Uniform_01_tanktop_F"
-    , "UCAC_CAMO_OLIVA_GUE"
-    , "CUP_U_CRYE_ATACSFG_Roll"
-    , "CUP_U_CRYE_BLK_Roll"
-    , "U_B_CTRG_Soldier_3_Arid_F"
-    , "U_B_CTRG_Soldier_2_F"
-    , "U_B_CTRG_Soldier_2_Arid_F"
-    , "U_B_CTRG_Soldier_3_F"
-    , "U_I_L_Uniform_01_deserter_F"
-    , "U_BG_Guerilla1_1"
-    , "U_BG_Guerilla1_2_F"
-    , "U_BG_Guerilla2_2"
-    , "U_BG_Guerilla2_1"
-    , "U_BG_Guerilla2_3"
-    , "U_BG_leader"
-    , "U_I_L_Uniform_01_tshirt_olive_F"
-    //guerrilla-winter
-    , "U_I_E_Uniform_01_sweater_F"
-    , "U_B_CTRG_Soldier_F"
-    , "U_B_CTRG_Soldier_Arid_F"
-    , "U_B_CTRG_Soldier_urb_1_F"
-    , "U_I_L_Uniform_01_camo_F"
-    , "U_BG_Guerrilla_6_1"
-    , "U_BG_Guerilla3_1"
-    , "U_C_HunterBody_grn"
-    //Paramilitary
-    , "U_I_C_Soldier_Para_2_F"
-    , "U_I_C_Soldier_Para_3_F"
-    , "U_I_C_Soldier_Para_5_F"
-    , "U_I_C_Soldier_Para_4_F"
-    , "U_I_C_Soldier_Para_1_F"
-    //bandits-summer
-    , "U_I_C_Soldier_Bandit_4_F"
-    , "U_I_C_Soldier_Bandit_1_F"
-    , "U_I_C_Soldier_Bandit_2_F"
-    , "U_I_C_Soldier_Bandit_5_F"
-    , "U_I_C_Soldier_Bandit_3_F"
-    //military
-    , "U_I_ParadeUniform_01_AAF_decorated_F"
-    , "U_O_ParadeUniform_01_CSAT_decorated_F"
-    , "U_I_E_ParadeUniform_01_LDF_decorated_F"
-    , "U_B_ParadeUniform_01_US_decorated_F"
-    , "U_I_ParadeUniform_01_AAF_F"
-    , "U_O_ParadeUniform_01_CSAT_F"
-    , "U_I_E_ParadeUniform_01_LDF_F"
-    , "U_B_ParadeUniform_01_US_F"
-    , "U_C_Paramedic_01_F"
-    //worker-overalls
-    , "U_C_ConstructionCoverall_Black_F"
-    , "U_C_ConstructionCoverall_Blue_F"
-    , "U_C_ConstructionCoverall_Red_F"
-    , "U_C_ConstructionCoverall_Vrana_F"
-    //idap
-    ,"U_C_IDAP_Man_cargo_F"
-    , "U_C_IDAP_Man_Jeans_F"
-    , "U_C_IDAP_Man_casual_F"
-    , "U_C_IDAP_Man_shorts_F"
-    , "U_C_IDAP_Man_Tee_F"
-    , "U_C_IDAP_Man_TeeShorts_F"
-    //misc
-    , "U_Competitor"
-    , "U_C_Driver_1_black"
-    , "U_C_Driver_1_blue"
-    , "U_C_Driver_2"
-    , "U_C_Driver_1"
-    , "U_C_Driver_1_green"
-    , "U_C_Driver_1_orange"
-    , "U_C_Driver_1_red"
-    , "U_C_Driver_3"
-    , "U_C_Driver_4"
-    , "U_C_Driver_1_white"
-    , "U_C_Driver_1_yellow"
-    , "U_C_Scientist"
-    , "U_C_Uniform_Scientist_01_formal_F"
-    , "U_C_Uniform_Scientist_01_F"
+    ["IEDUrbanSmall_Remote_Mag", 20], ["IEDLandSmall_Remote_Mag", 20], ["IEDUrbanBig_Remote_Mag", 5], ["IEDLandBig_Remote_Mag", 5]
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr", "tf_anprc154"]};
@@ -215,18 +138,14 @@ if (A3A_hasACE) then {
 
 _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 
-
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
-
 
 //UNIFORMS//
 
 private _rebUniforms =  [
-   , "U_I_G_resistanceLeader_F"
+    "U_I_G_resistanceLeader_F"
     , "U_I_E_Uniform_01_tanktop_F"
     , "UCAC_CAMO_OLIVA_GUE"
-    , "CUP_U_CRYE_ATACSFG_Roll"
-    , "CUP_U_CRYE_BLK_Roll"
     , "U_B_CTRG_Soldier_3_Arid_F"
     , "U_B_CTRG_Soldier_2_F"
     , "U_B_CTRG_Soldier_2_Arid_F"
@@ -239,10 +158,9 @@ private _rebUniforms =  [
     , "U_BG_Guerilla2_3"
     , "U_BG_leader"
     , "U_I_L_Uniform_01_tshirt_olive_F"
-    ,"UCAC_CAMO_OLIVA_GUE"
 ];
-if (isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) then {
-    _rebUniforms append = [
+if (isClass (configFile >> "CfgWeapons" >> "U_B_CombatUniform_mcam_W")) then {
+    _rebUniforms append [
     "U_B_CombatUniform_mcam_W",
     "WU_I_CombatUniform_AR",    
     "WU_B_T_Soldier_F",
@@ -269,21 +187,31 @@ if (isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) then {
 ///  Identities   ///
 /////////////////////
 private _faces = [
-    "PersianHead_A3_01"
-    , "PersianHead_A3_02"
-    , "AsianHead_A3_03"
+    "LivonianHead_9"
+    , "RussianHead_5"
+    , "AsianHead_A3_07"
     , "WhiteHead_20"
-    , "WhiteHead_02"
-    , "GreekHead_A3_13"
-    , "TanoanHead_A3_03"
-    , "GreekHead_A3_03"
-    , "AsianHead_A3_04"
-    , "TanoanHead_A3_05"
+    , "WhiteHead_31"
+    , "Sturrock"
+    , "LivonianHead_4"
+    , "LivonianHead_8"
+    , "WhiteHead_30"
+    , "TanoanHead_A3_01"
+    , "GreekHead_A3_09"
+    , "PersianHead_A3_03"
+    , "LivonianHead_10"
+    , "WhiteHead_21"
     , "GreekHead_A3_12"
-    , "Mavros"
+    , "TanoanHead_A3_05"
+    , "RussianHead_3"
+    , "WhiteHead_16"
+    , "PersianHead_A3_02"
+    , "WhiteHead_26"
+    , "GreekHead_A3_11"
+    , "WhiteHead_07"
 ];
-if (isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) then {
-    _faces append = [
+if (isClass (configFile >> "CfgWeapons" >> "U_B_CombatUniform_mcam_W")) then {
+    _faces append [
     "Max_faceWS1",
     "Max_faceWS10",
     "Max_faceWS2",
@@ -291,19 +219,19 @@ if (isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) then {
     "Max_faceWS4",
     "Max_faceWS6",
     "Max_faceWS9"];
-};
+    };
 
 ["faces", _faces] call _fnc_saveToTemplate;
 
-private _voices [
-    "Male04GRE", "Male02FRE","Male04GRE","Male06GRE","Male01FRE","Male03FRE"
-]
-if ((isClass (configFile >> "CfgVehicles" >> "U_B_CombatUniform_mcam_W")) && (isClass (configFile >> "CfgVehicles" >> "CUP_D_Female01_EN"))) then {
+private _voices = [
+    "Male04GRE", "Male02FRE","Male04GRE","Male06GRE","Male01FRE","Male03FRE","Male02FRE"
+];
+if ((isClass (configFile >> "CfgWeapons" >> "U_B_CombatUniform_mcam_W")) && (isClass (configFile >> "CfgVehicles" >> "CUP_D_Female01_EN"))) then {
     _voices pushBack "CUP_D_Female01_EN";
 };
 
 ["voices", _voices] call _fnc_saveToTemplate;
-
+"SahraniNames" call _fnc_saveNames;
 //////////////////////////
 //       Loadouts       //
 //////////////////////////

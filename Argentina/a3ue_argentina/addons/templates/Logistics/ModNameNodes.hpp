@@ -33,47 +33,29 @@ passed output from the function: A3A_Logistics_fnc_generateHardPoints
     Example: [cursorTarget, [0,-0.7,-0.7], 2.1] call A3A_Logistics_fnc_generateHardPoints;
 */
 
-/*
-example output
-*/
-
-/* faltan:
-Unimog_small
-acfaa_m1083a1p2_base
-acfaa_m1083a1p2_green
-acfaa_m998_4door
-Unimog416_big
-*/
-class Example_A3_Soft_F_Quadbike_01_Quadbike_01_F_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-    class Nodes
-    {
-        class Node1
-        {
-            offset[] = {0,-0.9,-0.453};
-            seats[] = {0};
-        };
-    };
-};
 class CLV_UNIMOG416_Unimog416Big : TRIPLES(ADDON,Nodes,Base)
 {
         class Nodes
     {
         class Node1
         {
-            offset[] = {0,-3.65,1};
+            offset[] = {0,-0.4,1.25};
+            seats[] = {1,2};
         };
         class Node2
         {
-            offset[] = {0,-4.45,1};
+            offset[] = {0,-1.2,1.25};
+            seats[] = {3,4};
         };
         class Node3
         {
-            offset[] = {0,-5.25,1};
+            offset[] = {0,-2,1.25};
+            seats[] = {5,6,7,8};
         };
         class Node4
         {
-            offset[] = {0,-6.05,1};
+            offset[] = {0,-2.8,1.25};
+            seats[] = {9,10};
         };
     };
 };
@@ -83,107 +65,169 @@ class CLV_UNIMOG_Unimog416small : TRIPLES(ADDON,Nodes,Base)
     {
         class Node1
         {
-            offset[] = {0,-2.65,1};
+            offset[] = {0,-0.4,1.25};
+            seats[] = {1,2};
         };
         class Node2
         {
-            offset[] = {0,-3.45,1};
+            offset[] = {0,-1.2,1.25};
+            seats[] = {3,4};
+        };
+        class Node3
+        {
+            offset[] = {0,-2,1.25};
+            seats[] = {5,6,7,8};
         };
     };
 };
-class acfaa_aav_acfaa_aav_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-        class Nodes
-    {
-        class Node1
-        {
-            offset[] = {0,-4.9,-1.5};
-        };
-        class Node2
-        {
-            offset[] = {0,-5.7,-1.5};
-        };
-    };
-};
-class acfaa_ch47f_Chinook_ARG_ACFAA_CH_47F_RAMP_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-        class Nodes
-    {
-        class Node1
-        {
-            offset[] = {0,-7.4,-3};
-        };
-        class Node2
-        {
-            offset[] = {0,-8.2,-3};
-        };
-    };
-};
-class acfaa_ch47f_Chinook_ARG_ACFAA_CH_47F_UNARMED_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-        class Nodes
-    {
-        class Node1
-        {
-            offset[] = {0,-7.4,-3};
-        };
-        class Node2
-        {
-            offset[] = {0,-8.2,-3};
-        };
-    };
-};
-class acfaa_m998_cargo_acfaa_m998_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-        class Nodes
-    {
-        class Node1
-        {
-            offset[] = {0,-2.4,-1};
-        };
-        class Node2
-        {
-            offset[] = {0,-3.2,-1};
-        };
-    };
-};
-class acfaa_m998_cargo_acfaa_m998_4door_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-        class Nodes
-    {
-        class Node1
-        {
-            offset[] = {0,-2.4,-1};
-        };
-        class Node2
-        {
-            offset[] = {0,-3.2,-1};
-        };
-    };
-};
+//[cursorTarget, [0,0,-0.4],3.25, true] call A3A_Logistics_fnc_generateHardPoints;
 class acfaa_fmtv_acfaa_m1083a1p2_p3d : TRIPLES(ADDON,Nodes,Base)
 {
         class Nodes
     {
         class Node1
         {
-            offset[] = {0,-3.9,-1};
+            offset[] = {0,-0.4,-0.4};
+            seats[] = {13,12,3,2};
         };
         class Node2
         {
-            offset[] = {0,-4.7,-1};
+            offset[] = {0,-1.2,-0.4};
+            seats[] = {4,5,6,7};
         };
         class Node3
         {
-            offset[] = {0,-5.5,-1};
+            offset[] = {0,-2,-0.4};
+            seats[] = {9,1,5,8};
         };
         class Node4
         {
-            offset[] = {0,-6.3,-1};
+            offset[] = {0,-2.8,-0.4};
+            seats[] = {14,15,10,11};
         };
-        class Node5
+    };
+};
+//[cursorTarget, [0,0.2,-0.75],2.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class acfaa_m998_cargo_acfaa_m998_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
         {
-            offset[] = {0,-7.1,-1};
+            offset[] = {0,-0.2,-0.75};
+            seats[] = {1,2,3,4};
+        };
+        class Node2
+        {
+            offset[] = {0,-1,-0.75};
+            seats[] = {5,6};
+        };
+        class Node3
+        {
+            offset[] = {0,-1.8,-0.75};
+            seats[] = {7,8};
+        };
+    };
+};
+
+//[cursorTarget, [0,-0.75,-0.85],1.25, true] call A3A_Logistics_fnc_generateHardPoints;
+class acfaa_m998_cargo_acfaa_m998_4door_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.15,-0.85};
+        };
+    };
+};
+//[cursorTarget, [-0.15,-0.6,-1.25],1.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class acfaa_m998_gmv_acfaa_gmv_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.15,-1,-1.25};
+        };
+        class Node2
+        {
+            offset[] = {-0.15,-1.8,-1.25};
+        };
+    };
+};
+class acfaa_m998_gmv_acfaa_gmv_m2_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.15,-1,-1.25};
+            seats[] = {4,3};
+        };
+        class Node2
+        {
+            offset[] = {-0.15,-1.8,-1.25};
+            seats[] = {5,6};
+        };
+    };
+};
+class acfaa_m998_gmv_acfaa_gmv_m134_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.15,-1,-1.25};
+        };
+        class Node2
+        {
+            offset[] = {-0.15,-1.8,-1.25};
+        };
+    };
+};
+//[cursorTarget, [0,0,-1.4],3.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class acfaa_aav_acfaa_aav_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.4,-1.4};
+            seats[] = {0,1,5,8};
+
+        };
+        class Node2
+        {
+            offset[] = {0,-1.2,-1.4};
+            seats[] = {2,3,6,9};
+        };
+        class Node3
+        {
+            offset[] = {0,-2,-1.4};
+            seats[] = {3,4,9,7};
+        };
+        class Node4
+        {
+            offset[] = {0,-2.8,-1.4};
+            seats[] = {11,4,10,7};
+        };
+    };
+};
+//[cursorTarget, [0,-1.25,-0.5],1.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class rt_hilux_ToW_Hilux_16_meshes_Hilux_16 : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.65,-0.5};
+            seats[] = {4,5};
+        };
+        class Node2
+        {
+            offset[] = {0,-2.45,-0.5};
+            seats[] = {6,7};
         };
     };
 };

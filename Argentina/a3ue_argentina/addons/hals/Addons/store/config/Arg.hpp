@@ -10,6 +10,7 @@
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_rifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
+
 			ITEM(acfaa_steyr_a1, 850, RIFLE_STOCK);
 			ITEM(acfaa_steyr_a2, 850, RIFLE_STOCK);
 			ITEM(acfaa_steyr_a2_car, 850, RIFLE_STOCK);
@@ -47,7 +48,7 @@
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
 			ITEM(acfaa_m249, 1000, RIFLE_STOCK);
-			ITEM(acfaa_fnmag_rail, 800, RIFLE_STOCK
+			ITEM(acfaa_fnmag_rail, 800, RIFLE_STOCK);
 		};
 
 		class smgArg
