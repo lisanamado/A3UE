@@ -36,14 +36,73 @@ passed output from the function: A3A_Logistics_fnc_generateHardPoints
 /*
 example output
 */
-class Example_A3_Soft_F_Quadbike_01_Quadbike_01_F_p3d : TRIPLES(ADDON,Nodes,Base)
+//[cursorTarget, [0,-1.25,-0.5],1.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class rt_hilux_ToW_Hilux_16_meshes_Hilux_16 : TRIPLES(ADDON,Nodes,Base)
 {
-    class Nodes
+        class Nodes
     {
         class Node1
         {
-            offset[] = {0,-0.9,-0.453};
-            seats[] = {0};
+            offset[] = {0,-1.65,-0.5};
+            seats[] = {4,5};
+        };
+        class Node2
+        {
+            offset[] = {0,-2.45,-0.5};
+            seats[] = {6,7};
+        };
+    };
+};
+//[cursorTarget, [0,-1.75,-0.25],1.75, true] call A3A_Logistics_fnc_generateHardPoints;
+class RT_70Series_ToW_toyota_j79_meshes_J79 : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-2.15,-0.25};
+            seats[] = {4,5,6,7};
+        };
+
+        class Node2
+        {
+            offset[] = {0,-2.95,-0.25};
+            seats[] = {4,5,6,7};
+        };
+    };
+};
+//[cursorTarget, [0,-0.75,-0.25],2.25, true] call A3A_Logistics_fnc_generateHardPoints;
+class cytech_cytech_rt_vehicles_Agrale_meshes_Agrale : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.15,-0.25};
+            seats[] = {3,4,5,6};
+        };
+
+        class Node2
+        {
+            offset[] = {0,-1.95,-0.25};
+            seats[] = {7,8,9,10,11};
+        };
+        class Node3
+        {
+            offset[] = {0,-2.75,-0.25};
+            seats[] = {7,8,9,10,11};
+        };
+    };
+};
+//[cursorTarget, [0,-1.5,-0.25],1.25, true] call A3A_Logistics_fnc_generateHardPoints;
+class cytech_cytech_rt_vehicles_AMV_meshes_AMV : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.9,-0.25};
+            seats[] = {4,5,6,7,8,9};
         };
     };
 };

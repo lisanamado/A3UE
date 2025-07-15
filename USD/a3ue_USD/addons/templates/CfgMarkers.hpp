@@ -2,10 +2,10 @@ class CfgMarkers
 {
 	class flag_NATO;
 
-	class my_extension_marker_aaf_remnants: flag_NATO 
+	class USD_marker: flag_NATO 
 	{
-		name = "AAF Remnants";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_aaf_torn_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_aaf_torn_co.paa);
+		name = "USD";
+		icon = QPATHTOFOLDER(Pictures\USDm.paa);
+		texture = QPATHTOFOLDER(Pictures\USDm.paa);
 	};
 };

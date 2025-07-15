@@ -1,4 +1,4 @@
-name = "Unión Solidaire de Douala";
+name = "Union Solidaire de Douala";
 author = "Catertico";
 tooltip = "";
 actionName = "";

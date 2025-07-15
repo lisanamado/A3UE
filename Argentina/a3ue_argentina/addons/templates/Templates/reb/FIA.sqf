@@ -1,7 +1,5 @@
 #include "..\..\script_component.hpp"
 
-//Posibles variantes: FIAT- Fuerza Insurgente Argentina Troska - FAP - Fuerza Armada Peroncha - OGT - Organización Gorilona Terraplanista
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -33,17 +31,17 @@ if (isClass (configFile >> "CfgVehicles" >> "rt_16Luxi_dirty")) then {
 ["vehiclesAT", _vehiclesAT] call _fnc_saveToTemplate;
 
 ["vehiclesAA", []] call _fnc_saveToTemplate;
-["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
+["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", []] call _fnc_saveToTemplate;                    
-["vehiclesCivPlane", ["C_Plane_Civil_01_F"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["I_C_Plane_Civil_01_F"]] call _fnc_saveToTemplate;                    
 
 ["vehiclesMedical", ["UNIMOG_MEDICO"]] call _fnc_saveToTemplate;
 
-//algo está mal con esto, no aparecen los vehiculos civiles
-["vehiclesCivTruck", ["C_Truck_02_transport_F","C_Van_01_transport_F"]] call _fnc_saveToTemplate;
+private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_SUV_01_F"];
+["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
+["vehiclesCivTruck", ["C_Truck_02_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["C_Boat_Civil_01_F","C_Rubberboat"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["C_Boat_Civil_01_F", "C_Rubberboat"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["I_G_HMG_02_high_F","I_G_HMG_02_F"]] call _fnc_saveToTemplate;
 
@@ -231,7 +229,7 @@ if ((isClass (configFile >> "CfgWeapons" >> "U_B_CombatUniform_mcam_W")) && (isC
 };
 
 ["voices", _voices] call _fnc_saveToTemplate;
-"SahraniNames" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////

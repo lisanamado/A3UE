@@ -12,7 +12,7 @@ class planeLoadouts
         {
             loadout[] = {"","","","","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","","","",""};
             mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
+            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};//cfgWeapons
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
     };
@@ -22,7 +22,7 @@ class planeLoadouts
         class B_Plane_CAS_01_dynamicLoadout_F
         {
             loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
+            mainGun = "Gatling_30mm_Plane_CAS_01_F";//cfgWeapons
             rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
         };

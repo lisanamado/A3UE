@@ -8,42 +8,138 @@ class planeLoadouts
     // diveParams[]
     class CASDIVE
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class sab_t28trojan_o
         {
-            loadout[] = {"","","","","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","","","",""};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
+            loadout[] = {"sab_milavi_1rnd_mk82_mag","sab_milavi_1rnd_cluster_01_mag","sab_milavi_1rnd_cluster_02_mag","sab_milavi_1rnd_mk82_mag"};
+            bombRacks[] = {"sab_milavi_mk82_weapon"};
+            diveParams[] = {900, 400, 180, 55, 15, {0,0}};
+        };
+        class sab_pc9_o
+        {
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_fab250_mag","sab_milavi_1rnd_cluster_01_mag","sab_milavi_1rnd_cluster_02_mag","sab_milavi_1rnd_fab250_mag","sab_milavi_7rnd_hydra_mag"};
+            bombRacks[] = {"sab_milavi_mk82_weapon","sab_milavi_fab250_weapon"};
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
+            diveParams[] = {900, 400, 180, 55, 15, {0,0}};
+        };
+        class sab_pc7_o
+        {
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_fab250_mag","sab_milavi_1rnd_cluster_02_mag","sab_milavi_1rnd_cluster_01_mag","sab_milavi_1rnd_fab250_mag","sab_milavi_7rnd_hydra_mag"};
+            bombRacks[] = {"sab_milavi_mk82_weapon","sab_milavi_fab250_weapon","sab_milavi_droptank_weapon"};
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
+            diveParams[] = {900, 400, 180, 55, 15, {0,0}};
+        };
+        class sab_mb339_o
+        {
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_cluster_01_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_cluster_01_mag","sab_milavi_7rnd_hydra_mag"};
+            bombRacks[] = {"sab_milavi_mk82_weapon"};
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
+        class sab_fiat_o
+        {
+            loadout[] = {"sab_milavi_1rnd_droptank_3_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_1rnd_droptank_3_mag"};
+            bombRacks[] = {"sab_milavi_mk82_weapon"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class sab_panther_o
+        {
+            loadout[] = {"sab_milavi_4rnd_zuni_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_mk82_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_mk82_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_4rnd_zuni_mag"};
+            mainGun = "sab_panther_quad_cannon_20mm";
+            bombRacks[] = {"sab_milavi_mk82_weapon"};
+            rocketLauncher[] = {"sab_milavi_hydra_weapon","sab_milavi_zuni_weapon"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        }; 
     };
 
     class CAS
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class sab_t28trojan_o
         {
-            loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
-            mainGun = "Gatling_30mm_Plane_CAS_01_F";
-            rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
-            missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_pod_mgx1_mag","sab_milavi_pod_mgx1_mag","sab_milavi_7rnd_hydra_mag"};
+            mainGun = "sab_milavi_pod_cannon_weapon";
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
         };
+        class sab_sf260_o
+        {
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_pod_mgx1_mag","sab_milavi_pod_mgx1_mag","sab_milavi_7rnd_hydra_mag"};
+            mainGun = "sab_milavi_pod_cannon_weapon";
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
+        };
+        class sab_pc9_o
+        {
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_hellfire_mag","sab_milavi_pod_mgx1_mag","sab_milavi_pod_mgx1_mag","sab_milavi_1rnd_hellfire_mag","sab_milavi_7rnd_hydra_mag"};
+            mainGun = "sab_milavi_pod_cannon_weapon";
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
+            missileLauncher[] = {"sab_milavi_agm_hellfire_weapon"};
+        };
+        class sab_pc7_o
+        {
+            loadout[] = {"sab_milavi_7rnd_hydra_mag","sab_milavi_4rnd_zuni_mag","sab_milavi_pod_mgx1_mag","sab_milavi_pod_mgx1_mag","sab_milavi_4rnd_zuni_mag","sab_milavi_7rnd_hydra_mag"};
+            mainGun = "sab_milavi_pod_cannon_weapon";
+            rocketLauncher[] = {"sab_milavi_hydra_weapon","sab_milavi_zuni_weapon"};
+        };
+        class sab_mb339_o
+        {
+            loadout[] = {"sab_milavi_2rnd_hellfire_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_2rnd_hellfire_mag"};
+            rocketLauncher[] = {"sab_milavi_hydra_weapon"};
+            missileLauncher[] = {"sab_milavi_agm_hellfire_weapon"};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
+        class sab_fiat_o
+        {
+            loadout[] = {"sab_milavi_1rnd_droptank_mag","sab_milavi_2rnd_hellfire_mag","sab_milavi_2rnd_hellfire_mag","sab_milavi_1rnd_droptank_mag"};
+            mainGun = "sab_milavi_defaultaircraft_weapon";
+            missileLauncher[] = {"sab_milavi_agm_hellfire_weapon"};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
+        class sab_panther_o
+        {
+            loadout[] = {"sab_milavi_4rnd_zuni_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_droptank_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_7rnd_hydra_mag","sab_milavi_4rnd_zuni_mag"};
+            mainGun = "sab_panther_quad_cannon_20mm";
+            rocketLauncher[] = {"sab_milavi_hydra_weapon","sab_milavi_zuni_weapon"};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
+        class sab_mystere_o
+        {
+            loadout[] = {"sab_milavi_4rnd_hellfire_mag","sab_milavi_1rnd_droptank_3_mag","sab_milavi_1rnd_droptank_3_mag","sab_milavi_4rnd_hellfire_mag"};
+            mainGun = "sab_milavi_defaultaircraft_weapon";
+            missileLauncher[] = {"sab_milavi_agm_hellfire_weapon"};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
+
     };
    
     class AA
     {
-        class AMF_RAFALE_C_01_F
+        class sab_pc21_o
         {
-            loadout[] = {"PylonMissile_Missile_MICAEM_x1","PylonMissile_Missile_MICAEM_x1","PylonRack_3_Missile_MICAEM_x1","PylonRack_3_Missile_MICAEM_x1","PylonRack_Missile_MICAIR_x1","PylonRack_Missile_MICAIR_x1","PylonRack_Missile_TANK_02_x1_f","PylonRack_Missile_TANK_02_x1_f","PylonRack_Missile_METEOR_INT_x1","PylonRack_Missile_METEOR_INT_x1","PylonRack_Missile_TANK_01_x1_f"};
-            mainGun = "weapon_30m791";
-            missileLauncher[] = {"weapon_MICAIRLauncher","weapon_MICAEMLauncher","weapon_METEORLauncher"};
+            loadout[] = {"sab_milavi_1rnd_aim9x_mag","sab_milavi_pod_mgx1_mag","sab_milavi_pod_mgx1_mag","sab_milavi_1rnd_aim9x_mag"};
+            mainGun = "sab_milavi_pod_cannon_weapon";
+            missileLauncher[] = {"sab_milavi_aam_weapon"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
-        class AMF_RAFALE_CRO_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_EGYPTIAN_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_ARABIAN_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_GREEK_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_INDIA_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_INDO_01_C : AMF_RAFALE_C_01_F {};
-        class AMF_RAFALE_QATARIAN_01_C : AMF_RAFALE_C_01_F {};
-        // Variants inherit from the main one
+        class sab_mystere_o
+        {
+            loadout[] = {"sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_droptank_3_mag","sab_milavi_1rnd_droptank_3_mag","sab_milavi_1rnd_aim9x_mag"};
+            mainGun = "sab_milavi_defaultaircraft_weapon";
+            missileLauncher[] = {"sab_milavi_aam_weapon"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
+            class sab_fiat_o
+        {
+            loadout[] = {"sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_droptank_mag"};
+            mainGun = "sab_milavi_defaultaircraft_weapon";
+            missileLauncher[] = {"sab_milavi_agm_hellfire_weapon"};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
+        class sab_m2000_o
+        {
+            loadout[] = {"sab_milavi_1rnd_droptank_mag","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag","sab_milavi_2rnd_hellfire_mag","","sab_milavi_2rnd_hellfire_mag","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_droptank_mag"};
+            mainGun = "sab_milavi_defaultaircraft_weapon";
+            missileLauncher[] = {"sab_milavi_aam_weapon","sab_milavi_agm_hellfire_weapon"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+            bombRacks[] = {"sab_milavi_droptank_weapon"};
+        };
     };
 };

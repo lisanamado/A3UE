@@ -70,15 +70,8 @@
 ["vehiclesTransportBoats", ["I_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["speedboat_pna"]] call _fnc_saveToTemplate;
 
-private _CAS = ["acfaa_at6b","a3a_Plane_Fighter_03_grey_F"];
-private _ASF = ["ACFAA_Gripen_NG"];
-
-if (isClass (configFile >> "CfgVehicles" >> "sab_etendard_b")) then {
-    _CAS append ["sab_alphajet_b","sab_jaguar_b","sab_etendard_b"];
-    _ASF append ["sab_etendard_b","sab_jaguar_b","sab_m2000_b"];
-};
-["vehiclesPlanesCAS", _CAS] call _fnc_saveToTemplate; 		//set pylons
-["vehiclesPlanesAA", _ASF] call _fnc_saveToTemplate; 			//set pylons?
+["vehiclesPlanesCAS", ["acfaa_at6b","a3a_Plane_Fighter_03_grey_F"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["ACFAA_Gripen_NG"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["acfaa_c130lep"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", [
@@ -164,7 +157,7 @@ if (isClass (configFile >> "CfgVehicles" >> "sab_etendard_b")) then {
 
 "afcaa_argnames" call _fnc_saveNames;
 
-["voices", "Male04GRE", "Male02FRE","Male04GRE","Male06GRE","Male01FRE","Male03FRE","Male02FRE"] call _fnc_saveToTemplate;
+["voices", ["Male04GRE","Male06GRE","Male01FRE","Male03FRE","Male02FRE"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //

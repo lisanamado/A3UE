@@ -7,54 +7,47 @@ class planeLoadouts
     // bombRacks[]
     // diveParams[]
     class CASDIVE
-    {
+    {   
+        class a3a_Plane_Fighter_03_grey_F
+        {
+            loadout[] = {"PylonRack_12Rnd_PG_missiles","PylonRack_1Rnd_Missile_AA_04_F","PylonMissile_1Rnd_Mk82_F","PylonWeapon_300Rnd_20mm_shells","PylonMissile_1Rnd_Mk82_F","PylonRack_1Rnd_Missile_AA_04_F","PylonRack_12Rnd_PG_missiles"};
+            mainGun = "Twin_Cannon_20mm_gunpod";
+            missileLauncher[] = {"Missile_AA_04_Plane_CAS_01_F","missiles_DAGR"};
+            bombRacks[] = {"Mk82BombLauncher"};//cfgWeapons
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
         class acfaa_at6b
         {
-            loadout[] = {"","","","acfaa_400Rnd_50cal_pod","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","acfaa_400Rnd_50cal_pod","","",""};
-            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
-        };
-
-        class sab_alphajet_b
-        {
-            loadout[] = {"sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_pod_mauser_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag"};
-            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
-        };
-        class sab_jaguar_b
-        {
-            loadout[] = {"sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","","sab_milavi_2rnd_mk82_mag","sab_milavi_2rnd_mk82_mag","","",""};
-            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
-        };
-        class sab_etendard_b
-        {
-            loadout[] = {"sab_milavi_1rnd_fab250_mag","sab_milavi_3rnd_mk82_mag","sab_milavi_3rnd_mk82_mag","sab_milavi_1rnd_fab250_mag"};
+            loadout[] = {"acfaa_7Rnd_FFAR","acfaa_7Rnd_FFAR","PylonMissile_1Rnd_Mk82_F","PylonMissile_1Rnd_Mk82_F","acfaa_7Rnd_FFAR","acfaa_7Rnd_FFAR"};
+            bombRacks[] = {"Mk82BombLauncher"};//cfgWeapons
+            rocketLauncher[] = {"acfaa_FFARLauncher_unguided"};
+            diveParams[] = {1000, 400, 180, 55, 15, {0,0}};
         };
     };
 
     class CAS
     {
+        class a3a_Plane_Fighter_03_grey_F
+        {
+            loadout[] = {"PylonRack_12Rnd_PG_missiles","PylonRack_1Rnd_Missile_AA_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonWeapon_300Rnd_20mm_shells","PylonMissile_1Rnd_Bomb_04_F","PylonRack_1Rnd_Missile_AA_04_F","PylonRack_12Rnd_PG_missiles"};
+            mainGun = "Twin_Cannon_20mm_gunpod";
+            missileLauncher[] = {"Missile_AA_04_Plane_CAS_01_F","missiles_DAGR"};
+        };
         class acfaa_at6b
         {
-            loadout[] = {"","acfaa_19Rnd_FFAR","acfaa_1Rnd_GBU12","acfaa_1Rnd_GBU12","acfaa_19Rnd_FFAR",""};
-        };
-        class sab_alphajet_b
-        {
-            loadout[] = {"sab_milavi_1rnd_maverick_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_pod_mauser_mag","sab_milavi_2rnd_mk82_mag","sab_milavi_1rnd_maverick_mag"};
-        };
-        class sab_jaguar_b
-        {
-            loadout[] = {"sab_milavi_2rnd_mk82_mag","sab_milavi_1rnd_maverick_mag","","sab_milavi_1rnd_maverick_mag","sab_milavi_2rnd_mk82_mag","","",""};
-        };
-        class sab_etendard_b
-        {
-            loadout[] = {"sab_milavi_1rnd_fab250_mag","sab_milavi_1rnd_maverick_mag","sab_milavi_1rnd_maverick_mag","sab_milavi_1rnd_fab250_mag"};
+            loadout[] = {"acfaa_7Rnd_FFAR","acfaa_7Rnd_FFAR","PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles","acfaa_7Rnd_FFAR","acfaa_7Rnd_FFAR"};
+            rocketLauncher[] = {"acfaa_FFARLauncher_unguided","missiles_DAR"};
+            missileLauncher[] = {"missiles_DAR"};
         };
     };
    
     class AA
     {
-        class sab_m2000_b
+        class ACFAA_Gripen_NG
         {
-            loadout[] = {"sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag","","sab_milavi_4rnd_zuni_mag","","sab_milavi_4rnd_zuni_mag","","sab_milavi_1rnd_aim9x_mag","sab_milavi_1rnd_aim9x_mag"};
+            loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_C_x1"};
+            mainGun = "weapon_Fighter_Gun20mm_AA"; 
+            missileLauncher[] = {"weapon_AGM_65Launcher","weapon_AMRAAMLauncher","weapon_BIM9xLauncher"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
     };
