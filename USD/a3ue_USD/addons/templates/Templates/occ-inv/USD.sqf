@@ -1,4 +1,3 @@
-//FALTA LOS PILONES DE LOS AVIONES, LAS LOGÍSTICAS DE VEHÍCULOS Y QUIZÁS ATRIBUTOS DE VEHÍCULO
 
 //////////////////////////
 //   Side Information   //
@@ -6,7 +5,7 @@
 
 #include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
-["name", "Union Solidaire de Douala"] call _fnc_saveToTemplate;
+["name", "USD"] call _fnc_saveToTemplate;
 ["spawnMarkerName", "Corridor de soutien de la USD"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
@@ -40,19 +39,21 @@
     "cytech_rt_agrale_Green"
     ,"cytech_rt_agrale_Camouflage"
     ,"I_E_Truck_02_F"
+    ,"walker_a3_t810"
 ]] call _fnc_saveToTemplate;		 // vehicle that can carry troops and cargoboxes
 ["vehiclesCargoTrucks", [
     "I_G_Van_01_transport_F"
     ,"I_E_Truck_02_transport_F"
+    ,"walker_a3_apextruckOV1"
 ]] call _fnc_saveToTemplate;		 // vehicle that can carry only cargoboxes
 ["vehiclesAmmoTrucks", [
-    "I_E_Truck_02_Ammo_F"
+    "walker_a3_t810am"
 ]] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to rearm vehicles
 ["vehiclesRepairTrucks", [
-    "I_G_Offroad_01_repair_F"
+    "walker_a3_t810rep"
 ]] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to repair vehicles
 ["vehiclesFuelTrucks", [
-    "I_E_Truck_02_fuel_F"
+    "walker_a3_t810fue"
 ]] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to refuel vehicles
 ["vehiclesMedical", [
     "cytech_rt_amv_Rescue"
@@ -334,7 +335,8 @@ _policeLoadoutData set ["sidearms", _fwPistols];
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militiaLoadoutData set ["uniforms", ["U_I_C_Soldier_Camo_F", "U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_1_F"]];
+_militiaLoadoutData set ["uniforms", ["arg_uniform_agbkmkii"]];
+_militiaLoadoutData set ["slUniforms", ["arg_uniform_jungledigital"]];
 _militiaLoadoutData set ["vests", ["V_SmershVest_01_radio_F","V_Chestrig_rgr","V_BandollierB_oli"]];
 _militiaLoadoutData set ["Hvests", ["V_TacVestIR_blk"]];
 _militiaLoadoutData set ["backpacks", ["B_TacticalPack_oli", "B_FieldPack_oli", "B_Kitbag_sgg"]];
@@ -355,7 +357,8 @@ _militiaLoadoutData set ["sidearms", _fwPistols];
 //    Military Loadout Data    //
 /////////////////////////////////
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militaryLoadoutData set ["uniforms", ["U_B_CTRG_Soldier_3_F", "U_B_CTRG_Soldier_F"]];
+_militaryLoadoutData set ["uniforms", ["arg_uniform_acrvz95leaf"]];
+_militaryLoadoutData set ["slUniforms", ["arg_uniform_acrvz95spring"]];
 _militaryLoadoutData set ["vests", ["V_TacVest_oli"]];
 _militaryLoadoutData set ["Hvests", ["V_HarnessOGL_ghex_F"]];
 _militaryLoadoutData set ["backpacks", ["B_Kitbag_sgg","B_Carryall_oli","B_TacticalPack_blk"]];
@@ -364,13 +367,13 @@ _militaryLoadoutData set ["slHat", ["H_Beret_EAF_01_F"]];
 _militaryLoadoutData set ["binoculars", ["Binocular"]];
 
 _militaryLoadoutData set ["slRifles", _fwaCarbinesElite];
-_militaryLoadoutData set ["rifles", _fwaRiflesMilitia /*+ _fwaRiflesMilita*/];
-_militaryLoadoutData set ["carbines", _fwaCarbinesMilitia /*+ _fwaCarbinesMilita*/];
-_militaryLoadoutData set ["grenadeLaunchers", _fwaGLsMilitia /*+ _fwaGLMilita*/];
-_militaryLoadoutData set ["SMGs", _fwaSMGsMilitia /*+ _fwaSMGsMilitary*/];
-_militaryLoadoutData set ["machineGuns", _fwaMGsMilitia /*+ _fwaMGsMilitary*/];
-_militaryLoadoutData set ["marksmanRifles", _fwaMMriflesMilitia /*+ _fwaMMriflesMilitary*/];
-_militaryLoadoutData set ["sniperRifles", _fwaSniperMilitia /*+ _fwaSniperMilitary*/];
+_militaryLoadoutData set ["rifles", _fwaRiflesMilitia];
+_militaryLoadoutData set ["carbines", _fwaCarbinesMilitia];
+_militaryLoadoutData set ["grenadeLaunchers", _fwaGLsMilitia];
+_militaryLoadoutData set ["SMGs", _fwaSMGsMilitia];
+_militaryLoadoutData set ["machineGuns", _fwaMGsMilitia];
+_militaryLoadoutData set ["marksmanRifles", _fwaMMriflesMilitia];
+_militaryLoadoutData set ["sniperRifles", _fwaSniperMilitia];
 _militaryLoadoutData set ["sidearms", _fwPistols];
 
 /////////////////////////////////
@@ -378,23 +381,24 @@ _militaryLoadoutData set ["sidearms", _fwPistols];
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_eliteLoadoutData set ["uniforms", ["U_B_CTRG_Soldier_urb_1_F","U_B_CTRG_Soldier_urb_3_F"]];
+_eliteLoadoutData set ["uniforms", ["arg_uniform_digitalflora"]];
+_eliteLoadoutData set ["slUniforms", ["arg_uniform_mfdpspruceland"]];
 _eliteLoadoutData set ["vests", ["V_PlateCarrierIA1_dgtl"]];
 _eliteLoadoutData set ["Hvests", ["V_PlateCarrierIA2_dgtl"]];
 _eliteLoadoutData set ["backpacks", ["B_Kitbag_rgr"]];
-_eliteLoadoutData set ["helmets", ["H_HelmetB_snakeskin"]];
+_eliteLoadoutData set ["helmets", ["H_HelmetB"]];
 _eliteLoadoutData set ["slHat", ["H_Beret_CSAT_01_F"]];
 _eliteLoadoutData set ["binoculars", ["Laserdesignator_03"]];
 _eliteLoadoutData set ["NVGs", ["ACE_NVG_Gen2_Brown"]];
 
 _eliteLoadoutData set ["slRifles", _USDsfRifles];
-_eliteLoadoutData set ["rifles", _fwaRiflesMilitary /*+ _fwaRiflesElite*/];
+_eliteLoadoutData set ["rifles", _fwaRiflesMilitary];
 _eliteLoadoutData set ["carbines", _fwaCarbinesElite];
-_eliteLoadoutData set ["grenadeLaunchers", _fwaGLMilitary /*+ _fwaGLElite*/];
+_eliteLoadoutData set ["grenadeLaunchers", _fwaGLMilitary];
 _eliteLoadoutData set ["SMGs", _fwaCarbinesMilitary];
-_eliteLoadoutData set ["machineGuns", _fwaMGsMilitary /*+ _fwaMGsElite*/];
-_eliteLoadoutData set ["marksmanRifles", _fwaMMriflesMilitary /*+_fwaMMriflesElite*/];
-_eliteLoadoutData set ["sniperRifles", _fwaSniperMilitary /*+_fwaSniperElite*/];
+_eliteLoadoutData set ["machineGuns", _fwaMGsMilitary];
+_eliteLoadoutData set ["marksmanRifles", _fwaMMriflesMilitary];
+_eliteLoadoutData set ["sniperRifles", _fwaSniperMilitary];
 _eliteLoadoutData set ["sidearms", _fwPistols];
 
 ///////////////////////////////////////

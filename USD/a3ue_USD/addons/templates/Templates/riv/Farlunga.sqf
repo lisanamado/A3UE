@@ -23,27 +23,22 @@
 ["surrenderCrate", "Box_Syndicate_Wps_F"] call _fnc_saveToTemplate;
 
 ["vehiclesRivalsLightArmed", [
-    "rt_j79_Armed"
-    ,"rt_j79_at"
-    ,"rt_j79_m2"
-    ,"rt_j79_GMG"
-    ,"rt_16Luxi_m2"
-    ,"rt_16Luxi_GMG"
-    ,"rt_16Luxi_at"
-    ,"I_G_Offroad_01_AT_F"
-    ,"I_G_Offroad_01_armed_F"
+    "I_G_Offroad_01_AT_F"
+	,"walker_a3_hiluxhmg_2"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", [
     "cytech_rt_agrale_Camouflage"
+	,"walker_a3_ural"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", [
-    "rt_16luxi_AFR"
-    ,"rt_16luxi_CAFR"
-    ,"I_G_Offroad_01_F"
-    ,"rt_j79_CAFR"
-    ,"rt_j79_AFR"
-    ,"rt_j76_IND"
-    ,"rt_j76"
+	"walker_a3_datsun_1"
+	,"walker_a3_datsun_3"
+	,"walker_a3_datsun_4"
+	,"walker_a3_hilux_1"
+	,"walker_a3_hilux_2"
+	,"walker_a3_c_landrover"
+	,"walker_a3_landrover"
+	,"walker_a3_uaz"
 ]] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", []] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", []] call _fnc_saveToTemplate;
