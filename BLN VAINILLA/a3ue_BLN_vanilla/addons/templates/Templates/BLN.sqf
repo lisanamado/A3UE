@@ -58,6 +58,7 @@ if (_hasWs) then {
   _staticAA = ["I_Tura_ZU23_lxWS"];
 };
 
+//NOT WORKING
 if (isClass (configFile >> "CfgVehicles" >> "walker_a3_hilux_1")) then {
     _vehiclesLightUnarmed = ["walker_a3_datsun_1","walker_a3_hilux_1"];
     _vehiclesLightArmed = ["walker_a3_hiluxhmg_1"];
@@ -165,10 +166,9 @@ private _initialRebelEquipment = [
     "2Rnd_12Gauge_Pellets",
     "2Rnd_12Gauge_Slug",
 
-    "hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder",
-    "hgun_ACPC2_F","hgun_ACPC2_F",
+    ["hgun_Pistol_heavy_02_F",5],"6Rnd_45ACP_Cylinder",
 
-    ["hgun_Pistol_Signal_F",9],"hgun_Pistol_Signal_F","6Rnd_RedSignal_F",
+    ["hgun_Pistol_Signal_F",5],"hgun_Pistol_Signal_F","6Rnd_RedSignal_F",
 
     "V_Pocketed_coyote_F","V_Pocketed_olive_F","V_Pocketed_black_F",
     "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_khk","V_BandollierB_oli","V_BandollierB_rgr","V_BandollierB_ghex_F",
@@ -182,7 +182,7 @@ private _initialRebelEquipment = [
 
 if (isClass (configFile >> "CfgWeapons" >> "sp_fwa_l9a1_hipower")) then {
     _initialRebelEquipment append [
-        "sp_fwa_m1911","sp_fwa_7Rnd_45acp_m1911","sp_fwa_7Rnd_45acp_m1911_Tracer",
+        ["sp_fwa_m1911",10],"sp_fwa_7Rnd_45acp_m1911","sp_fwa_7Rnd_45acp_m1911_Tracer",
         ["sp_fwa_smg_mk7a4sterling",2],"sp_fwa_15Rnd_9x19_L2A3_Sterling",
         ["sp_fwa_smg_sten_mk2",2],"sp_fwa_32Rnd_9x19_sten",
         ["sp_fwa_enfield_no5",2],"sp_fwa_10Rnd_303_No4",
@@ -194,9 +194,8 @@ if (isClass (configFile >> "CfgWeapons" >> "sp_fwa_l9a1_hipower")) then {
 if (isClass (configFile >> "CfgWeapons" >> "CUP_hgun_TaurusTracker455")) then {
     _initialRebelEquipment append [
     "CUP_sgun_CZ584",
-    "sgun_HunterShotgun_01_sawedoff_F",
-    ["CUP_srifle_Remington700", 10],
-    ["CUP_srifle_CZ550", 2],
+    ["CUP_srifle_Remington700", 5],
+    ["CUP_srifle_CZ550", 1],
 
     "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 
     "CUP_1Rnd_12Gauge_Pellets_No3_Buck", 
@@ -421,7 +420,7 @@ if (isClass (configFile >> "CfgWeapons" >> "WU_I_OfficerUniform")) then {
 
 ["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
-["facewear",["G_Bandanna_BlueFlame2"]] call _fnc_saveToTemplate;
+["facewear",["G_Bandanna_Syndikat2","G_Bandanna_sport","G_Bandanna_aviator","G_Balaclava_blk","G_Aviator","G_Lady_Blue","None","G_Spectacles","G_Squares","G_Spectacles_Tinted"]] call _fnc_saveToTemplate;
 
 ["headgear", ["H_Beret_blk"]] call _fnc_saveToTemplate;          //Headgear used by Rebell Ai until you have Armored Headgear.
 
@@ -441,6 +440,7 @@ if (isClass (configFile >> "CfgWeapons" >> "WU_I_OfficerUniform")) then {
     ];
 };
 
+"BLNames" call _fnc_saveNames;
 ["faces", _faces] call _fnc_saveToTemplate;
 ["voices", ["Male01FRE","Male02FRE","Male03FRE","Male01GRE","Male04GRE","Male06GRE"]] call _fnc_saveToTemplate;
 
@@ -455,7 +455,7 @@ _loadoutData set ["binoculars", ["Binocular"]];
 
 _loadoutData set ["uniforms", _rebUniforms];
 
-_loadoutData set ["facewear", ["G_Bandanna_RedFlame1"]];
+_loadoutData set ["facewear", ["facewear"]];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];

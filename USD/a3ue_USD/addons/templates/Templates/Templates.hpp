@@ -25,6 +25,17 @@ class Templates
         climate[] = {"tropical", "temperate"}; // climate that the template can be selected on.
         description = "Pirates du Golfe de Guinée "; // If this isn't included, no description will show (unless inherited from the base class.)
     };
+    class GuineensCiv : Vanilla_Base
+    {
+        basepath = QPATHTOFOLDER(Templates\civ); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
+        side = "Civ"; // Inv, Occ, Reb, Riv, Civ
+        flagTexture = QPATHTOFOLDER(Pictures\USDc.paa); // Path to an icon to be displayed in the select menu.
+        name = "Le Peuple des Golphe"; // Name shown in the select menu.
+        file = "USDc"; // The template file name - .sqf, that gets appended automatically.
+        maps[] = {}; // If this template should be prioritized on any maps (case sensitive to worldName)
+        climate[] = {"tropical", "temperate"}; // climate that the template can be selected on.
+        description = "Civilons du Golfe de Guinée "; // If this isn't included, no description will show (unless inherited from the base class.)
+    };
 };
 
 /*

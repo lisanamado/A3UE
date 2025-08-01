@@ -140,9 +140,7 @@
 ["magazines", createHashMapFromArray [
 ["I_E_Truck_02_MRL_F", ["12Rnd_230mm_rockets"]]
 ]] call _fnc_saveToTemplate;
-["uavsAttack", [
-    "sab_yak23_i"//might set pylons for this if I make an altered config inheriting the class for uavAttack Pylons 
-]] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
+["uavsAttack", []] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
 ["uavsPortable", [
     "I_UAV_06_F"
     ,"I_UAV_01_F"
@@ -193,8 +191,28 @@
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
+#include "..\USD_Vehicle_Attributes.sqf"
+
 //vehicle skins
-["variants", []] call _fnc_saveToTemplate;
+["variants", [
+    ["pook_FAV_FIA_I",["Woodland",1]]
+    ,["pook_FAV_scout_FIA_I",["NATO",1]]
+    ,["pook_FAV_M2_FIA_I",["Fleck",1]]
+    ,["re_DPV_FIA_B",["DesertCamo",1]]
+    ,["clv_Aml20",["OTAN",1]]
+    ,["clv_AmlHS30",["OTAN",1]]
+    ,["clv_Aml90",["Green",1]]
+    ,["vbci",["Green",1]]
+    ,["vbci_m2",["Woodland",1]]
+    ,["mephisto",["Tricolor1",1]]
+    ,["CLV_107",["Camuflado",1]]
+    ,["CLV_101",["British",1]]
+    ,["clv_Amx13",["Otan",1]]
+    ,["amx10rc",["Woodland1",1]]
+    ,["amx10rc_tml",["Woodland2",1]]
+    ,["amx30",["woodland",1]]
+    ,["clv_T62",["Camuflado3",1]]
+]] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
@@ -426,7 +444,7 @@ _sfLoadoutData set ["carbines", [
 ["arifle_AK12U_lush_F", "muzzle_snds_B", "ACE_acc_pointer_green", _USDHoloOptics, ["30rnd_762x39_AK12_Lush_Mag_F"], [], ""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-["arifle_AK12_GL_lush_F", "muzzle_snds_B", "ACE_acc_pointer_green", _USDHoloOptics, ["30rnd_762x39_AK12_Lush_Mag_F"], [_USDunderbarrelGrenades], ""]]
+["arifle_AK12_GL_lush_F", "muzzle_snds_B", "ACE_acc_pointer_green", _USDHoloOptics, ["30rnd_762x39_AK12_Lush_Mag_F"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]]
 ];
 _sfLoadoutData set ["SMGs", [
 ["SMG_03_khaki", "muzzle_snds_570", "", "", ["50Rnd_570x28_SMG_03"], [], ""]

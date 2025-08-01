@@ -127,7 +127,37 @@
 //Minefield definition
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
-
+["variants", [
+    ["acfaa_m1025a2", ["woodland_new", 1]],
+    ["acfaa_m1043", ["woodland_new", 1]],
+    ["acfaa_m998_4door", ["woodland_new", 1]],
+    ["acfaa_m1025a2_m2", ["woodland_new", 1]],
+    ["acfaa_m1025a2_mk19", ["woodland_new", 1]],
+    ["acfaa_m1025a2_m240", ["woodland_new", 1]],
+    ["acfaa_m1025a2_tow", ["woodland_new", 1]],
+    ["acfaa_m1043_m2", ["woodland_new", 1]],
+    ["acfaa_m1043_m240", ["woodland_new", 1]],
+    ["acfaa_m1043_mk19", ["woodland_new", 1]],
+    ["acfaa_m1045_tow", ["woodland_new", 1]],
+    ["acfaa_gmv_m134", ["woodland_new", 1]],
+    ["acfaa_gmv_m2", ["woodland_new", 1]],
+    ["acfaa_gmv", ["woodland_new", 1]],
+    ["acfaa_m997", ["woodland_new", 1]],
+    ["acfaa_m113_m2", ["camo2", 1]],
+    ["acfaa_m113_med", ["camo2", 1]],
+    ["acfaa_m1025a2_m240", ["woodland_new", 1]],
+    ["acfaa_gmv_m2", ["woodland_new", 1]],
+    ["CLV_VCTP2IP", ["Otan", 1]],
+    ["CLV_VCTP", ["Otan", 1]],
+    ["clv_Aml20", ["OTAN", 1]],
+    ["clv_Aml90", ["Argentino", 1]],
+    ["clv_AmlHS30", ["OTAN", 1]],
+    ["clv_Amx13", ["Otan", 1]],
+    ["clv_Kurassier", ["BicolorII", 1]],
+    ["clv_TAM", ["Green2", 1]],
+    ["clv_TAM2C", ["variant5", 1]],
+    ["clv_Dragon", ["LightGreen", 1]]
+]] call _fnc_saveToTemplate;
 /////////////////////
 ///  Identities   ///
 /////////////////////

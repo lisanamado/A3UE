@@ -54,18 +54,18 @@ if (isClass (configFile >> "CfgVehicles" >> "walker_a3_hilux_1")) then {
         "walker_a3_sedan_red",1,
         "walker_a3_skodovka",1,
         "walker_a3_skodovka_2",1,
-        "walker_a3_SUV",1,
+        "walker_a3_SUV",1
         ];};
 
 ["vehiclesCivCar", _civCarsWithWeights] call _fnc_saveToTemplate;
 
-private _vehiclesCivIndustrial, [
+private _vehiclesCivIndustrial = [
     "C_Van_01_transport_F", 1.0
     ,"C_Van_01_box_F", 0.8
     ,"C_Truck_02_transport_F", 0.5
     ,"C_Truck_02_covered_F", 0.5
     ,"C_Tractor_01_F", 0.3
-    "C_IDAP_Truck_02_water_F",0.1,
+    ,"C_IDAP_Truck_02_water_F",0.1,
     "C_IDAP_Van_02_vehicle_F",0.1,
     "C_IDAP_Van_02_transport_F",0.1,
     "C_IDAP_Offroad_01_F",0.1,
@@ -95,13 +95,13 @@ private _vehiclesCivBoat = [
 if (isClass (configFile >> "CfgVehicles" >> "walker_a3_hilux_1")) then {
     _vehiclesCivBoat = [
         "walker_A3_smallb_f",2,
-        "walker_A3_smallb_e",1
+        "walker_A3_smallb_e",1,
         "walker_A3_boat_f",1
     ];};
 
 ["vehiclesCivBoat", _vehiclesCivBoat] call _fnc_saveToTemplate;             //this line determines civilian boats -- Example: ["vehiclesCivBoat", ["C_Boat_Civil_01_F"]] -- Array, can contain multiple assets
 
-private _vehiclesCivRepair, [
+private _vehiclesCivRepair = [
     "C_Offroad_01_repair_F", 0.3
     ,"C_Van_02_service_F", 0.1                // orange
     ,"C_Truck_02_box_F", 0.1
@@ -109,27 +109,25 @@ private _vehiclesCivRepair, [
 
 ["vehiclesCivRepair", _vehiclesCivRepair] call _fnc_saveToTemplate;            //this line determines civilian repair vehicles
 
-private _vehiclesCivMedical, ["C_Van_02_medevac_F",0.1,"C_IDAP_Van_02_medevac_F",0.1];
+private _vehiclesCivMedical = ["C_Van_02_medevac_F",0.1,"C_IDAP_Van_02_medevac_F",0.1];
 
 if (isClass (configFile >> "CfgVehicles" >> "walker_a3_hilux_1")) then {
-    _vehiclesCivMedical = [
-        "walker_a3_s1203amb",0.3,
+    _vehiclesCivMedical append [
+        "walker_a3_s1203amb",0.3
     ];};
 
 ["vehiclesCivMedical", _vehiclesCivMedical] call _fnc_saveToTemplate;        //this line determines civilian medic vehicles
 
-private _vehiclesCivFuel, ["C_Van_01_fuel_F", 0.2,"C_Truck_02_fuel_F", 0.1];
+private _vehiclesCivFuel = ["C_Van_01_fuel_F", 0.2,"C_Truck_02_fuel_F", 0.1];
 
 ["vehiclesCivFuel", _vehiclesCivFuel] call _fnc_saveToTemplate;            //this line determines civilian fuel vehicles
 
-private _vehiclesCivHeli = [
-    "C_Heli_Light_01_civil_F",0.5, "C_IDAP_Heli_Transport_02_F",0.1];
-["vehiclesCivHeli", [_vehiclesCivHeli]] call _fnc_saveToTemplate;
+private _vehiclesCivHeli = ["C_Heli_Light_01_civil_F",0.5, "C_IDAP_Heli_Transport_02_F",0.1];
+["vehiclesCivHeli", _vehiclesCivHeli] call _fnc_saveToTemplate;
 
-private _vehiclesCivPlanes, [
-    "C_Plane_Civil_01_F",0.5,"C_Plane_Civil_01_F",0.1];
+private _vehiclesCivPlanes = ["C_Plane_Civil_01_F",0.5,"C_Plane_Civil_01_F",0.1];
 
-["vehiclesCivPlanes", [_vehiclesCivPlanes]] call _fnc_saveToTemplate;
+["vehiclesCivPlanes", _vehiclesCivPlanes] call _fnc_saveToTemplate;
 
 /////////////////////////////////
 ///  Identities and currency  ///
@@ -142,131 +140,99 @@ private _faces = [
 ];
 if (isClass (configFile >> "CfgWeapons" >> "WU_I_OfficerUniform")) then {
     _faces = [
-        "max_faceWS1","max_faceWS2","max_faceWS3","max_faceWS4","max_faceWS5","max_faceWS6","max_faceWS7","max_faceWS8","max_faceWS9","max_faceWS10",
-        "Barklem","WhiteHead_24","GreekHead_A3_12","RussianHead_5","WhiteHead_31","AsianHead_A3_04","TanoanHead_A3_04","AsianHead_A3_05","WhiteHead_15","PersianHead_A3_01"
+        "TanoanHead_A3_03","TanoanHead_A3_04","AfricanHead_02","PersianHead_A3_02","AfricanHead_03","TanoanHead_A3_08","max_faceWS2","max_faceWS3","max_faceWS4","max_faceWS5","max_faceWS6","max_faceWS10",
+        "LivonianHead_6","TanoanHead_A3_05","PersianHead_A3_03","TanoanHead_A3_01","TanoanHead_A3_06","AfricanHead_01"
     ];
 };
 
-["faces", [_faces]] call _fnc_saveToTemplate;
+["faces", _faces] call _fnc_saveToTemplate;
 
-//add names
+"AfroMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
 
 private _civUniforms = [
-    "U_C_Man_casual_1_F",
-    "U_C_Man_casual_2_F",
-    "U_C_Man_casual_3_F",
-    "U_C_Man_casual_4_F",
-    "U_C_Man_casual_5_F",
-    "U_C_Man_casual_6_F",
-    "U_C_ArtTShirt_01_v1_F",
-    "U_C_ArtTShirt_01_v2_F",
-    "U_C_ArtTShirt_01_v3_F",
-    "U_C_ArtTShirt_01_v4_F",
-    "U_C_ArtTShirt_01_v5_F",
-    "U_C_ArtTShirt_01_v6_F",
-    "U_NikosBody",
-    "U_NikosAgedBody",
-    "U_C_Poloshirt_blue",
-    "U_C_Poloshirt_burgundy",
-    "U_C_Poloshirt_stripped",
-    "U_C_Poloshirt_tricolour",
-    "U_C_Poloshirt_salmon",
-    "U_C_Poloshirt_redwhite",
-    "U_OrestesBody",
-    "U_C_Poor_1",
-    "U_C_HunterBody_grn",
-    "U_I_L_Uniform_01_tshirt_skull_F",
-    "U_I_L_Uniform_01_tshirt_black_F",
-    "U_I_L_Uniform_01_tshirt_sport_F",
-    "U_C_Scientist",
-    "U_C_Uniform_Scientist_02_formal_F",
-    "U_C_Uniform_Scientist_02_F",
-    "U_C_Uniform_Scientist_01_F"
+    "tenue_Jacket_black",
+    "tenue_Jacket_blue",
+    "tenue_Jacket_brown",
+    "tenue_Jacket_camo",
+    "tenue_Jacket_green",
+    "tenue_Jacket_black_white",
+    "tenue_Jacket_orange",
+    "tenue_Jacket_red",
+    "tenue_Jacket_superman",
+    "tenue_Jacket_white",
+    "tenue_Suit_beige",
+    "tenue_Suit_beige2",
+    "tenue_Suit_black",
+    "tenue_Suit_blue",
+    "tenue_Suit_cyan",
+    "tenue_Suit_maroon",
+    "tenue_Suit_purple",
+    "tenue_Suit_red",
+    "tenue_Suit_white",
+    "tenue_track_black",
+    "tenue_track_blue",
+    "tenue_track_orange",
+    "tenue_track_red",
+    "tenue_track_white"
 ];          //Uniforms given to Normal Civs
 
 private _pressUniforms = [
-    "U_C_Journalist",
-    "U_Marshal"
+    "U_B_GEN_Commander_F",
+    "WU_B_GEN_Commander_F"
 ];            //Uniforms given to Press/Journalists
 
 private _workerUniforms = [
     "U_C_WorkerCoveralls",
-    "U_C_Uniform_Farmer_01_F"
-];           //Uniforms given to Workers at Factories/Resources
-
-private _dlcUniforms = [];
-
-if (_hasApex) then {_dlcUniforms append [
-    "U_C_man_sport_1_F",
-    "U_C_man_sport_2_F",
-    "U_C_man_sport_3_F"];
-};
-
-if (_hasLawsOfWar) then {
-  _dlcUniforms append [
-    "U_C_Paramedic_01_F",
-    "U_C_Mechanic_01_F"
-  ];
-  _workerUniforms append [
     "U_C_ConstructionCoverall_Black_F",
     "U_C_ConstructionCoverall_Blue_F",
     "U_C_ConstructionCoverall_Red_F",
-    "U_C_ConstructionCoverall_Vrana_F"
-  ];
-};
+    "U_C_ConstructionCoverall_Vrana_F",
+    "tenue_Pilot_larkin",
+    "tenue_Worker_black",
+    "tenue_Worker_blue",
+    "tenue_Worker_green",
+    "tenue_Worker_orange",
+    "tenue_Worker_pink",
+    "tenue_Worker_red"
+];           //Uniforms given to Workers at Factories/Resources
 
-if (_hasWs && {(toLowerANSI worldName) in ["sefrouramal", "takistan"]}) then {
-  _civUniforms = [
-    "U_lxWS_C_Djella_01",
-    "U_lxWS_C_Djella_02",
-    "U_lxWS_C_Djella_02a",
-    "U_lxWS_C_Djella_03",
-    "U_lxWS_C_Djella_04",
-    "U_lxWS_C_Djella_05",
-    "U_lxWS_C_Djella_06",
-    "U_lxWS_C_Djella_07",
-    "U_lxWS_Tak_01_A",
-    "U_lxWS_Tak_01_B",
-    "U_lxWS_Tak_01_C",
-    "U_lxWS_Tak_02_A",
-    "U_lxWS_Tak_02_B",
-    "U_lxWS_Tak_02_C",
-    "U_lxWS_Tak_03_A",
-    "U_lxWS_Tak_03_B",
-    "U_lxWS_Tak_03_C"
-  ];
-};
-
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms] call _fnc_saveToTemplate;
 
 private _civhats = [
-    "H_Bandanna_blu",
-    "H_Bandanna_cbr",
-    "H_Bandanna_gry",
-    "H_Bandanna_khk",
-    "H_Bandanna_sand",
-    "H_Bandanna_sgg",
-    "H_Bandanna_surfer",
-    "H_Bandanna_surfer_blk",
-    "H_Bandanna_surfer_grn",
-    "H_Cap_blk",
     "H_Cap_blu",
-    "H_Cap_grn",
-    "H_Cap_grn_BI",
-    "H_Cap_oli",
+    "H_Cap_MaldenTours",
     "H_Cap_red",
     "H_Cap_surfer",
     "H_Cap_tan",
-    "H_StrawHat",
-    "H_StrawHat_dark",
-    "H_Hat_checker",
+    "H_Hat_brown",
     "H_Hat_Safari_olive_F",
-    "H_Hat_Safari_sand_F"
+    "H_Hat_Safari_sand_F",
+    "H_StrawHat_dark",
+    "H_Cap_Black_IDAP_F",
+    "H_Cap_Orange_IDAP_F",
+    "H_Cap_White_IDAP_F",
+    "H_HeadBandage_stained_F",
+    "H_Booniehat_dgtl",
+    "H_Bandanna_surfer"
 ];
+
+private _pressH = ["H_PASGT_neckprot_blue_press_F"];
+private _pressV = ["V_Press_F"];
+private _workerH = [
+    "H_Construction_basic_orange_F",
+    "H_Construction_earprot_orange_F",
+    "H_Construction_basic_red_F",
+    "H_Construction_basic_vrana_F",
+    "H_Construction_earprot_vrana_F",
+    "H_Construction_basic_white_F",
+    "H_Construction_earprot_white_F",
+    "H_Construction_basic_yellow_F",
+    "H_Construction_earprot_yellow_F"
+];            //Headgear given to Workers at Factories/Resources
 
 ["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.
 
@@ -275,9 +241,10 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["uniforms", _civUniforms];
 _loadoutData set ["pressUniforms", _pressUniforms];
 _loadoutData set ["workerUniforms", _workerUniforms];
-_loadoutData set ["pressVests", []];
+_loadoutData set ["pressVests", _pressV];
 _loadoutData set ["helmets", _civHats];
-_loadoutData set ["pressHelmets", []];
+_loadoutData set ["pressHelmets", _pressH];
+_loadoutData set ["workerHelmets", _workerH];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
@@ -288,14 +255,12 @@ private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
     ["uniforms"] call _fnc_setUniform;
 
-    ["items_medical_standard"] call _fnc_addItemSet;
-
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
 private _workerTemplate = {
-    ["helmets"] call _fnc_setHelmet;
+    ["workerHelmets"] call _fnc_setHelmet;
     ["workerUniforms"] call _fnc_setUniform;
 
     ["items_medical_standard"] call _fnc_addItemSet;

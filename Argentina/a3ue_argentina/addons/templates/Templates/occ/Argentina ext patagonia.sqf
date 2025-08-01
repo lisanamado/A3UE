@@ -193,7 +193,6 @@
     ["clv_TAM", ["Darkgreen", 1]],
     ["clv_TAM2C", ["Darkgreen", 1]],
     ["clv_Dragon", ["Darkgreen", 1]]
-
 ]] call _fnc_saveToTemplate;
 
 

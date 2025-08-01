@@ -106,3 +106,154 @@ class cytech_cytech_rt_vehicles_AMV_meshes_AMV : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
+//[cursorTarget, [0,0,-0.4],3.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_MTVR_mtvr : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.4,-0.4};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.2,-0.4};
+        };
+        class Node3
+        {
+            offset[] = {0,-2,-0.4};
+        };
+        class Node4
+        {
+            offset[] = {0,-2.8,-0.4};
+        };
+    };
+};
+//[cursorTarget, [0,0.25,-0.4],3.5, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_cars_t810_T810_w_ACR : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.15,-0.4};
+            seats[] = {2,3,4};
+        };
+        class Node2
+        {
+            offset[] = {0,-0.95,-0.4};
+            seats[] = {5,6,7};
+        };
+        class Node3
+        {
+            offset[] = {0,-1.75,-0.4};
+            seats[] = {8,9,10};
+        };
+        class Node4
+        {
+            offset[] = {0,-2.55,-0.4};
+            seats[] = {9,10,11};
+        };
+    };
+};
+//[cursorTarget, [0,-0.1,-0.75],1.9, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_datsun_datsun1_civil_1_open : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.5,-0.75};
+            seats[] = {2};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.3,-0.75};
+            seats[] = {1};
+        };
+    };
+};
+//[cursorTarget, [0,-0.25,-0.55],1.85, true] call A3A_Logistics_fnc_generateHardPoints;
+
+class walker_a3_vehicles_hilux_hilux1_civil_1_open : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.65,-0.55};
+            seats[] = {1,2};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.45,-0.55};
+            seats[] = {3,4};
+        };
+    };
+};
+class walker_a3_vehicles_hilux_hilux1_civil_3_open : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.65,-0.55};
+            seats[] = {1,2};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.45,-0.55};
+            seats[] = {3,4};
+        };
+    };
+};
+//[cursorTarget, [0,-0.5,-0.55],1, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_hilux_hilux1_civil_2_covered : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.9,-0.55};
+            seats[] = {1,2};
+        };
+    };
+};
+//[cursorTarget, [0,-1,-0.55],1, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_Small_boat_smallboat_1 : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.4,-0.55};
+        };
+    };
+};
+class walker_a3_vehicles_Small_boat_smallboat_2 : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.4,-0.55};
+        };
+    };
+};
+//[cursorTarget, [0,-3,-3.25],2, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_boat_f_fishing_boat : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-3.4,-3.25};
+            seats[] = {0,2,5};
+        };
+        class Node2
+        {
+            offset[] = {0,-4.2,-3.25};
+            seats[] = {3,4,5};
+        };
+    };
+};

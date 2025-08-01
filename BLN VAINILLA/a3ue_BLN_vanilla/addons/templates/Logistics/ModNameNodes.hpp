@@ -36,14 +36,104 @@ passed output from the function: A3A_Logistics_fnc_generateHardPoints
 /*
 example output
 */
-class Example_A3_Soft_F_Quadbike_01_Quadbike_01_F_p3d : TRIPLES(ADDON,Nodes,Base)
+//[cursorTarget, [0,-0.1,-0.75],1.9, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_datsun_datsun1_civil_1_open : TRIPLES(ADDON,Nodes,Base)
 {
-    class Nodes
+        class Nodes
     {
         class Node1
         {
-            offset[] = {0,-0.9,-0.453};
-            seats[] = {0};
+            offset[] = {0,-0.5,-0.75};
+            seats[] = {2};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.3,-0.75};
+            seats[] = {1};
+        };
+    };
+};
+//[cursorTarget, [0,-0.25,-0.55],1.85, true] call A3A_Logistics_fnc_generateHardPoints;
+
+class walker_a3_vehicles_hilux_hilux1_civil_1_open : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.65,-0.55};
+            seats[] = {1,2};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.45,-0.55};
+            seats[] = {3,4};
+        };
+    };
+};
+class walker_a3_vehicles_hilux_hilux1_civil_3_open : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.65,-0.55};
+            seats[] = {1,2};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.45,-0.55};
+            seats[] = {3,4};
+        };
+    };
+};
+//[cursorTarget, [0,-0.5,-0.55],1, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_hilux_hilux1_civil_2_covered : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.9,-0.55};
+            seats[] = {1,2};
+        };
+    };
+};
+//[cursorTarget, [0,-1,-0.55],1, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_Small_boat_smallboat_1 : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.4,-0.55};
+        };
+    };
+};
+class walker_a3_vehicles_Small_boat_smallboat_2 : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.4,-0.55};
+        };
+    };
+};
+//[cursorTarget, [0,-3,-3.25],2, true] call A3A_Logistics_fnc_generateHardPoints;
+class walker_a3_vehicles_boat_f_fishing_boat : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-3.4,-3.25};
+            seats[] = {0,2,5};
+        };
+        class Node2
+        {
+            offset[] = {0,-4.2,-3.25};
+            seats[] = {3,4,5};
         };
     };
 };

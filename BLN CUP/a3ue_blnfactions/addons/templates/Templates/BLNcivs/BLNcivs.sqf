@@ -135,10 +135,8 @@
 ////////////////////////////////
 
 ["currencySymbol", "$"] call _fnc_saveToTemplate;
-"SahraniNames" call _fnc_saveNames;
 
 ["faces", [
-
     "Max_faceWS1",
     "Max_faceWS10",
     "Max_faceWS2",

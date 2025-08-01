@@ -230,6 +230,8 @@ if ((isClass (configFile >> "CfgWeapons" >> "U_B_CombatUniform_mcam_W")) && (isC
 
 ["voices", _voices] call _fnc_saveToTemplate;
 
+"ARGames" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
