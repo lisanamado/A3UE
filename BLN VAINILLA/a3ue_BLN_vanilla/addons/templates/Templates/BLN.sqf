@@ -161,33 +161,33 @@ private _vehiclesBlackMarket = _shopWs + [
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "sgun_HunterShotgun_01_F",
-    "sgun_HunterShotgun_01_sawedoff_F",
-    "2Rnd_12Gauge_Pellets",
-    "2Rnd_12Gauge_Slug",
+    ["sgun_HunterShotgun_01_F", 54],
+    ["sgun_HunterShotgun_01_sawedoff_F", 42],
+    ["2Rnd_12Gauge_Pellets",157],
+    ["2Rnd_12Gauge_Slug",48],
 
-    ["hgun_Pistol_heavy_02_F",5],"6Rnd_45ACP_Cylinder",
+    ["hgun_Pistol_heavy_02_F",4],["6Rnd_45ACP_Cylinder",29],
 
-    ["hgun_Pistol_Signal_F",5],"hgun_Pistol_Signal_F","6Rnd_RedSignal_F",
+    ["hgun_Pistol_Signal_F",3],["6Rnd_RedSignal_F",15],
 
-    "V_Pocketed_coyote_F","V_Pocketed_olive_F","V_Pocketed_black_F",
-    "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_khk","V_BandollierB_oli","V_BandollierB_rgr","V_BandollierB_ghex_F",
+    ["V_Pocketed_coyote_F",62],["V_Pocketed_olive_F",48],["V_Pocketed_black_F",71],
+    ["V_BandollierB_blk",35],["V_BandollierB_cbr",51],["V_BandollierB_khk",84],["V_BandollierB_oli",56],["V_BandollierB_rgr",24],["V_BandollierB_ghex_F",12],
 
-    "B_FieldPack_cbr","B_FieldPack_khk","B_FieldPack_oli",
+    ["B_FieldPack_cbr",56],["B_FieldPack_khk",28],["B_FieldPack_oli", 74],
 
-    "Binocular",
+    ["Binocular",33],
     ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
-    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol"
+    ["acc_flashlight",22],["acc_flashlight_smg_01",16],["acc_flashlight_pistol",21]
 ];
 
 if (isClass (configFile >> "CfgWeapons" >> "sp_fwa_l9a1_hipower")) then {
     _initialRebelEquipment append [
-        ["sp_fwa_m1911",10],"sp_fwa_7Rnd_45acp_m1911","sp_fwa_7Rnd_45acp_m1911_Tracer",
-        ["sp_fwa_smg_mk7a4sterling",2],"sp_fwa_15Rnd_9x19_L2A3_Sterling",
-        ["sp_fwa_smg_sten_mk2",2],"sp_fwa_32Rnd_9x19_sten",
-        ["sp_fwa_enfield_no5",2],"sp_fwa_10Rnd_303_No4",
-        ["sp_fwa_m38_carcano",4],"sp_fwa_6Rnd_65carcano_m38",
-        ["sp_fwa_smg_thompson_m1a1",2],"sp_fwa_20Rnd_45acp_thompson_m1a1_Tracer"
+        ["sp_fwa_m1911",11],["sp_fwa_7Rnd_45acp_m1911",38],["sp_fwa_7Rnd_45acp_m1911_Tracer",23],
+        ["sp_fwa_smg_mk7a4sterling",1],["sp_fwa_15Rnd_9x19_L2A3_Sterling",14],
+        ["sp_fwa_smg_sten_mk2",2],["sp_fwa_32Rnd_9x19_sten",16],
+        ["sp_fwa_enfield_no5",1],["sp_fwa_10Rnd_303_No4",17],
+        ["sp_fwa_m38_carcano",4],["sp_fwa_6Rnd_65carcano_m38",54],
+        ["sp_fwa_smg_thompson_m1a1",1],["sp_fwa_20Rnd_45acp_thompson_m1a1_Tracer",7]
     ];
 };
 
