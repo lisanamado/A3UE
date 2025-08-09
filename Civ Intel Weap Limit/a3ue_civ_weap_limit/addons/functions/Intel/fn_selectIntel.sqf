@@ -72,7 +72,11 @@ private _fnc_addWeapon = {
     private _newWeapon = selectRandom _notYetUnlocked;
     private _magazine = selectRandom compatibleMagazines _newWeapon;
 
-private _quantity = 3 + floor (random 7); // random integer from 3 to 9    
+private _quantity = [
+    [A3A_guestItemLimit, (50 - A3A_guestItemLimit) / 5, 50], // Catertico's - EDIT: Changed divisor from 2 to 5, in order to lower _quantity - base QTYs on guestItemLimit for consistency with other arsenal functionality when unlocks disabled
+    [0.2 * minWeaps, minWeaps, 1 * minWeaps]
+] select (minWeaps > 0);
+_quantity = ceil (random _quantity); // in case unlocks disabled and A3A_guestItemLimit is set to 0, at least give 1 
     [
         _newWeapon call jn_fnc_arsenal_itemType,
         _newWeapon,
