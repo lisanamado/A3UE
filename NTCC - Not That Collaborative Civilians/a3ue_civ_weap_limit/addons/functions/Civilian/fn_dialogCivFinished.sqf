@@ -54,7 +54,7 @@ if (isNil "_QRFCivCallChance" || { _QRFCivCallChance <= 0 }) then {
 
 private _possibleMarkers = [citiesX, _unit, true] call A3A_fnc_findIfNearAndHostile;
 
-private _isDialogSuccessful = (captive _caller && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
+private _isDialogSuccessful = ((4 >= random 10) && (_possibleMarkers isNotEqualTo []));//deleted "captive _caller &&" so yo can talk to people even if not undercover  
 
 if (_isDialogSuccessful) exitWith {
     private _roll = random 100;
@@ -165,9 +165,9 @@ if (_isDialogSuccessful) exitWith {
                     "STR_antistasi_actions_talk_with_civ_success_decryption2"
                 ];
             };
-            default {_intelMessage = "STR_antistasi_actions_talk_with_civ_fail1"};
-            _QRFCivCallChance = _QRFCivCallChance + (random 25); // adds 0 to 25% chances of a QRF being sent after each failed attempt if undercover
-
+            default {_intelMessage = "STR_antistasi_actions_talk_with_civ_fail1";
+            _QRFCivCallChance = _QRFCivCallChance + (random 25); // adds 0 to 25% chances of a QRF being sent after each failed attempt
+            };
         };
         
         [_unit, (localize _intelMessage)] remoteExec ["globalChat", _caller];
@@ -189,17 +189,14 @@ if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
         "STR_antistasi_actions_talk_with_civ_fail_notundercover1",
         "STR_antistasi_actions_talk_with_civ_fail_notundercover2"
     ];
-    _QRFCivCallChance = _QRFCivCallChance + 10 + (random 75); // adds 10 to 75% chances of a QRF being sent after each failed attempt if not undercover
+    _QRFCivCallChance = _QRFCivCallChance + 25 + (random 75); // adds 25 to 75 chances of a QRF being sent after each attempt if not undercover
  };
 
-    _QRFCivCallChance = _QRFCivCallChance + 0 + (random 10); // adds 0 to 10% chances of a QRF being sent after each interaction
-
+    _QRFCivCallChance = _QRFCivCallChance + (random 10); // adds 0 to 10% chances of a QRF being sent after any attempt
 
 //QRF calling
-if (_QRFCivCallChance > random 75 + 100) then {
-private _type = "QRF"; // CASDIVE, QRF, Etc
-private _side = Occupants; // Occupants/Invaders
-["QRF", Occupants, "attack", 100, player, getPosATL player, 0.8, 0] remoteExec ["A3A_fnc_createSupport", 2];
+if (_QRFCivCallChance > random 50 + 100) then {
+["QRF", Occupants, "attack", 300, player, getPosATL player, 0.8, 0] remoteExec ["A3A_fnc_createSupport", 2];
 };
 
 [_unit, (localize _failMessage)] remoteExec ["globalChat", _caller];

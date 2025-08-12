@@ -161,23 +161,23 @@ private _vehiclesBlackMarket = _shopWs + [
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    ["sgun_HunterShotgun_01_F", 54],
-    ["sgun_HunterShotgun_01_sawedoff_F", 42],
-    ["2Rnd_12Gauge_Pellets",321],
-    ["2Rnd_12Gauge_Slug",48],
+    "sgun_HunterShotgun_01_F",
+    "sgun_HunterShotgun_01_sawedoff_F",
+    "2Rnd_12Gauge_Pellets",
+    "2Rnd_12Gauge_Slug",
 
     ["hgun_Pistol_heavy_02_F",4],["6Rnd_45ACP_Cylinder",131],
 
     ["hgun_Pistol_Signal_F",3],["6Rnd_RedSignal_F",15],
 
-    ["V_Pocketed_coyote_F",62],["V_Pocketed_olive_F",48],["V_Pocketed_black_F",71],
-    ["V_BandollierB_blk",35],["V_BandollierB_cbr",51],["V_BandollierB_khk",84],["V_BandollierB_oli",56],["V_BandollierB_rgr",24],["V_BandollierB_ghex_F",12],
+    "V_Pocketed_coyote_F","V_Pocketed_olive_F","V_Pocketed_black_F",
+    "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_khk","V_BandollierB_oli","V_BandollierB_rgr","V_BandollierB_ghex_F",
 
-    ["B_FieldPack_cbr",56],["B_FieldPack_khk",28],["B_FieldPack_oli", 74],
+    "B_FieldPack_cbr","B_FieldPack_khk","B_FieldPack_oli",
 
     ["Binocular",33],
     ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
-    ["acc_flashlight",22],["acc_flashlight_smg_01",16],["acc_flashlight_pistol",21]
+    ["acc_flashlight",25],["acc_flashlight_smg_01",16],["acc_flashlight_pistol",21]
 ];
 
 if (isClass (configFile >> "CfgWeapons" >> "sp_fwa_l9a1_hipower")) then {
