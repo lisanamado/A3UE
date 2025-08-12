@@ -195,8 +195,9 @@ if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
     _QRFCivCallChance = _QRFCivCallChance + (random 10); // adds 0 to 10% chances of a QRF being sent after any attempt
 
 //QRF calling
-if (_QRFCivCallChance > random 50 + 100) then {
+if (_QRFCivCallChance > random 100) then {
 ["QRF", Occupants, "attack", 300, player, getPosATL player, 0.8, 0] remoteExec ["A3A_fnc_createSupport", 2];
+_QRFCivCallChance = 0; // reset chance after QRF call
 };
 
 [_unit, (localize _failMessage)] remoteExec ["globalChat", _caller];
