@@ -43,7 +43,7 @@ private _configPath = configFile >> "cfgHALsAddons";
 
 	if (count _setting > 0) then {
 		private _value = [_configPath >> _setting, _default] call HALs_fnc_getConfigValue;
-		missionNamespace setVariable [
+		Variable [
 			format ["%1%2", _prefix, _setting],
 			_value call _code,
 			_broadcast

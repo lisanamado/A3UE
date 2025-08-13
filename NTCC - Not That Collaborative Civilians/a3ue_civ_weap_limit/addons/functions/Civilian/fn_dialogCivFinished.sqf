@@ -49,12 +49,16 @@ if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
 
 
 if (isNil "_QRFCivCallChance") then {
-    _QRFCivCallChance = 0;
+    missionNamespace setVariable ["_QRFCivCallChance", 0];
 };
 
 private _possibleMarkers = [citiesX, _unit, true] call A3A_fnc_findIfNearAndHostile;
 
 private _isDialogSuccessful = ((4 >= random 10) && (_possibleMarkers isNotEqualTo []));//deleted "captive _caller &&" so yo can talk to people even if not undercover  
+
+if !(captive _caller) then {
+    _QRFCivCallChance = _QRFCivCallChance + 25 + (random 75); // adds 25 to 99 chances of a QRF being sent after each attempt if not undercover
+ };
 
 if (_isDialogSuccessful) exitWith {
     private _roll = random 100;
@@ -183,20 +187,16 @@ private _failMessage = selectRandom [
     "STR_antistasi_actions_talk_with_civ_fail2", 
     "STR_antistasi_actions_talk_with_civ_fail3"
 ];
-
-if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
-    _failMessage = selectRandom [
-        "STR_antistasi_actions_talk_with_civ_fail_notundercover1",
-        "STR_antistasi_actions_talk_with_civ_fail_notundercover2"
-    ];
-    _QRFCivCallChance = _QRFCivCallChance + 25 + (random 75); // adds 25 to 99 chances of a QRF being sent after each attempt if not undercover
- };
-
-    _QRFCivCallChance = _QRFCivCallChance + (random 10); // adds 0 to 10% chances of a QRF being sent after any attempt
+_QRFCivCallChance = _QRFCivCallChance + (random 25); // adds 0 to 25% chances of a QRF being sent after each failed attempt
 
 //QRF calling
 if (_QRFCivCallChance > 99) then {
-["QRF", Occupants, "attack", 300, player, getPosATL player, 0.8, 0] remoteExec ["A3A_fnc_createSupport", 2];
+
+/*private _support = selectRandomWeighted [
+    "QRFLAND",10,
+    "QRFAIR",(_tierWar * 3),
+    "TANK",_tierWar];*/
+["QRFLAND", Occupants, "attack", 300, player, getPosATL player, 0.8, 0] call "A3A_fnc_createSupport";
 _QRFCivCallChance = 0; // reset chance after QRF call
 };
 
