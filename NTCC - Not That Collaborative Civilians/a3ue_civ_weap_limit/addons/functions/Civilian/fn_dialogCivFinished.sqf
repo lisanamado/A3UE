@@ -48,7 +48,7 @@ if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
 };
 
 
-if (isNil "_QRFCivCallChance" || { _QRFCivCallChance <= 0 }) then {
+if (isNil "_QRFCivCallChance") then {
     _QRFCivCallChance = 0;
 };
 
@@ -189,13 +189,13 @@ if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
         "STR_antistasi_actions_talk_with_civ_fail_notundercover1",
         "STR_antistasi_actions_talk_with_civ_fail_notundercover2"
     ];
-    _QRFCivCallChance = _QRFCivCallChance + 25 + (random 75); // adds 25 to 75 chances of a QRF being sent after each attempt if not undercover
+    _QRFCivCallChance = _QRFCivCallChance + 25 + (random 75); // adds 25 to 99 chances of a QRF being sent after each attempt if not undercover
  };
 
     _QRFCivCallChance = _QRFCivCallChance + (random 10); // adds 0 to 10% chances of a QRF being sent after any attempt
 
 //QRF calling
-if (_QRFCivCallChance > random 100) then {
+if (_QRFCivCallChance > 99) then {
 ["QRF", Occupants, "attack", 300, player, getPosATL player, 0.8, 0] remoteExec ["A3A_fnc_createSupport", 2];
 _QRFCivCallChance = 0; // reset chance after QRF call
 };
