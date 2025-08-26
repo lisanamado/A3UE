@@ -269,7 +269,11 @@ _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", ["ItemGPS"]];
 _loadoutData set ["NVGs", ["acfaa_anpvs14_monocular"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["rangefinders", ["Rangefinder"]];
+_rangefinders = ["Rangefinder"];
+if (isClass (configFile >> "CfgWeapons" >> "ACE_VectorDay")) then {
+    _rangefinders = ["ACE_VectorDay","ACE_Vector"];
+};
+_loadoutData set ["rangefinders", _rangefinders];
 
 _loadoutData set ["traitorUniforms", ["uni_negro"]];
 _loadoutData set ["traitorVests", ["acfaa_Modular_tan2"]];
@@ -438,7 +442,7 @@ _eliteLoadoutData set ["carbines", [
 ,["arifle_Mk20C_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-["ACFAA_FAMA_GL", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""]
+["ACFAA_FAMA_GL", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]
 ,["ACFAA_M4A1_M203_F", "", "acc_pointer_IR", _HoloOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]
 ,["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
 ]];
@@ -504,7 +508,7 @@ _militaryLoadoutData set ["carbines", [
 ,["arifle_Mk20C_F", "", "", _HoloOptics, ["30Rnd_556x45_Stanag"], [], ""]
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-["ACFAA_FAMA_GL", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""],3
+["ACFAA_FAMA_GL", "", "acc_pointer_IR", _HoloOptics, ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""],3
 ,["ACFAA_M4A1_M203_F", "", "acc_pointer_IR", _HoloOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""],1
 ,["arifle_TRG21_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""],2
 ,["arifle_Mk20_GL_F", "", "", "", ["30Rnd_556x45_Stanag"], [], ""]
@@ -548,7 +552,7 @@ _militiaLoadoutData set ["carbines", [
 ["ACFAA_FAMCA", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-["ACFAA_FAMA_GL", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], [], ""]
+["ACFAA_FAMA_GL", "", "", "", ["acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_Mag", "acfaa_20Rndfal_762x51_T_Mag"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
 ["acfaa_fmk3", "", "", "", ["acfaa_45Rnd_9x19_FMK3_Mag"], [], ""]

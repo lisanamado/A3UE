@@ -45,7 +45,7 @@
 ["vehiclesRivalsHelis", []] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", []] call _fnc_saveToTemplate;			
 
-["staticLowWeapons", ["O_G_HMG_02_F"]] call _fnc_saveToTemplate;
+["staticLowWeapons", ["O_G_HMG_02_F","O_G_HMG_02_high_F"]] call _fnc_saveToTemplate;
 ["staticAT", []] call _fnc_saveToTemplate;
 ["staticMortars", ["O_Mortar_01_F"]] call _fnc_saveToTemplate;
 

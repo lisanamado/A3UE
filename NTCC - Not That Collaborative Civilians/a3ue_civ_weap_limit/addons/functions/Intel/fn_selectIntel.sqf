@@ -78,8 +78,8 @@ private _fnc_addWeapon = {
     private _magazine = selectRandom compatibleMagazines _newWeapon;
 
 private _quantity = [
-    [(A3A_guestItemLimit / 4), A3A_guestItemLimit * 0.5, A3A_guestItemLimit * 1.1], // Catertico's - EDIT: made quantities depend on guest limit, making it unlikely to unlock them.
-    [0.1 * minWeaps, 0.33 * minWeaps, 1.1 * minWeaps] // Catertico's - EDIT: Lowered percentages of minWeapons, making it unlikely to unlock them. 
+    [A3A_guestItemLimit * 0.1, A3A_guestItemLimit * 0.25, A3A_guestItemLimit * 1.1], // Catertico's - EDIT: made quantities depend on guest limit, making it unlikely to unlock them.
+    [0.1 * minWeaps, 0.25 * minWeaps, 1.1 * minWeaps] // Catertico's - EDIT: Lowered percentages of minWeapons, making it unlikely to unlock them. 
 ] select (minWeaps > 0);
 _quantity = ceil (random _quantity); // in case unlocks disabled and A3A_guestItemLimit is set to 0, at least give 1 
 
@@ -115,7 +115,7 @@ if (_text isEqualTo "") then {
             {
                 case (MONEY):
                 {
-                    private _money = ((round (random 25)) + (10 * tierWar)) * 100; // Catertico's - EDIT: Changed random number from 50 to 25, in order to lower money rewards
+                    private _money = ((round (random 10)) + (10 * tierWar)) * 100; // Catertico's - EDIT: Changed random number from 50 to 10, in order to lower money rewards
                     _text = format ["A civilian gave you some confidential data, you sold it for %1 on the black market!", _money];
                     [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
                 };

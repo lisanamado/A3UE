@@ -25,9 +25,9 @@
         true (success) false (failure)
 */
 
-//Catertico's  changes:
-//Attempts to dialog can sum probabilities for a QRF call.
-//The QRF chances will increase by:
+//Catertico's desired changes:
+//Attempts to dialog should sum probabilities for a QRF call.
+//The QRF chances should increase by:
     // 0 to 10% after each interaction
     // 10 to 75% after each failed attempt if not undercover
     // 0 to 25% after each failed attempt if undercover
@@ -48,16 +48,20 @@ if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
 };
 
 
+/*Attempt to get the QRF call chance increasing with each interaction, to be solved
 if (isNil "_QRFCivCallChance") then {
     missionNamespace setVariable ["_QRFCivCallChance", 0];
-};
+};*/
+
+//One-interaction-at-once version (I'm making this to get at least chances for a QRF call after each interaction)
+private _QRFCivCallChance = random 11; 
 
 private _possibleMarkers = [citiesX, _unit, true] call A3A_fnc_findIfNearAndHostile;
 
 private _isDialogSuccessful = ((4 >= random 10) && (_possibleMarkers isNotEqualTo []));//deleted "captive _caller &&" so yo can talk to people even if not undercover  
 
 if !(captive _caller) then {
-    _QRFCivCallChance = _QRFCivCallChance + 25 + (random 75); // adds 25 to 99 chances of a QRF being sent after each attempt if not undercover
+    _QRFCivCallChance = _QRFCivCallChance + 50 + (random 75); // adds 25% to 125% chances of a QRF being sent after each attempt if not undercover
  };
 
 if (_isDialogSuccessful) exitWith {
@@ -192,11 +196,11 @@ _QRFCivCallChance = _QRFCivCallChance + (random 25); // adds 0 to 25% chances of
 //QRF calling
 if (_QRFCivCallChance > 99) then {
 
-/*private _support = selectRandomWeighted [
+private _support = selectRandomWeighted [
     "QRFLAND",10,
     "QRFAIR",(_tierWar * 3),
-    "TANK",_tierWar];*/
-["QRFLAND", Occupants, "attack", 300, player, getPosATL player, 0.8, 0] call "A3A_fnc_createSupport";
+    "TANK",_tierWar];//the chances of an airQRF or a Tank being sent would get higher as war level increases
+[_support, Occupants, "attack", 300, player, getPosATL player, 0.8, 0] call "A3A_fnc_createSupport";
 _QRFCivCallChance = 0; // reset chance after QRF call
 };
 
