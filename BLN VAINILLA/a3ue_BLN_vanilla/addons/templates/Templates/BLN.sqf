@@ -58,7 +58,6 @@ if (_hasWs) then {
   _staticAA = ["I_Tura_ZU23_lxWS"];
 };
 
-//NOT WORKING
 if (isClass (configFile >> "CfgVehicles" >> "walker_a3_hilux_1")) then {
     _vehiclesLightUnarmed = ["walker_a3_datsun_1","walker_a3_hilux_1"];
     _vehiclesLightArmed = ["walker_a3_hiluxhmg_1"];
@@ -387,12 +386,12 @@ private _rebUniforms = [
     "U_C_HunterBody_grn"
 ];          //Uniforms given to Normal Rebels
 
-private _dlcUniforms = [
+private _initialRebelEquipment append [
         "U_I_L_Uniform_01_tshirt_black_F",
         "U_I_L_Uniform_01_tshirt_olive_F",
         "U_I_L_Uniform_01_tshirt_skull_F",
         "U_I_L_Uniform_01_tshirt_sport_F"
-];          //Uniforms given if DLCs are enabled, only given to the Arsenal not Rebels
+];
 
 if (isClass (configFile >> "CfgWeapons" >> "WU_I_OfficerUniform")) then {
     _rebUniforms append [
@@ -404,7 +403,7 @@ if (isClass (configFile >> "CfgWeapons" >> "WU_I_OfficerUniform")) then {
         "WU_O_T_Officer_F",
         "WU_I_OfficerUniform"
     ];    
-    _dlcUniforms append [
+    _initialRebelEquipment append [
         "WU_B_GEN_Soldier_F",
         "U_B_CombatUniform_mcam_tshirt_W",
         "max_female_U",

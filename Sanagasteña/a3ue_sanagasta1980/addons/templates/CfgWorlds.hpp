@@ -1,0 +1,116 @@
+class CfgWorlds
+{
+    class GenericNames
+    {
+        class riojanames
+			{
+			class FirstNames
+			{
+				Julio = "Julio";
+				Maria = "María";
+				Diego = "Diego";
+				Gervasio = "Gervasio";
+				Ernesto = "Ernesto";
+				Juan = "Juan";
+				Osvaldo = "Osvaldo";
+				Miguel = "Miguel";
+				Roberto = "Roberto";
+				Andre = "Andrés";
+				Carlos = "Carlos";
+				Dario = "Darío";
+				Segundo = "Segundo";
+				Rafael = "Rafael";
+				Alberto = "Alberto";
+				Antonio = "Antonio";
+				Fernando = "Fernando";
+				Ricardo = "Ricardo";
+				Alfredo = "Alfredo";
+				Jorge = "Jorge";
+				Hernan = "Hernan";
+				Federico = "Federico";
+				Hector = "Héctor";
+				Valentin = "Valentín";
+				Agustin = "Agustín";
+				Emilio = "Emilio";
+				Santiago = "Santiago";
+				Francisco = "Francisco";
+				Guillermo = "Guillermo";
+				Luis = "Luis";
+				Pedro = "Pedro";
+				Manuel = "Manuel";
+				Romualdo = "Romualdo";
+				Claudio = "Claudio";
+			};
+			class LastNames
+			{
+				Sanchez = "Sánchez";
+				Fernandez = "Fernández";
+				Urrutia = "Urrutia";
+				Vilca = "Vilca";
+				Rodriguez = "Rodríguez";
+				Carrasco = "Carrasco";
+				Heredia = "Heredia";
+				Pillahuinque = "Pillahuinque";
+				Cabral = "Cabral";
+				Ralinqueo = "Ralinqueo";
+				Miguelez = "Miguelez";
+				Favalli = "Favalli";
+				Sosa = "Sosa";
+				Gil	= "Gil";
+				Duarte = "Duarte";
+				Rundwell = "Rundwell";
+				Maschwitz = "Maschwitz";
+				Garcia = "García";
+				Guiraldez = "Güiraldez";
+				Reinozo = "Reinozo";
+				Salvo = "Salvo";
+				Moreno = "Moreno";
+				Groslovich = "Groslovich";
+				Martinelli = "Martinelli";
+				Rigossi = "Rigossi";
+				Martinez = "Martínez";
+				Pirrinqueo = "Pirrinqueo";
+				Estragalarza = "Estragalarza";
+				Pugliese = "Pugliese";
+				Penaloza = "Peñaloza";
+				Pla = "Plá";
+				Guacurari = "Guacurarí";
+				Jauregui = "Jáuregui";
+				Alvarez = "Álvarez";
+				Lipan = "Lipán";
+				Moreira = "Moreira";
+				Montanelli = "Montanelli";
+				Quiroga = "Quiroga";
+				Guemes = "Güemes";
+				Fuentealba = "Fuentealba";
+				Fortunato = "Fortunato";
+				Bairoletto = "Bairoletto";
+				Sombra = "Sombra";
+				Nahuel = "Nahuel";
+				Barret = "Barret";
+				DelValle = "Del Valle";
+				Suarez = "Suárez";
+				Lopez = "López";
+				Pecho = "Pecho";
+				Pecha = "Pecha";
+				Pecchiola = "Pecchiola";
+				Pecherli = "Pecherli";
+				Sialotro = "Sialotro";
+				Merino = "Merino";
+				Quinteros = "Quinteros";
+				Morales = "Morales";
+				Gonzalez = "González";
+				Guarani = "Guaraní";
+				Huinca = "Huinca";
+				Coliqueo = "Coliqueo";
+				Quilapan = "Quilapán";
+				Soto = "Soto";
+				Navarro = "Navarro";
+				Mallin = "Mallín";
+				Viltes = "Viltes";
+				Santucho = "Santucho";
+				Caceres = "Cáceres";
+			};
+		};
+    };
+};
